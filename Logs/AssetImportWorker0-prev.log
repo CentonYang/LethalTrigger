@@ -11,19 +11,19 @@ D:\Unity\2020.3.19f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-E:/File/Project/Unity/A_project
+E:/File/Project/Github/LethalTrigger
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-9666
-Successfully changed project path to: E:/File/Project/Unity/A_project
-E:/File/Project/Unity/A_project
+6086
+Successfully changed project path to: E:/File/Project/Github/LethalTrigger
+E:/File/Project/Github/LethalTrigger
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 93.20 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 82.91 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.19f1 (68f137dc9bbe)
 [Subsystems] Discovering subsystems at path D:/Unity/2020.3.19f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path E:/File/Project/Unity/A_project/Assets
+[Subsystems] Discovering subsystems at path E:/File/Project/Github/LethalTrigger/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -35,89 +35,89 @@ Initialize mono
 Mono path[0] = 'D:/Unity/2020.3.19f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Unity/2020.3.19f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'D:/Unity/2020.3.19f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56912
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56180
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Unity/2020.3.19f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001943 seconds.
+Registered in 0.001256 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 91.06 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 80.75 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.839 seconds
+- Completed reload, in  1.708 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1840ms)
-		BeginReloadAssembly (72ms)
+	ReloadAssembly (1708ms)
+		BeginReloadAssembly (59ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (540ms)
-			LoadAssemblies (71ms)
+		EndReloadAssembly (464ms)
+			LoadAssemblies (58ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (192ms)
+			SetupTypeCache (158ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (35ms)
-			SetupLoadedEditorAssemblies (246ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (212ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (91ms)
-				BeforeProcessingInitializeOnLoad (16ms)
-				ProcessInitializeOnLoadAttributes (100ms)
-				ProcessInitializeOnLoadMethodAttributes (34ms)
+				RefreshPlugins (81ms)
+				BeforeProcessingInitializeOnLoad (14ms)
+				ProcessInitializeOnLoadAttributes (81ms)
+				ProcessInitializeOnLoadMethodAttributes (31ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.005780 seconds.
+Registered in 0.005022 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 93.28 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 99.00 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.234 seconds
+- Completed reload, in  2.002 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2235ms)
-		BeginReloadAssembly (169ms)
+	ReloadAssembly (2003ms)
+		BeginReloadAssembly (152ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (2001ms)
-			LoadAssemblies (108ms)
+		EndReloadAssembly (1794ms)
+			LoadAssemblies (96ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (467ms)
+			SetupTypeCache (385ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (104ms)
-			SetupLoadedEditorAssemblies (1178ms)
+			RebuildScriptCaches (102ms)
+			SetupLoadedEditorAssemblies (1070ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (93ms)
-				BeforeProcessingInitializeOnLoad (112ms)
-				ProcessInitializeOnLoadAttributes (960ms)
-				ProcessInitializeOnLoadMethodAttributes (6ms)
-				AfterProcessingInitializeOnLoad (3ms)
+				RefreshPlugins (99ms)
+				BeforeProcessingInitializeOnLoad (103ms)
+				ProcessInitializeOnLoadAttributes (853ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.43 seconds
-Refreshing native plugins compatible for Editor in 0.83 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.14 seconds
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4373 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 230.1 MB.
-System memory in use after: 230.3 MB.
+System memory in use after: 230.4 MB.
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 4860.
-Total: 4.110800 ms (FindLiveObjects: 0.456000 ms CreateObjectMapping: 0.292800 ms MarkObjects: 3.328400 ms  DeleteObjects: 0.032700 ms)
+Total: 4.418400 ms (FindLiveObjects: 0.483800 ms CreateObjectMapping: 0.245700 ms MarkObjects: 3.647000 ms  DeleteObjects: 0.040800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -132,498 +132,236 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Characters/Creno/hair.fbx
-  artifactKey: Guid(47714d416d96c714d887419065396440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/hair.fbx using Guid(47714d416d96c714d887419065396440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40f268c2fd16a9e2e90d92bebfb06748') in 2.820023 seconds 
-  Import took 3.138518 seconds .
+  path: Assets/Characters/Creno/Creno.blend1
+  artifactKey: Guid(02de94b9933602a45ab417933037a6e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Creno.blend1 using Guid(02de94b9933602a45ab417933037a6e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27f2509b6c277b6729ea2363a739724c') in 0.170983 seconds 
+  Import took 0.342308 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000245 seconds.
+  Time since last request: 0.000268 seconds.
   path: Assets/Characters/Creno/Creno.blend
   artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60f3112242d7cd667b0c1b242f7a061d') in 0.836218 seconds 
-  Import took 0.844993 seconds .
+Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd981bf0a3c8297b897fd81fe0d9a07d1') in 0.659554 seconds 
+  Import took 1.028705 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000224 seconds.
+  Time since last request: 0.000301 seconds.
+  path: Assets/Characters/01.blend
+  artifactKey: Guid(9d2875f75eb01ef44ba8b7f032044c11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/01.blend using Guid(9d2875f75eb01ef44ba8b7f032044c11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a0174d36fdf040bf14520626a54cc98') in 1.912339 seconds 
+  Import took 1.942359 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006537 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.75 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.435 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1436ms)
+		BeginReloadAssembly (146ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (46ms)
+		EndReloadAssembly (1232ms)
+			LoadAssemblies (93ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (362ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (85ms)
+			SetupLoadedEditorAssemblies (540ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (94ms)
+				ProcessInitializeOnLoadAttributes (432ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.76 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4028 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 219.6 MB.
+System memory in use after: 219.9 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 4944.
+Total: 4.631000 ms (FindLiveObjects: 0.374000 ms CreateObjectMapping: 0.221800 ms MarkObjects: 3.997400 ms  DeleteObjects: 0.036200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 181.505583 seconds.
+  path: Assets/Characters/Creno/Creno.blend
+  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd05d188181aa78adab635792e7c0a0e') in 0.516795 seconds 
+  Import took 0.771988 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
   path: Assets/Characters/Creno/Creno.fbx
   artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7af69a44b9c636c13568e526644206d') in 2.291360 seconds 
-  Import took 2.610297 seconds .
+Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97f86a19402b168dc79cbaf8a0728f08') in 0.313628 seconds 
+  Import took 0.505379 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1380.941687 seconds.
+  Time since last request: 73.043536 seconds.
   path: Assets/Characters/Creno/Creno.blend
   artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c770b2123a312929f626fec09a29434') in 0.721129 seconds 
-  Import took 0.965529 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000277 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '983c29c72a30d387250e57a5ec5c061c') in 0.703071 seconds 
-  Import took 0.906395 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 103.670963 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b61b2bce9c5bc52d8bb12e7808f0bbf1') in 0.734789 seconds 
-  Import took 0.938446 seconds .
+Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06192cb1c09d593c7953bbf1a3071b86') in 0.270020 seconds 
+  Import took 0.337530 seconds .
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000293 seconds.
   path: Assets/Characters/Creno/Creno.fbx
   artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7da00508d22cc95cf7134004e0c730f9') in 0.198234 seconds 
-  Import took 0.295469 seconds .
+Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14d00f59ae8c0a159ba90592769bc4b5') in 0.308137 seconds 
+  Import took 0.340066 seconds .
 
 ========================================================================
-Received Import Request.
-  Time since last request: 27.734976 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf2719afaac1a3eb9dd8aefa4bcaf3a6') in 0.204418 seconds 
-  Import took 0.393685 seconds .
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004850 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.812 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1812ms)
+		BeginReloadAssembly (135ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (47ms)
+		EndReloadAssembly (1618ms)
+			LoadAssemblies (106ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (415ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (95ms)
+			SetupLoadedEditorAssemblies (843ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (97ms)
+				ProcessInitializeOnLoadAttributes (732ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4028 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.1 MB.
+System memory in use after: 220.3 MB.
 
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 4982.
+Total: 4.689700 ms (FindLiveObjects: 0.392900 ms CreateObjectMapping: 0.234200 ms MarkObjects: 4.037100 ms  DeleteObjects: 0.024000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 72.828265 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '206491a95a8308082a99ed17da528916') in 0.191727 seconds 
-  Import took 0.245729 seconds .
+  Time since last request: 878.254967 seconds.
+  path: Assets/Scenes/New Scene.unity
+  artifactKey: Guid(4e14d9b91d1d3d848a8ef2ddaece4d1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/New Scene.unity using Guid(4e14d9b91d1d3d848a8ef2ddaece4d1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '024d893cf95971e0174d12aadef41507') in 0.590834 seconds 
+  Import took 0.653652 seconds .
 
 ========================================================================
-Received Import Request.
-  Time since last request: 14.511864 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2fcc1b44a68cf5545731227507af7f1') in 0.193151 seconds 
-  Import took 0.232070 seconds .
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004471 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.406 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1406ms)
+		BeginReloadAssembly (127ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (47ms)
+		EndReloadAssembly (1220ms)
+			LoadAssemblies (102ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (372ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (84ms)
+			SetupLoadedEditorAssemblies (497ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (4ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (97ms)
+				ProcessInitializeOnLoadAttributes (385ms)
+				ProcessInitializeOnLoadMethodAttributes (6ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (30ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4028 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 220.2 MB.
+System memory in use after: 220.4 MB.
 
-========================================================================
-Received Import Request.
-  Time since last request: 3.802679 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e3ffd46814234b9ea2381cdb3482d9f') in 0.197552 seconds 
-  Import took 0.238450 seconds .
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 4984.
+Total: 4.176800 ms (FindLiveObjects: 0.388800 ms CreateObjectMapping: 0.217400 ms MarkObjects: 3.547200 ms  DeleteObjects: 0.021800 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 318.918593 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6aacbc7584bf03ba2f8a9646d21ed16d') in 0.173675 seconds 
-  Import took 0.211557 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 27.830217 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '720ec535bfc3191b9f219acff487397d') in 0.026320 seconds 
-  Import took 0.062301 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 222.344670 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '537cb370931c5b0b4c6338ce5e57c161') in 0.161731 seconds 
-  Import took 0.198676 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 75.414981 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0901f0b6bca607fe4720216971396485') in 0.171299 seconds 
-  Import took 0.201981 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3295.212260 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f1c3ec8ce7358f68918d13c4ea9606b') in 1.083016 seconds 
-  Import took 1.185441 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47238ce0ba934eea71fc90063d3c01c6') in 0.145494 seconds 
-  Import took 0.189360 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 124.203345 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35288c5d9eef0b92e40b4d50fadd2ad9') in 0.140104 seconds 
-  Import took 0.213923 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 160.609773 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2036e44e7bfdb57c89c0ec817110ec53') in 0.172929 seconds 
-  Import took 0.185781 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.391125 seconds.
-  path: Assets/Characters/Creno/Creno.blend1
-  artifactKey: Guid(02de94b9933602a45ab417933037a6e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend1 using Guid(02de94b9933602a45ab417933037a6e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb56b48e80943b806fdc46a83c2bddb7') in 0.017498 seconds 
-  Import took 0.210612 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8782.370753 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dcea985af118a269c901536008305be') in 0.463577 seconds 
-  Import took 0.566644 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '889cad84506d3fc69ee5f0683e0b67ad') in 0.161620 seconds 
-  Import took 0.174857 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.613419 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '348b44fa51eb87c3a6e3a6fd7ad12fc3') in 0.236117 seconds 
-  Import took 0.448123 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000297 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '038560aa8bcd0a475e70a99e7705f6c3') in 0.011653 seconds 
-  Import took 0.046431 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 70.710449 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25b615e3de2b2918c71749da5ea98c8b') in 0.231603 seconds 
-  Import took 0.528795 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000227 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f74f4ada472c92f165fefe28c558737') in 0.164834 seconds 
-  Import took 0.373134 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 29.966638 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d1ba4e77d6d7a46fd5d6922dd4826c2') in 0.226708 seconds 
-  Import took 0.420826 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000342 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc7c2a55017b6d6ebc8d77abf716a5ac') in 0.168876 seconds 
-  Import took 0.177070 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 322.932659 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04fb4ad31ecfa247a325bc1981aa219d') in 0.171455 seconds 
-  Import took 0.206750 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 213.692962 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09c71779a3aa276911452cc4f568fea1') in 0.423297 seconds 
-  Import took 0.470286 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 53.620808 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34604ae7fb1917103901db56e68104e5') in 0.200879 seconds 
-  Import took 0.215727 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 96.481788 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a49b9d01e9fb8c47b013265e306b5339') in 0.266123 seconds 
-  Import took 0.311531 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 473.516183 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44ff5821da338b142b02bbd98280d29d') in 0.616982 seconds 
-  Import took 0.630756 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000220 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5933c05ba4a498573bd83dd32bb4ba72') in 0.186975 seconds 
-  Import took 0.197948 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 29949.616880 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f948191291154875a84f16545893953') in 0.822112 seconds 
-  Import took 0.950911 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e87a93f7e1947f84994d4f0977112237') in 0.171165 seconds 
-  Import took 0.203167 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 194.457348 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e704cef16d9f0e684131d99f75c4c85') in 0.252055 seconds 
-  Import took 0.344112 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 188.751014 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41e8aa34fb9841b6b911025c16991433') in 0.243732 seconds 
-  Import took 0.478632 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000334 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbed51e8a832c93bea52c2b48dd9c7cd') in 0.024815 seconds 
-  Import took 0.035726 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 24.933119 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8609c6182aaddca4c244a687c649fa1') in 0.181766 seconds 
-  Import took 0.217026 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 42.479707 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae7fdf5e2fcfbc51cb3c56345bb22619') in 0.198319 seconds 
-  Import took 0.234615 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 95.851357 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16c76c0e3c3f81d2a90dd6147b66b37e') in 0.215434 seconds 
-  Import took 0.360414 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 20.686787 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecca4958a001a368f5a1ed508592fa2e') in 0.180938 seconds 
-  Import took 0.361967 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.447427 seconds.
-  path: Assets/Characters/Creno/Creno.controller
-  artifactKey: Guid(0f64f6c667bd8444fbcd1c93429f10ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.controller using Guid(0f64f6c667bd8444fbcd1c93429f10ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd871001d9cd68a0e30d233b7a0ed1fb3') in 0.032656 seconds 
-  Import took 0.043584 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 71.374429 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60d394c1282f8803ab486ba5da914baa') in 0.237897 seconds 
-  Import took 0.456176 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.005884 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b40b5721fb57ba2e8a89e4ce2e3372b9') in 0.248278 seconds 
-  Import took 0.313803 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 64.280978 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c19e7485976a0a3ce12388941131217e') in 0.266938 seconds 
-  Import took 0.379804 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 271.484093 seconds.
-  path: Assets/Characters/Creno/Materials/CR-UV.png
-  artifactKey: Guid(68b64171bccd55b4eac2ce0884173c36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Materials/CR-UV.png using Guid(68b64171bccd55b4eac2ce0884173c36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ba505c324df9d00bf71892a2cf2a55c') in 0.227414 seconds 
-  Import took 0.252491 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 36.993365 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2760f2275636f073d0dc761d6d2d1140') in 0.330257 seconds 
-  Import took 0.493714 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000196 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f457b51606d2e1b2cb2fc79a8576dd1') in 0.186374 seconds 
-  Import took 0.203819 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 15.949394 seconds.
-  path: Assets/Characters/Creno/Creno.blend1
-  artifactKey: Guid(02de94b9933602a45ab417933037a6e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend1 using Guid(02de94b9933602a45ab417933037a6e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6737b11a261daa4c0b82842aa5fc2017') in 0.008162 seconds 
-  Import took 0.146439 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 362.330511 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58fe037ae03ddef1998880b0dda1e43d') in 0.466104 seconds 
-  Import took 0.478971 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000262 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28cabb701944a5078a51564f5eed1c1f') in 0.184135 seconds 
-  Import took 0.216513 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 197.718568 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '059961efea5a3c4a203c5229d260391e') in 0.269782 seconds 
-  Import took 0.321508 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000244 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f68f0814c959ba6634224f90d44b687c') in 0.173901 seconds 
-  Import took 0.209188 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 506.976024 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c7586aa789a5d777c348f8afc607c43') in 0.496647 seconds 
-  Import took 0.620469 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 6571.068128 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93ddf4a5d55aec5e1801461a9ac336f0') in 1.011930 seconds 
-  Import took 1.131464 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 818.104576 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.323798 seconds  code(4) message(Build asset version error: assets/characters/creno/creno.blend in SourceAssetDB has modification time of '2022-02-19T16:52:39.5283448Z' while content on disk has modification time of '2022-02-19T16:53:08.513962Z')
-  ERROR: Build asset version error: assets/characters/creno/creno.blend in SourceAssetDB has modification time of '2022-02-19T16:52:39.5283448Z' while content on disk has modification time of '2022-02-19T16:53:08.513962Z'
-  Import took 0.345315 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c057041252f1542e05ce5b761e2930d') in 0.024909 seconds 
-  Import took 0.211257 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 19.666826 seconds.
-  path: Assets/Characters/Creno/Creno.blend
-  artifactKey: Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.blend using Guid(1904327f954c4fc4881ad365ea3e2379) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ac03f9bbd8475b572961cb00fb4eab8') in 0.311388 seconds 
-  Import took 0.369438 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000198 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '714e0e2ce8c30d16da8b5354b3645898') in 0.036597 seconds 
-  Import took 0.265543 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 43.110863 seconds.
-  path: Assets/Characters/Creno/Creno.fbx
-  artifactKey: Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.fbx using Guid(9f70203bf5f36e849951416f20db37bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7750502e23f7cc956c76a5863f8fc9c') in 0.223041 seconds 
-  Import took 0.455292 seconds .
-
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
