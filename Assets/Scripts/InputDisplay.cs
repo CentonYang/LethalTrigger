@@ -24,29 +24,36 @@ public class InputDisplay : MonoBehaviour
         if (player1.moveKey != mChar[0])
         {
             mChar[0] = player1.moveKey;
-            mChar[1] = mChar[0] == '1' ? '¡ú' :
-            mChar[0] == '2' ? '¡õ' :
-            mChar[0] == '3' ? '¡û' :
-            mChar[0] == '4' ? '¡ö' :
-            mChar[0] == '6' ? '¡÷' :
-            mChar[0] == '7' ? '¡ø' :
-            mChar[0] == '8' ? '¡ô' :
-            mChar[0] == '9' ? '¡ù' : '¡¹';
-            moveInput = mChar[1].ToString() + moveInput;
+            switch (mChar[0])
+            {
+                case '1': mChar[1] = '¡ú'; break;
+                case '2': mChar[1] = '¡õ'; break;
+                case '3': mChar[1] = '¡û'; break;
+                case '4': mChar[1] = '¡ö'; break;
+                case '6': mChar[1] = '¡÷'; break;
+                case '7': mChar[1] = '¡ø'; break;
+                case '8': mChar[1] = '¡ô'; break;
+                case '9': mChar[1] = '¡ù'; break;
+                default: mChar[1] = '¡@'; break;
+            }
+            if (mChar[1] != '¡@')
+                moveInput = mChar[1].ToString() + moveInput;
         }
         if (player1.actionKey != aChar[0] && player1.actionKey != ' ')
         {
             aChar[0] = player1.actionKey;
-            aChar[1] = aChar[0] == 'm' ? '¢õ' :
-            aChar[0] == 'w' ? '£@' :
-            aChar[0] == 'g' ? '¢ï' :
-            aChar[0] == 's' ? '¢û' :
-            aChar[0] == 'M' ? '¢Û' :
-            aChar[0] == 'W' ? '¢å' :
-            aChar[0] == 'G' ? '¢Õ' : '¢û';
-            moveInput = aChar[1].ToString() + moveInput;
+            switch (aChar[0])
+            {
+                case 'M': aChar[1] = '¢Û'; break;
+                case 'W': aChar[1] = '¢å'; break;
+                case 'S': aChar[1] = '¢á'; break;
+                case 'R': aChar[1] = '¢à'; break;
+                default: aChar[1] = '¡@'; break;
+            }
+            if (aChar[1] != '¡@')
+                moveInput = aChar[1].ToString() + moveInput;
         }
-        if (moveInput.Length > 20)
+        if (moveInput != null && moveInput.Length > 20)
             moveInput = moveInput.Remove(moveInput.Length - 1, 1);
         moveText.text = moveInput;
     }

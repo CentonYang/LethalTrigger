@@ -12,8 +12,7 @@ public class MariaScript : MonoBehaviour
     public string actionMsg;
     public int direction;
     public List<string> actionName;
-    public float jumpHight, moveSpeed;
-    public bool animUnscale;
+    public float jumpHight, moveSpeed, motionScale;
 
     void Awake()
     {
@@ -48,11 +47,7 @@ public class MariaScript : MonoBehaviour
         if (opponent.transform.position.x - transform.position.x > 5)
             if (rgBody.velocity.x < 0)
                 rgBody.velocity = Vector2.right;
-    }
-
-    void FixedUpdate()
-    {
-        //animator.speed = animUnscale ? 1 / Time.timeScale : 1;
+        motionScale = animator.GetFloat("scale");
     }
 
     public void GameMode()
@@ -116,42 +111,36 @@ public class MariaScript : MonoBehaviour
         switch (evt)
         {
             case "idle":
-                rgBody.velocity *= Vector2.right * moveSpeed;
+                Moving(true, 0);
                 break;
             case "def":
-                transform.localScale = new Vector3(1, 1, direction);
-                rgBody.velocity *= -Vector2.right * moveSpeed;
+                Moving(true, 2);
                 break;
             case "walk":
-                transform.localScale = new Vector3(1, 1, direction);
-                rgBody.velocity = Vector2.right * moveSpeed * direction;
+                Moving(false, 2);
                 break;
             case "run":
-                transform.localScale = new Vector3(1, 1, direction);
-                rgBody.velocity = Vector2.right * moveSpeed * direction;
+                Moving(false, 2);
                 break;
             case "runstop":
-                rgBody.velocity *= Vector2.right * moveSpeed;
+                Moving(true, 0);
                 break;
             case "roll":
                 Physics2D.IgnoreLayerCollision(3, 3, true);
                 animator.SetInteger("ground", 0);
-                transform.localScale = new Vector3(1, 1, direction);
-                rgBody.velocity = Vector2.right * moveSpeed * direction;
+                Moving(false, 2);
                 break;
             case "dodge":
                 animator.SetInteger("ground", 0);
-                transform.localScale = new Vector3(1, 1, direction);
-                rgBody.velocity = Vector2.right * moveSpeed * -direction;
+                Moving(false, 0);
                 break;
             case "jump":
-                rgBody.velocity *= 0;
+                Moving(true, 0, 0.1f); ;
                 if (actionMsg == "Rjump" || actionMsg == "Ljump")
                 {
-                    rgBody.AddForce(Vector2.up * jumpHight, ForceMode2D.Impulse);
-                    rgBody.velocity += Vector2.right * moveSpeed * direction;
+                    Moving(false, 1);
                 }
-                else rgBody.AddForce(Vector2.up * jumpHight, ForceMode2D.Impulse);
+                else Moving(false, 0, 0); ;
                 break;
             case "fall":
                 animator.SetBool("fall", true);
@@ -187,6 +176,15 @@ public class MariaScript : MonoBehaviour
                 rgBody.velocity = Vector2.right * moveSpeed * transform.localScale.z;
                 break;
         }
+    }
+
+    public void Moving(bool stop, int directionMode, float moveScale = 1, float jumpScale = 1) //directionMode.0 = 不轉身且方向不可控, 1 = 不轉身但方向可控, 2 = 轉身且方向可控
+    {
+        if (directionMode == 2) transform.localScale = new Vector3(1, 1, direction);
+        if (stop)
+            rgBody.velocity *= Vector2.right * moveSpeed * moveScale * (directionMode > 0 ? direction : transform.localScale.z) * motionScale;
+        else
+            rgBody.velocity = (Vector2.right * moveSpeed * moveScale * (directionMode > 0 ? direction : transform.localScale.z)) + (Vector2.up * jumpHight * jumpScale) * motionScale;
     }
 
     void ResetAllBool() //重置所有Bool

@@ -1909,7 +1909,7 @@
     },
     "m_Name": "MainColor",
     "m_DefaultReferenceName": "Color_292da047ccd34a0f944c21b6d29919aa",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_MainColor",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -2234,7 +2234,7 @@
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
     "m_ObjectId": "3c310ae9dbce45e09dbecf3317118597",
     "m_ActiveSubTarget": {
-        "m_Id": "9be067f445c8463fae054804f066f49f"
+        "m_Id": "e92c9bc7797b41e8b53a885913e19a78"
     },
     "m_SurfaceType": 0,
     "m_AlphaMode": 0,
@@ -2342,7 +2342,7 @@
     },
     "m_Name": "ShadowColor",
     "m_DefaultReferenceName": "Color_3f6d3f6bb3164ea3a8790a9a73a936a3",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_ShadowColor",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -2404,7 +2404,7 @@
     },
     "m_Name": "RimTheshhold",
     "m_DefaultReferenceName": "Vector1_4298d1479a1844c288488b6ee08d9e68",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_RimTheshhold",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -3258,7 +3258,7 @@
     },
     "m_Name": "RimColor",
     "m_DefaultReferenceName": "Color_7732e8adc142460689b75b04551b33af",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_RimColor",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -3309,10 +3309,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 1652.9998779296875,
-            "y": -262.0,
+            "x": 1653.0,
+            "y": -290.9999694824219,
             "width": 184.0,
-            "height": 252.99998474121095
+            "height": 253.0
         }
     },
     "m_Slots": [
@@ -3648,8 +3648,8 @@
     "m_ObjectId": "89e90874721d44b8bafe2b2b3999c876",
     "m_Title": "Texture 2D",
     "m_Position": {
-        "x": 1488.9998779296875,
-        "y": -320.9999694824219
+        "x": 1271.0,
+        "y": -350.0
     }
 }
 
@@ -4042,12 +4042,6 @@
     "m_Property": {
         "m_Id": "cf8c899cd0444a2a852d7fff71122091"
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
-    "m_ObjectId": "9be067f445c8463fae054804f066f49f"
 }
 
 {
@@ -4651,9 +4645,9 @@
     "m_ShaderOutputName": "BaseColor",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.5,
-        "y": 0.5,
-        "z": 0.5
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -4861,7 +4855,7 @@
     },
     "m_Name": "RimAmount",
     "m_DefaultReferenceName": "Vector1_bd6333cc3ed942c3a714ea87f29452c0",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_RimAmount",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -4922,7 +4916,7 @@
     },
     "m_Name": "Glassiness",
     "m_DefaultReferenceName": "Vector1_bffd4c99c34346949dd9e2a2319d62d1",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_Glassiness",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -5187,7 +5181,7 @@
     },
     "m_Name": "Offset",
     "m_DefaultReferenceName": "Vector2_cf8c899cd0444a2a852d7fff71122091",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_Offset",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -5377,7 +5371,7 @@
     },
     "m_Name": "Tiling",
     "m_DefaultReferenceName": "Vector2_d7bb844ccf764a8d808d73730d43799c",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_Tilling",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -5742,7 +5736,7 @@
     },
     "m_Name": "SpecularColor",
     "m_DefaultReferenceName": "Color_e887d95f83cb48028db188ad9bd9c68f",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_SpecularColor",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
@@ -5755,6 +5749,12 @@
         "a": 0.0
     },
     "m_ColorMode": 1
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
+    "m_ObjectId": "e92c9bc7797b41e8b53a885913e19a78"
 }
 
 {

@@ -57,71 +57,65 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Outline\Scripts\Outline.cs" />
-    <Compile Include="Assets\ShaderForge\Example Assets\Scripts\SoftNormalsToVertexColor.cs" />
     <Compile Include="Assets\Particles\SwordLight.cs" />
-    <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EnableCameraDepthInForward.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\MoveList.cs" />
     <Compile Include="Assets\Scripts\StopMotion.cs" />
     <Compile Include="Assets\Scripts\Crystal.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\URP_BlitRenderFeature-master\Blit.cs" />
     <Compile Include="Assets\Scripts\MariaScript.cs" />
     <Compile Include="Assets\Scripts\OrthToPers.cs" />
     <Compile Include="Assets\Scripts\VolumeSetting.cs" />
     <Compile Include="Assets\Scripts\MainViewer.cs" />
-    <Compile Include="Assets\Scripts\DistanceWall.cs" />
     <Compile Include="Assets\Scripts\InputDisplay.cs" />
     <Compile Include="Assets\Scripts\GameSystem.cs" />
-    <Compile Include="Assets\ShaderForge\Example Assets\Scripts\EditorLabel.cs" />
     <Compile Include="Assets\Scripts\ActionData.cs" />
     <Compile Include="Assets\Scripts\Shadow.cs" />
+    <Compile Include="Assets\Shaders\DepthNormalsFeature.cs" />
+    <Compile Include="Assets\Shaders\OutlineFeature.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Shaders\Outline.shader" />
-    <None Include="Assets\ShaderForge\Example Assets\Shaders\Vegetation.shader" />
-    <None Include="Assets\ShaderForge\Example Assets\Shaders\LightWrapping.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonBodyDoubleShadeWithFeather.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Outline\Resources\Shaders\OutlineMask.shader" />
-    <None Include="Assets\ShaderForge\Example Assets\Shaders\Parallax.shader" />
+    <None Include="Assets\UnityChanSSU_URP-release-1.0.2\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\Shaders\NiloZOffset.hlsl" />
-    <None Include="Assets\ShaderForge\Example Assets\Shaders\Tiles.shader" />
-    <None Include="Assets\ShaderForge\Example Assets\Shaders\Refraction.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\ShaderForge\Example Assets\Shaders\CustomLighting.shader" />
+    <None Include="Assets\Shaders\Outline.hlsl" />
     <None Include="Assets\Assets MOOD WARE\_MW Skybox\Documentation\Documentation City Street Skyboxes Vol. 1.txt" />
+    <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonBody.hlsl" />
+    <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToon.shader" />
     <None Include="Assets\Shaders\SimpleURPToonLitOutlineExample_LightingEquation.hlsl" />
     <None Include="Assets\Shaders\SimpleURPToonLitOutlineExample.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonHead.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\Shaders\SimpleURPToonLitOutlineExample_Shared.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexColorRounding.shader" />
     <None Include="Assets\Shaders\NiloOutlineUtil.hlsl" />
     <None Include="Assets\Outline\Readme.txt" />
+    <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonOutline.hlsl" />
     <None Include="Assets\Shaders\CustomLighting.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\URP_BlitRenderFeature-master\Sobel.hlsl" />
+    <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonInput.hlsl" />
+    <None Include="Assets\Shaders\ToonShader.shader" />
+    <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonBodyShadingGradeMap.hlsl" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Shaders\SobelFilter.shader" />
-    <None Include="Assets\ShaderForge\Readme.txt" />
-    <None Include="Assets\ShaderForge\Example Assets\Shaders\PixelRotator.shader" />
-    <None Include="Assets\URP_BlitRenderFeature-master\SobelFilter.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Shaders\NiloInvLerpRemap.hlsl" />
-    <None Include="Assets\ShaderForge\Example Assets\Shaders\VertexAnimation.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Outline\Resources\Shaders\OutlineFill.shader" />
-    <None Include="Assets\ShaderForge\Example Assets\Shaders\TessellationDisplacement.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
@@ -801,6 +795,18 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{190E90D8-9917-5951-AA7B-A730BF055218}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.animations.springbone.editor.csproj">
+      <Project>{067621B0-DF79-C739-1FDC-33EA7269BC44}</Project>
+      <Name>com.unity.animations.springbone.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.animations.springbone.csproj">
+      <Project>{1ABC8579-FBFC-B827-0998-655C5C7ED8BD}</Project>
+      <Name>com.unity.animations.springbone</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.UniversalToonShader.Urp.Editor.csproj">
+      <Project>{F28105EC-EB9D-B413-5ECE-AD95A5E2BDE1}</Project>
+      <Name>Unity.UniversalToonShader.Urp.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

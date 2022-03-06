@@ -6,11 +6,11 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public int[] moveTimer = { 0, 10 }; //value, max
-    public char moveKey, actionKey;
+    public char moveKey,actionKey;
+    public List<char> inputMove,inputAction;
     public MoveList moveList;
     public List<string> actionName, actionStep;
     public string actionMsg;
-    public bool restMove;
     public GameSystem gameSystem;
 
     void Awake()
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        MoveTransform(moveKey, true);
+        TransformOutput('5');
     }
 
     void Update()
@@ -31,92 +31,94 @@ public class PlayerController : MonoBehaviour
             GameMode();
             gameSystem.gameStep--;
         }
+        if (inputMove.Count > 0)
+        {
+            moveKey = inputMove[0];
+            TransformOutput(moveKey);
+            inputMove.RemoveAt(0);
+        }
+        if (inputAction.Count > 0)
+        {
+            actionKey = inputAction[0];
+            TransformOutput(actionKey);
+            inputAction.RemoveAt(0);
+        }
     }
 
     public void GameMode()
     {
         if (moveTimer[0] < 1)
-        { actionName.Clear(); actionStep.Clear(); MoveTransform(moveKey, true); }
+        {
+            actionName.Clear(); actionStep.Clear();
+            TransformOutput(moveKey);
+        }
         if (moveTimer[0] > 0) moveTimer[0]--;
         //transform.GetChild(0).SendMessage("GameMode", SendMessageOptions.DontRequireReceiver);
     }
 
     public void InputMove(InputAction.CallbackContext ctx)
     {
-        MoveTransform(
-            ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y < 0 ? '1' :
-            ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y < 0 ? '2' :
-            ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y < 0 ? '3' :
-            ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y == 0 ? '4' :
-            ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y == 0 ? '6' :
-            ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y > 0 ? '7' :
-            ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y > 0 ? '8' :
-            ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y > 0 ? '9' : '5', false
-            );
+        if (ctx.phase != InputActionPhase.Started)
+        {
+            inputMove.Add(
+                ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y < 0 ? '1' :
+                ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y < 0 ? '2' :
+                ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y < 0 ? '3' :
+                ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y == 0 ? '4' :
+                ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y == 0 ? '6' :
+                ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y > 0 ? '7' :
+                ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y > 0 ? '8' :
+                ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y > 0 ? '9' : '5');
+            if (ctx.ReadValue<Vector2>().x > 0)
+                inputMove.Add('R');
+            if (ctx.ReadValue<Vector2>().x < 0)
+                inputMove.Add('L');
+            if (ctx.ReadValue<Vector2>().y > 0)
+                inputMove.Add('U');
+            if (ctx.ReadValue<Vector2>().y < 0)
+                inputMove.Add('D');
+        }
     }
 
     public void InputAction(InputAction.CallbackContext ctx)
     {
-        ActionTransform(
-            ctx.action.name + ctx.ReadValue<float>() == "M_cls1" ? 'M' :
-            ctx.action.name + ctx.ReadValue<float>() == "M_cls0" ? 'm' :
-            ctx.action.name + ctx.ReadValue<float>() == "W_cls1" ? 'W' :
-            ctx.action.name + ctx.ReadValue<float>() == "W_cls0" ? 'w' :
-            ctx.action.name + ctx.ReadValue<float>() == "G_cls1" ? 'G' :
-            ctx.action.name + ctx.ReadValue<float>() == "G_cls0" ? 'g' :
-            ctx.action.name + ctx.ReadValue<float>() == "S_cls1" ? 'S' : 's'
-            );
-    }
-
-    public void MoveTransform(char getMove, bool rest)
-    {
-        if (!rest)
-            if (moveKey == getMove) return;
-        restMove = rest;
-        for (int i = 0; i < moveList.data.Length; i++)
+        if (ctx.phase != InputActionPhase.Started)
         {
-            if (!actionName.Contains(moveList.data[i].name))
-                if (moveList.data[i].step[0] == getMove)  //移動鍵找指令加入actionList
-                {
-                    moveTimer[0] = moveTimer[1];
-                    moveKey = getMove;
-                    actionName.Add(moveList.data[i].name);
-                    actionStep.Add(moveList.data[i].step.Substring(1));
-                }
+            inputAction.Add(
+                ctx.action.name + ctx.ReadValue<float>() == "M_cls1" ? 'M' :
+                ctx.action.name + ctx.ReadValue<float>() == "M_cls0" ? 'm' :
+                ctx.action.name + ctx.ReadValue<float>() == "W_cls1" ? 'W' :
+                ctx.action.name + ctx.ReadValue<float>() == "W_cls0" ? 'w' :
+                ctx.action.name + ctx.ReadValue<float>() == "S_cls1" ? 'S' :
+                ctx.action.name + ctx.ReadValue<float>() == "S_cls0" ? 's' :
+                ctx.action.name + ctx.ReadValue<float>() == "R_cls1" ? 'R' : 'r');
         }
-        TransformOutput(moveKey);
-    }
-
-    public void ActionTransform(char getAction)
-    {
-        if (actionKey == getAction) return;
-        actionKey = getAction; restMove = false;
-        for (int i = 0; i < moveList.data.Length; i++)
-        {
-            if (!actionName.Contains(moveList.data[i].name))
-                if (moveList.data[i].step[0] == getAction)  //動作鍵找指令加入actionList
-                {
-                    actionName.Add(moveList.data[i].name);
-                    actionStep.Add(moveList.data[i].step.Substring(1));
-                }
-        }
-        TransformOutput(actionKey);
     }
 
     public void TransformOutput(char compareKey)
     {
+        for (int i = 0; i < moveList.data.Length; i++)
+        {
+            if (!actionName.Contains(moveList.data[i].name))
+                if (moveList.data[i].step[0] == compareKey)
+                {
+                    moveTimer[0] = moveTimer[1];
+                    actionName.Add(moveList.data[i].name);
+                    actionStep.Add(moveList.data[i].step.Substring(1));
+                }
+        }
+        bool pushMsg = true;
         for (int i = 0; i < actionName.Count; i++)
         {
-            if (actionStep[i].Length > 0)
-                if (compareKey == actionStep[i][0]) //指令表篩選
-                    actionStep[i] = actionStep[i].Remove(0, 1);
+            if (actionStep[i].Length > 0 && compareKey == actionStep[i][0])
+                actionStep[i] = actionStep[i].Remove(0, 1);
             if (actionStep[i].Length < 1) //指令表過濾
             {
-                if (actionMsg != actionName[i] && !restMove)
+                if (actionMsg != actionName[i] && pushMsg)
                 {
                     actionMsg = actionName[i];
+                    pushMsg = false;
                     transform.GetChild(0).SendMessage("ActionMessage", actionMsg, SendMessageOptions.DontRequireReceiver);
-                    restMove = true;
                 }
                 actionName.RemoveAt(i); actionStep.RemoveAt(i); i--;
             }

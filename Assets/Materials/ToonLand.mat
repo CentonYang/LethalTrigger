@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ToonLand
-  m_Shader: {fileID: -6465566751694194690, guid: e5f2f2fc2de2be44d9471965491448d4, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a95550f3b52cb4241b21110c74aecd5e, type: 3}
   m_ShaderKeywords: _METALLICSPECGLOSSMAP _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,6 +32,14 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_a9bb7848061d477ebbdf6e3daa5942fd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_c2df060e8ce34deab317c4c15e4e80fd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 87ce03bd447ccce48bbff87ac0d8355f, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -145,9 +153,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_124dbbb840df4f5f89e1a4691633a318: 0.5
     - Vector1_4298d1479a1844c288488b6ee08d9e68: 1
+    - Vector1_94b81c8627f54a618d569437d0e88d2f: 0
     - Vector1_bd6333cc3ed942c3a714ea87f29452c0: 0
     - Vector1_bffd4c99c34346949dd9e2a2319d62d1: 3
+    - Vector1_d98503d6f2de4f24890f6c3ee70d5623: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 5
@@ -195,10 +206,15 @@ Material:
     m_Colors:
     - Color_292da047ccd34a0f944c21b6d29919aa: {r: 0.60746706, g: 0.60870105, b: 0.6886792, a: 0}
     - Color_3f6d3f6bb3164ea3a8790a9a73a936a3: {r: 0.1981132, g: 0.1981132, b: 0.1981132, a: 0}
+    - Color_4d4f34baf42d41cc9c639c16cdae788b: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0}
     - Color_7732e8adc142460689b75b04551b33af: {r: 0, g: 0, b: 0, a: 0}
+    - Color_9f031382be0f4017a7481537dbc8970e: {r: 0.1960784, g: 0.1960784, b: 0.1960784, a: 0}
     - Color_e887d95f83cb48028db188ad9bd9c68f: {r: 1, g: 1, b: 1, a: 0}
+    - Color_fbc24de3f1994b1b9ef161ae763d1a57: {r: 1, g: 1, b: 1, a: 0}
+    - Vector2_217b256995974d169b4d5213cef2e692: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_cf8c899cd0444a2a852d7fff71122091: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_d7bb844ccf764a8d808d73730d43799c: {r: 1, g: 1, b: 0, a: 0}
+    - Vector2_fda48d9aa44e4549b601789c0b71edb5: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
