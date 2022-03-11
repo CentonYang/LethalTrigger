@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public int[] moveTimer = { 0, 10 }; //value, max
-    public char moveKey,actionKey;
-    public List<char> inputMove,inputAction;
+    public int[] moveTimer = { 0, 10 }, diraction = { 1, 1 };
+    public char moveKey, actionKey;
+    public List<char> inputMove, inputAction;
     public MoveList moveList;
     public List<string> actionName, actionStep;
     public string actionMsg;
@@ -50,10 +50,9 @@ public class PlayerController : MonoBehaviour
         if (moveTimer[0] < 1)
         {
             actionName.Clear(); actionStep.Clear();
-            TransformOutput(moveKey);
         }
         if (moveTimer[0] > 0) moveTimer[0]--;
-        //transform.GetChild(0).SendMessage("GameMode", SendMessageOptions.DontRequireReceiver);
+        TransformOutput(moveKey);
     }
 
     public void InputMove(InputAction.CallbackContext ctx)
@@ -70,9 +69,9 @@ public class PlayerController : MonoBehaviour
                 ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y > 0 ? '8' :
                 ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y > 0 ? '9' : '5');
             if (ctx.ReadValue<Vector2>().x > 0)
-                inputMove.Add('R');
+            { inputMove.Add('R'); diraction[0] = 1; }
             if (ctx.ReadValue<Vector2>().x < 0)
-                inputMove.Add('L');
+            { inputMove.Add('L'); diraction[0] = -1; }
             if (ctx.ReadValue<Vector2>().y > 0)
                 inputMove.Add('U');
             if (ctx.ReadValue<Vector2>().y < 0)
@@ -114,11 +113,12 @@ public class PlayerController : MonoBehaviour
                 actionStep[i] = actionStep[i].Remove(0, 1);
             if (actionStep[i].Length < 1) //指令表過濾
             {
-                if (actionMsg != actionName[i] && pushMsg)
+                if ((actionMsg != actionName[i] && pushMsg) || (diraction[0] != diraction[1]))
                 {
                     actionMsg = actionName[i];
+                    diraction[1] = diraction[0];
                     pushMsg = false;
-                    transform.GetChild(0).SendMessage("ActionMessage", actionMsg, SendMessageOptions.DontRequireReceiver);
+                    GetComponentInChildren<ActionSystem>().ActionMessage(actionMsg, diraction[0]);
                 }
                 actionName.RemoveAt(i); actionStep.RemoveAt(i); i--;
             }

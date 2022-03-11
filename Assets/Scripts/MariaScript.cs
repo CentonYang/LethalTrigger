@@ -12,7 +12,7 @@ public class MariaScript : MonoBehaviour
     public string actionMsg;
     public int direction;
     public List<string> actionName;
-    public float jumpHight, moveSpeed, motionScale;
+    public float jumpHeight, moveSpeed, motionScale;
 
     void Awake()
     {
@@ -152,7 +152,7 @@ public class MariaScript : MonoBehaviour
                 Physics2D.IgnoreLayerCollision(3, 3, true);
                 transform.localScale = new Vector3(1, 1, direction);
                 rgBody.velocity *= 0;
-                rgBody.AddForce(Vector2.up * jumpHight, ForceMode2D.Impulse);
+                rgBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
                 rgBody.velocity += Vector2.right * moveSpeed * direction;
                 break;
             case "hm":
@@ -184,7 +184,7 @@ public class MariaScript : MonoBehaviour
         if (stop)
             rgBody.velocity *= Vector2.right * moveSpeed * moveScale * (directionMode > 0 ? direction : transform.localScale.z) * motionScale;
         else
-            rgBody.velocity = (Vector2.right * moveSpeed * moveScale * (directionMode > 0 ? direction : transform.localScale.z)) + (Vector2.up * jumpHight * jumpScale) * motionScale;
+            rgBody.velocity = (Vector2.right * moveSpeed * moveScale * (directionMode > 0 ? direction : transform.localScale.z)) + (Vector2.up * jumpHeight * jumpScale) * motionScale;
     }
 
     void ResetAllBool() //重置所有Bool
