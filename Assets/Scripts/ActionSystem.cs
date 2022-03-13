@@ -5,19 +5,22 @@ using Cinemachine;
 
 public class ActionSystem : MonoBehaviour
 {
-    [HideInInspector] public GameObject controller, opponent;
+    [HideInInspector] public PlayerController controller;
+    public ActionSystem opponent;
     [HideInInspector] public Rigidbody2D rgBody;
     [HideInInspector] public MoveList moveList;
     [HideInInspector] public Animator animator;
     [HideInInspector] public string actionMsg;
     [HideInInspector] public int direction;
 
-    public enum MoveMode { set, multi, add };
-    //[Tooltip("移動模式:改變/乘算/增加")] public MoveMode moveMode;
+    public enum MoveMode { move, jump, all };
+    [Tooltip("移動模式:移動/跳躍/全部")] public MoveMode moveMode;
     public enum DirectionMode { noTurn_noCtrl, noTurn_ctrl, turn_ctrl }
     [Tooltip("轉身與方向控制:不轉身且不控制/不轉身但控制/轉身並控制")] public DirectionMode drtMode;
+    [Tooltip("空中動作")] public bool airAction;
     [Tooltip("可取消動作")] public bool cancel;
     [Tooltip("可取消的動作")] public List<string> cancelList;
+    [Tooltip("可取消但接續第一個動作")] public List<string> cancelOtherList;
     [Tooltip("跳躍高度")] public float jumpHeight;
     [Tooltip("移動速度")] public float moveSpeed;
     [Tooltip("使用時間縮放")] public bool timeScale;
@@ -35,43 +38,56 @@ public class ActionSystem : MonoBehaviour
     [Tooltip("空中擊退距離")] public float airHitDistance;
     [Tooltip("攻擊倒地對手")] public bool hitGround;
     [Tooltip("固定/投擲招式")] public bool follow;
-    [Tooltip("可穿透對手")] public bool triggerOppo;
     public enum HitPoint { high, low };
     [Tooltip("攻擊打點高低:高/低")] public HitPoint hitPoint;
     [Tooltip("Counter時距")] public bool counterRange;
 
-    public void ActionMessage(string atName, int drt)
+    public void ActionMessage(List<string> atName, int drt)
     {
-        print(atName);
-        actionMsg = atName;
+        //print(atName);
         direction = drt;
-        if (cancelList != null && cancel)
+        for (int i = 0; i < atName.Count; i++)
         {
-            for (int i = 0; i < cancelList.Count; i++)
-                if (atName == cancelList[i])
-                {
-                    animator.CrossFadeInFixedTime(atName, 0.05f);
-                    return;
-                }
+            if (cancelList != null && cancel)
+            {
+                for (int j = 0; j < cancelList.Count; j++)
+                    if (atName[i] == cancelList[j])
+                    {
+                        cancelList.Clear();
+                        animator.CrossFadeInFixedTime(atName[i], 0.05f);
+                        return;
+                    }
+            }
+            if (cancelOtherList != null && cancel)
+            {
+                for (int j = 1; j < cancelOtherList.Count; j++)
+                    if (atName[i] == cancelOtherList[j])
+                    {
+                        animator.CrossFadeInFixedTime(cancelOtherList[0], 0.05f);
+                        cancelOtherList.Clear();
+                        return;
+                    }
+            }
         }
     }
 
     public void ActionEvent()
     {
-        Physics2D.IgnoreLayerCollision(3, 3, triggerOppo);
         if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(1, 1, direction);
-        //switch (moveMode)
-        //{
-        //    case MoveMode.set:
-        rgBody.velocity = (Vector2.right * moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.z) + Vector2.up * jumpHeight) * timeScaleRate;
-        //        break;
-        //    case MoveMode.multi:
-        //        rgBody.velocity *= (Vector2.right * moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.z) + Vector2.up * jumpHeight) * timeScaleRate;
-        //        break;
-        //    case MoveMode.add:
-        //        rgBody.velocity += (Vector2.right * moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.z) + Vector2.up * jumpHeight) * timeScaleRate;
-        //        break;
-        //}
+        switch (moveMode)
+        {
+            case MoveMode.all:
+                rgBody.velocity = (Vector2.right * moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.z) + Vector2.up * jumpHeight) * timeScaleRate;
+                break;
+            case MoveMode.move:
+                rgBody.velocity = (Vector2.right * moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.z) + Vector2.up * rgBody.velocity.y) * timeScaleRate;
+                break;
+            case MoveMode.jump:
+                rgBody.velocity = (Vector2.right * rgBody.velocity.x * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.z) + Vector2.up * jumpHeight) * timeScaleRate;
+                break;
+        }
+        if ((opponent.transform.position.x - transform.position.x < -5 && rgBody.velocity.x > 0) || (opponent.transform.position.x - transform.position.x > 5 && rgBody.velocity.x < 0))
+            rgBody.position -= Vector2.right * Time.deltaTime * rgBody.velocity.x;
         if (timeScale)
             foreach (Animator anims in FindObjectsOfType<Animator>())
                 anims.SetFloat("scale", timeScaleRate);
@@ -81,25 +97,35 @@ public class ActionSystem : MonoBehaviour
     {
         cancelList.Clear();
         cancelList.AddRange(canceler.Split(','));
+        controller.TransformOutput(controller.moveKey[0]);
+        controller.TransformOutput(controller.moveKey[1]);
+    }
+
+    public void CancelOther(string canceler)
+    {
+        cancelOtherList.Clear();
+        cancelOtherList.AddRange(canceler.Split(','));
+        controller.TransformOutput(controller.moveKey[0]);
+        controller.TransformOutput(controller.moveKey[1]);
     }
 
     public void NextState(string animState)
     {
+        cancelOtherList.Clear();
         animator.CrossFadeInFixedTime(animState, 0.05f);
     }
 
     void Awake()
     {
-        controller = transform.parent.gameObject;
+        controller = transform.parent.GetComponent<PlayerController>();
         animator = GetComponentInChildren<Animator>();
         rgBody = GetComponent<Rigidbody2D>();
-        Physics2D.IgnoreLayerCollision(3, 3, false);
         moveList = GetComponent<MoveList>();
         GameObject.Find("TwoCharCam").GetComponent<CinemachineTargetGroup>().AddMember(transform, 1, 0);
         if (controller.name == "Player1")
-        { opponent = GameObject.Find("Player2").transform.GetChild(0).gameObject; direction = 1; }
+        { opponent = GameObject.Find("Player2").GetComponentInChildren<ActionSystem>(); direction = 1; }
         else if (controller.name == "Player2")
-        { opponent = GameObject.Find("Player1").transform.GetChild(0).gameObject; direction = -1; }
+        { opponent = GameObject.Find("Player1").GetComponentInChildren<ActionSystem>(); direction = -1; }
         transform.localScale = new Vector3(1, 1, direction);
     }
 
@@ -110,14 +136,8 @@ public class ActionSystem : MonoBehaviour
 
     void Update()
     {
-        if (rgBody.velocity.y < 0) ActionMessage("Fall", '5');
-        if (opponent.transform.position.x - transform.position.x < -5)
-            if (rgBody.velocity.x > 0)
-                rgBody.velocity = -Vector2.right;
-        if (opponent.transform.position.x - transform.position.x > 5)
-            if (rgBody.velocity.x < 0)
-                rgBody.velocity = Vector2.right;
-        timeScaleRate = animator.GetFloat("scale");
+        if (!timeScale)
+            timeScaleRate = animator.GetFloat("scale");
         ActionEvent();
     }
 }

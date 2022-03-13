@@ -72,7 +72,11 @@
     <Compile Include="Assets\Scripts\GameSystem.cs" />
     <Compile Include="Assets\Scripts\ActionSystem.cs" />
     <Compile Include="Assets\Scripts\Shadow.cs" />
-    <Compile Include="Assets\Shaders\DepthNormalsFeature.cs" />
+    <Compile Include="Assets\DynamicBone\Scripts\DynamicBonePlaneCollider.cs" />
+    <Compile Include="Assets\DynamicBone\Scripts\DynamicBoneColliderBase.cs" />
+    <Compile Include="Assets\DynamicBone\Scripts\DynamicBone.cs" />
+    <Compile Include="Assets\DynamicBone\Demo\DynamicBoneDemo1.cs" />
+    <Compile Include="Assets\DynamicBone\Scripts\DynamicBoneCollider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -113,6 +117,7 @@
     <None Include="Assets\Shaders\SobelFilter.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Shaders\NiloInvLerpRemap.hlsl" />
+    <None Include="Assets\DynamicBone\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\Outline\Resources\Shaders\OutlineFill.shader" />

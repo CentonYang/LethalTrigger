@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: "\u670D\u88DD"
   m_Shader: {fileID: 4800000, guid: 766736548846cdf459a9766614dcccab, type: 3}
-  m_ShaderKeywords: UTS_USE_RAYTRACING_SHADOW _ _EMISSIVE_SIMPLE _IS_ANGELRING_OFF
-    _IS_CLIPPING_OFF _IS_OUTLINE_CLIPPING_NO _OUTLINE_POS
+  m_ShaderKeywords: _ _EMISSIVE_SIMPLE _IS_ANGELRING_OFF _IS_CLIPPING_OFF _IS_OUTLINE_CLIPPING_NO
+    _OUTLINE_POS
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -163,10 +163,10 @@ Material:
     - Vector1_bd6333cc3ed942c3a714ea87f29452c0: 0.6
     - Vector1_bffd4c99c34346949dd9e2a2319d62d1: 32
     - Vector1_f3a4f4b920434bdda0af67e38b152918: 1
-    - _1st2nd_Shades_Feather: 0.1
+    - _1st2nd_Shades_Feather: 0.5
     - _1st_ShadeColor_Feather: 0.01
-    - _1st_ShadeColor_Step: 0.5
-    - _2nd_ShadeColor_Feather: 0.1
+    - _1st_ShadeColor_Step: 0.7
+    - _2nd_ShadeColor_Feather: 0.5
     - _2nd_ShadeColor_Step: 0.5
     - _ARSampler_AlphaOn: 0
     - _AR_OffsetU: 0
@@ -178,7 +178,7 @@ Material:
     - _Ap_RimLight_FeatherOff: 0
     - _Ap_RimLight_Power: 0.1
     - _AutoRenderQueue: 1
-    - _BaseColor_Step: 0.5
+    - _BaseColor_Step: 0.7
     - _BaseShade_Feather: 0.01
     - _Base_Speed: 0
     - _Blend: 0
@@ -261,7 +261,7 @@ Material:
     - _OcclusionStrength: 1
     - _Offset_X_Axis_BLD: -0.05
     - _Offset_Y_Axis_BLD: 0.09
-    - _Offset_Z: 0
+    - _Offset_Z: 2
     - _OutlineThickness: 1
     - _OutlineWidth: 1
     - _OutlineZOffset: 0.0001
@@ -337,17 +337,17 @@ Material:
     - Color_e887d95f83cb48028db188ad9bd9c68f: {r: 0.31372547, g: 0.31372547, b: 0.31372547, a: 0}
     - Vector2_cf8c899cd0444a2a852d7fff71122091: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_d7bb844ccf764a8d808d73730d43799c: {r: 1, g: 1, b: 0, a: 0}
-    - _1st_ShadeColor: {r: 0.2735849, g: 0.207395, b: 0.20518868, a: 1}
-    - _2nd_ShadeColor: {r: 0, g: 0, b: 0, a: 1}
+    - _1st_ShadeColor: {r: 0.5879761, g: 0.64347106, b: 0.6886792, a: 1}
+    - _2nd_ShadeColor: {r: 0.41368484, g: 0.40801886, b: 0.5, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.4528302, g: 0.42933428, b: 0.42933428, a: 1}
-    - _Color: {r: 0.45283014, g: 0.42933425, b: 0.42933425, a: 1}
+    - _BaseColor: {r: 0.8820755, g: 0.8990063, b: 1, a: 1}
+    - _Color: {r: 0.8820755, g: 0.8990063, b: 1, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionMapChannelMask: {r: 1, g: 1, b: 1, a: 0}
     - _Emissive_Color: {r: 0, g: 0, b: 0, a: 1}
-    - _HighColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+    - _HighColor: {r: 0.6167675, g: 0.70275635, b: 0.7924528, a: 1}
     - _IndirectLightMinColor: {r: 0.09999997, g: 0.09999997, b: 0.09999997, a: 1}
     - _MainColor: {r: 1, g: 1, b: 1, a: 0}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}

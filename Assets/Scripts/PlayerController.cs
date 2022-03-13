@@ -6,11 +6,10 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public int[] moveTimer = { 0, 10 }, diraction = { 1, 1 };
-    public char moveKey, actionKey;
-    public List<char> inputMove, inputAction;
+    public char[] moveKey = { '5', '5' };
+    public char actionKey;
     public MoveList moveList;
-    public List<string> actionName, actionStep;
-    public string actionMsg;
+    public List<string> actionName, actionStep, actionMsg;
     public GameSystem gameSystem;
 
     void Awake()
@@ -20,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        TransformOutput('5');
+
     }
 
     void Update()
@@ -31,17 +30,9 @@ public class PlayerController : MonoBehaviour
             GameMode();
             gameSystem.gameStep--;
         }
-        if (inputMove.Count > 0)
+        if (actionName.Count > 30)
         {
-            moveKey = inputMove[0];
-            TransformOutput(moveKey);
-            inputMove.RemoveAt(0);
-        }
-        if (inputAction.Count > 0)
-        {
-            actionKey = inputAction[0];
-            TransformOutput(actionKey);
-            inputAction.RemoveAt(0);
+            actionName.RemoveAt(0); actionStep.RemoveAt(0);
         }
     }
 
@@ -50,16 +41,27 @@ public class PlayerController : MonoBehaviour
         if (moveTimer[0] < 1)
         {
             actionName.Clear(); actionStep.Clear();
+            TransformOutput(moveKey[0]);
+            if (moveKey[0] != '5')
+                TransformOutput(moveKey[1]);
+            moveTimer[0] = moveTimer[1];
         }
         if (moveTimer[0] > 0) moveTimer[0]--;
-        TransformOutput(moveKey);
+        if (actionMsg != null)
+        {
+            GetComponentInChildren<ActionSystem>().ActionMessage(actionMsg, diraction[0]);
+            foreach (var item in actionMsg)
+                print(item);
+            actionMsg.Clear();
+        }
     }
 
     public void InputMove(InputAction.CallbackContext ctx)
     {
+        moveTimer[0] = moveTimer[1];
         if (ctx.phase != InputActionPhase.Started)
         {
-            inputMove.Add(
+            moveKey[0] =
                 ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y < 0 ? '1' :
                 ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y < 0 ? '2' :
                 ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y < 0 ? '3' :
@@ -67,58 +69,60 @@ public class PlayerController : MonoBehaviour
                 ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y == 0 ? '6' :
                 ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y > 0 ? '7' :
                 ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y > 0 ? '8' :
-                ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y > 0 ? '9' : '5');
+                ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y > 0 ? '9' : '5';
+            TransformOutput(moveKey[0]);
             if (ctx.ReadValue<Vector2>().x > 0)
-            { inputMove.Add('R'); diraction[0] = 1; }
+            { moveKey[1] = '>'; diraction[0] = 1; }
             if (ctx.ReadValue<Vector2>().x < 0)
-            { inputMove.Add('L'); diraction[0] = -1; }
+            { moveKey[1] = '<'; diraction[0] = -1; }
             if (ctx.ReadValue<Vector2>().y > 0)
-                inputMove.Add('U');
+                moveKey[1] = '^';
             if (ctx.ReadValue<Vector2>().y < 0)
-                inputMove.Add('D');
+                moveKey[1] = 'v';
+            if (moveKey[0] == '5') moveKey[1] = '5';
+            TransformOutput(moveKey[1]);
         }
     }
 
     public void InputAction(InputAction.CallbackContext ctx)
     {
+        moveTimer[0] = moveTimer[1];
         if (ctx.phase != InputActionPhase.Started)
         {
-            inputAction.Add(
+            actionKey =
                 ctx.action.name + ctx.ReadValue<float>() == "M_cls1" ? 'M' :
                 ctx.action.name + ctx.ReadValue<float>() == "M_cls0" ? 'm' :
                 ctx.action.name + ctx.ReadValue<float>() == "W_cls1" ? 'W' :
                 ctx.action.name + ctx.ReadValue<float>() == "W_cls0" ? 'w' :
                 ctx.action.name + ctx.ReadValue<float>() == "S_cls1" ? 'S' :
                 ctx.action.name + ctx.ReadValue<float>() == "S_cls0" ? 's' :
-                ctx.action.name + ctx.ReadValue<float>() == "R_cls1" ? 'R' : 'r');
+                ctx.action.name + ctx.ReadValue<float>() == "R_cls1" ? 'R' : 'r';
         }
+        TransformOutput(actionKey);
     }
 
     public void TransformOutput(char compareKey)
     {
         for (int i = 0; i < moveList.data.Length; i++)
         {
-            if (!actionName.Contains(moveList.data[i].name))
-                if (moveList.data[i].step[0] == compareKey)
-                {
-                    moveTimer[0] = moveTimer[1];
-                    actionName.Add(moveList.data[i].name);
-                    actionStep.Add(moveList.data[i].step.Substring(1));
-                }
+            //if (!actionName.Contains(moveList.data[i].name))
+            if (moveList.data[i].step[0] == compareKey)
+            {
+                //moveTimer[0] = moveTimer[1];
+                actionName.Add(moveList.data[i].name);
+                actionStep.Add(moveList.data[i].step.Substring(1));
+            }
         }
-        bool pushMsg = true;
         for (int i = 0; i < actionName.Count; i++)
         {
             if (actionStep[i].Length > 0 && compareKey == actionStep[i][0])
                 actionStep[i] = actionStep[i].Remove(0, 1);
-            if (actionStep[i].Length < 1) //指令表過濾
+            if (actionStep[i].Length < 1)
             {
-                if ((actionMsg != actionName[i] && pushMsg) || (diraction[0] != diraction[1]))
+                if (!actionMsg.Contains(actionName[i]) || diraction[0] != diraction[1])
                 {
-                    actionMsg = actionName[i];
+                    actionMsg.Add(actionName[i]);
                     diraction[1] = diraction[0];
-                    pushMsg = false;
-                    GetComponentInChildren<ActionSystem>().ActionMessage(actionMsg, diraction[0]);
                 }
                 actionName.RemoveAt(i); actionStep.RemoveAt(i); i--;
             }

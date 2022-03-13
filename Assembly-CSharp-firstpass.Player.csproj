@@ -304,6 +304,9 @@
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.UniversalToonShader.Urp.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.UniversalToonShader.Urp.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Animation.Rigging.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.Editor.dll</HintPath>
     </Reference>
@@ -708,6 +711,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="com.unity.animations.springbone.Player.csproj">
+      <Project>{996F0F87-B9FA-7549-214D-B13572E3BE78}</Project>
+      <Name>com.unity.animations.springbone.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.animations.springbone.editor.Player.csproj">
+      <Project>{A5B8F09E-AAD0-45E7-A1F5-F1D595EA59EB}</Project>
+      <Name>com.unity.animations.springbone.editor.Player</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

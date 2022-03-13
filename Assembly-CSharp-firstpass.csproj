@@ -721,11 +721,11 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Animation.Rigging.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Animation.Rigging.Editor.dll</HintPath>
@@ -735,6 +735,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="com.unity.animations.springbone.csproj">
+      <Project>{1ABC8579-FBFC-B827-0998-655C5C7ED8BD}</Project>
+      <Name>com.unity.animations.springbone</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.animations.springbone.editor.csproj">
+      <Project>{067621B0-DF79-C739-1FDC-33EA7269BC44}</Project>
+      <Name>com.unity.animations.springbone.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.UniversalToonShader.Urp.Editor.csproj">
+      <Project>{F28105EC-EB9D-B413-5ECE-AD95A5E2BDE1}</Project>
+      <Name>Unity.UniversalToonShader.Urp.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -46,13 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveTimer: 000000000a000000
-  moveKey: 53
+  diraction: 0100000001000000
+  moveKey: 35003500
   actionKey: 0
   moveList: {fileID: 0}
   actionName: []
   actionStep: []
-  actionMsg: 
-  restMove: 0
+  actionMsg: []
   gameSystem: {fileID: 7037856769567328144, guid: c536e9e12b9a93d40b15d1704fd9696b, type: 3}
 --- !u!114 &7676681392316780415
 MonoBehaviour:
@@ -171,14 +171,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7676681392316780412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
   outlineColor: {r: 1, g: 0.5019608, b: 0, a: 1}
-  outlineWidth: 1
+  outlineWidth: 4
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
