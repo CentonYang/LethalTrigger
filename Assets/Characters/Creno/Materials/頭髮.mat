@@ -9,15 +9,15 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: "\u982D\u9AEE"
   m_Shader: {fileID: 4800000, guid: 766736548846cdf459a9766614dcccab, type: 3}
-  m_ShaderKeywords: _ _EMISSIVE_SIMPLE _IS_ANGELRING_OFF _IS_CLIPPING_OFF _IS_OUTLINE_CLIPPING_NO
-    _OUTLINE_POS
+  m_ShaderKeywords: _ _EMISSIVE_SIMPLE _IS_ANGELRING_OFF _IS_OUTLINE_CLIPPING_NO
+    _IS_TRANSCLIPPING_ON _OUTLINE_POS _SHADINGGRADEMAP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
     IgnoreProjection: False
-    RenderType: Opaque
+    RenderType: TransparentCutout
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -191,11 +191,11 @@ Material:
     - _CelShadeSoftness: 0.05
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _ClippingMode: 0
+    - _ClippingMode: 1
     - _Clipping_Level: 0.216
     - _ColorShift_Speed: 0
     - _Cull: 2
-    - _CullMode: 2
+    - _CullMode: 0
     - _Cutoff: 0.5
     - _DepthSensitivity: 0.5
     - _DetailAlbedoMapScale: 1
@@ -216,7 +216,7 @@ Material:
     - _Inverse_Clipping: 0
     - _Inverse_MatcapMask: 0
     - _Inverse_Z_Axis_BLD: 1
-    - _IsBaseMapAlphaAsClippingMask: 0
+    - _IsBaseMapAlphaAsClippingMask: 1
     - _IsFace: 0
     - _Is_BLD: 0
     - _Is_BakedNormal: 0
@@ -325,7 +325,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteMode: 1
     - _simpleUI: 0
-    - _utsTechnique: 0
+    - _utsTechnique: 1
     - _utsVersion: 2.08
     - _utsVersionX: 2
     - _utsVersionY: 5

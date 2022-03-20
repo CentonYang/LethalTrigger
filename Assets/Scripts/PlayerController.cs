@@ -50,8 +50,8 @@ public class PlayerController : MonoBehaviour
         if (actionMsg != null)
         {
             GetComponentInChildren<ActionSystem>().ActionMessage(actionMsg, diraction[0]);
-            foreach (var item in actionMsg)
-                print(item);
+            //foreach (var item in actionMsg)
+            //    print(item);
             actionMsg.Clear();
         }
     }
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
     public void InputAction(InputAction.CallbackContext ctx)
     {
         moveTimer[0] = moveTimer[1];
-        if (ctx.phase != InputActionPhase.Started)
+        if (ctx.phase != InputActionPhase.Performed)
         {
             actionKey =
                 ctx.action.name + ctx.ReadValue<float>() == "M_cls1" ? 'M' :
@@ -127,5 +127,6 @@ public class PlayerController : MonoBehaviour
                 actionName.RemoveAt(i); actionStep.RemoveAt(i); i--;
             }
         }
+        print(compareKey);
     }
 }
