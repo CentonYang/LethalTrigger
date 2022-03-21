@@ -12,6 +12,8 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public Animator animator;
     [HideInInspector] public string actionMsg;
     [HideInInspector] public int direction;
+    [HideInInspector] public bool hited;
+    [HideInInspector] public GameObject hitboxes;
 
     public enum MoveMode { move, soar, all, none };
     [Tooltip("移動模式:移動/漂浮/全部/無視")] public MoveMode moveMode;
@@ -42,6 +44,8 @@ public class ActionSystem : MonoBehaviour
     [Tooltip("攻擊打點高低:高/低")] public HitPoint hitPoint;
     [Tooltip("Counter時距")] public bool counterRange;
     [Tooltip("可否空中防禦")] public bool isADef;
+
+
 
     public void ActionMessage(List<string> atName, int drt)
     {
@@ -97,13 +101,14 @@ public class ActionSystem : MonoBehaviour
             foreach (Animator anims in FindObjectsOfType<Animator>())
                 anims.SetFloat("scale", timeScaleRate);
         if (!animator.IsInTransition(0))
-            //if (rgBody.velocity.y < -1f)
-            //{
-            //    if (animator.GetCurrentAnimatorStateInfo(0).IsName("Jump") || animator.GetCurrentAnimatorStateInfo(0).IsName("FJump"))
-            //        NextState("Fall");
-            //    if (animator.GetCurrentAnimatorStateInfo(0).IsName("HitFly"))
-            //        NextState("Drop");
-            //}
+        {
+            if (rgBody.velocity.y < -1f)
+            {
+                //    if (animator.GetCurrentAnimatorStateInfo(0).IsName("Jump") || animator.GetCurrentAnimatorStateInfo(0).IsName("FJump"))
+                //        NextState("Fall");
+                //    if (animator.GetCurrentAnimatorStateInfo(0).IsName("HitFly"))
+                //        NextState("Drop");
+            }
             //else
             if (rgBody.position.y < 0.02f)
             {
@@ -114,6 +119,7 @@ public class ActionSystem : MonoBehaviour
                 if (animator.GetCurrentAnimatorStateInfo(0).IsName("LDrop"))
                     NextState("LDown");
             }
+        }
     }
 
     public void Canceler(string canceler)
@@ -162,6 +168,20 @@ public class ActionSystem : MonoBehaviour
             return true;
     }
 
+    public void Hited(string oppoCol)
+    {
+        if (oppoCol == "HurtBox" && !hited)
+        {
+            hited = true;
+            print("beat");
+        }
+    }
+
+    public void Hurted()
+    {
+
+    }
+
     void Awake()
     {
         controller = transform.parent.GetComponent<PlayerController>();
@@ -185,6 +205,8 @@ public class ActionSystem : MonoBehaviour
     {
         if (!timeScale)
             timeScaleRate = animator.GetFloat("scale");
+        if (!hitboxes.activeSelf)
+            hited = false;
         ActionEvent();
     }
 }

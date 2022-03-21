@@ -127,6 +127,6 @@ public class PlayerController : MonoBehaviour
                 actionName.RemoveAt(i); actionStep.RemoveAt(i); i--;
             }
         }
-        print(compareKey);
+        //print(compareKey);
     }
 }
