@@ -56,7 +56,7 @@ public class ActionSystem : MonoBehaviour
                     if (atName[i] == cancelList[j] && CompareState(atName[i]))
                     {
                         cancelList.Clear();
-                        animator.CrossFadeInFixedTime(atName[i], 0.05f);
+                        animator.CrossFadeInFixedTime(atName[i], 0.02f);
                         return;
                     }
             }
@@ -65,7 +65,7 @@ public class ActionSystem : MonoBehaviour
                 for (int j = 1; j < cancelOtherList.Count; j++)
                     if (atName[i] == cancelOtherList[j] && CompareState(atName[i]))
                     {
-                        animator.CrossFadeInFixedTime(cancelOtherList[0], 0.05f);
+                        animator.CrossFadeInFixedTime(cancelOtherList[0], 0.02f);
                         cancelOtherList.Clear();
                         return;
                     }
