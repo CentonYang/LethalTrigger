@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = 1;
         moveList = GetComponentInChildren<MoveList>();
     }
 
@@ -36,6 +38,14 @@ public class PlayerController : MonoBehaviour
             actionName.RemoveRange(0, actionName.Count - 99);
             actionStep.RemoveRange(0, actionStep.Count - 99);
         }
+        if (actionMsg.Count > 0 && !GetComponentInChildren<ActionSystem>().animator.IsInTransition(0) && GetComponentInChildren<ActionSystem>().cancel)
+        {
+            GetComponentInChildren<ActionSystem>().ActionMessage(actionMsg[0], diraction[0]);
+            //print(actionMsg[0].ToString());
+            actionMsg.RemoveAt(0);
+            if (actionMsg.Count > 9)
+                actionMsg.RemoveRange(0, actionMsg.Count - 9);
+        }
     }
 
     public void GameMode()
@@ -49,11 +59,6 @@ public class PlayerController : MonoBehaviour
             moveTimer[0] = moveTimer[1];
         }
         if (moveTimer[0] > 0) moveTimer[0]--;
-        if (actionMsg.Count > 0 && !GetComponentInChildren<ActionSystem>().animator.IsInTransition(0))
-        {
-            GetComponentInChildren<ActionSystem>().ActionMessage(actionMsg[0], diraction[0]);
-            actionMsg.RemoveAt(0);
-        }
     }
 
     public void InputMove(InputAction.CallbackContext ctx)
@@ -99,6 +104,8 @@ public class PlayerController : MonoBehaviour
                 ctx.action.name + ctx.ReadValue<float>() == "R_cls1" ? 'R' : 'r';
         }
         TransformOutput(actionKey);
+        if (ctx.action.name == "Start")
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void TransformOutput(char compareKey)
@@ -120,12 +127,12 @@ public class PlayerController : MonoBehaviour
             if (actionStep[i].Length < 1)
             {
                 if (actionName[i] != storageName)
-                    if (!actionMsg.Contains(actionName[i]) || diraction[0] != diraction[1])
+                    if (!actionMsg.Contains(actionName[i]))
                     {
                         storageName = actionName[i];
                         actionMsg.Add(actionName[i]);
                         diraction[1] = diraction[0];
-                        print(actionName[i]);
+                        //print(actionName[i]);
                     }
                 actionName.RemoveAt(i); actionStep.RemoveAt(i); i--;
             }

@@ -76,8 +76,9 @@
     <Compile Include="Assets\Scripts\GameSystem.cs" />
     <Compile Include="Assets\DynamicBone\Scripts\DynamicBoneColliderBase.cs" />
     <Compile Include="Assets\Scripts\ActionSystem.cs" />
-    <Compile Include="Assets\Scripts\Shadow.cs" />
     <Compile Include="Assets\Scripts\HitCollision.cs" />
+    <Compile Include="Assets\Scripts\Shadow.cs" />
+    <Compile Include="Assets\Scripts\DestroySelf.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -810,14 +811,6 @@
     <ProjectReference Include="Assembly-CSharp-firstpass.Player.csproj">
       <Project>{A65AED5A-3761-6D85-6A19-FDB78D68F783}</Project>
       <Name>Assembly-CSharp-firstpass.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.unity.animations.springbone.Player.csproj">
-      <Project>{996F0F87-B9FA-7549-214D-B13572E3BE78}</Project>
-      <Name>com.unity.animations.springbone.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.unity.animations.springbone.editor.Player.csproj">
-      <Project>{A5B8F09E-AAD0-45E7-A1F5-F1D595EA59EB}</Project>
-      <Name>com.unity.animations.springbone.editor.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
