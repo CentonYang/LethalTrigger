@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -11,9 +12,11 @@ public class PlayerController : MonoBehaviour
     public MoveList moveList;
     public List<string> actionName, actionStep, actionMsg;
     public GameSystem gameSystem;
+    public string storageName;
 
     void Awake()
     {
+        Time.timeScale = 1;
         moveList = GetComponentInChildren<MoveList>();
     }
 
@@ -30,30 +33,32 @@ public class PlayerController : MonoBehaviour
             GameMode();
             gameSystem.gameStep--;
         }
-        if (actionName.Count > 30)
+        if (actionName.Count > 99)
         {
-            actionName.RemoveAt(0); actionStep.RemoveAt(0);
+            actionName.RemoveRange(0, actionName.Count - 99);
+            actionStep.RemoveRange(0, actionStep.Count - 99);
+        }
+        if (actionMsg.Count > 0 && !GetComponentInChildren<ActionSystem>().animator.IsInTransition(0) && GetComponentInChildren<ActionSystem>().cancel)
+        {
+            GetComponentInChildren<ActionSystem>().ActionMessage(actionMsg[0], diraction[0]);
+            //print(actionMsg[0].ToString());
+            actionMsg.RemoveAt(0);
+            if (actionMsg.Count > 9)
+                actionMsg.RemoveRange(0, actionMsg.Count - 9);
         }
     }
 
     public void GameMode()
     {
+        TransformOutput(moveKey[0]);
+        if (moveKey[0] != '5')
+            TransformOutput(moveKey[1]);
         if (moveTimer[0] < 1)
         {
             actionName.Clear(); actionStep.Clear();
-            TransformOutput(moveKey[0]);
-            if (moveKey[0] != '5')
-                TransformOutput(moveKey[1]);
             moveTimer[0] = moveTimer[1];
         }
         if (moveTimer[0] > 0) moveTimer[0]--;
-        if (actionMsg != null)
-        {
-            GetComponentInChildren<ActionSystem>().ActionMessage(actionMsg, diraction[0]);
-            foreach (var item in actionMsg)
-                print(item);
-            actionMsg.Clear();
-        }
     }
 
     public void InputMove(InputAction.CallbackContext ctx)
@@ -87,7 +92,7 @@ public class PlayerController : MonoBehaviour
     public void InputAction(InputAction.CallbackContext ctx)
     {
         moveTimer[0] = moveTimer[1];
-        if (ctx.phase != InputActionPhase.Started)
+        if (ctx.phase != InputActionPhase.Performed)
         {
             actionKey =
                 ctx.action.name + ctx.ReadValue<float>() == "M_cls1" ? 'M' :
@@ -99,19 +104,21 @@ public class PlayerController : MonoBehaviour
                 ctx.action.name + ctx.ReadValue<float>() == "R_cls1" ? 'R' : 'r';
         }
         TransformOutput(actionKey);
+        if (ctx.action.name == "Start")
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void TransformOutput(char compareKey)
     {
         for (int i = 0; i < moveList.data.Length; i++)
         {
-            //if (!actionName.Contains(moveList.data[i].name))
-            if (moveList.data[i].step[0] == compareKey)
-            {
-                //moveTimer[0] = moveTimer[1];
-                actionName.Add(moveList.data[i].name);
-                actionStep.Add(moveList.data[i].step.Substring(1));
-            }
+            if (!(actionName.Contains(moveList.data[i].name) && actionStep.Contains(moveList.data[i].step)))
+                if (moveList.data[i].step[0] == compareKey)
+                {
+                    //moveTimer[0] = moveTimer[1];
+                    actionName.Add(moveList.data[i].name);
+                    actionStep.Add(moveList.data[i].step.Substring(1));
+                }
         }
         for (int i = 0; i < actionName.Count; i++)
         {
@@ -119,13 +126,17 @@ public class PlayerController : MonoBehaviour
                 actionStep[i] = actionStep[i].Remove(0, 1);
             if (actionStep[i].Length < 1)
             {
-                if (!actionMsg.Contains(actionName[i]) || diraction[0] != diraction[1])
-                {
-                    actionMsg.Add(actionName[i]);
-                    diraction[1] = diraction[0];
-                }
+                if (actionName[i] != storageName)
+                    if (!actionMsg.Contains(actionName[i]))
+                    {
+                        storageName = actionName[i];
+                        actionMsg.Add(actionName[i]);
+                        diraction[1] = diraction[0];
+                        //print(actionName[i]);
+                    }
                 actionName.RemoveAt(i); actionStep.RemoveAt(i); i--;
             }
         }
+        //print(compareKey);
     }
 }

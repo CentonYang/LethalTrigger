@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class InputDisplay : MonoBehaviour
 {
-    public TMP_Text moveText, actionText;
+    public Sprite cross, button;
+    public List<Image> inputBgs;
     public PlayerController player1;
     char[] mChar = { ' ', ' ' }, aChar = { ' ', ' ' };
-    string moveInput;
+    public string[] moveInput = { "", "" };
 
     void Awake()
     {
@@ -37,7 +39,7 @@ public class InputDisplay : MonoBehaviour
                 default: mChar[1] = '¡@'; break;
             }
             if (mChar[1] != '¡@')
-                moveInput = mChar[1].ToString() + moveInput;
+                moveInput[0] = mChar[1].ToString() + moveInput[0];
         }
         if (player1.actionKey != aChar[0] && player1.actionKey != ' ')
         {
@@ -51,11 +53,43 @@ public class InputDisplay : MonoBehaviour
                 default: aChar[1] = '¡@'; break;
             }
             if (aChar[1] != '¡@')
-                moveInput = aChar[1].ToString() + moveInput;
+                moveInput[0] = aChar[1].ToString() + moveInput[0];
         }
-        if (moveInput != null && moveInput.Length > 20)
-            moveInput = moveInput.Remove(moveInput.Length - 1, 1);
-        moveText.text = moveInput;
+        if (moveInput[0] != null && moveInput[0].Length > 20)
+            moveInput[0] = moveInput[0].Substring(0, 20);
+        if (moveInput[0] != moveInput[1])
+        {
+            for (int i = 0; i < moveInput[0].Length; i++)
+            {
+                foreach (Transform item in inputBgs[i].GetComponentsInChildren<Transform>())
+                {
+                    item.gameObject.SetActive(false);
+                }
+                inputBgs[i].sprite = cross;
+                switch (moveInput[0][i])
+                {
+                    case '¡ú': Display(i, "InputLeft"); Display(i, "InputDown"); break;
+                    case '¡õ': Display(i, "InputDown"); break;
+                    case '¡û': Display(i, "InputRight"); Display(i, "InputDown"); break;
+                    case '¡ö': Display(i, "InputLeft"); break;
+                    case '¡÷': Display(i, "InputRight"); break;
+                    case '¡ø': Display(i, "InputLeft"); Display(i, "InputUp"); break;
+                    case '¡ô': Display(i, "InputUp"); break;
+                    case '¡ù': Display(i, "InputRight"); Display(i, "InputUp"); break;
+                    case '¢Û': inputBgs[i].sprite = button; Display(i, "InputM"); break;
+                    case '¢å': inputBgs[i].sprite = button; Display(i, "InputW"); break;
+                    case '¢á': inputBgs[i].sprite = button; Display(i, "InputS"); break;
+                    case '¢à': inputBgs[i].sprite = button; Display(i, "InputR"); break;
+                }
+                inputBgs[i].gameObject.SetActive(true);
+            }
+        }
+        moveInput[1] = moveInput[0];
+    }
+
+    void Display(int i, string str)
+    {
+        inputBgs[i].transform.Find(str).gameObject.SetActive(true);
     }
 }
 
