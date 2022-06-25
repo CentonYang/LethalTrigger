@@ -23,9 +23,9 @@ public class InputDisplay : MonoBehaviour
 
     void Update()
     {
-        if (player1.moveKey[0] != mChar[0])
+        if (player1.moveString.Length > 0 && player1.moveString[player1.moveString.Length - 1] != mChar[0])
         {
-            mChar[0] = player1.moveKey[0];
+            mChar[0] = player1.moveString[player1.moveString.Length - 1];
             switch (mChar[0])
             {
                 case '1': mChar[1] = '¡ú'; break;

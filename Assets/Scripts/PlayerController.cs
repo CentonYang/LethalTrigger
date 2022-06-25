@@ -6,18 +6,18 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public int[] moveTimer = { 0, 10 }, diraction = { 1, 1 };
-    public char[] moveKey = { '5', '5' };
+    public int[] moveTimer = { 0, 10 };
+    public int movesNum, diraction = 1;
     public char actionKey;
-    public MoveList moveList;
     public List<string> actionName, actionStep, actionMsg;
     public GameSystem gameSystem;
-    public string storageName;
+    public string moveString, comString;
+    public string[] movesName;
 
     void Awake()
     {
         Time.timeScale = 1;
-        moveList = GetComponentInChildren<MoveList>();
+        //moveList = GetComponentInChildren<MoveList>();
     }
 
     void Start()
@@ -33,65 +33,55 @@ public class PlayerController : MonoBehaviour
             GameMode();
             gameSystem.gameStep--;
         }
-        if (actionName.Count > 99)
-        {
-            actionName.RemoveRange(0, actionName.Count - 99);
-            actionStep.RemoveRange(0, actionStep.Count - 99);
-        }
-        if (actionMsg.Count > 0 && !GetComponentInChildren<ActionSystem>().animator.IsInTransition(0) && GetComponentInChildren<ActionSystem>().cancel)
-        {
-            GetComponentInChildren<ActionSystem>().ActionMessage(actionMsg[0], diraction[0]);
-            //print(actionMsg[0].ToString());
-            actionMsg.RemoveAt(0);
-            if (actionMsg.Count > 9)
-                actionMsg.RemoveRange(0, actionMsg.Count - 9);
-        }
     }
 
     public void GameMode()
     {
-        TransformOutput(moveKey[0]);
-        if (moveKey[0] != '5')
-            TransformOutput(moveKey[1]);
-        if (moveTimer[0] < 1)
+        if (moveString.Length > 1)
         {
-            actionName.Clear(); actionStep.Clear();
-            moveTimer[0] = moveTimer[1];
+            moveTimer[0]++;
+            if (moveTimer[1] > 6)
+            {
+                moveTimer[1] = 0;
+                moveString = moveString.Substring(1);
+            }
         }
-        if (moveTimer[0] > 0) moveTimer[0]--;
+        else
+            moveTimer[0] = 0;
+        if (moveTimer[0] > 20)
+            moveTimer[1]++;
     }
 
     public void InputMove(InputAction.CallbackContext ctx)
     {
-        moveTimer[0] = moveTimer[1];
         if (ctx.phase != InputActionPhase.Started)
         {
-            moveKey[0] =
-                ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y < 0 ? '1' :
-                ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y < 0 ? '2' :
-                ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y < 0 ? '3' :
-                ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y == 0 ? '4' :
-                ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y == 0 ? '6' :
-                ctx.ReadValue<Vector2>().x < 0 && ctx.ReadValue<Vector2>().y > 0 ? '7' :
-                ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y > 0 ? '8' :
-                ctx.ReadValue<Vector2>().x > 0 && ctx.ReadValue<Vector2>().y > 0 ? '9' : '5';
-            TransformOutput(moveKey[0]);
-            if (ctx.ReadValue<Vector2>().x > 0)
-            { moveKey[1] = '>'; diraction[0] = 1; }
-            if (ctx.ReadValue<Vector2>().x < 0)
-            { moveKey[1] = '<'; diraction[0] = -1; }
-            if (ctx.ReadValue<Vector2>().y > 0)
-                moveKey[1] = '^';
-            if (ctx.ReadValue<Vector2>().y < 0)
-                moveKey[1] = 'v';
-            if (moveKey[0] == '5') moveKey[1] = '5';
-            TransformOutput(moveKey[1]);
+            float angle = Mathf.Atan2(ctx.ReadValue<Vector2>().y, ctx.ReadValue<Vector2>().x) * Mathf.Rad2Deg;
+            movesNum = ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y == 0 ? 5 :
+                InRange(-22.5f, 22.5f, angle) ? 6 :
+                InRange(22.5f, 67.5f, angle) ? 9 :
+                InRange(67.5f, 112.5f, angle) ? 8 :
+                InRange(112.5f, 157.5f, angle) ? 7 :
+                InRange(-157.5f, -112.5f, angle) ? 1 :
+                InRange(-112.5f, -67.5f, angle) ? 2 :
+                InRange(-67.5f, -22.5f, angle) ? 3 : 4;
+            if (moveString.Length == 0 || moveString[moveString.Length - 1].ToString() != movesNum.ToString())
+            {
+                switch (movesNum)
+                {
+                    case 3: case 6: case 9: diraction = 1; break;
+                    case 1: case 4: case 7: diraction = -1; break;
+                }
+                moveString += movesNum;
+                if (moveString.Length > 6)
+                    moveString = moveString.Substring(1);
+                comString = ConvertMoves(moveString, comString);
+            }
         }
     }
 
     public void InputAction(InputAction.CallbackContext ctx)
     {
-        moveTimer[0] = moveTimer[1];
         if (ctx.phase != InputActionPhase.Performed)
         {
             actionKey =
@@ -102,41 +92,25 @@ public class PlayerController : MonoBehaviour
                 ctx.action.name + ctx.ReadValue<float>() == "S_cls1" ? 'S' :
                 ctx.action.name + ctx.ReadValue<float>() == "S_cls0" ? 's' :
                 ctx.action.name + ctx.ReadValue<float>() == "R_cls1" ? 'R' : 'r';
+            moveString = movesNum.ToString();
         }
-        TransformOutput(actionKey);
         if (ctx.action.name == "Start")
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void TransformOutput(char compareKey)
+    bool InRange(float min, float max, float v)
     {
-        for (int i = 0; i < moveList.data.Length; i++)
-        {
-            if (!(actionName.Contains(moveList.data[i].name) && actionStep.Contains(moveList.data[i].step)))
-                if (moveList.data[i].step[0] == compareKey)
-                {
-                    //moveTimer[0] = moveTimer[1];
-                    actionName.Add(moveList.data[i].name);
-                    actionStep.Add(moveList.data[i].step.Substring(1));
-                }
-        }
-        for (int i = 0; i < actionName.Count; i++)
-        {
-            if (actionStep[i].Length > 0 && compareKey == actionStep[i][0])
-                actionStep[i] = actionStep[i].Remove(0, 1);
-            if (actionStep[i].Length < 1)
-            {
-                if (actionName[i] != storageName)
-                    if (!actionMsg.Contains(actionName[i]))
-                    {
-                        storageName = actionName[i];
-                        actionMsg.Add(actionName[i]);
-                        diraction[1] = diraction[0];
-                        //print(actionName[i]);
-                    }
-                actionName.RemoveAt(i); actionStep.RemoveAt(i); i--;
-            }
-        }
-        //print(compareKey);
+        return v > min && v <= max;
+    }
+
+    string ConvertMoves(string str, string cto)
+    {
+        char spliter = ',';
+        if (str.Length > 0)
+            for (int i = 0; i < movesName.Length; i++)
+                for (int j = 1; j < movesName[i].Split(spliter).Length; j++)
+                    if (str.Contains(movesName[i].Split(spliter)[j]))
+                        return movesName[i].Split(spliter)[0];
+        return cto;
     }
 }

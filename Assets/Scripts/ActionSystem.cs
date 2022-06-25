@@ -24,16 +24,19 @@ public class ActionSystem : MonoBehaviour
     [Tooltip("轉身與方向控制:不轉身且不控制/不轉身但控制/轉身並控制")] public DirectionMode drtMode;
     [Tooltip("空中動作")] public bool airAction;
     [Tooltip("可取消動作")] public bool cancel;
-    [Tooltip("可取消的動作")] public List<string> cancelList;
-    [Tooltip("可取消但接續第一個動作")] public List<string> cancelOtherList;
+    [Tooltip("取消的動作")] public List<string> cancelList;
+    [Tooltip("取消但以第一個動作")] public List<string> cancelOtherList;
     [Tooltip("浮空高度")] public float soarHeight;
     [Tooltip("移動速度")] public float moveSpeed;
     [Tooltip("使用時間縮放")] public bool timeScale;
     [Tooltip("時間縮放率")] public float timeScaleRate;
     [Tooltip("攻擊傷害")] public float dmg;
-    [Tooltip("氣力值傷害")] public float vitDmg;
+    [Tooltip("防住氣力值傷害")] public float vitDmg;
     [Tooltip("擊中氣力值傷害")] public float hitVitDmg;
     [Tooltip("自身氣力值損耗")] public float vitLost;
+    [Tooltip("防住燃晶槽傷害")] public float blzDmg;
+    [Tooltip("擊中燃晶槽傷害")] public float hitBlzDmg;
+    [Tooltip("自身燃晶槽損耗")] public float blzLost;
     [Tooltip("傷害修正")] public float fixRate;
     [Tooltip("僵直時間")] public float stiffDuration;
     [Tooltip("防禦僵直時間")] public float defStiffDuration;
@@ -46,40 +49,63 @@ public class ActionSystem : MonoBehaviour
     public enum HitPoint { high, low };
     [Tooltip("攻擊打點高低:高/低")] public HitPoint hitPoint;
     [Tooltip("Counter時距")] public bool counterRange;
-    [Tooltip("可否空中防禦")] public bool isADef;
+    [Tooltip("狀態: '':地面/ FF:衝刺/ A:空中/ D:防禦/ CT:防住/ ACT:空中防住/ HU:受傷/ AHU:空中受傷/ DOWN:倒地/ WAKE:起身")] public string inState;
 
 
-
-    public void ActionMessage(string atName, int drt)
+    public void ComMessage()
     {
-        //foreach (var at in atName) print(at);
-        direction = drt;
+        direction = controller.diraction;
+        string mStr = controller.moveString, cStr = controller.comString, aStr = controller.actionKey.ToString();
+        string getName;
         if (cancelList != null && cancel)
-        {
-            for (int j = 0; j < cancelList.Count; j++)
-                if (atName == cancelList[j] && CompareState(atName))
+            foreach (string item in cancelList)
+            {
+                getName = SearchAction(item, mStr, cStr, aStr);
+                if (getName != null)
                 {
                     cancelList.Clear(); cancelOtherList.Clear();
-                    animator.CrossFadeInFixedTime(atName, 0.01f);
-                    //return;
+                    animator.CrossFadeInFixedTime(getName, .01f);
+                    controller.comString = ""; controller.actionKey = '\0';
+                    return;
                 }
-        }
+
+            }
         if (cancelOtherList != null && cancel)
-        {
-            for (int j = 1; j < cancelOtherList.Count; j++)
-                if (atName == cancelOtherList[j] && CompareState(atName))
+            for (int i = 1; i < cancelOtherList.Count; i++)
+            {
+                getName = SearchAction(cancelOtherList[i], mStr, cStr, aStr);
+                if (getName != null)
                 {
                     cancelList.Clear();
-                    animator.CrossFadeInFixedTime(cancelOtherList[0], 0.01f);
-                    cancelOtherList.Clear();
-                    //return;
+                    animator.CrossFadeInFixedTime(cancelOtherList[0], .01f);
+                    controller.comString = ""; controller.actionKey = '\0';
+                    cancelOtherList.Clear(); return;
                 }
-        }
+            }
+    }
+
+    string SearchAction(string target, string mStr, string cStr, string aStr)
+    {
+        if (target == inState + cStr + aStr)
+            return target;
+        if (cStr.Length > 1 && target == inState + cStr.Substring(1) + aStr)
+            return target;
+        if (target == inState + mStr + aStr)
+            return target;
+        if (target == inState + aStr)
+            return target;
+        if (target == inState + cStr)
+            return target;
+        if (cStr.Length > 1 && target == inState + cStr.Substring(1))
+            return target;
+        if (mStr.Length > 0 && target == inState + mStr[mStr.Length - 1].ToString())
+            return target;
+        return null;
     }
 
     public void ActionEvent()
     {
-        if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(1, 1, direction);
+        if (drtMode == DirectionMode.turn_ctrl) transform.localEulerAngles = new Vector3(1, -90 + direction * 90, 1);
         switch (moveMode)
         {
             case MoveMode.move:
@@ -132,7 +158,6 @@ public class ActionSystem : MonoBehaviour
     {
         cancelList.Clear();
         cancelList.AddRange(canceler.Split(','));
-        controller.actionMsg.Add(controller.storageName);
         //controller.TransformOutput(controller.moveKey[0]);
         //controller.TransformOutput(controller.moveKey[1]);
     }
@@ -141,7 +166,6 @@ public class ActionSystem : MonoBehaviour
     {
         cancelOtherList.Clear();
         cancelOtherList.AddRange(canceler.Split(','));
-        controller.actionMsg.Add(controller.storageName);
         //controller.TransformOutput(controller.moveKey[0]);
         //controller.TransformOutput(controller.moveKey[1]);
     }
@@ -167,21 +191,12 @@ public class ActionSystem : MonoBehaviour
 
     public void SetADef(int set)
     {
-        isADef = set == 0 ? false : true;
+        //isADef = set == 0 ? false : true;
     }
 
     public void SetDown(int set)
     {
         downed = set == 0 ? false : true;
-    }
-
-    bool CompareState(string state)
-    {
-        if (state == "ADef")
-            if (isADef) return true;
-            else return false;
-        else
-            return true;
     }
 
     public void Hited(string oppoCol)
@@ -257,5 +272,6 @@ public class ActionSystem : MonoBehaviour
         if (!hitboxes.activeSelf)
             hited = false;
         ActionEvent();
+        ComMessage();
     }
 }

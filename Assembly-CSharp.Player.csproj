@@ -75,30 +75,44 @@
     <Compile Include="Assets\DynamicBone\Scripts\DynamicBoneCollider.cs" />
     <Compile Include="Assets\Scripts\GameSystem.cs" />
     <Compile Include="Assets\DynamicBone\Scripts\DynamicBoneColliderBase.cs" />
+    <Compile Include="Assets\Scripts\DestroySelf.cs" />
     <Compile Include="Assets\Scripts\ActionSystem.cs" />
     <Compile Include="Assets\Scripts\HitCollision.cs" />
     <Compile Include="Assets\Scripts\Shadow.cs" />
-    <Compile Include="Assets\Scripts\DestroySelf.cs" />
+    <Compile Include="Assets\UniGLTF\Samples\UniHumanoid\RuntimeBvhLoader.cs" />
+    <Compile Include="Assets\UniGLTF\Samples\UniHumanoid\HumanBuilderTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon.shader" />
     <None Include="Assets\Shaders\Outline.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_attribute.hlsl" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_geometry_vertex.hlsl" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_geometry_uv.hlsl" />
+    <None Include="Assets\VRMShaders\GLTF\IO\Resources\UniGLTF\NormalMapExporter.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonBodyDoubleShadeWithFeather.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\Outline\Resources\Shaders\OutlineMask.shader" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_lighting_mtoon.hlsl" />
     <None Include="Assets\UnityChanSSU_URP-release-1.0.2\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\Shaders\NiloZOffset.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Shaders\Outline.hlsl" />
     <None Include="Assets\Assets MOOD WARE\_MW Skybox\Documentation\Documentation City Street Skyboxes Vol. 1.txt" />
     <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonBody.hlsl" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_forward_vertex.hlsl" />
     <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToon.shader" />
+    <None Include="Assets\VRMShaders\GLTF\IO\Resources\UniGLTF\StandardMapExporter.shader" />
     <None Include="Assets\Shaders\SimpleURPToonLitOutlineExample_LightingEquation.hlsl" />
     <None Include="Assets\Shaders\SimpleURPToonLitOutlineExample.shader" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_forward_fragment.hlsl" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_geometry_alpha.hlsl" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_input.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_lighting_unity.hlsl" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonHead.hlsl" />
@@ -110,15 +124,19 @@
     <None Include="Assets\Shaders\NiloOutlineUtil.hlsl" />
     <None Include="Assets\Outline\Readme.txt" />
     <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonOutline.hlsl" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_utility.hlsl" />
     <None Include="Assets\Shaders\CustomLighting.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonInput.hlsl" />
     <None Include="Assets\Shaders\ToonShader.shader" />
     <None Include="Assets\UnityChanSSU_URP-release-1.0.2\Packages\UnityChanToonShaderVer2_Project-urp-2.5.0\Runtime\Shaders\UniversalToonBodyShadingGradeMap.hlsl" />
+    <None Include="Assets\VRMShaders\GLTF\IO\Resources\UniGLTF\StandardMapImporter.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Shaders\SobelFilter.shader" />
+    <None Include="Assets\VRMShaders\GLTF\UniUnlit\Resources\UniGLTF\UniUnlit.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Shaders\NiloInvLerpRemap.hlsl" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_geometry_normal.hlsl" />
     <None Include="Assets\DynamicBone\ReadMe.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -126,6 +144,7 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\VRMShaders\VRM10\MToon10\Resources\VRM10\vrmc_materials_mtoon_define.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -800,17 +819,37 @@
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.Player.csproj">
       <Project>{A65AED5A-3761-6D85-6A19-FDB78D68F783}</Project>
       <Name>Assembly-CSharp-firstpass.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="VRM.Player.csproj">
+      <Project>{8BA66664-F803-C0AD-8F88-5EBE0050790B}</Project>
+      <Name>VRM.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniGLTF.Player.csproj">
+      <Project>{F7D29F3B-36F3-B379-BADE-5F8DAD349A62}</Project>
+      <Name>UniGLTF.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniGLTF.Samples.ScreenSpace.Player.csproj">
+      <Project>{E5A563D3-0C3E-1327-58A2-006D92B472EF}</Project>
+      <Name>UniGLTF.Samples.ScreenSpace.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniHumanoid.Player.csproj">
+      <Project>{D1CC8AC0-A108-6CF2-6CF2-388124E44636}</Project>
+      <Name>UniHumanoid.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="VRMShaders.GLTF.IO.Runtime.Player.csproj">
+      <Project>{DECC9F7D-30E0-52B5-1669-E9B17CCFF855}</Project>
+      <Name>VRMShaders.GLTF.IO.Runtime.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
