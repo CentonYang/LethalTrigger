@@ -28,48 +28,6 @@ MonoBehaviour:
     max: {x: 0, y: 0, z: 0}
     center: {x: 0, y: 0, z: 0}
     axisLength: 0
-  - humanBone: 1
-    boneName: J_Bip_L_UpperLeg
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 2
-    boneName: J_Bip_R_UpperLeg
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 3
-    boneName: J_Bip_L_LowerLeg
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 4
-    boneName: J_Bip_R_LowerLeg
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 5
-    boneName: J_Bip_L_Foot
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 6
-    boneName: J_Bip_R_Foot
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
   - humanBone: 7
     boneName: J_Bip_C_Spine
     useDefaultValues: 1
@@ -79,6 +37,13 @@ MonoBehaviour:
     axisLength: 0
   - humanBone: 8
     boneName: J_Bip_C_Chest
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 54
+    boneName: J_Bip_C_UpperChest
     useDefaultValues: 1
     min: {x: 0, y: 0, z: 0}
     max: {x: 0, y: 0, z: 0}
@@ -98,57 +63,36 @@ MonoBehaviour:
     max: {x: 0, y: 0, z: 0}
     center: {x: 0, y: 0, z: 0}
     axisLength: 0
-  - humanBone: 11
-    boneName: J_Bip_L_Shoulder
+  - humanBone: 21
+    boneName: J_Adj_L_FaceEye
     useDefaultValues: 1
     min: {x: 0, y: 0, z: 0}
     max: {x: 0, y: 0, z: 0}
     center: {x: 0, y: 0, z: 0}
     axisLength: 0
-  - humanBone: 12
-    boneName: J_Bip_R_Shoulder
+  - humanBone: 22
+    boneName: J_Adj_R_FaceEye
     useDefaultValues: 1
     min: {x: 0, y: 0, z: 0}
     max: {x: 0, y: 0, z: 0}
     center: {x: 0, y: 0, z: 0}
     axisLength: 0
-  - humanBone: 13
-    boneName: J_Bip_L_UpperArm
+  - humanBone: 1
+    boneName: J_Bip_L_UpperLeg
     useDefaultValues: 1
     min: {x: 0, y: 0, z: 0}
     max: {x: 0, y: 0, z: 0}
     center: {x: 0, y: 0, z: 0}
     axisLength: 0
-  - humanBone: 14
-    boneName: J_Bip_R_UpperArm
+  - humanBone: 3
+    boneName: J_Bip_L_LowerLeg
     useDefaultValues: 1
     min: {x: 0, y: 0, z: 0}
     max: {x: 0, y: 0, z: 0}
     center: {x: 0, y: 0, z: 0}
     axisLength: 0
-  - humanBone: 15
-    boneName: J_Bip_L_LowerArm
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 16
-    boneName: J_Bip_R_LowerArm
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 17
-    boneName: J_Bip_L_Hand
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 18
-    boneName: J_Bip_R_Hand
+  - humanBone: 5
+    boneName: J_Bip_L_Foot
     useDefaultValues: 1
     min: {x: 0, y: 0, z: 0}
     max: {x: 0, y: 0, z: 0}
@@ -161,6 +105,27 @@ MonoBehaviour:
     max: {x: 0, y: 0, z: 0}
     center: {x: 0, y: 0, z: 0}
     axisLength: 0
+  - humanBone: 2
+    boneName: J_Bip_R_UpperLeg
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 4
+    boneName: J_Bip_R_LowerLeg
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 6
+    boneName: J_Bip_R_Foot
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
   - humanBone: 20
     boneName: J_Bip_R_ToeBase
     useDefaultValues: 1
@@ -168,15 +133,57 @@ MonoBehaviour:
     max: {x: 0, y: 0, z: 0}
     center: {x: 0, y: 0, z: 0}
     axisLength: 0
-  - humanBone: 21
-    boneName: J_Adj_L_FaceEye
+  - humanBone: 11
+    boneName: J_Bip_L_Shoulder
     useDefaultValues: 1
     min: {x: 0, y: 0, z: 0}
     max: {x: 0, y: 0, z: 0}
     center: {x: 0, y: 0, z: 0}
     axisLength: 0
-  - humanBone: 22
-    boneName: J_Adj_R_FaceEye
+  - humanBone: 13
+    boneName: J_Bip_L_UpperArm
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 15
+    boneName: J_Bip_L_LowerArm
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 17
+    boneName: J_Bip_L_Hand
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 12
+    boneName: J_Bip_R_Shoulder
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 14
+    boneName: J_Bip_R_UpperArm
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 16
+    boneName: J_Bip_R_LowerArm
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 18
+    boneName: J_Bip_R_Hand
     useDefaultValues: 1
     min: {x: 0, y: 0, z: 0}
     max: {x: 0, y: 0, z: 0}
@@ -387,13 +394,6 @@ MonoBehaviour:
     axisLength: 0
   - humanBone: 53
     boneName: J_Bip_R_Little3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 54
-    boneName: J_Bip_C_UpperChest
     useDefaultValues: 1
     min: {x: 0, y: 0, z: 0}
     max: {x: 0, y: 0, z: 0}
