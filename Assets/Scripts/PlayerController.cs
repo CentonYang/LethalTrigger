@@ -9,10 +9,9 @@ public class PlayerController : MonoBehaviour
     public int[] moveTimer = { 0, 10 };
     public int movesNum, diraction = 1;
     public char actionKey;
-    public List<string> actionName, actionStep, actionMsg;
+    public List<string> actionName, actionStep, actionMsg, movesName;
     public GameSystem gameSystem;
     public string moveString, comString;
-    public string[] movesName;
 
     void Awake()
     {
@@ -40,22 +39,20 @@ public class PlayerController : MonoBehaviour
         if (moveString.Length > 1)
         {
             moveTimer[0]++;
-            if (moveTimer[1] > 6)
+            if (moveTimer[0] > 10)
             {
-                moveTimer[1] = 0;
-                moveString = moveString.Substring(1);
+                moveString = moveString[moveString.Length - 1].ToString();
+                comString = ConvertMoves(moveString, comString);
+                moveTimer[0] = 0;
             }
         }
-        else
-            moveTimer[0] = 0;
-        if (moveTimer[0] > 20)
-            moveTimer[1]++;
     }
 
     public void InputMove(InputAction.CallbackContext ctx)
     {
         if (ctx.phase != InputActionPhase.Started)
         {
+            moveTimer[0] = 0;
             float angle = Mathf.Atan2(ctx.ReadValue<Vector2>().y, ctx.ReadValue<Vector2>().x) * Mathf.Rad2Deg;
             movesNum = ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y == 0 ? 5 :
                 InRange(-22.5f, 22.5f, angle) ? 6 :
@@ -103,14 +100,18 @@ public class PlayerController : MonoBehaviour
         return v > min && v <= max;
     }
 
-    string ConvertMoves(string str, string cto)
+    public string ConvertMoves(string str, string cto)
     {
         char spliter = ',';
         if (str.Length > 0)
-            for (int i = 0; i < movesName.Length; i++)
+            for (int i = 0; i < movesName.Count; i++)
                 for (int j = 1; j < movesName[i].Split(spliter).Length; j++)
                     if (str.Contains(movesName[i].Split(spliter)[j]))
-                        return movesName[i].Split(spliter)[0];
+                    {
+                        movesName.Add(movesName[i]);
+                        movesName.RemoveAt(i);
+                        return movesName[movesName.Count - 1].Split(spliter)[0];
+                    }
         return cto;
     }
 }
