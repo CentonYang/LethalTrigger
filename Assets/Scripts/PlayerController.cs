@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour
     public List<string> actionName, actionStep, actionMsg, movesName;
     public GameSystem gameSystem;
     public string moveString, comString;
+    InputDisplay id;
 
     void Awake()
     {
         Time.timeScale = 1;
+        id = FindObjectOfType<InputDisplay>();
         //moveList = GetComponentInChildren<MoveList>();
     }
 
@@ -36,16 +38,17 @@ public class PlayerController : MonoBehaviour
 
     public void GameMode()
     {
-        if (moveString.Length > 1)
+        //if (moveString.Length > 1)
+        //{
+        moveTimer[0]++;
+        if (moveTimer[0] > 20)
         {
-            moveTimer[0]++;
-            if (moveTimer[0] > 10)
-            {
+            if (moveString.Length > 1)
                 moveString = moveString[moveString.Length - 1].ToString();
-                comString = ConvertMoves(moveString, comString);
-                moveTimer[0] = 0;
-            }
+            moveTimer[0] = 0;
         }
+        //comString = ConvertMoves(moveString, comString);
+        //}
     }
 
     public void InputMove(InputAction.CallbackContext ctx)
@@ -62,6 +65,7 @@ public class PlayerController : MonoBehaviour
                 InRange(-157.5f, -112.5f, angle) ? 1 :
                 InRange(-112.5f, -67.5f, angle) ? 2 :
                 InRange(-67.5f, -22.5f, angle) ? 3 : 4;
+            id.GetInput(movesNum.ToString()[0]);
             if (moveString.Length == 0 || moveString[moveString.Length - 1].ToString() != movesNum.ToString())
             {
                 switch (movesNum)
@@ -90,6 +94,7 @@ public class PlayerController : MonoBehaviour
                 ctx.action.name + ctx.ReadValue<float>() == "S_cls0" ? 's' :
                 ctx.action.name + ctx.ReadValue<float>() == "R_cls1" ? 'R' : 'r';
             moveString = movesNum.ToString();
+            id.GetInput(actionKey);
         }
         if (ctx.action.name == "Start")
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

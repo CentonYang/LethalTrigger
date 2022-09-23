@@ -11,6 +11,7 @@ public class MoveList : MonoBehaviour
     public struct Data
     {
         public string name;
-        public string step;
+        public string staLost;
+        public string blzLost;
     }
 }

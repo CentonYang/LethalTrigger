@@ -12,7 +12,7 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public Animator animator;
     [HideInInspector] public string actionMsg;
     [HideInInspector] public int direction;
-    [HideInInspector] public bool hited, hurted, downed;
+    public bool hited, hurted, downed;
     [HideInInspector] public float stiff, offGround, gravity;
     public Vector2 velocity;
     public GameObject hitboxes;
@@ -24,17 +24,21 @@ public class ActionSystem : MonoBehaviour
     public enum DirectionMode { noTurn_noCtrl, noTurn_ctrl, turn_ctrl }
     [Tooltip("轉身與方向控制:不轉身且不控制/不轉身但控制/轉身並控制")] public DirectionMode drtMode;
     [Tooltip("可取消動作")] public bool cancel;
+    [Tooltip("打擊長度")] public bool hitRange;
     [Tooltip("擊中後可取消動作")] public bool hitCancel;
     [Tooltip("取消的動作")] public List<string> cancelList;
     [Tooltip("取消但以第一個動作")] public List<string> cancelOtherList;
     [Tooltip("浮空高度")] public float soarHeight;
     [Tooltip("移動速度")] public float moveSpeed;
+    [Tooltip("角色半徑")] public float radius;
+    [Tooltip("角色穿過")] public bool trigger;
+    [Tooltip("氣力值冷卻中")] public bool staCD;
     [Tooltip("使用時間縮放")] public bool timeScale;
     [Tooltip("時間縮放率")] public float timeScaleRate;
     [Tooltip("攻擊傷害")] public float dmg;
-    [Tooltip("防住氣力值傷害")] public float vitDmg;
-    [Tooltip("擊中氣力值傷害")] public float hitVitDmg;
-    [Tooltip("自身氣力值損耗")] public float vitLost;
+    [Tooltip("防住氣力值傷害")] public float staDmg;
+    [Tooltip("擊中氣力值傷害")] public float hitStaDmg;
+    [Tooltip("自身氣力值損耗")] public float staLost;
     [Tooltip("防住燃晶槽傷害")] public float blzDmg;
     [Tooltip("擊中燃晶槽傷害")] public float hitBlzDmg;
     [Tooltip("自身燃晶槽損耗")] public float blzLost;
@@ -57,10 +61,14 @@ public class ActionSystem : MonoBehaviour
         direction = pc.diraction;
         string mStr = pc.moveString, cStr = pc.comString, aStr = pc.actionKey.ToString();
         string getName;
-        if (cancelList != null && cancel)
+        if (cancelList != null && (cancel || (hitCancel && hited)))
             foreach (string item in cancelList)
             {
                 getName = SearchAction(item, mStr, cStr, aStr);
+                if (pc.moveString.Length > 0 && pc.moveString[pc.moveString.Length - 1] == '5')
+                    pc.comString = "";
+                if (pc.comString.Length > 1)
+                    pc.comString = pc.comString.Substring(1);
                 if (getName != null)
                 {
                     cancelList.Clear(); cancelOtherList.Clear();
@@ -68,12 +76,15 @@ public class ActionSystem : MonoBehaviour
                     animator.CrossFadeInFixedTime(getName, 0);
                     return;
                 }
-
             }
-        if (cancelOtherList != null && cancel)
+        if (cancelOtherList != null && (cancel || (hitCancel && hited)))
             for (int i = 1; i < cancelOtherList.Count; i++)
             {
                 getName = SearchAction(cancelOtherList[i], mStr, cStr, aStr);
+                if (pc.moveString.Length > 0 && pc.moveString[pc.moveString.Length - 1] == '5')
+                    pc.comString = "";
+                if (pc.comString.Length > 1)
+                    pc.comString = pc.comString.Substring(1);
                 if (getName != null)
                 {
                     cancelList.Clear();
@@ -106,63 +117,72 @@ public class ActionSystem : MonoBehaviour
 
     public void ActionEvent()
     {
-        velocity.y -= gravity * Time.deltaTime;
-        if (cc.isGrounded)
-            velocity.y = 0;
+        if (inState == InState.N) velocity.y = 0;
+        if (!hurted)
+        {
+            if (pc.movesNum == 4) velocity.x -= Time.deltaTime * 4;
+            if (pc.movesNum == 6) velocity.x += Time.deltaTime * 4;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITF") && velocity.y < 0 && offGround <= 0)
+            NextState("HITD");
+        if (cc.isGrounded && velocity.y < 0)
+        {
+            if (inState == InState.A && (moveMode == MoveMode.move || moveMode == MoveMode.none))
+                NextState("AL");
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITD") && offGround <= 0)
+                if (!downed)
+                {
+                    downed = true;
+                    if (velocity.y < -20)
+                    {
+                        velocity.y *= -.6f; NextState("HITF");
+                        Time.timeScale = .01f; StartCoroutine(TimeStop(.1f));
+                    }
+                    else
+                        NextState("DOWN");
+                }
+                else NextState("WAKE");
+        }
+        if (inState == InState.WAKE)
+        { downed = false; hurted = false; }
+        velocity.y -= gravity;
+        velocity.x += velocity.x < 0 ? Time.deltaTime : velocity.x > 0 ? -Time.deltaTime : 0;
         if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(direction, 1, 1);
         switch (moveMode)
         {
             case MoveMode.move:
-                velocity.x = moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.x) * Time.deltaTime;
+                velocity.x = moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.x);
                 break;
             case MoveMode.soar:
-                velocity.y = soarHeight * Time.deltaTime;
+                velocity.y = soarHeight;
                 break;
             case MoveMode.all:
-                velocity = new Vector2(moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.x), soarHeight) * Time.deltaTime;
+                velocity = new Vector2(moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.x), soarHeight);
                 break;
         }
         float dis = Mathf.Abs(opponent.transform.position.x - transform.position.x) - 5;
         if (dis > 0)
         {
-            if (opponent.transform.position.x - transform.position.x < 0 && velocity.x > 0)
-                velocity.x -= dis;
-            if (opponent.transform.position.x - transform.position.x > 0 && velocity.x < 0)
-                velocity.x += dis;
+            if (transform.position.x > opponent.transform.position.x && velocity.x > 0)
+                velocity.x -= dis / Time.deltaTime;
+            if (transform.position.x < opponent.transform.position.x && velocity.x < 0)
+                velocity.x += dis / Time.deltaTime;
         }
-        if (!animator.IsInTransition(0))
+        float ras = Mathf.Abs(opponent.transform.position.x - transform.position.x) - radius - opponent.radius;
+        if (ras < 0 && !trigger && !opponent.trigger)
         {
-            if (velocity.y < -1f)
-            {
-                //    if (animator.GetCurrentAnimatorStateInfo(0).IsName("Jump") || animator.GetCurrentAnimatorStateInfo(0).IsName("FJump"))
-                //        NextState("Fall");
-                //    if (animator.GetCurrentAnimatorStateInfo(0).IsName("HitFly"))
-                //        NextState("Drop");
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("HitFly"))
-                    NextState("Drop");
-            }
-            //else
-            if (cc.isGrounded)
-            {
-                if (inState == InState.A && (moveMode == MoveMode.move || moveMode == MoveMode.none))
-                    NextState("AL");
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Drop") || animator.GetCurrentAnimatorStateInfo(0).IsName("HitFly"))
-                    if (!downed)
-                    { downed = true; NextState("Down"); }
-                    else NextState("Stand");
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("LDrop"))
-                    if (!downed)
-                    { downed = true; NextState("LDown"); }
-                    else NextState("LStand");
-            }
+            if (transform.position.x < opponent.transform.position.x)
+                velocity.x += ras / Time.deltaTime * .2f;
+            if (transform.position.x > opponent.transform.position.x)
+                velocity.x -= ras / Time.deltaTime * .2f;
         }
-        if (stiff <= 0 && !animator.IsInTransition(0) && (animator.GetCurrentAnimatorStateInfo(0).IsName("UStiff") || animator.GetCurrentAnimatorStateInfo(0).IsName("DStiff")))
-            NextState("Idle");
+        if (stiff <= 0 && !animator.IsInTransition(0) && inState == InState.HU)
+            NextState("5");
         if (stiff > 0)
             stiff -= 60 * Time.deltaTime;
         if (offGround > 0)
             offGround -= 60 * Time.deltaTime;
-        cc.Move(velocity);
+        cc.Move(velocity * Time.deltaTime);
         transform.position = cc.transform.position;
         cc.transform.localPosition *= 0;
     }
@@ -171,25 +191,18 @@ public class ActionSystem : MonoBehaviour
     {
         cancelList.Clear();
         cancelList.AddRange(canceler.Split(','));
-        //controller.TransformOutput(controller.moveKey[0]);
-        //controller.TransformOutput(controller.moveKey[1]);
     }
 
     public void CancelOther(string canceler)
     {
         cancelOtherList.Clear();
         cancelOtherList.AddRange(canceler.Split(','));
-        //controller.TransformOutput(controller.moveKey[0]);
-        //controller.TransformOutput(controller.moveKey[1]);
     }
 
     public void NextState(string animState)
     {
         cancelList.Clear(); cancelOtherList.Clear();
         animator.CrossFadeInFixedTime(animState, 0);
-        //controller.actionMsg.Add(controller.storageName);
-        //controller.TransformOutput(controller.moveKey[0]);
-        //controller.TransformOutput(controller.moveKey[1]);
     }
 
     public void Jump(float force)
@@ -200,11 +213,6 @@ public class ActionSystem : MonoBehaviour
     public void push(float force)
     {
         velocity.x = force;
-    }
-
-    public void SetADef(int set)
-    {
-        //isADef = set == 0 ? false : true;
     }
 
     public void SetDown(int set)
@@ -219,50 +227,52 @@ public class ActionSystem : MonoBehaviour
             hited = true;
             GameObject hitVFXObj = Instantiate(hitVFX, hitTrans.position, hitTrans.rotation);
             hitVFXObj.transform.localScale = transform.localScale;
-            StartCoroutine(opponent.Hurted(dmg, vitDmg, hitVitDmg, fixRate, stiffDuration, defStiffDuration, hitHeight, hitDistance, airHitHeight, airHitDistance, hitPoint == 0 ? true : false));
+            StartCoroutine(opponent.Hurted(dmg, staDmg, hitStaDmg, fixRate, stiffDuration, defStiffDuration, hitHeight, hitDistance, airHitHeight, airHitDistance, hitPoint == 0 ? true : false));
         }
     }
 
-    public IEnumerator Hurted(float _dmg, float _vitDmg, float _hitVDmg, float _fixRate, float _stiffDur, float _dStiffDur, float _hitH, float _hitD, float _aHitH, float _aHitD, bool _hitHigh)
+    public IEnumerator Hurted(float _dmg, float _staDmg, float _hitSDmg, float _fixRate, float _stiffDur, float _dStiffDur, float _hitH, float _hitD, float _aHitH, float _aHitD, bool _hitHigh)
     {
         hurted = true;
-        bool isAir = inState == InState.A || inState == InState.AHU ? true : false;
-        if (_hitHigh) //是打點高
-            if (_hitH != 0 || isAir) //是打飛招式或在空中
-                if (_hitH > 0) //往上打
-                    NextState("HitFly");
-                else //往下打
-                    NextState("Drop");
-            else //不是打飛招式也不是在空中
-            if ((opponent.transform.position.x - transform.position.x) * transform.localScale.z > 0) //面對對手
-                NextState("UStiff");
+        bool isAir = inState == InState.A || inState == InState.AHU || inState == InState.DOWN ? true : false;
+        offGround = 2;
+        if (_hitH != 0 || isAir) //是打飛招式或在空中
+            if (_hitH < 0)
+                NextState("HITD");
+            else
+                NextState("HITF");
+        else if (_hitHigh) //是打點高
+            if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //面對對手
+                NextState("HUB");
             else //背對對手
-                NextState("DStiff");
+                NextState("HUF");
         else //是打點低
         {
-            if (_hitH != 0 || isAir) //是打飛招式或在空中
-                NextState("LDrop");
-            else //不是打飛招式
-            if ((opponent.transform.position.x - transform.position.x) * transform.localScale.z > 0) //面對對手
-                NextState("DStiff");
+            if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //面對對手
+                NextState("HUF");
             else //背對對手
-                NextState("UStiff");
+                NextState("HUB");
         }
-        Time.timeScale = 0.01f;
-        stiff = _stiffDur;
-        offGround = 3;
-        //print("hurt!");
-        yield return new WaitForSecondsRealtime(0.1f);
-        Time.timeScale = 1;
+        Time.timeScale = .01f;
+        if (_hitH == 0)
+            stiff = _stiffDur;
+        yield return new WaitForSecondsRealtime(.1f);
         if (isAir)
             velocity = new Vector2(_aHitD * (opponent.transform.position.x - transform.position.x < 0 ? 1 : -1), _aHitH);
         else
             velocity = new Vector2(_hitD * (opponent.transform.position.x - transform.position.x < 0 ? 1 : -1), _hitH);
+        Time.timeScale = 1;
     }
 
-    void Awake()
+    public IEnumerator TimeStop(float timeLong)
     {
-        gravity = 5;
+        yield return new WaitForSecondsRealtime(timeLong);
+        Time.timeScale = 1;
+    }
+
+    void Start()
+    {
+        gravity = .2f;
         pc = transform.parent.GetComponent<PlayerController>();
         cc = GetComponentInChildren<CharacterController>();
         animator = GetComponentInChildren<Animator>();
@@ -275,14 +285,9 @@ public class ActionSystem : MonoBehaviour
         transform.localScale = new Vector3(direction, 1, 1);
     }
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-        if (!hitboxes.activeSelf)
+        if (!hitRange)
             hited = false;
         ActionEvent();
         ComMessage();
