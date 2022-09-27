@@ -12,9 +12,9 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public Animator animator;
     [HideInInspector] public string actionMsg;
     [HideInInspector] public int direction;
-    public bool hited, hurted, downed;
-    [HideInInspector] public float stiff, offGround, gravity;
-    public Vector2 velocity;
+    [HideInInspector] public bool hited, hurted, downed;
+    [HideInInspector] public float stiff, offGround, gravity, pushDis, dirDis;
+    public Vector2 velocity, hp, sta, btr, skill;
     public GameObject hitboxes;
     public Transform hitTrans;
     public GameObject hitVFX;
@@ -65,10 +65,10 @@ public class ActionSystem : MonoBehaviour
             foreach (string item in cancelList)
             {
                 getName = SearchAction(item, mStr, cStr, aStr);
-                if (pc.moveString.Length > 0 && pc.moveString[pc.moveString.Length - 1] == '5')
-                    pc.comString = "";
                 if (pc.comString.Length > 1)
                     pc.comString = pc.comString.Substring(1);
+                else
+                    pc.comString = pc.ConvertMoves(pc.movesNum.ToString(), pc.comString);
                 if (getName != null)
                 {
                     cancelList.Clear(); cancelOtherList.Clear();
@@ -81,10 +81,10 @@ public class ActionSystem : MonoBehaviour
             for (int i = 1; i < cancelOtherList.Count; i++)
             {
                 getName = SearchAction(cancelOtherList[i], mStr, cStr, aStr);
-                if (pc.moveString.Length > 0 && pc.moveString[pc.moveString.Length - 1] == '5')
-                    pc.comString = "";
                 if (pc.comString.Length > 1)
                     pc.comString = pc.comString.Substring(1);
+                else
+                    pc.comString = pc.ConvertMoves(pc.movesNum.ToString(), pc.comString);
                 if (getName != null)
                 {
                     cancelList.Clear();
@@ -117,16 +117,22 @@ public class ActionSystem : MonoBehaviour
 
     public void ActionEvent()
     {
-        if (inState == InState.N) velocity.y = 0;
+        if (!hitRange)
+        { hited = false; pushDis = 0; }
         if (!hurted)
         {
-            if (pc.movesNum == 4) velocity.x -= Time.deltaTime * 4;
-            if (pc.movesNum == 6) velocity.x += Time.deltaTime * 4;
+            if ((moveMode == MoveMode.soar || moveMode == MoveMode.none) && Mathf.Abs(dirDis) < 2)
+            {
+                if (pc.movesNum == 1 || pc.movesNum == 4 || pc.movesNum == 7) dirDis -= .2f;
+                if (pc.movesNum == 3 || pc.movesNum == 6 || pc.movesNum == 9) dirDis += .2f;
+            }
+            else dirDis = 0;
         }
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITF") && velocity.y < 0 && offGround <= 0)
             NextState("HITD");
         if (cc.isGrounded && velocity.y < 0)
         {
+            if (inState != InState.A && inState != InState.AHU) velocity.y = 0;
             if (inState == InState.A && (moveMode == MoveMode.move || moveMode == MoveMode.none))
                 NextState("AL");
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITD") && offGround <= 0)
@@ -135,8 +141,8 @@ public class ActionSystem : MonoBehaviour
                     downed = true;
                     if (velocity.y < -20)
                     {
-                        velocity.y *= -.6f; NextState("HITF");
                         Time.timeScale = .01f; StartCoroutine(TimeStop(.1f));
+                        velocity.y *= -.4f; NextState("HITF");
                     }
                     else
                         NextState("DOWN");
@@ -144,9 +150,12 @@ public class ActionSystem : MonoBehaviour
                 else NextState("WAKE");
         }
         if (inState == InState.WAKE)
-        { downed = false; hurted = false; }
+            downed = false;
+        if (inState == InState.HU || inState == InState.AHU)
+            hurted = true;
+        else hurted = false;
         velocity.y -= gravity;
-        velocity.x += velocity.x < 0 ? Time.deltaTime : velocity.x > 0 ? -Time.deltaTime : 0;
+        velocity.x += velocity.x < 0 ? .05f : velocity.x > 0 ? -.05f : 0;
         if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(direction, 1, 1);
         switch (moveMode)
         {
@@ -160,29 +169,35 @@ public class ActionSystem : MonoBehaviour
                 velocity = new Vector2(moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.x), soarHeight);
                 break;
         }
+        if (hited && pushDis != 0)
+            velocity.x = -pushDis;
         float dis = Mathf.Abs(opponent.transform.position.x - transform.position.x) - 5;
         if (dis > 0)
         {
             if (transform.position.x > opponent.transform.position.x && velocity.x > 0)
-                velocity.x -= dis / Time.deltaTime;
+                velocity.x = -dis / Time.deltaTime;
             if (transform.position.x < opponent.transform.position.x && velocity.x < 0)
-                velocity.x += dis / Time.deltaTime;
+                velocity.x = dis / Time.deltaTime;
+            cc.Move(velocity * Time.deltaTime);
+            velocity.x = 0;
         }
         float ras = Mathf.Abs(opponent.transform.position.x - transform.position.x) - radius - opponent.radius;
-        if (ras < 0 && !trigger && !opponent.trigger)
+        if (ras < 0 && !trigger && !opponent.trigger && inState != InState.HU && inState != InState.AHU)
         {
             if (transform.position.x < opponent.transform.position.x)
-                velocity.x += ras / Time.deltaTime * .2f;
+                velocity.x = ras / Time.deltaTime * .75f;
             if (transform.position.x > opponent.transform.position.x)
-                velocity.x -= ras / Time.deltaTime * .2f;
+                velocity.x = -ras / Time.deltaTime * .75f;
+            cc.Move(velocity * Time.deltaTime);
+            velocity.x = 0;
         }
-        if (stiff <= 0 && !animator.IsInTransition(0) && inState == InState.HU)
+        if (stiff <= 0 && offGround <= 0 && inState == InState.HU)
             NextState("5");
         if (stiff > 0)
             stiff -= 60 * Time.deltaTime;
         if (offGround > 0)
             offGround -= 60 * Time.deltaTime;
-        cc.Move(velocity * Time.deltaTime);
+        cc.Move((velocity + new Vector2(dirDis, 0)) * Time.deltaTime);
         transform.position = cc.transform.position;
         cc.transform.localPosition *= 0;
     }
@@ -205,21 +220,6 @@ public class ActionSystem : MonoBehaviour
         animator.CrossFadeInFixedTime(animState, 0);
     }
 
-    public void Jump(float force)
-    {
-        velocity.y = force;
-    }
-
-    public void push(float force)
-    {
-        velocity.x = force;
-    }
-
-    public void SetDown(int set)
-    {
-        downed = set == 0 ? false : true;
-    }
-
     public void Hited(string oppoCol)
     {
         if (oppoCol == "HurtBox" && !hited && !follow)
@@ -233,9 +233,10 @@ public class ActionSystem : MonoBehaviour
 
     public IEnumerator Hurted(float _dmg, float _staDmg, float _hitSDmg, float _fixRate, float _stiffDur, float _dStiffDur, float _hitH, float _hitD, float _aHitH, float _aHitD, bool _hitHigh)
     {
-        hurted = true;
         bool isAir = inState == InState.A || inState == InState.AHU || inState == InState.DOWN ? true : false;
         offGround = 2;
+        if (_hitH == 0)
+            stiff = _stiffDur;
         if (_hitH != 0 || isAir) //是打飛招式或在空中
             if (_hitH < 0)
                 NextState("HITD");
@@ -254,13 +255,15 @@ public class ActionSystem : MonoBehaviour
                 NextState("HUB");
         }
         Time.timeScale = .01f;
-        if (_hitH == 0)
-            stiff = _stiffDur;
         yield return new WaitForSecondsRealtime(.1f);
         if (isAir)
-            velocity = new Vector2(_aHitD * (opponent.transform.position.x - transform.position.x < 0 ? 1 : -1), _aHitH);
+        {
+            velocity = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
+        }
         else
-            velocity = new Vector2(_hitD * (opponent.transform.position.x - transform.position.x < 0 ? 1 : -1), _hitH);
+        {
+            velocity = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD : _hitD, _hitH);
+        }
         Time.timeScale = 1;
     }
 
@@ -272,7 +275,7 @@ public class ActionSystem : MonoBehaviour
 
     void Start()
     {
-        gravity = .2f;
+        gravity = .5f;
         pc = transform.parent.GetComponent<PlayerController>();
         cc = GetComponentInChildren<CharacterController>();
         animator = GetComponentInChildren<Animator>();
@@ -285,11 +288,9 @@ public class ActionSystem : MonoBehaviour
         transform.localScale = new Vector3(direction, 1, 1);
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (!hitRange)
-            hited = false;
-        ActionEvent();
         ComMessage();
+        ActionEvent();
     }
 }

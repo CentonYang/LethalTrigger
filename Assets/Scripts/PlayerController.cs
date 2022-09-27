@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 120;
         Time.timeScale = 1;
         id = FindObjectOfType<InputDisplay>();
         //moveList = GetComponentInChildren<MoveList>();
@@ -41,13 +42,13 @@ public class PlayerController : MonoBehaviour
         //if (moveString.Length > 1)
         //{
         moveTimer[0]++;
-        if (moveTimer[0] > 20)
+        if (moveTimer[0] > moveTimer[1])
         {
             if (moveString.Length > 1)
                 moveString = moveString[moveString.Length - 1].ToString();
             moveTimer[0] = 0;
+            //comString = ConvertMoves(moveString, comString);
         }
-        //comString = ConvertMoves(moveString, comString);
         //}
     }
 
@@ -115,6 +116,8 @@ public class PlayerController : MonoBehaviour
                     {
                         movesName.Add(movesName[i]);
                         movesName.RemoveAt(i);
+                        if (movesName[i].Split(spliter)[0].Length > 1)
+                            moveString = moveString[moveString.Length - 1].ToString();
                         return movesName[movesName.Count - 1].Split(spliter)[0];
                     }
         return cto;
