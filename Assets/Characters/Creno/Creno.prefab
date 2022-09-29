@@ -1614,6 +1614,7 @@ GameObject:
   - component: {fileID: 3848901961095113692}
   - component: {fileID: 6426964817012265881}
   - component: {fileID: 3538226632255913463}
+  - component: {fileID: 2310454425579235717}
   - component: {fileID: 6106371776833607259}
   m_Layer: 0
   m_Name: Creno
@@ -1955,9 +1956,9 @@ MonoBehaviour:
   staDmg: 0
   hitStaDmg: 0
   staLost: 0
-  blzDmg: 0
-  hitBlzDmg: 0
-  blzLost: 0
+  btrDmg: 0
+  hitBtrDmg: 0
+  btrLost: 0
   fixRate: 0
   stiffDuration: 0
   defStiffDuration: 0
@@ -1968,6 +1969,22 @@ MonoBehaviour:
   follow: 0
   hitPoint: 0
   inState: 0
+--- !u!114 &2310454425579235717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2222569306515119335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25da59bda1c2dea4f979d141088a6fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+  - name: FR
+    staLost: 75
+    btrLost: 0
 --- !u!50 &6106371776833607259
 Rigidbody2D:
   serializedVersion: 4

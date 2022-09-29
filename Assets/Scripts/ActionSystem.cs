@@ -39,9 +39,9 @@ public class ActionSystem : MonoBehaviour
     [Tooltip("¨¾¦í®ð¤O­È¶Ë®`")] public float staDmg;
     [Tooltip("À»¤¤®ð¤O­È¶Ë®`")] public float hitStaDmg;
     [Tooltip("¦Û¨­®ð¤O­È·l¯Ó")] public float staLost;
-    [Tooltip("¨¾¦í¿U´¹¼Ñ¶Ë®`")] public float blzDmg;
-    [Tooltip("À»¤¤¿U´¹¼Ñ¶Ë®`")] public float hitBlzDmg;
-    [Tooltip("¦Û¨­¿U´¹¼Ñ·l¯Ó")] public float blzLost;
+    [Tooltip("¨¾¦í¿U´¹¼Ñ¶Ë®`")] public float btrDmg;
+    [Tooltip("À»¤¤¿U´¹¼Ñ¶Ë®`")] public float hitBtrDmg;
+    [Tooltip("¦Û¨­¿U´¹¼Ñ·l¯Ó")] public float btrLost;
     [Tooltip("¶Ë®`­×¥¿")] public float fixRate;
     [Tooltip("»øª½®É¶¡")] public float stiffDuration;
     [Tooltip("¨¾¿m»øª½®É¶¡")] public float defStiffDuration;
@@ -61,7 +61,7 @@ public class ActionSystem : MonoBehaviour
         direction = pc.diraction;
         string mStr = pc.moveString, cStr = pc.comString, aStr = pc.actionKey.ToString();
         string getName;
-        if (cancelList != null && (cancel || (hitCancel && hited)))
+        if (cancelList != null)
             foreach (string item in cancelList)
             {
                 getName = SearchAction(item, mStr, cStr, aStr);
@@ -73,11 +73,11 @@ public class ActionSystem : MonoBehaviour
                 {
                     cancelList.Clear(); cancelOtherList.Clear();
                     pc.actionKey = '\0';
-                    animator.CrossFadeInFixedTime(getName, 0);
+                    actionMsg = getName;
                     return;
                 }
             }
-        if (cancelOtherList != null && (cancel || (hitCancel && hited)))
+        if (cancelOtherList != null)
             for (int i = 1; i < cancelOtherList.Count; i++)
             {
                 getName = SearchAction(cancelOtherList[i], mStr, cStr, aStr);
@@ -88,9 +88,10 @@ public class ActionSystem : MonoBehaviour
                 if (getName != null)
                 {
                     cancelList.Clear();
-                    animator.CrossFadeInFixedTime(cancelOtherList[0], 0);
                     pc.actionKey = '\0';
-                    cancelOtherList.Clear(); return;
+                    actionMsg = cancelOtherList[0];
+                    cancelOtherList.Clear();
+                    return;
                 }
             }
     }
@@ -156,6 +157,23 @@ public class ActionSystem : MonoBehaviour
         else hurted = false;
         velocity.y -= gravity;
         velocity.x += velocity.x < 0 ? .05f : velocity.x > 0 ? -.05f : 0;
+        if (actionMsg != null && (cancel || (hitCancel && hited)))
+        {
+            foreach (MoveList.Data item in moveList.data)
+            {
+                if (item.name == actionMsg && item.staLost > 0)
+                    if (!staCD)
+                        sta.x -= item.staLost;
+                    else actionMsg = null;
+                if (item.name == actionMsg && item.btrLost > 0)
+                    if (btr.x - item.btrLost >= 0)
+                        btr.x -= item.btrLost;
+                    else actionMsg = actionMsg + "_NB";
+            }
+            if (actionMsg != null)
+                animator.CrossFadeInFixedTime(actionMsg, 0);
+            actionMsg = null;
+        }
         if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(direction, 1, 1);
         switch (moveMode)
         {
@@ -202,21 +220,32 @@ public class ActionSystem : MonoBehaviour
         cc.transform.localPosition *= 0;
     }
 
+    public void ValueEvent()
+    {
+        if (hp.x <= 0) hp.x = 0;
+        if (sta.x <= 0) { staCD = true; sta.x = 0; }
+        if (sta.x >= sta.y) { staCD = false; sta.x = sta.y; }
+        if (sta.x < sta.y && inState != InState.D && inState != InState.G) sta.x += Time.deltaTime * 50;
+    }
+
     public void Canceler(string canceler)
     {
         cancelList.Clear();
+        actionMsg = null;
         cancelList.AddRange(canceler.Split(','));
     }
 
     public void CancelOther(string canceler)
     {
         cancelOtherList.Clear();
+        actionMsg = null;
         cancelOtherList.AddRange(canceler.Split(','));
     }
 
     public void NextState(string animState)
     {
         cancelList.Clear(); cancelOtherList.Clear();
+        actionMsg = null;
         animator.CrossFadeInFixedTime(animState, 0);
     }
 
@@ -257,13 +286,9 @@ public class ActionSystem : MonoBehaviour
         Time.timeScale = .01f;
         yield return new WaitForSecondsRealtime(.1f);
         if (isAir)
-        {
             velocity = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
-        }
         else
-        {
             velocity = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD : _hitD, _hitH);
-        }
         Time.timeScale = 1;
     }
 
@@ -292,5 +317,6 @@ public class ActionSystem : MonoBehaviour
     {
         ComMessage();
         ActionEvent();
+        ValueEvent();
     }
 }

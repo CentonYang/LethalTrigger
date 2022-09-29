@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleUI : MonoBehaviour
 {
@@ -26,7 +27,9 @@ public class BattleUI : MonoBehaviour
         p1.hpLose.anchoredPosition = new Vector2(Mathf.Lerp(p1.hpLose.anchoredPosition.x, p1.hp.anchoredPosition.x, .05f), p1.hpLose.anchoredPosition.y);
         p2.hp.anchoredPosition = new Vector2(Mathf.Lerp(p2.hpV.x, p2.hpV.y, pc2.hp.x / pc2.hp.y), p2.hp.anchoredPosition.y);
         p2.hpLose.anchoredPosition = new Vector2(Mathf.Lerp(p2.hpLose.anchoredPosition.x, p2.hp.anchoredPosition.x, .05f), p2.hpLose.anchoredPosition.y);
+        p1.sta.anchoredPosition = new Vector2(Mathf.Lerp(p1.staV.x, p1.staV.y, pc1.sta.x / pc1.sta.y), p1.sta.anchoredPosition.y);
         p2.sta.anchoredPosition = new Vector2(Mathf.Lerp(p2.staV.x, p2.staV.y, pc2.sta.x / pc2.sta.y), p2.sta.anchoredPosition.y);
-        p2.sta.anchoredPosition = new Vector2(Mathf.Lerp(p2.staV.x, p2.staV.y, pc2.sta.x / pc2.sta.y), p2.sta.anchoredPosition.y);
+        p1.sta.GetComponent<Image>().color = pc1.staCD ? Color.red : Color.white;
+        p2.sta.GetComponent<Image>().color = pc2.staCD ? Color.red : Color.white;
     }
 }

@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             moveTimer[0] = 0;
             float angle = Mathf.Atan2(ctx.ReadValue<Vector2>().y, ctx.ReadValue<Vector2>().x) * Mathf.Rad2Deg;
-            movesNum = ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y == 0 ? 5 :
+            int num = ctx.ReadValue<Vector2>().x == 0 && ctx.ReadValue<Vector2>().y == 0 ? 5 :
                 InRange(-22.5f, 22.5f, angle) ? 6 :
                 InRange(22.5f, 67.5f, angle) ? 9 :
                 InRange(67.5f, 112.5f, angle) ? 8 :
@@ -66,7 +66,11 @@ public class PlayerController : MonoBehaviour
                 InRange(-157.5f, -112.5f, angle) ? 1 :
                 InRange(-112.5f, -67.5f, angle) ? 2 :
                 InRange(-67.5f, -22.5f, angle) ? 3 : 4;
-            id.GetInput(movesNum.ToString()[0]);
+            if (num != movesNum)
+            {
+                movesNum = num;
+                id.GetInput(movesNum.ToString()[0]);
+            }
             if (moveString.Length == 0 || moveString[moveString.Length - 1].ToString() != movesNum.ToString())
             {
                 switch (movesNum)
