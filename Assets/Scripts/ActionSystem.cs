@@ -65,9 +65,7 @@ public class ActionSystem : MonoBehaviour
             foreach (string item in cancelList)
             {
                 getName = SearchAction(item, mStr, cStr, aStr);
-                if (pc.comString.Length > 1)
-                    pc.comString = pc.comString.Substring(1);
-                else
+                if (pc.comString.Length <= 1)
                     pc.comString = pc.ConvertMoves(pc.movesNum.ToString(), pc.comString);
                 if (getName != null)
                 {
@@ -81,9 +79,7 @@ public class ActionSystem : MonoBehaviour
             for (int i = 1; i < cancelOtherList.Count; i++)
             {
                 getName = SearchAction(cancelOtherList[i], mStr, cStr, aStr);
-                if (pc.comString.Length > 1)
-                    pc.comString = pc.comString.Substring(1);
-                else
+                if (pc.comString.Length <= 1)
                     pc.comString = pc.ConvertMoves(pc.movesNum.ToString(), pc.comString);
                 if (getName != null)
                 {
@@ -171,8 +167,12 @@ public class ActionSystem : MonoBehaviour
                     else actionMsg = actionMsg + "_NB";
             }
             if (actionMsg != null)
+            {
                 animator.CrossFadeInFixedTime(actionMsg, 0);
-            actionMsg = null;
+                if (pc.comString.Length <= 1 || (actionMsg != null && actionMsg.Length > 1))
+                    pc.comString = pc.ConvertMoves(pc.movesNum.ToString(), pc.comString);
+                actionMsg = null;
+            }
         }
         if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(direction, 1, 1);
         switch (moveMode)
@@ -230,22 +230,19 @@ public class ActionSystem : MonoBehaviour
 
     public void Canceler(string canceler)
     {
-        cancelList.Clear();
-        actionMsg = null;
+        cancelList.Clear(); actionMsg = null;
         cancelList.AddRange(canceler.Split(','));
     }
 
     public void CancelOther(string canceler)
     {
-        cancelOtherList.Clear();
-        actionMsg = null;
+        cancelOtherList.Clear(); actionMsg = null;
         cancelOtherList.AddRange(canceler.Split(','));
     }
 
     public void NextState(string animState)
     {
-        cancelList.Clear(); cancelOtherList.Clear();
-        actionMsg = null;
+        cancelList.Clear(); cancelOtherList.Clear(); actionMsg = null;
         animator.CrossFadeInFixedTime(animState, 0);
     }
 

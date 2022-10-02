@@ -7,6 +7,7 @@ public class BattleUI : MonoBehaviour
 {
     public ActionSystem pc1, pc2;
     public PlayerUI p1, p2;
+    public Sprite[] stab1, stab2;
 
     [System.Serializable]
     public struct PlayerUI
@@ -29,7 +30,7 @@ public class BattleUI : MonoBehaviour
         p2.hpLose.anchoredPosition = new Vector2(Mathf.Lerp(p2.hpLose.anchoredPosition.x, p2.hp.anchoredPosition.x, .05f), p2.hpLose.anchoredPosition.y);
         p1.sta.anchoredPosition = new Vector2(Mathf.Lerp(p1.staV.x, p1.staV.y, pc1.sta.x / pc1.sta.y), p1.sta.anchoredPosition.y);
         p2.sta.anchoredPosition = new Vector2(Mathf.Lerp(p2.staV.x, p2.staV.y, pc2.sta.x / pc2.sta.y), p2.sta.anchoredPosition.y);
-        p1.sta.GetComponent<Image>().color = pc1.staCD ? Color.red : Color.white;
-        p2.sta.GetComponent<Image>().color = pc2.staCD ? Color.red : Color.white;
+        p1.sta.GetComponent<Image>().sprite = pc1.staCD ? stab1[1] : stab1[0];
+        p2.sta.GetComponent<Image>().sprite = pc2.staCD ? stab2[1] : stab2[0];
     }
 }
