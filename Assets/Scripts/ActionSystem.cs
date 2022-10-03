@@ -13,7 +13,7 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public string actionMsg;
     [HideInInspector] public int direction;
     [HideInInspector] public bool hited, hurted, downed;
-    [HideInInspector] public float stiff, offGround, gravity, pushDis, dirDis;
+    [HideInInspector] public float stiff, offGround, gravity, pushDis, dirDis, combo;
     public Vector2 velocity, hp, sta, btr, skill;
     public GameObject hitboxes;
     public Transform hitTrans;
@@ -146,8 +146,8 @@ public class ActionSystem : MonoBehaviour
                 }
                 else NextState("WAKE");
         }
-        if (inState == InState.WAKE)
-            downed = false;
+        if (inState == InState.WAKE || inState == InState.N)
+        { downed = false; opponent.combo = 0; }
         if (inState == InState.HU || inState == InState.AHU)
             hurted = true;
         else hurted = false;
@@ -280,6 +280,7 @@ public class ActionSystem : MonoBehaviour
             else //­I¹ï¹ï¤â
                 NextState("HUB");
         }
+        opponent.combo++;
         Time.timeScale = .01f;
         yield return new WaitForSecondsRealtime(.1f);
         if (isAir)

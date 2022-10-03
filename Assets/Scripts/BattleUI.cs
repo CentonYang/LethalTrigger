@@ -13,6 +13,7 @@ public class BattleUI : MonoBehaviour
     public struct PlayerUI
     {
         public RectTransform hp, hpLose, sta, btr, skill;
+        public Text combo;
         public Vector2 hpV, staV, btrV, skillV;
     }
 
@@ -32,5 +33,11 @@ public class BattleUI : MonoBehaviour
         p2.sta.anchoredPosition = new Vector2(Mathf.Lerp(p2.staV.x, p2.staV.y, pc2.sta.x / pc2.sta.y), p2.sta.anchoredPosition.y);
         p1.sta.GetComponent<Image>().sprite = pc1.staCD ? stab1[1] : stab1[0];
         p2.sta.GetComponent<Image>().sprite = pc2.staCD ? stab2[1] : stab2[0];
+        if (pc1.combo > 1 && pc1.combo < 100 && p1.combo.text != pc1.combo.ToString())
+        { p1.combo.GetComponent<Animator>().Play("FadeIn", 0, 0); p1.combo.text = pc1.combo.ToString(); }
+        if (pc1.combo < 2 && p1.combo.text != pc1.combo.ToString() && p1.combo.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("FadeIn")) p1.combo.GetComponent<Animator>().Play("FadeOut");
+        if (pc2.combo > 1 && pc2.combo < 100 && p2.combo.text != pc2.combo.ToString())
+        { p2.combo.GetComponent<Animator>().Play("FadeIn", 0, 0); p2.combo.text = pc2.combo.ToString(); }
+        if (pc2.combo < 2 && p2.combo.text != pc2.combo.ToString() && p2.combo.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("FadeIn")) p2.combo.GetComponent<Animator>().Play("FadeOut");
     }
 }
