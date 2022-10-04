@@ -8,15 +8,15 @@ public class InputDisplay : MonoBehaviour
 {
     public Sprite cross, button;
     public List<Image> inputBgs;
-    public PlayerController player1;
     char[] mChar = { ' ', ' ' }, aChar = { ' ', ' ' };
     public char inputChar;
     public string[] moveInput = { "", "" };
 
     void Awake()
     {
-        player1 = GameObject.Find("Player1").GetComponent<PlayerController>();
+
     }
+
     void Start()
     {
 

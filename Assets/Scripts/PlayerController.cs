@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Users;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,14 +13,24 @@ public class PlayerController : MonoBehaviour
     public List<string> actionName, actionStep, actionMsg, movesName;
     public GameSystem gameSystem;
     public string moveString, comString;
-    InputDisplay id;
+    public InputDisplay id;
+    PlayerInput pi;
+
 
     void Awake()
     {
-        Application.targetFrameRate = 120;
         Time.timeScale = 1;
-        id = FindObjectOfType<InputDisplay>();
-        //moveList = GetComponentInChildren<MoveList>();
+        if (id == null)
+            id = FindObjectOfType<InputDisplay>();
+        pi = GetComponent<PlayerInput>();
+        pi.user.UnpairDevices();
+        if (InputSystem.devices.Count > 1)
+            if (gameObject.name == "Player1")
+                InputUser.PerformPairingWithDevice(InputSystem.devices[InputSystem.devices.Count - 2], pi.user);
+            else
+                InputUser.PerformPairingWithDevice(InputSystem.devices[InputSystem.devices.Count - 1], pi.user);
+        else if (gameObject.name == "Player1")
+            InputUser.PerformPairingWithDevice(InputSystem.devices[0], pi.user);
     }
 
     void Start()
