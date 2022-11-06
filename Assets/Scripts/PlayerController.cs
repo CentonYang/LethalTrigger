@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public GameSystem gameSystem;
     public string moveString, comString;
     public InputDisplay id;
+    public BattleMenu battleMenu;
     PlayerInput pi;
 
 
@@ -65,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
     public void InputMove(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase != InputActionPhase.Started)
+        if (ctx.phase != InputActionPhase.Started && !battleMenu.gameObject.activeSelf)
         {
             moveTimer[0] = 0;
             float angle = Mathf.Atan2(ctx.ReadValue<Vector2>().y, ctx.ReadValue<Vector2>().x) * Mathf.Rad2Deg;
@@ -99,7 +100,7 @@ public class PlayerController : MonoBehaviour
 
     public void InputAction(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase != InputActionPhase.Performed)
+        if (ctx.phase != InputActionPhase.Performed && !battleMenu.gameObject.activeSelf)
         {
             actionKey =
                 ctx.action.name + ctx.ReadValue<float>() == "M_cls1" ? 'M' :
@@ -111,9 +112,12 @@ public class PlayerController : MonoBehaviour
                 ctx.action.name + ctx.ReadValue<float>() == "R_cls1" ? 'R' : 'r';
             moveString = movesNum.ToString();
             id.GetInput(actionKey);
+            if (ctx.action.name == "Start")
+            {
+                battleMenu.layer = 0; battleMenu.changeLayer = true;
+                battleMenu.gameObject.SetActive(true);
+            }
         }
-        if (ctx.action.name == "Start")
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     bool InRange(float min, float max, float v)

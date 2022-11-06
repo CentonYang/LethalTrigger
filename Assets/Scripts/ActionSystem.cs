@@ -10,11 +10,13 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public ActionSystem opponent;
     [HideInInspector] public MoveList moveList;
     [HideInInspector] public Animator animator;
-    [HideInInspector] public string actionMsg;
+    [HideInInspector] public AudioSource audioSource;
+    [HideInInspector] public string actionMsg, acceptMsg;
     [HideInInspector] public int direction;
     [HideInInspector] public bool hited, hurted, downed;
     [HideInInspector] public float stiff, offGround, gravity, pushDis, dirDis, combo;
-    public Vector2 velocity, hp, sta, btr, skill;
+    [HideInInspector] public Vector2 velocity, hurtVel;
+    public Vector2 hp, sta, btr, skill;
     public GameObject hitboxes;
     public Transform hitTrans;
     public GameObject hitVFX;
@@ -54,7 +56,7 @@ public class ActionSystem : MonoBehaviour
     [Tooltip("攻擊打點高低:高/低")] public HitPoint hitPoint;
     public enum InState { N, FF, A, AL, D, G, HU, AHU, DOWN, WAKE };
     [Tooltip("狀態: 地面/ 衝刺/ 空中/ 落地/ 防禦/ 防住/ 受傷/ 空中受傷/ 倒地/ 起身")] public InState inState;
-
+    [Tooltip("音效列表")] public List<AudioClip> audios;
 
     public void ComMessage()
     {
@@ -125,35 +127,7 @@ public class ActionSystem : MonoBehaviour
             }
             else dirDis = 0;
         }
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITF") && velocity.y < 0 && offGround <= 0)
-            NextState("HITD");
-        if (cc.isGrounded && velocity.y < 0)
-        {
-            if (inState != InState.A && inState != InState.AHU) velocity.y = 0;
-            if (inState == InState.A && (moveMode == MoveMode.move || moveMode == MoveMode.none))
-                NextState("AL");
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITD") && offGround <= 0)
-                if (!downed)
-                {
-                    downed = true;
-                    if (velocity.y < -20)
-                    {
-                        Time.timeScale = .01f; StartCoroutine(TimeStop(.1f));
-                        velocity.y *= -.4f; NextState("HITF");
-                    }
-                    else
-                        NextState("DOWN");
-                }
-                else NextState("WAKE");
-        }
-        if (inState == InState.WAKE || inState == InState.N)
-        { downed = false; opponent.combo = 0; }
-        if (inState == InState.HU || inState == InState.AHU || inState == InState.G)
-            hurted = true;
-        else hurted = false;
-        velocity.y -= gravity;
-        velocity.x += velocity.x < 0 ? .05f : velocity.x > 0 ? -.05f : 0;
-        if (actionMsg != null && (cancel || (hitCancel && hited)) && inState != InState.HU && inState != InState.AHU && inState != InState.G)
+        if (actionMsg != null && (cancel || (hitCancel && hited)) && acceptMsg == null)
         {
             foreach (MoveList.Data item in moveList.data)
             {
@@ -174,6 +148,50 @@ public class ActionSystem : MonoBehaviour
                 actionMsg = null;
             }
         }
+        if (acceptMsg != null)
+        {
+            if (inState == InState.WAKE) acceptMsg = null;
+            else NextState(acceptMsg);
+            acceptMsg = null;
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITF") && velocity.y < 0 && offGround <= 0)
+            NextState("HITD");
+        if (cc.isGrounded && velocity.y < 0)
+        {
+            if (inState != InState.A && inState != InState.AHU) velocity.y = 0;
+            if (inState == InState.A && (moveMode == MoveMode.move || moveMode == MoveMode.none))
+                NextState("AL");
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITD") && offGround <= 0)
+                if (!downed)
+                {
+                    downed = true;
+                    if (velocity.y < -20)
+                    {
+                        audioSource.clip = audios[5]; audioSource.Play();
+                        Time.timeScale = .01f; StartCoroutine(DownBreak(.1f));
+                    }
+                    else
+                        NextState("DOWN");
+                }
+                else NextState("WAKE");
+        }
+        if (inState == InState.HU || inState == InState.AHU || inState == InState.G)
+            hurted = true;
+        else hurted = false;
+        velocity.y -= gravity;
+        velocity.x += velocity.x < 0 ? .05f : velocity.x > 0 ? -.05f : 0;
+        if (stiff <= 0 && offGround <= 0)
+            if (inState == InState.HU) NextState("5");
+            else if (inState == InState.G) NextState("D");
+        if (stiff > 0)
+            stiff -= 60 * Time.fixedDeltaTime;
+        if (offGround > 0)
+        {
+            velocity = hurtVel;
+            offGround -= 60 * Time.fixedDeltaTime;
+        }
+        if (inState == InState.WAKE || inState == InState.N && offGround <= 0)
+        { downed = false; opponent.combo = 0; }
         if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(direction, 1, 1);
         switch (moveMode)
         {
@@ -193,30 +211,23 @@ public class ActionSystem : MonoBehaviour
         if (dis > 0)
         {
             if (transform.position.x > opponent.transform.position.x && velocity.x > 0)
-                velocity.x = -dis / Time.deltaTime;
+                velocity.x = -dis / Time.fixedDeltaTime;
             if (transform.position.x < opponent.transform.position.x && velocity.x < 0)
-                velocity.x = dis / Time.deltaTime;
-            cc.Move(velocity * Time.deltaTime);
+                velocity.x = dis / Time.fixedDeltaTime;
+            cc.Move(velocity * Time.fixedDeltaTime);
             velocity.x = 0;
         }
         float ras = Mathf.Abs(opponent.transform.position.x - transform.position.x) - radius - opponent.radius;
         if (ras < 0 && !trigger && !opponent.trigger && inState != InState.HU && inState != InState.AHU)
         {
             if (transform.position.x < opponent.transform.position.x)
-                velocity.x = ras / Time.deltaTime * .75f;
+                velocity.x = ras / Time.fixedDeltaTime * .75f;
             if (transform.position.x > opponent.transform.position.x)
-                velocity.x = -ras / Time.deltaTime * .75f;
-            cc.Move(velocity * Time.deltaTime);
+                velocity.x = -ras / Time.fixedDeltaTime * .75f;
+            cc.Move(velocity * Time.fixedDeltaTime);
             velocity.x = 0;
         }
-        if (stiff <= 0 && offGround <= 0)
-            if (inState == InState.HU) NextState("5");
-            else if (inState == InState.G) NextState("D");
-        if (stiff > 0)
-            stiff -= 60 * Time.deltaTime;
-        if (offGround > 0)
-            offGround -= 60 * Time.deltaTime;
-        cc.Move((velocity + new Vector2(dirDis, 0)) * Time.deltaTime);
+        cc.Move((velocity + new Vector2(dirDis, 0)) * Time.fixedDeltaTime);
         transform.position = cc.transform.position;
         cc.transform.localPosition *= 0;
     }
@@ -226,7 +237,7 @@ public class ActionSystem : MonoBehaviour
         if (hp.x <= 0) hp.x = 0;
         if (sta.x <= 0) { staCD = true; sta.x = 0; }
         if (sta.x >= sta.y) { staCD = false; sta.x = sta.y; }
-        if (sta.x < sta.y && inState != InState.D && inState != InState.G) sta.x += Time.deltaTime * 50;
+        if (sta.x < sta.y && inState != InState.D && inState != InState.G) sta.x += Time.fixedDeltaTime * 50;
     }
 
     public void Canceler(string canceler)
@@ -244,17 +255,32 @@ public class ActionSystem : MonoBehaviour
     public void NextState(string animState)
     {
         cancelList.Clear(); cancelOtherList.Clear(); actionMsg = null;
-        animator.CrossFadeInFixedTime(animState, 0);
+        animator.Play(animState, -1, 0);
     }
 
     public void Hited(string oppoCol)
     {
-        if (oppoCol == "HurtBox" && !hited && !follow)
+        if (oppoCol == "HurtBox" && !hited && !follow && opponent.inState != InState.WAKE)
         {
             hited = true;
             GameObject hitVFXObj = Instantiate(hitVFX, hitTrans.position, hitTrans.rotation);
             hitVFXObj.transform.localScale = transform.localScale;
             StartCoroutine(opponent.Hurted(dmg, staDmg, hitStaDmg, fixRate, stiffDuration, defStiffDuration, hitHeight, hitDistance, airHitHeight, airHitDistance, hitPoint == 0 ? true : false));
+        }
+    }
+
+    public void AudioPlay(string type) //打:h/砍:s
+    {
+        switch (type)
+        {
+            case "h":
+                audioSource.clip = audios[0]; opponent.audioSource.clip = audios[2]; audioSource.Play(); break;
+            case "hn":
+                opponent.audioSource.clip = audios[2]; break;
+            case "s":
+                audioSource.clip = audios[1]; opponent.audioSource.clip = audios[3]; audioSource.Play(); break;
+            case "sn":
+                opponent.audioSource.clip = audios[3]; break;
         }
     }
 
@@ -265,7 +291,9 @@ public class ActionSystem : MonoBehaviour
         if ((inState == InState.D || inState == InState.G) && (opponent.transform.position.x - transform.position.x) * direction > 0)
         {
             transform.localScale = new Vector3(direction, 1, 1);
-            stiff = _dStiffDur; NextState("G");
+            stiff = _dStiffDur; acceptMsg = "G";
+            audioSource.clip = audios[4]; audioSource.Play();
+            hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD * .75f : _hitD * .75f, 0);
         }
         else
         {
@@ -273,30 +301,37 @@ public class ActionSystem : MonoBehaviour
                 stiff = _stiffDur;
             if (_hitH != 0 || isAir) //是打飛招式或在空中
                 if (_hitH < 0)
-                    NextState("HITD");
+                    acceptMsg = "HITD";
                 else
-                    NextState("HITF");
+                    acceptMsg = "HITF";
             else if (_hitHigh) //是打點高
                 if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //面對對手
-                    NextState("HUB");
+                    acceptMsg = "HUB";
                 else //背對對手
-                    NextState("HUF");
+                    acceptMsg = "HUF";
             else //是打點低
             {
                 if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //面對對手
-                    NextState("HUF");
+                    acceptMsg = "HUF";
                 else //背對對手
-                    NextState("HUB");
+                    acceptMsg = "HUB";
             }
-            opponent.combo++;
+            audioSource.Play(); opponent.combo++;
+            if (isAir)
+                hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
+            else
+                hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD : _hitD, _hitH);
         }
         Time.timeScale = .01f;
         yield return new WaitForSecondsRealtime(.1f);
-        if (isAir)
-            velocity = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
-        else
-            velocity = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD * (inState == InState.G ? .75f : 1) : _hitD * (inState == InState.G ? .75f : 1), _hitH);
         Time.timeScale = 1;
+    }
+
+    public IEnumerator DownBreak(float timeLong)
+    {
+        yield return new WaitForSecondsRealtime(timeLong);
+        Time.timeScale = 1;
+        velocity.y *= -.4f; NextState("HITF");
     }
 
     public IEnumerator TimeStop(float timeLong)
@@ -313,12 +348,13 @@ public class ActionSystem : MonoBehaviour
         cc = GetComponentInChildren<CharacterController>();
         animator = GetComponentInChildren<Animator>();
         moveList = GetComponent<MoveList>();
+        audioSource = GetComponentInChildren<AudioSource>();
         GameObject.Find("TwoCharCam").GetComponent<CinemachineTargetGroup>().AddMember(transform, 1, 0);
         if (pc.name == "Player1")
             opponent = GameObject.Find("Player2").GetComponentInChildren<ActionSystem>();
         else if (pc.name == "Player2")
             opponent = GameObject.Find("Player1").GetComponentInChildren<ActionSystem>();
-        transform.localScale = new Vector3(direction, 1, 1);
+        //transform.localScale = new Vector3(direction, 1, 1);
     }
 
     void FixedUpdate()
