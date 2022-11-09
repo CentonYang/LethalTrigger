@@ -323,7 +323,7 @@ public class ActionSystem : MonoBehaviour
                 hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD : _hitD, _hitH);
         }
         Time.timeScale = .01f;
-        yield return new WaitForSecondsRealtime(.1f);
+        yield return new WaitForSecondsRealtime(0f);
         Time.timeScale = 1;
     }
 
