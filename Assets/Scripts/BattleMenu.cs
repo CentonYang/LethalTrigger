@@ -116,11 +116,11 @@ public class BattleMenu : MonoBehaviour
         {
             if (item.title == name)
                 if (language == 0)
-                    return item.zh.Split('$')[split];
+                    return item.zh.Split('§')[split];
                 else if (language == 1)
-                    return item.en.Split('$')[split];
+                    return item.en.Split('§')[split];
                 else if (language == 2)
-                    return item.jp.Split('$')[split];
+                    return item.jp.Split('§')[split];
         }
         return null;
     }

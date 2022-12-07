@@ -22,41 +22,41 @@ public class ActionSystem : MonoBehaviour
     public GameObject hitVFX;
 
     public enum MoveMode { move, soar, all, none };
-    [Tooltip("²¾°Ê¼Ò¦¡:²¾°Ê/º}¯B/¥ş³¡/µLµø")] public MoveMode moveMode;
+    [Tooltip("ç§»å‹•æ¨¡å¼:ç§»å‹•/æ¼‚æµ®/å…¨éƒ¨/ç„¡è¦–")] public MoveMode moveMode;
     public enum DirectionMode { noTurn_noCtrl, noTurn_ctrl, turn_ctrl }
-    [Tooltip("Âà¨­»P¤è¦V±±¨î:¤£Âà¨­¥B¤£±±¨î/¤£Âà¨­¦ı±±¨î/Âà¨­¨Ã±±¨î")] public DirectionMode drtMode;
-    [Tooltip("¥i¨ú®ø°Ê§@")] public bool cancel;
-    [Tooltip("¥´À»ªø«×")] public bool hitRange;
-    [Tooltip("À»¤¤«á¥i¨ú®ø°Ê§@")] public bool hitCancel;
-    [Tooltip("¨ú®øªº°Ê§@")] public List<string> cancelList;
-    [Tooltip("¨ú®ø¦ı¥H²Ä¤@­Ó°Ê§@")] public List<string> cancelOtherList;
-    [Tooltip("¯BªÅ°ª«×")] public float soarHeight;
-    [Tooltip("²¾°Ê³t«×")] public float moveSpeed;
-    [Tooltip("¨¤¦â¥b®|")] public float radius;
-    [Tooltip("¨¤¦â¬ï¹L")] public bool trigger;
-    [Tooltip("®ğ¤O­È§N«o¤¤")] public bool staCD;
-    [Tooltip("¨Ï¥Î®É¶¡ÁY©ñ")] public bool timeScale;
-    [Tooltip("®É¶¡ÁY©ñ²v")] public float timeScaleRate;
-    [Tooltip("§ğÀ»¶Ë®`")] public float dmg;
-    [Tooltip("¨¾¦í®ğ¤O­È¶Ë®`")] public float staDmg;
-    [Tooltip("À»¤¤®ğ¤O­È¶Ë®`")] public float hitStaDmg;
-    [Tooltip("¦Û¨­®ğ¤O­È·l¯Ó")] public float staLost;
-    [Tooltip("¨¾¦í¿U´¹¼Ñ¶Ë®`")] public float btrDmg;
-    [Tooltip("À»¤¤¿U´¹¼Ñ¶Ë®`")] public float hitBtrDmg;
-    [Tooltip("¦Û¨­¿U´¹¼Ñ·l¯Ó")] public float btrLost;
-    [Tooltip("¶Ë®`­×¥¿")] public float fixRate;
-    [Tooltip("»øª½®É¶¡")] public float stiffDuration;
-    [Tooltip("¨¾¿m»øª½®É¶¡")] public float defStiffDuration;
-    [Tooltip("À»­¸°ª«×")] public float hitHeight;
-    [Tooltip("À»°h¶ZÂ÷")] public float hitDistance;
-    [Tooltip("ªÅ¤¤À»­¸°ª«×")] public float airHitHeight;
-    [Tooltip("ªÅ¤¤À»°h¶ZÂ÷")] public float airHitDistance;
-    [Tooltip("¥N¤J©Û¦¡°Êµe")] public bool follow;
+    [Tooltip("è½‰èº«èˆ‡æ–¹å‘æ§åˆ¶:ä¸è½‰èº«ä¸”ä¸æ§åˆ¶/ä¸è½‰èº«ä½†æ§åˆ¶/è½‰èº«ä¸¦æ§åˆ¶")] public DirectionMode drtMode;
+    [Tooltip("å¯å–æ¶ˆå‹•ä½œ")] public bool cancel;
+    [Tooltip("æ‰“æ“Šé•·åº¦")] public bool hitRange;
+    [Tooltip("æ“Šä¸­å¾Œå¯å–æ¶ˆå‹•ä½œ")] public bool hitCancel;
+    [Tooltip("å–æ¶ˆçš„å‹•ä½œ")] public List<string> cancelList;
+    [Tooltip("å–æ¶ˆä½†ä»¥ç¬¬ä¸€å€‹å‹•ä½œ")] public List<string> cancelOtherList;
+    [Tooltip("æµ®ç©ºé«˜åº¦")] public float soarHeight;
+    [Tooltip("ç§»å‹•é€Ÿåº¦")] public float moveSpeed;
+    [Tooltip("è§’è‰²åŠå¾‘")] public float radius;
+    [Tooltip("è§’è‰²ç©¿é")] public bool trigger;
+    [Tooltip("æ°£åŠ›å€¼å†·å»ä¸­")] public bool staCD;
+    [Tooltip("ä½¿ç”¨æ™‚é–“ç¸®æ”¾")] public bool timeScale;
+    [Tooltip("æ™‚é–“ç¸®æ”¾ç‡")] public float timeScaleRate;
+    [Tooltip("æ”»æ“Šå‚·å®³")] public float dmg;
+    [Tooltip("é˜²ä½æ°£åŠ›å€¼å‚·å®³")] public float staDmg;
+    [Tooltip("æ“Šä¸­æ°£åŠ›å€¼å‚·å®³")] public float hitStaDmg;
+    [Tooltip("è‡ªèº«æ°£åŠ›å€¼æè€—")] public float staLost;
+    [Tooltip("é˜²ä½ç‡ƒæ™¶æ§½å‚·å®³")] public float btrDmg;
+    [Tooltip("æ“Šä¸­ç‡ƒæ™¶æ§½å‚·å®³")] public float hitBtrDmg;
+    [Tooltip("è‡ªèº«ç‡ƒæ™¶æ§½æè€—")] public float btrLost;
+    [Tooltip("å‚·å®³ä¿®æ­£")] public float fixRate;
+    [Tooltip("åƒµç›´æ™‚é–“")] public float stiffDuration;
+    [Tooltip("é˜²ç¦¦åƒµç›´æ™‚é–“")] public float defStiffDuration;
+    [Tooltip("æ“Šé£›é«˜åº¦")] public float hitHeight;
+    [Tooltip("æ“Šé€€è·é›¢")] public float hitDistance;
+    [Tooltip("ç©ºä¸­æ“Šé£›é«˜åº¦")] public float airHitHeight;
+    [Tooltip("ç©ºä¸­æ“Šé€€è·é›¢")] public float airHitDistance;
+    [Tooltip("ä»£å…¥æ‹›å¼å‹•ç•«")] public bool follow;
     public enum HitPoint { high, low };
-    [Tooltip("§ğÀ»¥´ÂI°ª§C:°ª/§C")] public HitPoint hitPoint;
+    [Tooltip("æ”»æ“Šæ‰“é»é«˜ä½:é«˜/ä½")] public HitPoint hitPoint;
     public enum InState { N, FF, A, AL, D, G, HU, AHU, DOWN, WAKE };
-    [Tooltip("ª¬ºA: ¦a­±/ ½Ä¨ë/ ªÅ¤¤/ ¸¨¦a/ ¨¾¿m/ ¨¾¦í/ ¨ü¶Ë/ ªÅ¤¤¨ü¶Ë/ ­Ë¦a/ °_¨­")] public InState inState;
-    [Tooltip("­µ®Ä¦Cªí")] public List<AudioClip> audios;
+    [Tooltip("ç‹€æ…‹: åœ°é¢/ è¡åˆº/ ç©ºä¸­/ è½åœ°/ é˜²ç¦¦/ é˜²ä½/ å—å‚·/ ç©ºä¸­å—å‚·/ å€’åœ°/ èµ·èº«")] public InState inState;
+    [Tooltip("éŸ³æ•ˆåˆ—è¡¨")] public List<AudioClip> audios;
 
     public void ComMessage()
     {
@@ -269,7 +269,7 @@ public class ActionSystem : MonoBehaviour
         }
     }
 
-    public void AudioPlay(string type) //¥´:h/¬å:s
+    public void AudioPlay(string type) //æ‰“:h/ç :s
     {
         switch (type)
         {
@@ -299,21 +299,21 @@ public class ActionSystem : MonoBehaviour
         {
             if (_hitH == 0)
                 stiff = _stiffDur;
-            if (_hitH != 0 || isAir) //¬O¥´­¸©Û¦¡©Î¦bªÅ¤¤
+            if (_hitH != 0 || isAir) //æ˜¯æ‰“é£›æ‹›å¼æˆ–åœ¨ç©ºä¸­
                 if (_hitH < 0)
                     acceptMsg = "HITD";
                 else
                     acceptMsg = "HITF";
-            else if (_hitHigh) //¬O¥´ÂI°ª
-                if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //­±¹ï¹ï¤â
+            else if (_hitHigh) //æ˜¯æ‰“é»é«˜
+                if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //é¢å°å°æ‰‹
                     acceptMsg = "HUB";
-                else //­I¹ï¹ï¤â
+                else //èƒŒå°å°æ‰‹
                     acceptMsg = "HUF";
-            else //¬O¥´ÂI§C
+            else //æ˜¯æ‰“é»ä½
             {
-                if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //­±¹ï¹ï¤â
+                if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //é¢å°å°æ‰‹
                     acceptMsg = "HUF";
-                else //­I¹ï¹ï¤â
+                else //èƒŒå°å°æ‰‹
                     acceptMsg = "HUB";
             }
             audioSource.Play(); opponent.combo++;

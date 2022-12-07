@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
+        
     }
 
     void Update()
@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour
             if (num != movesNum)
             {
                 movesNum = num;
-                print("!");
                 id.GetInput(movesNum.ToString()[0]);
             }
             if (moveString.Length == 0 || moveString[moveString.Length - 1].ToString() != movesNum.ToString())
