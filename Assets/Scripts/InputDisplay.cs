@@ -24,7 +24,6 @@ public class InputDisplay : MonoBehaviour
 
     public void GetInput(char i)
     {
-        print(i);
         if (inputChar != '5')
             moveInput[0] = inputChar.ToString() + moveInput[0];
     }

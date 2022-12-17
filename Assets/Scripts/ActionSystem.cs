@@ -11,10 +11,11 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public MoveList moveList;
     [HideInInspector] public Animator animator;
     [HideInInspector] public AudioSource audioSource;
+    public Sounder sounder;
     [HideInInspector] public string actionMsg, acceptMsg;
     [HideInInspector] public int direction;
-    [HideInInspector] public bool hited, hurted, downed;
-    [HideInInspector] public float stiff, offGround, gravity, pushDis, dirDis, combo;
+    [HideInInspector] public bool hited, hurted, downbreak;
+    [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed;
     [HideInInspector] public Vector2 velocity, hurtVel;
     public Vector2 hp, sta, btr, skill;
     public GameObject hitboxes;
@@ -150,48 +151,48 @@ public class ActionSystem : MonoBehaviour
         }
         if (acceptMsg != null)
         {
-            if (inState == InState.WAKE) acceptMsg = null;
-            else NextState(acceptMsg);
+            if (inState != InState.WAKE)
+                NextState(acceptMsg);
             acceptMsg = null;
         }
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITF") && velocity.y < 0 && offGround <= 0)
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITF") && velocity.y < 0)
             NextState("HITD");
         if (cc.isGrounded && velocity.y < 0)
         {
-            if (inState != InState.A && inState != InState.AHU) velocity.y = 0;
             if (inState == InState.A && (moveMode == MoveMode.move || moveMode == MoveMode.none))
                 NextState("AL");
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITD") && offGround <= 0)
-                if (!downed)
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITD") && !downbreak)
+                if (velocity.y < -20)
                 {
-                    downed = true;
-                    if (velocity.y < -20)
-                    {
-                        audioSource.clip = audios[5]; audioSource.Play();
-                        Time.timeScale = .01f; StartCoroutine(DownBreak(.1f));
-                    }
-                    else
-                        NextState("DOWN");
+                    downbreak = true;
+                    Time.timeScale = .5f; StartCoroutine(DownBreak(velocity.y, .1f));
+                    velocity.y = 0;
+                    audioSource.clip = audios[5]; Sounder sd = Instantiate(sounder, audioSource.transform);
                 }
-                else NextState("WAKE");
+                else
+                {
+                    if (downed > 0) NextState("WAKE");
+                    else NextState("DOWN");
+                    downed++;
+                }
         }
         if (inState == InState.HU || inState == InState.AHU || inState == InState.G)
             hurted = true;
         else hurted = false;
         velocity.y -= gravity;
         velocity.x += velocity.x < 0 ? .05f : velocity.x > 0 ? -.05f : 0;
-        if (stiff <= 0 && offGround <= 0)
+        if (stiff <= 0)
             if (inState == InState.HU) NextState("5");
             else if (inState == InState.G) NextState("D");
         if (stiff > 0)
-            stiff -= 60 * Time.fixedDeltaTime;
-        if (offGround > 0)
+            stiff--;
+        if (pushReac > 0)
         {
             velocity = hurtVel;
-            offGround -= 60 * Time.fixedDeltaTime;
+            pushReac--;
         }
-        if (inState == InState.WAKE || inState == InState.N && offGround <= 0)
-        { downed = false; opponent.combo = 0; }
+        if (inState == InState.WAKE || inState == InState.N && stiff <= 0)
+        { downed = 0; opponent.combo = 0; }
         if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(direction, 1, 1);
         switch (moveMode)
         {
@@ -232,7 +233,7 @@ public class ActionSystem : MonoBehaviour
         cc.transform.localPosition *= 0;
     }
 
-    public void ValueEvent()
+    void ValueEvent()
     {
         if (hp.x <= 0) hp.x = 0;
         if (sta.x <= 0) { staCD = true; sta.x = 0; }
@@ -260,7 +261,7 @@ public class ActionSystem : MonoBehaviour
 
     public void Hited(string oppoCol)
     {
-        if (oppoCol == "HurtBox" && !hited && !follow && opponent.inState != InState.WAKE)
+        if (oppoCol == "HurtBox" && !hited && !follow)
         {
             hited = true;
             GameObject hitVFXObj = Instantiate(hitVFX, hitTrans.position, hitTrans.rotation);
@@ -269,16 +270,19 @@ public class ActionSystem : MonoBehaviour
         }
     }
 
-    public void AudioPlay(string type) //打:h/砍:s
+    public void AudioPlay(string type) //打:h/砍:s/只有擊中音效:+n
     {
+        Sounder sd;
         switch (type)
         {
             case "h":
-                audioSource.clip = audios[0]; opponent.audioSource.clip = audios[2]; audioSource.Play(); break;
+                opponent.audioSource.clip = audios[2]; audioSource.clip = audios[0];
+                sd = Instantiate(sounder, audioSource.transform); break;
             case "hn":
                 opponent.audioSource.clip = audios[2]; break;
             case "s":
-                audioSource.clip = audios[1]; opponent.audioSource.clip = audios[3]; audioSource.Play(); break;
+                opponent.audioSource.clip = audios[3]; audioSource.clip = audios[1];
+                sd = Instantiate(sounder, audioSource.transform); break;
             case "sn":
                 opponent.audioSource.clip = audios[3]; break;
         }
@@ -287,12 +291,12 @@ public class ActionSystem : MonoBehaviour
     public IEnumerator Hurted(float _dmg, float _staDmg, float _hitSDmg, float _fixRate, float _stiffDur, float _dStiffDur, float _hitH, float _hitD, float _aHitH, float _aHitD, bool _hitHigh)
     {
         bool isAir = inState == InState.A || inState == InState.AHU || inState == InState.DOWN ? true : false;
-        offGround = 2;
+        pushReac = 2;
         if ((inState == InState.D || inState == InState.G) && (opponent.transform.position.x - transform.position.x) * direction > 0)
         {
             transform.localScale = new Vector3(direction, 1, 1);
             stiff = _dStiffDur; acceptMsg = "G";
-            audioSource.clip = audios[4]; audioSource.Play();
+            audioSource.clip = audios[4]; Sounder sd = Instantiate(sounder, audioSource.transform);
             hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD * .75f : _hitD * .75f, 0);
         }
         else
@@ -316,25 +320,27 @@ public class ActionSystem : MonoBehaviour
                 else //背對對手
                     acceptMsg = "HUB";
             }
-            audioSource.Play(); opponent.combo++;
+            Sounder sd = Instantiate(sounder, audioSource.transform);
+            opponent.combo++;
             if (isAir)
                 hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
             else
                 hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD : _hitD, _hitH);
         }
-        Time.timeScale = .01f;
-        yield return new WaitForSecondsRealtime(0f);
+        Time.timeScale = .5f;
+        yield return new WaitForSecondsRealtime(.2f);
         Time.timeScale = 1;
     }
 
-    public IEnumerator DownBreak(float timeLong)
+    IEnumerator DownBreak(float vely, float timeLong)
     {
         yield return new WaitForSecondsRealtime(timeLong);
         Time.timeScale = 1;
-        velocity.y *= -.4f; NextState("HITF");
+        velocity.y = Mathf.Abs(vely) * .4f; NextState("HITF");
+        downed++; downbreak = false;
     }
 
-    public IEnumerator TimeStop(float timeLong)
+    IEnumerator TimeStop(float timeLong)
     {
         yield return new WaitForSecondsRealtime(timeLong);
         Time.timeScale = 1;
