@@ -9,10 +9,8 @@ public class HitCollision : MonoBehaviour
     void Start()
     {
         parent = transform.GetComponentInParent<ActionSystem>();
-        opponent = parent.opponent;
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -20,9 +18,17 @@ public class HitCollision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        opponent = parent.opponent;
         if (col.transform.IsChildOf(opponent.transform))
         {
             parent.Hited(col.tag);
         }
+    }
+
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        opponent = parent.opponent;
+        if (parent.hurted && hit.point.y > .1f)
+            opponent.pushDis = parent.velocity.x;
     }
 }

@@ -2,16 +2,17 @@
     "name": "inputActions",
     "maps": [
         {
-            "name": "Player1",
+            "name": "Player",
             "id": "a320788d-6820-4fe6-a5d0-5e4337ecfc69",
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "c2f8668b-dc39-41c4-909a-32c2c4fb7805",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "M_cls",
@@ -19,7 +20,8 @@
                     "id": "a26d0372-84fe-4d07-8cf7-c5258f05154a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "W_cls",
@@ -27,7 +29,8 @@
                     "id": "04e3940f-5e1c-46f8-9819-c5da4c60739a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "S_cls",
@@ -35,7 +38,8 @@
                     "id": "c84e82fd-03d5-4b7c-947c-c5f107aa1c6e",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "R_cls",
@@ -43,7 +47,8 @@
                     "id": "dad8f5a5-f785-4c07-84f4-76ad4d0c52d3",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Start",
@@ -51,7 +56,8 @@
                     "id": "ccd55799-bb30-45bc-97ce-8dc0ed443a4b",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
