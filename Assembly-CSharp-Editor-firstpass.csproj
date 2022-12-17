@@ -734,6 +734,9 @@
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Formats.Fbx.Editor">
+        <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.Formats.Fbx.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Searcher.Editor">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
     </Reference>
@@ -746,6 +749,9 @@
     <Reference Include="Unity.Rider.Editor">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Autodesk.Fbx">
+        <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Autodesk.Fbx.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.IK.Runtime">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
@@ -754,6 +760,9 @@
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Runtime">
+        <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.Formats.Fbx.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
@@ -772,6 +781,9 @@
     </Reference>
     <Reference Include="Unity.Sysroot.Linux_x86_64">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
+    </Reference>
+    <Reference Include="Autodesk.Fbx.Editor">
+        <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Autodesk.Fbx.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -854,13 +866,13 @@
       <Project>{5fc0d50c-78e7-ee93-7d06-a714b4bd9c9f}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{02d8a5d6-7815-b446-ab1e-13e2789752e9}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="UniGLTF.Samples.ScreenSpace.csproj">
       <Project>{7b9c89e4-1230-f513-04e0-6c192d011da7}</Project>
       <Name>UniGLTF.Samples.ScreenSpace</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{02d8a5d6-7815-b446-ab1e-13e2789752e9}</Project>
+      <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
       <Project>{538afd82-0178-f674-14f6-d3d9b00fa5f8}</Project>

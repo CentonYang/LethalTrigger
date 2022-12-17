@@ -36,30 +36,30 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/SkeletonMeshUtility.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/MuscleDebug.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/AvatarDescription.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/IO/Extensions/BvhExtensions.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/PoseModifier/IPoseModifier.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/IO/BvhImporterContext.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/Humanoid.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/HumanoidLoader.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/IBone.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/IO/BvhImporter.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/HumanPoseTransfer.cs" />
+     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/BvhBone.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/Extensions/EnumExtensions.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/IO/Extensions/UnityExtensions.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/HumanPoseClip.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/Skeleton.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/SkeletonMeshUtility.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/MuscleDebug.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/BoneGizmoDrawer.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/MuscleInspector.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/AvatarDescription.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/SkeletonEstimator.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/IO/Extensions/BvhExtensions.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/PoseModifier/IPoseModifier.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/IO/BvhImporterContext.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/PoseModifier/HandRig.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/IO/BvhAnimationClip.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/Humanoid.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/HumanoidLoader.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/PoseModifier/HandPose.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/Format/Bvh.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/IBone.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/IO/BvhImporter.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/BoneMapping.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/HumanPoseTransfer.cs" />
-     <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/BvhBone.cs" />
      <Compile Include="Assets/UniGLTF/Runtime/UniHumanoid/AnimationClipUtility.cs" />
      <None Include="Assets/UniGLTF/Runtime/UniHumanoid/UniHumanoid.asmdef" />
     <Reference Include="UnityEngine">

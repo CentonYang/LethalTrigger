@@ -10,7 +10,7 @@ Available memory:        15963 MB
 Using pre-set license
 Pro License: YES
 
-(Unity:151832): Gdk-CRITICAL **: 22:13:47.780: gdk_window_get_cursor: assertion 'GDK_IS_WINDOW (window)' failed
+(Unity:21335): Gdk-CRITICAL **: 19:40:28.802: gdk_window_get_cursor: assertion 'GDK_IS_WINDOW (window)' failed
 Desktop is 1920 x 2160 @ 60 Hz
 Initialize udev device monitor.
 
@@ -26,7 +26,7 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-37691
+35201
 Successfully changed project path to: /media/centon/Centon/File/Project/Github/LethalTrigger
 /media/centon/Centon/File/Project/Github/LethalTrigger
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -58,7 +58,7 @@ Successfully changed project path to: /media/centon/Centon/File/Project/Github/L
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 193.22 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 173.71 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.13f1 (9e7d58001ecf)
 [Subsystems] Discovering subsystems at path /home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Resources/UnitySubsystems
@@ -78,54 +78,333 @@ L_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_
 blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffers GL_NV_blend_minmax_factor GL_NV_blend_square GL_NV_clip_space_w_scaling GL_NV_command_list GL_NV_compute_program5 GL_NV_conditional_render GL_NV_conservative_raster GL_NV_conservative_raster_dilate GL_NV_conservative_raster_pre_snap_triangles GL_NV_copy_depth_to_color GL_NV_copy_image GL_NV_depth_buffer_float GL_NV_depth_clamp GL_NV_draw_texture GL_NV_draw_vulkan_image GL_NV_ES1_1_compatibility GL_NV_ES3_1_compatibility GL_NV_explicit_multisample GL_NV_feature_query GL_NV_fence GL_NV_fill_rectangle GL_NV_float_buffer GL_NV_fog_distance GL_NV_fragment_coverage_to_color GL_NV_fragment_program GL_NV_fragment_program_option GL_NV_fragment_program2 GL_NV_fragment_shader_interlock GL_NV_framebuffer_mixed_samples GL_NV_framebuffer_multisample_coverage GL_NV_geometry_shader4 GL_NV_geometry_shader_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_
 NV_gpu_program_fp64 GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_partitioned GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_N
 V_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_vdpau_interop GL_NV_vdpau_interop2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NVX_nvenc_interop GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OVR_multiview GL_OVR_multiview2 GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum
-OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle 1125751128
+OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle 1926751560
 Initialize mono
 Mono path[0] = '/home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Managed'
 Mono path[1] = '/home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
 Mono config path = '/home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56832
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56335
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.039029 seconds.
+Registered in 0.017978 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 234.10 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 116.70 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.156 seconds
+- Completed reload, in  0.747 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1157ms)
-		BeginReloadAssembly (98ms)
+	ReloadAssembly (747ms)
+		BeginReloadAssembly (61ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (876ms)
-			LoadAssemblies (100ms)
+		EndReloadAssembly (557ms)
+			LoadAssemblies (59ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (164ms)
+			SetupTypeCache (115ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (53ms)
-			SetupLoadedEditorAssemblies (557ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (326ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (79ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (234ms)
+				InitializePlatformSupportModulesInManaged (61ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (117ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (147ms)
-				ProcessInitializeOnLoadMethodAttributes (94ms)
+				ProcessInitializeOnLoadAttributes (98ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.109753 seconds.
-Android Extension - Scanning For ADB Devices 5833 ms
+Registered in 0.080748 seconds.
+Android Extension - Scanning For ADB Devices 4952 ms
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 122.77 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UpdateMenuTitleForLanguage: 10
+Mono: successfully reloaded assembly
+- Completed reload, in  1.995 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1996ms)
+		BeginReloadAssembly (106ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (1704ms)
+			LoadAssemblies (250ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (311ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (114ms)
+			SetupLoadedEditorAssemblies (884ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (123ms)
+				BeforeProcessingInitializeOnLoad (228ms)
+				ProcessInitializeOnLoadAttributes (402ms)
+				ProcessInitializeOnLoadMethodAttributes (99ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler after 0.11 seconds
+Refreshing native plugins compatible for Editor in 1.11 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5794 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (1.7 MB). Loaded Objects now: 6259.
+Memory consumption went from 235.8 MB to 234.2 MB.
+Total: 7.082514 ms (FindLiveObjects: 0.439273 ms CreateObjectMapping: 0.619246 ms MarkObjects: 5.008071 ms  DeleteObjects: 1.014732 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 6722.211450 seconds.
+  path: Assets/UI/UI3.psb
+  artifactKey: Guid(b861f1be626e767478ae709f986097e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3.psb using Guid(b861f1be626e767478ae709f986097e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3cb6b607287602b462f1cc693f9bf10') in 0.274518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.630562 seconds.
+  path: Assets/UI/UI3.psb
+  artifactKey: Guid(b861f1be626e767478ae709f986097e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3.psb using Guid(b861f1be626e767478ae709f986097e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b936de3c4d524d538722aed8cc38de5') in 0.133166 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.987544 seconds.
+  path: Assets/UI/UI3.psb
+  artifactKey: Guid(b861f1be626e767478ae709f986097e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3.psb using Guid(b861f1be626e767478ae709f986097e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53d5686ae10be40cf9eb016f8868ea58') in 0.143246 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 186.765750 seconds.
+  path: Assets/UI/UI3.psb
+  artifactKey: Guid(b861f1be626e767478ae709f986097e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3.psb using Guid(b861f1be626e767478ae709f986097e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7ea62c7391963e6b594cf4fdefb7da0') in 1.930761 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 32.959128 seconds.
+  path: Assets/UI/UI3.psb
+  artifactKey: Guid(b861f1be626e767478ae709f986097e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3.psb using Guid(b861f1be626e767478ae709f986097e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8eef19b1c1f99145803e14d37423e8e5') in 0.421718 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 257.354516 seconds.
+  path: Assets/Assets MOOD WARE/_MW Skybox/Test Objects/MAT/01.mat
+  artifactKey: Guid(1cae6a78f7281be409769900ba2535c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets MOOD WARE/_MW Skybox/Test Objects/MAT/01.mat using Guid(1cae6a78f7281be409769900ba2535c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56b1d99e58f22cd5cfd7e7eb99424159') in 0.143961 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/AllSkyFree/Night MoonBurst/AllSky_Night_MoonBurst Equirect.mat
+  artifactKey: Guid(51b74d7bad397457d883c5940f7664d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Night MoonBurst/AllSky_Night_MoonBurst Equirect.mat using Guid(51b74d7bad397457d883c5940f7664d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '666fa5d55055beb3b1a8c8979b8fd005') in 1.377804 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Assets MOOD WARE/_MW Skybox/Test Objects/MAT/03.mat
+  artifactKey: Guid(0f7c739d760c4b44c946dd36ab2651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets MOOD WARE/_MW Skybox/Test Objects/MAT/03.mat using Guid(0f7c739d760c4b44c946dd36ab2651f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea876faf5680a9e1256ff59a49c16072') in 0.060566 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet.mat
+  artifactKey: Guid(656058fe318eb48558d21d66d1a79a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Space_AnotherPlanet/AllSky_Space_AnotherPlanet.mat using Guid(656058fe318eb48558d21d66d1a79a2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39ba39893d4bf4fa943ec3420dd013c0') in 0.639047 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/UniGLTF/Samples/ScreenSpace/a.mat
+  artifactKey: Guid(17618f7c446af114e8ac672f1e992954) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UniGLTF/Samples/ScreenSpace/a.mat using Guid(17618f7c446af114e8ac672f1e992954) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc9bdc8f9a047572f96f624f3b1ddc6a') in 0.080308 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Assets MOOD WARE/_MW Skybox/Test Objects/MAT/02.mat
+  artifactKey: Guid(16193bda331f83c4f97fa8ed66accbbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets MOOD WARE/_MW Skybox/Test Objects/MAT/02.mat using Guid(16193bda331f83c4f97fa8ed66accbbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c336fa6a77f8d9cded378a25dd10dc5d') in 0.062182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Assets MOOD WARE/_MW Skybox/Test Objects/MAT/04.mat
+  artifactKey: Guid(20f80288aaf25b14b9e733d6727bd48e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets MOOD WARE/_MW Skybox/Test Objects/MAT/04.mat using Guid(20f80288aaf25b14b9e733d6727bd48e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f4b4eb6f06710c7c2ebbb9e17286e88') in 0.035426 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/AllSkyFree/Overcast Low/AllSky_Overcast4_Low Equirect.mat
+  artifactKey: Guid(54fe2f000ad8f424fb63cc3ea0ae2bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Overcast Low/AllSky_Overcast4_Low Equirect.mat using Guid(54fe2f000ad8f424fb63cc3ea0ae2bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0766e99ebe8118469177c4ebfd5555d7') in 0.457693 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/AllSkyFree/Overcast Low/AllSky_Overcast4_Low.mat
+  artifactKey: Guid(f2b5f3f20933f434e850db1b710542fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/Overcast Low/AllSky_Overcast4_Low.mat using Guid(f2b5f3f20933f434e850db1b710542fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b11f112f28cb74e8d2424989077e5377') in 0.504083 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/AllSkyFree/_AllSkyFreeDemoEnvironment/AdditiveSprite.mat
+  artifactKey: Guid(55c04ce684cb542debc357409498bc4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AllSkyFree/_AllSkyFreeDemoEnvironment/AdditiveSprite.mat using Guid(55c04ce684cb542debc357409498bc4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '552a233a17d0c2fbd6a89fb82b144d52') in 0.086097 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 143.401986 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56938ae02f949305fe4cb3fbd5598409') in 2.319631 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 349.341384 seconds.
+  path: Assets/UI/Battle.psb
+  artifactKey: Guid(1a7efa9828ecace4b898e9ab792290d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Battle.psb using Guid(1a7efa9828ecace4b898e9ab792290d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b8ff91a88cc32ddaad9b05a11f23896') in 2.265832 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.286247 seconds.
+  path: Assets/UI/Battle.psb
+  artifactKey: Guid(1a7efa9828ecace4b898e9ab792290d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Battle.psb using Guid(1a7efa9828ecace4b898e9ab792290d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be553d649d910bd3a6e4ac23cf1d6cf5') in 2.435797 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.811068 seconds.
+  path: Assets/UI/Battle.psb
+  artifactKey: Guid(1a7efa9828ecace4b898e9ab792290d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/Battle.psb using Guid(1a7efa9828ecace4b898e9ab792290d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97e917425b00462bccd22871835eb743') in 2.004174 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 364.593642 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9357268c79070d6efa79d99f334cc39c') in 0.105206 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.875816 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7a6d71c00ccbe0311d3b0b8783f3b1a') in 2.200128 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.035043 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23c59d8e34e6799a4e4282926df21b33') in 2.165711 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.926243 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe0c2d4ddfccef0401f7c3b78953078') in 2.469878 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.806181 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05f8876616b7f0b5d716db89b26002fc') in 2.647118 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.071565 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09ebda8086e5ab18ec063a53848723ef') in 2.352906 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.792407 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '704bc83524c957cdf00b5db0c5943cc3') in 0.100734 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.596682 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee9d08ffcc5b19b6002a83c52a97753d') in 0.751839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.154023 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9754d065cd1d172ee71ff83da7cc6a27') in 0.108725 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.559947 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b475bde94f257b5e0cd74df1eaecd7c6') in 0.923435 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.867699 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b746b7e26722dc1a78428586b611de47') in 2.505217 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.779473 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ec9ef4a14d57695b4de61470641fcca') in 2.395200 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.689122 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4ccffd6f548fd69b9abde02bc552aa0') in 0.102969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.640561 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45e89cd5217aadacd81541eb6bf2c984') in 0.869183 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 30.803407 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b390a7e77c353cb4cafcad7dfb46f3f9') in 1.018580 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.288294 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd13e485617b5b1038ed5138be202c00c') in 2.400132 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 70.340655 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '978d69c056b5aff9680650abd255959b') in 3.021401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 56.274870 seconds.
+  path: Assets/UI/UI3-1.psb
+  artifactKey: Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/UI/UI3-1.psb using Guid(d10245a0adc1ba8e59fdde664af41bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebe506440e1e5ac8e1934211eb102d47') in 0.893929 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
