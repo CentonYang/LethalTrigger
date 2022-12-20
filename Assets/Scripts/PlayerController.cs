@@ -8,45 +8,30 @@ using UnityEngine.InputSystem.Users;
 public class PlayerController : MonoBehaviour
 {
     public int[] moveTimer = { 0, 10 };
-    public int movesNum, diraction = 1;
+    public int pc, movesNum, diraction = 1;
     public char actionKey;
     public List<string> actionName, actionStep, actionMsg, movesName;
-    public GameSystem gameSystem;
     public string moveString, comString;
     public InputDisplay id;
     public BattleMenu battleMenu;
-    PlayerInput pi;
-
 
     void Awake()
     {
         Time.timeScale = 1;
+        pc = gameObject.name == "Player1" ? 0 : 1;
         if (id == null)
             id = FindObjectOfType<InputDisplay>();
-        pi = GetComponent<PlayerInput>();
-        pi.user.UnpairDevices();
-        if (InputSystem.devices.Count > 1)
-            if (gameObject.name == "Player1")
-                InputUser.PerformPairingWithDevice(InputSystem.devices[InputSystem.devices.Count - 2], pi.user);
-            else
-                InputUser.PerformPairingWithDevice(InputSystem.devices[InputSystem.devices.Count - 1], pi.user);
-        else if (gameObject.name == "Player1")
-            InputUser.PerformPairingWithDevice(InputSystem.devices[0], pi.user);
+        InstallDevices(gameObject, pc);
     }
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        gameSystem.gameStep += Time.deltaTime * gameSystem.fps;
-        if (gameSystem.gameStep >= 1)
-        {
-            GameMode();
-            gameSystem.gameStep--;
-        }
+
     }
 
     public void GameMode()
@@ -115,6 +100,7 @@ public class PlayerController : MonoBehaviour
             if (ctx.action.name == "Start")
             {
                 battleMenu.layer = 0; battleMenu.changeLayer = true;
+                battleMenu.pc = gameObject.name == "Player1" ? 0 : 1;
                 battleMenu.gameObject.SetActive(true);
             }
         }
@@ -140,5 +126,18 @@ public class PlayerController : MonoBehaviour
                         return movesName[movesName.Count - 1].Split(spliter)[0];
                     }
         return cto;
+    }
+
+    static public void InstallDevices(GameObject _obj, int _pc)
+    {
+        PlayerInput pi = _obj.GetComponent<PlayerInput>();
+        pi.user.UnpairDevices();
+        if (InputSystem.devices.Count > 1)
+            if (_pc == 0)
+                InputUser.PerformPairingWithDevice(InputSystem.devices[InputSystem.devices.Count - 2], pi.user);
+            else
+                InputUser.PerformPairingWithDevice(InputSystem.devices[InputSystem.devices.Count - 1], pi.user);
+        else if (_pc == 0)
+            InputUser.PerformPairingWithDevice(InputSystem.devices[0], pi.user);
     }
 }

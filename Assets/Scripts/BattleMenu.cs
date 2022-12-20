@@ -7,13 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class BattleMenu : MonoBehaviour
 {
-    public int layer, select, arrow, language;
+    public int pc, layer, select, arrow, language;
     public Animator menuAnim;
     [HideInInspector] public bool changeLayer, changeSelect;
     public List<Text> menuOptions;
     public List<string> menuOptionsText;
     public Text infoTitle, infoContent;
     public List<MainMenu.ContentName> contentName;
+    public Cinemachine.CinemachineTargetGroup cineTarget;
+    public Cinemachine.CinemachineFramingTransposer cineTrans;
 
     void Start()
     {
@@ -21,6 +23,8 @@ public class BattleMenu : MonoBehaviour
         menuAnim = GetComponent<Animator>();
         foreach (Text item in menuOptions)
             menuOptionsText.Add(item.text);
+        cineTarget = FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
+        cineTrans = GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>();
     }
 
     void FixedUpdate()
@@ -30,9 +34,11 @@ public class BattleMenu : MonoBehaviour
             if (changeLayer)
             {
                 changeLayer = false;
-                GetComponent<PlayerInput>().user.UnpairDevices();
+                PlayerController.InstallDevices(gameObject, pc);
+                cineTarget.m_Targets[1 - pc].weight = 0;
+                cineTrans.m_ScreenX = .65f;
                 foreach (PlayerController item in FindObjectsOfType<PlayerController>())
-                { item.movesNum = 5; item.moveString = "5"; }
+                { item.movesNum = 5; item.moveString = "5"; item.comString = "N"; }
             }
             if (select > 4) select = 0; if (select < 0) select = 4;
             if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
@@ -67,8 +73,14 @@ public class BattleMenu : MonoBehaviour
             }
         }
         if (layer == -1)
+        {
             if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("OnExit") && menuAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
+            {
+                cineTrans.m_ScreenX = .5f;
+                cineTarget.m_Targets[1 - pc].weight = 1;
                 gameObject.SetActive(false);
+            }
+        }
     }
 
     IEnumerator PreloadScene(string sceneID)

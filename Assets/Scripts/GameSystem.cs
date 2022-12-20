@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class GameSystem : MonoBehaviour
 {
-    public float gameStep = 0, fps = 60;
+    static public int pc1, pc2;
+    static public GameObject characters;
 }

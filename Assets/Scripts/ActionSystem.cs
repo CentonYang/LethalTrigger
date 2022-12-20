@@ -13,11 +13,11 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public AudioSource audioSource;
     public Sounder sounder;
     [HideInInspector] public string actionMsg, acceptMsg;
-    [HideInInspector] public int direction;
+    [HideInInspector] public int direction, hitType;
     [HideInInspector] public bool hited, hurted, downbreak;
     [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed;
     [HideInInspector] public Vector2 velocity, hurtVel;
-    public Vector2 hp, sta, btr, skill;
+    public Vector2 hp, sta, btr, skill, fix;
     public GameObject hitboxes;
     public Transform hitTrans;
     public GameObject hitVFX;
@@ -41,10 +41,8 @@ public class ActionSystem : MonoBehaviour
     [Tooltip("攻擊傷害")] public float dmg;
     [Tooltip("防住氣力值傷害")] public float staDmg;
     [Tooltip("擊中氣力值傷害")] public float hitStaDmg;
-    [Tooltip("自身氣力值損耗")] public float staLost;
     [Tooltip("防住燃晶槽傷害")] public float btrDmg;
     [Tooltip("擊中燃晶槽傷害")] public float hitBtrDmg;
-    [Tooltip("自身燃晶槽損耗")] public float btrLost;
     [Tooltip("傷害修正")] public float fixRate;
     [Tooltip("僵直時間")] public float stiffDuration;
     [Tooltip("防禦僵直時間")] public float defStiffDuration;
@@ -119,15 +117,12 @@ public class ActionSystem : MonoBehaviour
     {
         if (!hitRange)
         { hited = false; pushDis = 0; }
-        if (!hurted)
+        if ((moveMode == MoveMode.soar || moveMode == MoveMode.none) && inState == InState.A && Mathf.Abs(dirDis) < 2)
         {
-            if ((moveMode == MoveMode.soar || moveMode == MoveMode.none) && Mathf.Abs(dirDis) < 2)
-            {
-                if (pc.movesNum == 1 || pc.movesNum == 4 || pc.movesNum == 7) dirDis -= .2f;
-                if (pc.movesNum == 3 || pc.movesNum == 6 || pc.movesNum == 9) dirDis += .2f;
-            }
-            else dirDis = 0;
+            if (pc.movesNum == 1 || pc.movesNum == 4 || pc.movesNum == 7) dirDis -= .2f;
+            if (pc.movesNum == 3 || pc.movesNum == 6 || pc.movesNum == 9) dirDis += .2f;
         }
+        else dirDis = 0;
         if (actionMsg != null && (cancel || (hitCancel && hited)) && acceptMsg == null)
         {
             foreach (MoveList.Data item in moveList.data)
@@ -139,7 +134,7 @@ public class ActionSystem : MonoBehaviour
                 if (item.name == actionMsg && item.btrLost > 0)
                     if (btr.x - item.btrLost >= 0)
                         btr.x -= item.btrLost;
-                    else actionMsg = actionMsg + "_NB";
+                    else actionMsg = actionMsg + "NB";
             }
             if (actionMsg != null)
             {
@@ -181,7 +176,7 @@ public class ActionSystem : MonoBehaviour
         else hurted = false;
         velocity.y -= gravity;
         velocity.x += velocity.x < 0 ? .05f : velocity.x > 0 ? -.05f : 0;
-        if (stiff <= 0)
+        if (stiff <= 0 && pushReac <= 0)
             if (inState == InState.HU) NextState("5");
             else if (inState == InState.G) NextState("D");
         if (stiff > 0)
@@ -191,8 +186,8 @@ public class ActionSystem : MonoBehaviour
             velocity = hurtVel;
             pushReac--;
         }
-        if (inState == InState.WAKE || inState == InState.N && stiff <= 0)
-        { downed = 0; opponent.combo = 0; }
+        if ((inState == InState.WAKE || inState == InState.N) && pushReac <= 0)
+        { downed = 0; opponent.combo = 0; fix.x = fix.y; }
         if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(direction, 1, 1);
         switch (moveMode)
         {
@@ -235,10 +230,12 @@ public class ActionSystem : MonoBehaviour
 
     void ValueEvent()
     {
-        if (hp.x <= 0) hp.x = 0;
+        if (hp.x < 0) hp.x = 0; if (hp.x > hp.y) hp.x = hp.y;
         if (sta.x <= 0) { staCD = true; sta.x = 0; }
         if (sta.x >= sta.y) { staCD = false; sta.x = sta.y; }
         if (sta.x < sta.y && inState != InState.D && inState != InState.G) sta.x += Time.fixedDeltaTime * 50;
+        if (btr.x < 0) btr.x = 0; if (btr.x > btr.y) btr.x = btr.y;
+        if (skill.x < 0) skill.x = 0; if (skill.x > skill.y) skill.x = skill.y;
     }
 
     public void Canceler(string canceler)
@@ -256,79 +253,107 @@ public class ActionSystem : MonoBehaviour
     public void NextState(string animState)
     {
         cancelList.Clear(); cancelOtherList.Clear(); actionMsg = null;
-        animator.Play(animState, -1, 0);
+        if (animator.HasState(0, Animator.StringToHash(animState)))
+            animator.Play(animState, -1, 0);
     }
 
     public void Hited(string oppoCol)
     {
-        if (oppoCol == "HurtBox" && !hited && !follow)
+        if (oppoCol == "HurtBox" && !hited && !follow && !(opponent.cc.isGrounded && opponent.velocity.y < 0 && opponent.downed > 1))
         {
             hited = true;
             GameObject hitVFXObj = Instantiate(hitVFX, hitTrans.position, hitTrans.rotation);
             hitVFXObj.transform.localScale = transform.localScale;
-            StartCoroutine(opponent.Hurted(dmg, staDmg, hitStaDmg, fixRate, stiffDuration, defStiffDuration, hitHeight, hitDistance, airHitHeight, airHitDistance, hitPoint == 0 ? true : false));
+            StartCoroutine(opponent.Hurted(dmg, staDmg, hitStaDmg, btrDmg, hitBtrDmg, fixRate, stiffDuration, defStiffDuration, hitHeight, hitDistance, airHitHeight, airHitDistance, hitPoint == 0 ? true : false));
         }
     }
 
-    public void AudioPlay(string type) //打:h/砍:s/只有擊中音效:+n
+    public void AudioPlay(string type) //打:h/砍:s/銃:g/只有擊中音效:+n
     {
         Sounder sd;
         switch (type)
         {
             case "h":
-                opponent.audioSource.clip = audios[2]; audioSource.clip = audios[0];
+                hitType = 1; audioSource.clip = audios[0];
                 sd = Instantiate(sounder, audioSource.transform); break;
             case "hn":
-                opponent.audioSource.clip = audios[2]; break;
+                hitType = 1; audioSource.clip = audios[0]; break;
             case "s":
-                opponent.audioSource.clip = audios[3]; audioSource.clip = audios[1];
+                hitType = 2; audioSource.clip = audios[1];
                 sd = Instantiate(sounder, audioSource.transform); break;
             case "sn":
-                opponent.audioSource.clip = audios[3]; break;
+                hitType = 2; audioSource.clip = audios[1]; break;
+            case "g":
+                hitType = 3; audioSource.clip = audios[6];
+                sd = Instantiate(sounder, audioSource.transform); break;
         }
     }
 
-    public IEnumerator Hurted(float _dmg, float _staDmg, float _hitSDmg, float _fixRate, float _stiffDur, float _dStiffDur, float _hitH, float _hitD, float _aHitH, float _aHitD, bool _hitHigh)
+    public IEnumerator Hurted(float _dmg, float _staDmg, float _hitSDmg, float _btrDmg, float _hitBDmg, float _fixRate, float _stiffDur, float _dStiffDur, float _hitH, float _hitD, float _aHitH, float _aHitD, bool _hitHigh)
     {
         bool isAir = inState == InState.A || inState == InState.AHU || inState == InState.DOWN ? true : false;
         pushReac = 2;
         if ((inState == InState.D || inState == InState.G) && (opponent.transform.position.x - transform.position.x) * direction > 0)
         {
             transform.localScale = new Vector3(direction, 1, 1);
-            stiff = _dStiffDur; acceptMsg = "G";
             audioSource.clip = audios[4]; Sounder sd = Instantiate(sounder, audioSource.transform);
-            hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD * .75f : _hitD * .75f, 0);
+            float _gHitH = 0;
+            //傷害計算
+            btr.x += _btrDmg;
+            opponent.skill.x += _btrDmg / 2;
+            sta.x += _staDmg;
+            if (sta.x > 0 && !staCD)
+            { stiff = _dStiffDur; if (!hitRange) NextState("G"); }
+            else if (_hitH != 0) //是打飛招式或在空中
+            {
+                if (_hitH < 0)
+                    NextState("HITD");
+                else
+                    NextState("HITF");
+                hp.x += _dmg / 2; _gHitH = _hitH;
+            }
+            else
+            { stiff = _stiffDur; NextState("BK"); hp.x += _dmg / 2; }
+            //////
+            hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD * .75f : _hitD * .75f, _gHitH);
         }
         else
         {
+            audioSource.clip = opponent.hitType == 1 || opponent.hitType == 3 ? audios[2] : opponent.hitType == 2 ? audios[3] : null;
+            Sounder sd = Instantiate(sounder, audioSource.transform);
+            opponent.combo++;
+            //傷害計算
+            hp.x += _dmg * fix.x;
+            fix.x *= _fixRate;
+            sta.x += _hitSDmg; btr.x += _hitBDmg;
+            opponent.skill.x += _hitBDmg / 2;
+            //////
             if (_hitH == 0)
                 stiff = _stiffDur;
             if (_hitH != 0 || isAir) //是打飛招式或在空中
                 if (_hitH < 0)
-                    acceptMsg = "HITD";
+                    NextState("HITD");
                 else
-                    acceptMsg = "HITF";
+                    NextState("HITF");
             else if (_hitHigh) //是打點高
                 if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //面對對手
-                    acceptMsg = "HUB";
+                    NextState("HUB");
                 else //背對對手
-                    acceptMsg = "HUF";
+                    NextState("HUF");
             else //是打點低
             {
                 if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //面對對手
-                    acceptMsg = "HUF";
+                    NextState("HUF");
                 else //背對對手
-                    acceptMsg = "HUB";
+                    NextState("HUB");
             }
-            Sounder sd = Instantiate(sounder, audioSource.transform);
-            opponent.combo++;
             if (isAir)
                 hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
             else
                 hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD : _hitD, _hitH);
         }
         Time.timeScale = .5f;
-        yield return new WaitForSecondsRealtime(.2f);
+        yield return new WaitForSecondsRealtime(.1f);
         Time.timeScale = 1;
     }
 
@@ -336,7 +361,7 @@ public class ActionSystem : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(timeLong);
         Time.timeScale = 1;
-        velocity.y = Mathf.Abs(vely) * .4f; NextState("HITF");
+        velocity.y = Mathf.Abs(vely) * .4f * (downed > 0 ? Mathf.Pow(.9f, downed) : 1); NextState("HITF");
         downed++; downbreak = false;
     }
 
@@ -356,17 +381,27 @@ public class ActionSystem : MonoBehaviour
         moveList = GetComponent<MoveList>();
         audioSource = GetComponentInChildren<AudioSource>();
         GameObject.Find("TwoCharCam").GetComponent<CinemachineTargetGroup>().AddMember(transform, 1, 0);
-        if (pc.name == "Player1")
-            opponent = GameObject.Find("Player2").GetComponentInChildren<ActionSystem>();
-        else if (pc.name == "Player2")
-            opponent = GameObject.Find("Player1").GetComponentInChildren<ActionSystem>();
         //transform.localScale = new Vector3(direction, 1, 1);
     }
 
     void FixedUpdate()
     {
+        if (opponent == null)
+        {
+            if (pc.name == "Player1")
+                opponent = GameObject.Find("Player2").GetComponentInChildren<ActionSystem>();
+            else if (pc.name == "Player2")
+                opponent = GameObject.Find("Player1").GetComponentInChildren<ActionSystem>();
+        }
+        else
+        {
+            ActionEvent();
+            ValueEvent();
+        }
+    }
+
+    void Update()
+    {
         ComMessage();
-        ActionEvent();
-        ValueEvent();
     }
 }

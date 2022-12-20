@@ -9,7 +9,6 @@ public class InputDisplay : MonoBehaviour
     public Sprite cross, button;
     public List<Image> inputBgs;
     char[] mChar = { ' ', ' ' }, aChar = { ' ', ' ' };
-    public char inputChar;
     public string[] moveInput = { "", "" };
 
     void Awake()
@@ -24,8 +23,8 @@ public class InputDisplay : MonoBehaviour
 
     public void GetInput(char i)
     {
-        if (inputChar != '5')
-            moveInput[0] = inputChar.ToString() + moveInput[0];
+        if (i != '5' && i != 'm' && i != 'w' && i != 's' && i != 'r')
+            moveInput[0] = i.ToString() + moveInput[0];
     }
 
     void Update()
