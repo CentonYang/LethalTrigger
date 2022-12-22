@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class BattleMenu : MonoBehaviour
 {
-    public int pc, layer, select, arrow, language;
+    public int pc, layer, select, arrowV, arrowH, language;
     public Animator menuAnim;
     [HideInInspector] public bool changeLayer, changeSelect;
     public List<Text> menuOptions;
@@ -38,7 +38,9 @@ public class BattleMenu : MonoBehaviour
             {
                 changeLayer = false;
                 PlayerController.InstallDevices(gameObject, pc);
-                cineTarget.m_Targets[1 - pc].weight = 0;
+                for (int i = 0; i < cineTarget.m_Targets.Length; i++)
+                    if (cineTarget.m_Targets[i].target.GetComponent<ActionSystem>().pc.pc == pc)
+                        cineTarget.m_Targets[1 - i].weight = 0;
                 cineTrans.m_ScreenX = .65f;
                 foreach (PlayerController item in FindObjectsOfType<PlayerController>())
                 { item.movesNum = 5; item.moveString = "5"; item.comString = "N"; }
@@ -48,8 +50,8 @@ public class BattleMenu : MonoBehaviour
             if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
             {
                 changeSelect = true;
-                if (arrow == 1) menuAnim.Play("Next");
-                else if (arrow == -1) menuAnim.Play("Previous");
+                if (arrowV == 1) menuAnim.Play("Next");
+                else if (arrowV == -1) menuAnim.Play("Previous");
             }
             if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Next") && menuAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0 && changeSelect)
             { changeSelect = false; select++; menuOptionsText.Add(menuOptionsText[0]); menuOptionsText.RemoveAt(0); }
@@ -89,24 +91,33 @@ public class BattleMenu : MonoBehaviour
                 foreach (GameObject item in hideUI)
                     item.SetActive(true);
                 cineTrans.m_ScreenX = .5f;
-                cineTarget.m_Targets[1 - pc].weight = 1;
+                for (int i = 0; i < cineTarget.m_Targets.Length; i++)
+                    cineTarget.m_Targets[i].weight = 1;
                 gameObject.SetActive(false);
             }
         }
         if (layer == 1)
         {
             if (select == 1)
-                infoContent.rectTransform.Translate(0, arrow * 5, 0);
+            {
+                infoContent.rectTransform.Translate(0, arrowV * 4, 0);
+                infoContent.rectTransform.Translate(arrowH * 2, 0, 0);
+            }
         }
     }
 
     public void SelectMotion(InputAction.CallbackContext ctx)
     {
         if (ctx.ReadValue<Vector2>().y < -.1f)
-            arrow = 1;
+            arrowV = 1;
         else if (ctx.ReadValue<Vector2>().y > .1f)
-            arrow = -1;
-        else arrow = 0;
+            arrowV = -1;
+        else arrowV = 0;
+        if (ctx.ReadValue<Vector2>().x < -.1f)
+            arrowH = 1;
+        else if (ctx.ReadValue<Vector2>().x > .1f)
+            arrowH = -1;
+        else arrowH = 0;
     }
 
     public void SelectAction(InputAction.CallbackContext ctx)

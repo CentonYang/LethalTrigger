@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
             if (ctx.action.name == "Start")
             {
                 battleMenu.layer = 0; battleMenu.changeLayer = true;
-                battleMenu.pc = gameObject.name == "Player1" ? 0 : 1;
+                battleMenu.pc = pc;
                 battleMenu.gameObject.SetActive(true);
             }
         }

@@ -322,7 +322,7 @@ public class ActionSystem : MonoBehaviour
         }
         else
         {
-            audioSource.clip = opponent.hitType == 1 || opponent.hitType == 3 ? audios[2] : opponent.hitType == 2 ? audios[3] : null;
+            audioSource.clip = opponent.hitType == 1 || opponent.hitType == 3 ? opponent.audios[2] : opponent.hitType == 2 ? opponent.audios[3] : null;
             Sounder sd = Instantiate(sounder, audioSource.transform);
             opponent.combo++;
             //傷害計算
