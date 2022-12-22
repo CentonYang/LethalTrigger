@@ -16,7 +16,7 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public int direction, hitType;
     [HideInInspector] public bool hited, hurted, downbreak;
     [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed;
-    [HideInInspector] public Vector2 velocity, hurtVel;
+    public Vector2 velocity, hurtVel;
     public Vector2 hp, sta, btr, skill, fix;
     public GameObject hitboxes;
     public Transform hitTrans;
@@ -59,7 +59,7 @@ public class ActionSystem : MonoBehaviour
 
     public void ComMessage()
     {
-        direction = pc.diraction;
+        direction = pc.direction;
         string mStr = pc.moveString, cStr = pc.comString, aStr = pc.actionKey.ToString();
         string getName;
         if (cancelList != null)
@@ -152,6 +152,26 @@ public class ActionSystem : MonoBehaviour
         }
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITF") && velocity.y < 0)
             NextState("HITD");
+        if (inState == InState.HU || inState == InState.AHU || inState == InState.G)
+            hurted = true;
+        else hurted = false;
+        if (stiff <= 0 && pushReac <= 0)
+            if (inState == InState.HU) NextState("5");
+            else if (inState == InState.G) NextState("D");
+        if (stiff > 0)
+            stiff--;
+        if (pushReac > 0)
+        {
+            velocity = hurtVel;
+            pushReac--;
+        }
+        else
+        {
+            velocity.y -= gravity;
+            velocity.x += velocity.x < 0 ? .05f : velocity.x > 0 ? -.05f : 0;
+        }
+        if ((inState == InState.WAKE || inState == InState.N) && pushReac <= 0)
+        { downed = 0; opponent.combo = 0; fix.x = fix.y; }
         if (cc.isGrounded && velocity.y < 0)
         {
             if (inState == InState.A && (moveMode == MoveMode.move || moveMode == MoveMode.none))
@@ -171,23 +191,6 @@ public class ActionSystem : MonoBehaviour
                     downed++;
                 }
         }
-        if (inState == InState.HU || inState == InState.AHU || inState == InState.G)
-            hurted = true;
-        else hurted = false;
-        velocity.y -= gravity;
-        velocity.x += velocity.x < 0 ? .05f : velocity.x > 0 ? -.05f : 0;
-        if (stiff <= 0 && pushReac <= 0)
-            if (inState == InState.HU) NextState("5");
-            else if (inState == InState.G) NextState("D");
-        if (stiff > 0)
-            stiff--;
-        if (pushReac > 0)
-        {
-            velocity = hurtVel;
-            pushReac--;
-        }
-        if ((inState == InState.WAKE || inState == InState.N) && pushReac <= 0)
-        { downed = 0; opponent.combo = 0; fix.x = fix.y; }
         if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(direction, 1, 1);
         switch (moveMode)
         {
@@ -328,6 +331,10 @@ public class ActionSystem : MonoBehaviour
             sta.x += _hitSDmg; btr.x += _hitBDmg;
             opponent.skill.x += _hitBDmg / 2;
             //////
+            if (isAir)
+                hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
+            else
+                hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD : _hitD, _hitH);
             if (_hitH == 0)
                 stiff = _stiffDur;
             if (_hitH != 0 || isAir) //是打飛招式或在空中
@@ -347,10 +354,6 @@ public class ActionSystem : MonoBehaviour
                 else //背對對手
                     NextState("HUB");
             }
-            if (isAir)
-                hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
-            else
-                hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD : _hitD, _hitH);
         }
         Time.timeScale = .5f;
         yield return new WaitForSecondsRealtime(.1f);
@@ -380,28 +383,33 @@ public class ActionSystem : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         moveList = GetComponent<MoveList>();
         audioSource = GetComponentInChildren<AudioSource>();
-        GameObject.Find("TwoCharCam").GetComponent<CinemachineTargetGroup>().AddMember(transform, 1, 0);
-        //transform.localScale = new Vector3(direction, 1, 1);
+        if (GameObject.Find("TwoCharCam") != null)
+            GameObject.Find("TwoCharCam").GetComponent<CinemachineTargetGroup>().AddMember(transform, 1, 0);
+        if (pc != null)
+            direction = pc.direction;
     }
 
     void FixedUpdate()
     {
-        if (opponent == null)
-        {
-            if (pc.name == "Player1")
-                opponent = GameObject.Find("Player2").GetComponentInChildren<ActionSystem>();
-            else if (pc.name == "Player2")
-                opponent = GameObject.Find("Player1").GetComponentInChildren<ActionSystem>();
-        }
-        else
-        {
-            ActionEvent();
-            ValueEvent();
-        }
+        if (pc != null)
+            if (opponent == null)
+            {
+                if (pc.name == "Player1")
+                    opponent = GameObject.Find("Player2").GetComponentInChildren<ActionSystem>();
+                else if (pc.name == "Player2")
+                    opponent = GameObject.Find("Player1").GetComponentInChildren<ActionSystem>();
+            }
+            else
+            {
+                ActionEvent();
+                ValueEvent();
+            }
     }
 
     void Update()
     {
+        if (pc == null || (pc.pc == 0 && !GameSystem.p1Comp) || (pc.pc == 1 && !GameSystem.p2Comp))
+            return;
         ComMessage();
     }
 }

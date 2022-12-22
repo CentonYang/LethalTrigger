@@ -14,8 +14,11 @@ public class BattleMenu : MonoBehaviour
     public List<string> menuOptionsText;
     public Text infoTitle, infoContent;
     public List<MainMenu.ContentName> contentName;
-    public Cinemachine.CinemachineTargetGroup cineTarget;
-    public Cinemachine.CinemachineFramingTransposer cineTrans;
+    public string exitScene;
+    public GameObject moveList;
+    public List<GameObject> hideUI;
+    Cinemachine.CinemachineTargetGroup cineTarget;
+    Cinemachine.CinemachineFramingTransposer cineTrans;
 
     void Start()
     {
@@ -39,18 +42,22 @@ public class BattleMenu : MonoBehaviour
                 cineTrans.m_ScreenX = .65f;
                 foreach (PlayerController item in FindObjectsOfType<PlayerController>())
                 { item.movesNum = 5; item.moveString = "5"; item.comString = "N"; }
+                foreach (GameObject item in hideUI)
+                    item.SetActive(false);
             }
-            if (select > 4) select = 0; if (select < 0) select = 4;
             if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
+            {
+                changeSelect = true;
                 if (arrow == 1) menuAnim.Play("Next");
                 else if (arrow == -1) menuAnim.Play("Previous");
+            }
             if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Next") && menuAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0 && changeSelect)
             { changeSelect = false; select++; menuOptionsText.Add(menuOptionsText[0]); menuOptionsText.RemoveAt(0); }
             else if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Previous") && menuAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0 && changeSelect)
             { changeSelect = false; select--; menuOptionsText.Insert(0, menuOptionsText[menuOptionsText.Count - 1]); menuOptionsText.RemoveAt(menuOptionsText.Count - 1); }
+            if (select > 4) select = 0; if (select < 0) select = 4;
             if ((menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Next") || menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Previous")) && menuAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
             {
-                changeSelect = true;
                 for (int i = 0; i < menuOptions.Count; i++)
                     menuOptions[i].text = menuOptionsText[i];
                 menuAnim.Play("Normal");
@@ -59,9 +66,12 @@ public class BattleMenu : MonoBehaviour
             {
                 menuAnim.Play("Null");
                 if (select == 0)
-                    StartCoroutine(PreloadScene(SceneManager.GetActiveScene().name));
+                {
+                    GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
+                    StartCoroutine(MainMenu.PreloadScene(SceneManager.GetActiveScene().name));
+                }
                 else if (select == 4)
-                    SceneManager.LoadSceneAsync("Main");
+                    SceneManager.LoadSceneAsync(exitScene);
             }
             switch (select)
             {
@@ -76,18 +86,18 @@ public class BattleMenu : MonoBehaviour
         {
             if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("OnExit") && menuAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
             {
+                foreach (GameObject item in hideUI)
+                    item.SetActive(true);
                 cineTrans.m_ScreenX = .5f;
                 cineTarget.m_Targets[1 - pc].weight = 1;
                 gameObject.SetActive(false);
             }
         }
-    }
-
-    IEnumerator PreloadScene(string sceneID)
-    {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneID);
-        while (!asyncLoad.isDone)
-            yield return null;
+        if (layer == 1)
+        {
+            if (select == 1)
+                infoContent.rectTransform.Translate(0, arrow * 5, 0);
+        }
     }
 
     public void SelectMotion(InputAction.CallbackContext ctx)
@@ -101,11 +111,13 @@ public class BattleMenu : MonoBehaviour
 
     public void SelectAction(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase != InputActionPhase.Performed)
+        if (ctx.phase == InputActionPhase.Performed)
         {
-            if (ctx.action.name == "Start")
+            if (ctx.action.name == "Start" || ctx.action.name + ctx.ReadValue<float>() == "R_cls1")
             {
-                layer = -1; menuAnim.Play("OnExit");
+                if (layer == 0)
+                { layer = -1; menuAnim.Play("OnExit"); }
+                if (layer == 1) layer = 0;
             }
             if (ctx.action.name + ctx.ReadValue<float>() == "W_cls1")
             {
@@ -113,11 +125,12 @@ public class BattleMenu : MonoBehaviour
                 {
                     if (select == 0 || select == 4)
                         menuAnim.Play("OnExit");
+                    if (select == 1)
+                    {
+                        layer = 1;
+                        infoContent.text = moveList.GetComponent<MoveListDisplay>().skills[pc == 0 ? GameSystem.p1Char : GameSystem.p2Char];
+                    }
                 }
-            }
-            if (ctx.action.name + ctx.ReadValue<float>() == "R_cls1")
-            {
-                layer = -1; menuAnim.Play("OnExit");
             }
         }
     }

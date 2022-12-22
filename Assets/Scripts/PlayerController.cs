@@ -8,12 +8,13 @@ using UnityEngine.InputSystem.Users;
 public class PlayerController : MonoBehaviour
 {
     public int[] moveTimer = { 0, 10 };
-    public int pc, movesNum, diraction = 1;
+    public int pc, movesNum, direction = 1;
     public char actionKey;
     public List<string> actionName, actionStep, actionMsg, movesName;
     public string moveString, comString;
     public InputDisplay id;
     public BattleMenu battleMenu;
+    public List<ActionSystem> characters;
 
     void Awake()
     {
@@ -26,12 +27,21 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-
+        if (gameObject.name == "Player1" && GetComponentInChildren<ActionSystem>() == null)
+        {
+            ActionSystem ch = Instantiate(characters[GameSystem.p1Char], transform);
+            ch.name = characters[GameSystem.p1Char].name;
+        }
+        else if (gameObject.name == "Player2" && GetComponentInChildren<ActionSystem>() == null)
+        {
+            ActionSystem ch = Instantiate(characters[GameSystem.p2Char], transform);
+            ch.name = characters[GameSystem.p2Char].name;
+        }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-
+        GameMode();
     }
 
     public void GameMode()
@@ -51,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
     public void InputMove(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase != InputActionPhase.Started && !battleMenu.gameObject.activeSelf)
+        if (ctx.phase == InputActionPhase.Performed && !battleMenu.gameObject.activeSelf)
         {
             moveTimer[0] = 0;
             float angle = Mathf.Atan2(ctx.ReadValue<Vector2>().y, ctx.ReadValue<Vector2>().x) * Mathf.Rad2Deg;
@@ -72,8 +82,8 @@ public class PlayerController : MonoBehaviour
             {
                 switch (movesNum)
                 {
-                    case 3: case 6: case 9: diraction = 1; break;
-                    case 1: case 4: case 7: diraction = -1; break;
+                    case 3: case 6: case 9: direction = 1; break;
+                    case 1: case 4: case 7: direction = -1; break;
                 }
                 moveString += movesNum;
                 if (moveString.Length > 6)

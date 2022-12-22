@@ -60,17 +60,19 @@ public class MainMenu : MonoBehaviour
                 foreach (GameObject item in bgm) item.gameObject.SetActive(false);
                 bgm[0].SetActive(true);
             }
-            if (select > 4) select = 0; if (select < 0) select = 4;
             if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Normal"))
+            {
+                changeSelect = true;
                 if (arrow == 1) menuAnim.Play("Next");
                 else if (arrow == -1) menuAnim.Play("Previous");
+            }
             if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Next") && menuAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0 && changeSelect)
             { changeSelect = false; select++; menuOptionsText.Add(menuOptionsText[0]); menuOptionsText.RemoveAt(0); }
             else if (menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Previous") && menuAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0 && changeSelect)
             { changeSelect = false; select--; menuOptionsText.Insert(0, menuOptionsText[menuOptionsText.Count - 1]); menuOptionsText.RemoveAt(menuOptionsText.Count - 1); }
+            if (select > 4) select = 0; if (select < 0) select = 4;
             if ((menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Next") || menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Previous")) && menuAnim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
             {
-                changeSelect = true;
                 for (int i = 0; i < menuOptions.Count; i++)
                     menuOptions[i].text = menuOptionsText[i];
                 menuAnim.Play("Normal");
@@ -79,7 +81,7 @@ public class MainMenu : MonoBehaviour
             {
                 menuAnim.Play("Null");
                 if (select == 1)
-                    SceneManager.LoadSceneAsync("PracticeMode");
+                { GameSystem.gamemode = 1; GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0); StartCoroutine(PreloadScene("CharacterSelect")); }
                 else if (select == 4)
                     Application.Quit();
             }
@@ -105,7 +107,7 @@ public class MainMenu : MonoBehaviour
 
     public void SelectAction(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase != InputActionPhase.Performed && !menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Null"))
+        if (ctx.phase == InputActionPhase.Performed && !menuAnim.GetCurrentAnimatorStateInfo(0).IsName("Null"))
         {
             if (ctx.action.name == "Start")
             {
@@ -141,5 +143,12 @@ public class MainMenu : MonoBehaviour
                     return item.jp.Split('§')[split];
         }
         return null;
+    }
+
+    static public IEnumerator PreloadScene(string sceneID)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneID);
+        while (!asyncLoad.isDone)
+            yield return null;
     }
 }
