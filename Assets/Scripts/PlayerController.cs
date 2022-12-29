@@ -7,7 +7,7 @@ using UnityEngine.InputSystem.Users;
 
 public class PlayerController : MonoBehaviour
 {
-    public int[] moveTimer = { 0, 10 };
+    public int[] moveTimer = { 0, 12 };
     public int pc, movesNum, direction = 1;
     public char actionKey;
     public List<string> actionName, actionStep, actionMsg, movesName;
@@ -46,17 +46,14 @@ public class PlayerController : MonoBehaviour
 
     public void GameMode()
     {
-        //if (moveString.Length > 1)
-        //{
         moveTimer[0]++;
         if (moveTimer[0] > moveTimer[1])
         {
             if (moveString.Length > 1)
                 moveString = moveString[moveString.Length - 1].ToString();
             moveTimer[0] = 0;
-            //comString = ConvertMoves(moveString, comString);
+            comString = ConvertMoves(moveString, comString);
         }
-        //}
     }
 
     public void InputMove(InputAction.CallbackContext ctx)

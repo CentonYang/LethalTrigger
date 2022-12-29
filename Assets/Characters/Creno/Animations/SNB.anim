@@ -20458,7 +20458,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 3
+        value: 2
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -20514,7 +20514,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 5
+        value: 4
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -20550,7 +20550,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.6666667
+        time: 0.6333333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -42841,7 +42841,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 3
+        value: 2
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -42897,7 +42897,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.33333334
-        value: 5
+        value: 4
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -42933,7 +42933,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.6666667
+        time: 0.6333333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -43213,7 +43213,14 @@ AnimationClip:
     messageOptions: 0
   - time: 0.43333334
     functionName: Canceler
-    data: DFM,DFW,FF,8,U,DS,S
+    data: DFM,DFW,FF,8,U,DS
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.43333334
+    functionName: CancelOther
+    data: FFDM,DM
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

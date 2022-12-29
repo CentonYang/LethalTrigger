@@ -16,7 +16,7 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public int direction, hitType;
     [HideInInspector] public bool hited, hurted, downbreak;
     [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed;
-    public Vector2 velocity, hurtVel;
+    [HideInInspector] public Vector2 velocity, hurtVel;
     public Vector2 hp, sta, btr, skill, fix;
     public GameObject hitboxes;
     public Transform hitTrans;
@@ -71,7 +71,7 @@ public class ActionSystem : MonoBehaviour
                 if (getName != null)
                 {
                     cancelList.Clear(); cancelOtherList.Clear();
-                    pc.actionKey = '\0';
+                    //pc.actionKey = '\0';
                     actionMsg = getName;
                     return;
                 }
@@ -85,7 +85,7 @@ public class ActionSystem : MonoBehaviour
                 if (getName != null)
                 {
                     cancelList.Clear();
-                    pc.actionKey = '\0';
+                    //pc.actionKey = '\0';
                     actionMsg = cancelOtherList[0];
                     cancelOtherList.Clear();
                     return;
@@ -123,7 +123,7 @@ public class ActionSystem : MonoBehaviour
             if (pc.movesNum == 3 || pc.movesNum == 6 || pc.movesNum == 9) dirDis += .2f;
         }
         else dirDis = 0;
-        if (actionMsg != null && (cancel || (hitCancel && hited)) && acceptMsg == null)
+        if (actionMsg != null && (cancel || (hitCancel && hited)) /*&& acceptMsg == null*/)
         {
             foreach (MoveList.Data item in moveList.data)
             {
@@ -138,10 +138,9 @@ public class ActionSystem : MonoBehaviour
             }
             if (actionMsg != null)
             {
+                if (actionMsg.Contains(pc.actionKey))
+                    pc.actionKey = '\0';
                 NextState(actionMsg);
-                if (pc.comString.Length <= 1 || (actionMsg != null && actionMsg.Length > 1))
-                    pc.comString = pc.ConvertMoves(pc.movesNum.ToString(), pc.comString);
-                actionMsg = null;
             }
         }
         if (acceptMsg != null)
@@ -162,7 +161,10 @@ public class ActionSystem : MonoBehaviour
             stiff--;
         if (pushReac > 0)
         {
-            velocity = hurtVel;
+            if (pushReac > 1)
+                velocity *= 0;
+            else
+                velocity = hurtVel;
             pushReac--;
         }
         else
@@ -170,9 +172,7 @@ public class ActionSystem : MonoBehaviour
             velocity.y -= gravity;
             velocity.x += velocity.x < 0 ? .05f : velocity.x > 0 ? -.05f : 0;
         }
-        if ((inState == InState.WAKE || inState == InState.N) && pushReac <= 0)
-        { downed = 0; opponent.combo = 0; fix.x = fix.y; }
-        if (cc.isGrounded && velocity.y < 0)
+        if (cc.isGrounded && velocity.y < 0 && pushReac <= 0)
         {
             if (inState == InState.A && (moveMode == MoveMode.move || moveMode == MoveMode.none))
                 NextState("AL");
@@ -180,8 +180,8 @@ public class ActionSystem : MonoBehaviour
                 if (velocity.y < -20)
                 {
                     downbreak = true;
-                    Time.timeScale = .5f; StartCoroutine(DownBreak(velocity.y, .1f));
-                    velocity.y = 0;
+                    Time.timeScale = .5f; StartCoroutine(DownBreak(velocity, .2f));
+                    pushReac = 6;
                     audioSource.clip = audios[5]; Sounder sd = Instantiate(sounder, audioSource.transform);
                 }
                 else
@@ -255,6 +255,7 @@ public class ActionSystem : MonoBehaviour
 
     public void NextState(string animState)
     {
+        if (pushReac > 0 && animState == "5") return;
         cancelList.Clear(); cancelOtherList.Clear(); actionMsg = null;
         if (animator.HasState(0, Animator.StringToHash(animState)))
             animator.Play(animState, -1, 0);
@@ -360,11 +361,13 @@ public class ActionSystem : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    IEnumerator DownBreak(float vely, float timeLong)
+    IEnumerator DownBreak(Vector2 vel, float timeLong)
     {
         yield return new WaitForSecondsRealtime(timeLong);
         Time.timeScale = 1;
-        velocity.y = Mathf.Abs(vely) * .4f * (downed > 0 ? Mathf.Pow(.9f, downed) : 1); NextState("HITF");
+        velocity.x = vel.x;
+        velocity.y = Mathf.Abs(vel.y) * .4f * (downed > 0 ? Mathf.Pow(.75f, downed) : 1); NextState("HITF");
+        pushReac = 0;
         downed++; downbreak = false;
     }
 
@@ -410,6 +413,8 @@ public class ActionSystem : MonoBehaviour
     {
         if (pc == null || (pc.pc == 0 && !GameSystem.p1Comp) || (pc.pc == 1 && !GameSystem.p2Comp))
             return;
+        if ((inState == InState.WAKE || inState == InState.N) && pushReac <= 0)
+        { downed = 0; opponent.combo = 0; fix.x = fix.y; }
         ComMessage();
     }
 }
