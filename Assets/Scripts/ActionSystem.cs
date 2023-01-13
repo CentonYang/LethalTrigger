@@ -213,7 +213,7 @@ public class ActionSystem : MonoBehaviour
                 velocity.x = -dis / Time.fixedDeltaTime;
             if (transform.position.x < opponent.transform.position.x && velocity.x < 0)
                 velocity.x = dis / Time.fixedDeltaTime;
-            cc.Move(velocity * Time.fixedDeltaTime);
+            cc.Move(new Vector2(velocity.x, velocity.y < -10 ? -10 : velocity.y) * Time.fixedDeltaTime);
             velocity.x = 0;
         }
         float ras = Mathf.Abs(opponent.transform.position.x - transform.position.x) - radius - opponent.radius;
@@ -223,10 +223,10 @@ public class ActionSystem : MonoBehaviour
                 velocity.x = ras / Time.fixedDeltaTime * .75f;
             if (transform.position.x > opponent.transform.position.x)
                 velocity.x = -ras / Time.fixedDeltaTime * .75f;
-            cc.Move(velocity * Time.fixedDeltaTime);
+            cc.Move(new Vector2(velocity.x, velocity.y < -10 ? -10 : velocity.y) * Time.fixedDeltaTime);
             velocity.x = 0;
         }
-        cc.Move((velocity + new Vector2(dirDis, 0)) * Time.fixedDeltaTime);
+        cc.Move((new Vector2(velocity.x, velocity.y < -10 ? -10 : velocity.y) + new Vector2(dirDis, 0)) * Time.fixedDeltaTime);
         transform.position = cc.transform.position;
         cc.transform.localPosition *= 0;
     }
