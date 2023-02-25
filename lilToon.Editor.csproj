@@ -36,27 +36,27 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/lilToon/Editor/lilToonEditorUtils.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilRenderPipelineReader.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilToonPropertyDrawer.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilStartup.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilEnumeration.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilShaderContainerImporter.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilToonAssetPostprocessor.cs" />
      <Compile Include="Assets/lilToon/Editor/lilDirectoryManager.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilShaderAPI.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilRenderPipelineReader.cs" />
      <Compile Include="Assets/lilToon/Editor/lilConstants.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilMaterialUtils.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilInspector.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilShaderManager.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilMaterialProperty.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilToonSetting.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilPropertyNameChecker.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilTextureUtils.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilOptimizer.cs" />
      <Compile Include="Assets/lilToon/Editor/lilEditorGUI.cs" />
-     <Compile Include="Assets/lilToon/Editor/lilToonPreset.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilInspector.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilTextureUtils.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilShaderManager.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilToonEditorUtils.cs" />
      <Compile Include="Assets/lilToon/Editor/lilLanguageManager.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilToonAssetPostprocessor.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilToonSetting.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilMaterialUtils.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilPropertyNameChecker.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilToonPropertyDrawer.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilShaderAPI.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilOptimizer.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilToonPreset.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilMaterialProperty.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilEnumeration.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilStartup.cs" />
+     <Compile Include="Assets/lilToon/Editor/lilShaderContainerImporter.cs" />
      <None Include="Assets/lilToon/Editor/CurrentRP.txt" />
      <None Include="Assets/lilToon/Editor/Resources/lang.txt" />
      <None Include="Assets/lilToon/Editor/lilToon.Editor.asmdef" />

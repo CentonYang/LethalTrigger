@@ -10,7 +10,7 @@ Available memory:        15963 MB
 Using pre-set license
 Pro License: YES
 
-(Unity:20486): Gdk-CRITICAL **: 02:12:04.274: gdk_window_get_cursor: assertion 'GDK_IS_WINDOW (window)' failed
+(Unity:29166): Gdk-CRITICAL **: 03:04:03.726: gdk_window_get_cursor: assertion 'GDK_IS_WINDOW (window)' failed
 Desktop is 1920 x 2160 @ 60 Hz
 Initialize udev device monitor.
 
@@ -26,7 +26,7 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-37901
+41641
 Successfully changed project path to: /media/centon/Centon/File/Project/Github/LethalTrigger
 /media/centon/Centon/File/Project/Github/LethalTrigger
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -58,7 +58,7 @@ Successfully changed project path to: /media/centon/Centon/File/Project/Github/L
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 194.37 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 323.33 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.13f1 (9e7d58001ecf)
 [Subsystems] Discovering subsystems at path /home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Resources/UnitySubsystems
@@ -78,218 +78,61 @@ L_EXT_texture_lod_bias GL_EXT_texture_mirror_clamp GL_EXT_texture_object GL_EXT_
 blend_equation_advanced_coherent GL_NVX_blend_equation_advanced_multi_draw_buffers GL_NV_blend_minmax_factor GL_NV_blend_square GL_NV_clip_space_w_scaling GL_NV_command_list GL_NV_compute_program5 GL_NV_conditional_render GL_NV_conservative_raster GL_NV_conservative_raster_dilate GL_NV_conservative_raster_pre_snap_triangles GL_NV_copy_depth_to_color GL_NV_copy_image GL_NV_depth_buffer_float GL_NV_depth_clamp GL_NV_draw_texture GL_NV_draw_vulkan_image GL_NV_ES1_1_compatibility GL_NV_ES3_1_compatibility GL_NV_explicit_multisample GL_NV_feature_query GL_NV_fence GL_NV_fill_rectangle GL_NV_float_buffer GL_NV_fog_distance GL_NV_fragment_coverage_to_color GL_NV_fragment_program GL_NV_fragment_program_option GL_NV_fragment_program2 GL_NV_fragment_shader_interlock GL_NV_framebuffer_mixed_samples GL_NV_framebuffer_multisample_coverage GL_NV_geometry_shader4 GL_NV_geometry_shader_passthrough GL_NV_gpu_program4 GL_NV_internalformat_sample_query GL_NV_gpu_program4_1 GL_NV_gpu_program5 GL_NV_gpu_program5_mem_extended GL_
 NV_gpu_program_fp64 GL_NV_gpu_shader5 GL_NV_half_float GL_NV_light_max_exponent GL_NV_memory_attachment GL_NV_multisample_coverage GL_NV_multisample_filter_hint GL_NV_occlusion_query GL_NV_packed_depth_stencil GL_NV_parameter_buffer_object GL_NV_parameter_buffer_object2 GL_NV_path_rendering GL_NV_path_rendering_shared_edge GL_NV_pixel_data_range GL_NV_point_sprite GL_NV_primitive_restart GL_NV_query_resource GL_NV_query_resource_tag GL_NV_register_combiners GL_NV_register_combiners2 GL_NV_sample_locations GL_NV_sample_mask_override_coverage GL_NV_shader_atomic_counters GL_NV_shader_atomic_float GL_NV_shader_atomic_float64 GL_NV_shader_atomic_fp16_vector GL_NV_shader_atomic_int64 GL_NV_shader_buffer_load GL_NV_shader_storage_buffer_object GL_NV_shader_subgroup_partitioned GL_NV_stereo_view_rendering GL_NV_texgen_reflection GL_NV_texture_barrier GL_NV_texture_compression_vtc GL_NV_texture_env_combine4 GL_NV_texture_multisample GL_NV_texture_rectangle GL_NV_texture_rectangle_compressed GL_NV_texture_shader GL_N
 V_texture_shader2 GL_NV_texture_shader3 GL_NV_transform_feedback GL_NV_transform_feedback2 GL_NV_uniform_buffer_unified_memory GL_NV_vdpau_interop GL_NV_vdpau_interop2 GL_NV_vertex_array_range GL_NV_vertex_array_range2 GL_NV_vertex_attrib_integer_64bit GL_NV_vertex_buffer_unified_memory GL_NV_vertex_program GL_NV_vertex_program1_1 GL_NV_vertex_program2 GL_NV_vertex_program2_option GL_NV_vertex_program3 GL_NV_viewport_array2 GL_NV_viewport_swizzle GL_NVX_conditional_render GL_NV_gpu_multicast GL_NVX_progress_fence GL_NVX_gpu_memory_info GL_NVX_nvenc_interop GL_NV_shader_thread_group GL_NV_shader_thread_shuffle GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OVR_multiview GL_OVR_multiview2 GL_SGIS_generate_mipmap GL_SGIS_texture_lod GL_SGIX_depth_texture GL_SGIX_shadow GL_SUN_slice_accum
-OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle -1082463944
+OPENGL LOG: Creating OpenGL 4.5 graphics device ; Context level  <OpenGL 4.5> ; Context handle -519859400
 Initialize mono
 Mono path[0] = '/home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/Managed'
 Mono path[1] = '/home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
 Mono config path = '/home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56486
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56166
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2021.3.13f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.019766 seconds.
+Registered in 0.025409 seconds.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 131.66 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 236.74 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.833 seconds
+- Completed reload, in  1.004 seconds
 Domain Reload Profiling:
-	ReloadAssembly (833ms)
-		BeginReloadAssembly (71ms)
+	ReloadAssembly (1005ms)
+		BeginReloadAssembly (77ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (623ms)
-			LoadAssemblies (68ms)
+		EndReloadAssembly (775ms)
+			LoadAssemblies (76ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (122ms)
+			SetupTypeCache (142ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (42ms)
-			SetupLoadedEditorAssemblies (368ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (493ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (66ms)
+				InitializePlatformSupportModulesInManaged (76ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (132ms)
+				RefreshPlugins (237ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (115ms)
-				ProcessInitializeOnLoadMethodAttributes (53ms)
+				ProcessInitializeOnLoadAttributes (118ms)
+				ProcessInitializeOnLoadMethodAttributes (60ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.096961 seconds.
-Android Extension - Scanning For ADB Devices 5054 ms
+Registered in 0.109952 seconds.
+Android Extension - Scanning For ADB Devices 5743 ms
 Begin MonoManager ReloadAssembly
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 131.77 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 145.59 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-UpdateMenuTitleForLanguage: 10
-Mono: successfully reloaded assembly
-- Completed reload, in  2.175 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2176ms)
-		BeginReloadAssembly (114ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (29ms)
-		EndReloadAssembly (1876ms)
-			LoadAssemblies (266ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (336ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (115ms)
-			SetupLoadedEditorAssemblies (1004ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (26ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (132ms)
-				BeforeProcessingInitializeOnLoad (316ms)
-				ProcessInitializeOnLoadAttributes (413ms)
-				ProcessInitializeOnLoadMethodAttributes (107ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
-Refreshing native plugins compatible for Editor in 1.04 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5800 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 53 unused Assets / (1.4 MB). Loaded Objects now: 6267.
-Memory consumption went from 238.7 MB to 237.3 MB.
-Total: 6.389607 ms (FindLiveObjects: 0.459929 ms CreateObjectMapping: 0.491759 ms MarkObjects: 4.721014 ms  DeleteObjects: 0.715390 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 4347.675317 seconds.
-  path: Assets/Characters/Natalia/Natalia.prefab
-  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ede4fa40b9490d46f0de7f271883b5df') in 1.256593 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Characters/Natalia/Materials/Natalia_Weapon_UV2.mat
-  artifactKey: Guid(5dce8a107d57b1436b22437a3c390d05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Materials/Natalia_Weapon_UV2.mat using Guid(5dce8a107d57b1436b22437a3c390d05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22264553c033cd548939394da7fb3378') in 0.036423 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Characters/Natalia/Natalia.Materials/N00_000_00_FaceMouth_00_FACE (Instance).asset
-  artifactKey: Guid(4872730409e1c6cf3a92529fb9101867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Natalia.Materials/N00_000_00_FaceMouth_00_FACE (Instance).asset using Guid(4872730409e1c6cf3a92529fb9101867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f651488e14cabd3b3e1400b101fddded') in 0.065070 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Characters/Natalia/Natalia.Materials/N00_000_00_Body_00_SKIN (Instance).asset
-  artifactKey: Guid(52699f82144a7188d8b92f023eee2b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Natalia.Materials/N00_000_00_Body_00_SKIN (Instance).asset using Guid(52699f82144a7188d8b92f023eee2b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd8862b7ad4f07fd6c3e5961fe3fdc71') in 0.067146 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Characters/Natalia/Weapon.fbx
-  artifactKey: Guid(fc94b7819f4fc71a8a5a811814f035c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Weapon.fbx using Guid(fc94b7819f4fc71a8a5a811814f035c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13f1988623463d3cda43ede14f9002d7') in 0.045325 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 14.456693 seconds.
-  path: Assets/Characters/Natalia/Natalia.Materials/N00_000_00_Body_00_SKIN (Instance).asset
-  artifactKey: Guid(52699f82144a7188d8b92f023eee2b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Natalia.Materials/N00_000_00_Body_00_SKIN (Instance).asset using Guid(52699f82144a7188d8b92f023eee2b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b4cb093f58d6e7d57403a97ce28ab35') in 0.081609 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Characters/Natalia/Natalia.Materials/N00_000_00_FaceMouth_00_FACE (Instance).asset
-  artifactKey: Guid(4872730409e1c6cf3a92529fb9101867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Natalia.Materials/N00_000_00_FaceMouth_00_FACE (Instance).asset using Guid(4872730409e1c6cf3a92529fb9101867) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca8930992e501ed564a4898c71bd8bb8') in 0.091276 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.073955 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 143.34 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in 40.251 seconds
-Domain Reload Profiling:
-	ReloadAssembly (40252ms)
-		BeginReloadAssembly (184ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (9ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (52ms)
-		EndReloadAssembly (39894ms)
-			LoadAssemblies (38020ms)
-			RebuildTransferFunctionScriptingTraits (1ms)
-			SetupTypeCache (308ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (95ms)
-			SetupLoadedEditorAssemblies (1117ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (30ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (144ms)
-				BeforeProcessingInitializeOnLoad (423ms)
-				ProcessInitializeOnLoadAttributes (401ms)
-				ProcessInitializeOnLoadMethodAttributes (110ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (21ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 25.24 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5699 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 81 unused Assets / (11.5 MB). Loaded Objects now: 6399.
-Memory consumption went from 254.2 MB to 242.7 MB.
-Total: 11.467259 ms (FindLiveObjects: 0.427739 ms CreateObjectMapping: 0.516672 ms MarkObjects: 4.582218 ms  DeleteObjects: 5.938771 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 317.472927 seconds.
-  path: Assets/Characters/Natalia/Natalia.prefab
-  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a457765b11d7f4daf74cf8d1a529547') in 1.209503 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.366518 seconds.

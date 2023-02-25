@@ -800,11 +800,11 @@
     <Reference Include="Unity.Toolchain.Linux-x86_64">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.Toolchain.Linux-x86_64.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+        <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
         <HintPath>/media/centon/Centon/File/Project/Github/LethalTrigger/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
@@ -901,6 +901,10 @@
     <ProjectReference Include="Unity.VisualEffectGraph.Runtime.csproj">
       <Project>{edbdb0ac-b084-02c1-6215-6d711bab685f}</Project>
       <Name>Unity.VisualEffectGraph.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="lilToon.Editor.csproj">
+      <Project>{1defba6b-50ad-2835-7ec8-e458ecb7c905}</Project>
+      <Name>lilToon.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
       <Project>{d6860151-4a28-2bdc-381a-d61c17f24369}</Project>
