@@ -369,6 +369,7 @@ namespace lilToon
                 !assetName.Contains("ltsmulti") &&
                 !assetName.Contains("ltspass_lite") &&
                 !assetName.Contains("ltsl") &&
+                !assetName.Contains("fakeshadow") &&
                 File.Exists(lilDirectoryManager.postBuildTempPath)
             )
             {
@@ -393,6 +394,14 @@ namespace lilToon
                 }
             }
 
+            if(
+                !assetName.Contains("ltspass") &&
+                GetBoolField("LIL_OPTIMIZE_DEFFERED", false)
+            )
+            {
+                sb.Replace("/SHADOW_CASTER_OUTLINE", "/SHADOW_CASTER");
+            }
+
             sb.Replace("\r\n", "\r");
             sb.Replace("\n", "\r");
             sb.Replace("\r", "\r\n");
@@ -400,6 +409,8 @@ namespace lilToon
             sb.Replace("\r\n    \r\n", "\r\n");
             sb.Replace("\r\n        \r\n", "\r\n");
             sb.Replace("\r\n            \r\n", "\r\n");
+
+            AddHLSLDependency(assetFolderPath, ctx);
 
             return sb.ToString();
         }
@@ -422,7 +433,7 @@ namespace lilToon
             AddDependency(ctx, path);
             StreamReader sr = new StreamReader(path);
             string line;
-            while ((line = sr.ReadLine()) != null)
+            while((line = sr.ReadLine()) != null)
             {
                 if(line.Contains(csdShaderNameTag))
                 {
@@ -570,7 +581,7 @@ namespace lilToon
             StreamReader sr = new StreamReader(path);
             string line;
 
-            while ((line = sr.ReadLine()) != null)
+            while((line = sr.ReadLine()) != null)
             {
                 if(!isOrigShaderNameLoaded && line.StartsWith("Shader"))
                 {
@@ -842,6 +853,18 @@ namespace lilToon
                     }
                 }
             #endif
+        }
+
+        private static void AddHLSLDependency(string assetFolderPath, AssetImportContext ctx)
+        {
+            if(ctx == null) return;
+
+            foreach(string guid in AssetDatabase.FindAssets("", new[]{assetFolderPath}))
+            {
+                string assetpath = AssetDatabase.GUIDToAssetPath(guid);
+                if(assetpath.Contains("lilcontainer")) continue;
+                AddDependency(ctx, assetpath);
+            }
         }
 
         //------------------------------------------------------------------------------------------------------------------------------

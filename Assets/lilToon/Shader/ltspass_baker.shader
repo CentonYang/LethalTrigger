@@ -114,7 +114,6 @@ Shader "Hidden/ltsother_baker"
             #define LIL_FEATURE_BumpMap
             #define LIL_FEATURE_EmissionMap
             #define LIL_FEATURE_OutlineTex
-            #define LIL_FEATURE_FurNoiseMask
             #define LIL_OPTIMIZE_APPLY_SHADOW_FA
             #define LIL_OPTIMIZE_USE_FORWARDADD
             #define LIL_OPTIMIZE_USE_VERTEXLIGHT
@@ -194,10 +193,10 @@ Shader "Hidden/ltsother_baker"
                     float4 col = LIL_SAMPLE_2D(_MainTex,sampler_MainTex,input.uv0);
                     col.g = 1.0 - col.g;
                 #elif defined(_TEXTURE_PACKING)
-                    float4 p1 = LIL_SAMPLE_2D(_PackingTexture1,sampler_linear_clamp,input.uv0);
-                    float4 p2 = LIL_SAMPLE_2D(_PackingTexture2,sampler_linear_clamp,input.uv0);
-                    float4 p3 = LIL_SAMPLE_2D(_PackingTexture3,sampler_linear_clamp,input.uv0);
-                    float4 p4 = LIL_SAMPLE_2D(_PackingTexture4,sampler_linear_clamp,input.uv0);
+                    float4 p1 = LIL_SAMPLE_2D(_PackingTexture1,lil_sampler_linear_clamp,input.uv0);
+                    float4 p2 = LIL_SAMPLE_2D(_PackingTexture2,lil_sampler_linear_clamp,input.uv0);
+                    float4 p3 = LIL_SAMPLE_2D(_PackingTexture3,lil_sampler_linear_clamp,input.uv0);
+                    float4 p4 = LIL_SAMPLE_2D(_PackingTexture4,lil_sampler_linear_clamp,input.uv0);
                     float4 col = 1.0f;
                     if(_PackingChannel1 >= 4) {
                         col.r = dot(p1.rgb, 1.0/3.0);
@@ -231,7 +230,7 @@ Shader "Hidden/ltsother_baker"
                     uint w,h,d,l;
                     _MainTex3D.GetDimensions(0,w,h,d,l);
                     col.rgb = (col.rgb - col.rgb / (float)w) + 0.5 / (float)w;
-                    col.rgb = LIL_SAMPLE_3D(_MainTex3D, sampler_linear_clamp, col.rgb).rgb;
+                    col.rgb = LIL_SAMPLE_3D(_MainTex3D, lil_sampler_linear_clamp, col.rgb).rgb;
                     col.a = 1;
                 #else
                     // Main

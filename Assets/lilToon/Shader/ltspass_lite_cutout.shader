@@ -19,6 +19,7 @@ Shader "Hidden/ltspass_lite_cutout"
                         _AlphaBoostFA               ("Alpha Boost", Range(1,100)) = 10
                         _lilDirectionalLightStrength ("Directional Light Strength", Range(0,1)) = 1
         [lilVec3B]      _LightDirectionOverride     ("Light Direction Override", Vector) = (0.001,0.002,0.001,0)
+                        _AAStrength                 ("AA Strength", Range(0, 1)) = 1
         [NoScaleOffset] _TriMask                    ("TriMask", 2D) = "white" {}
 
         //----------------------------------------------------------------------------------------------------------------------
@@ -86,7 +87,7 @@ Shader "Hidden/ltspass_lite_cutout"
         [HideInInspector]                               _BaseColor          ("Color", Color) = (1,1,1,1)
         [HideInInspector]                               _BaseMap            ("Texture", 2D) = "white" {}
         [HideInInspector]                               _BaseColorMap       ("Texture", 2D) = "white" {}
-        [HideInInspector]                               _lilToonVersion     ("Version", Int) = 32
+        [HideInInspector]                               _lilToonVersion     ("Version", Int) = 33
 
         //----------------------------------------------------------------------------------------------------------------------
         // Advanced

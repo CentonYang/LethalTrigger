@@ -26,6 +26,7 @@ float4  _MainTex_ST;
 #if defined(LIL_FEATURE_MAIN2ND)
     float4  _Color2nd;
     float4  _Main2ndTex_ST;
+    float4  _Main2ndTex_ScrollRotate;
     float4  _Main2ndDistanceFade;
     #if defined(LIL_FEATURE_DECAL) && defined(LIL_FEATURE_ANIMATE_DECAL)
         float4  _Main2ndTexDecalAnimation;
@@ -47,6 +48,7 @@ float4  _MainTex_ST;
 #if defined(LIL_FEATURE_MAIN3RD)
     float4  _Color3rd;
     float4  _Main3rdTex_ST;
+    float4  _Main3rdTex_ScrollRotate;
     float4  _Main3rdDistanceFade;
     #if defined(LIL_FEATURE_DECAL) && defined(LIL_FEATURE_ANIMATE_DECAL)
         float4  _Main3rdTexDecalAnimation;
@@ -133,9 +135,11 @@ float4  _MainTex_ST;
 // Reflection
 #if defined(LIL_FEATURE_REFLECTION)
     float4  _ReflectionColor;
-    float4  _SmoothnessTex_ST;
     float4  _MetallicGlossMap_ST;
     float4  _ReflectionColorTex_ST;
+#endif
+#if defined(LIL_FEATURE_REFLECTION) || defined(LIL_REFRACTION_BLUR2)
+    float4  _SmoothnessTex_ST;
 #endif
 #if defined(LIL_FEATURE_REFLECTION) || defined(LIL_GEM)
     float4  _ReflectionCubeColor;
@@ -355,13 +359,15 @@ float   _MonochromeLighting;
     float   _Anisotropy2ndSpecularStrength;
 #endif
 #if defined(LIL_FEATURE_REFLECTION) || defined(LIL_GEM)
-    float   _Smoothness;
     float   _Reflectance;
     float   _SpecularNormalStrength;
     float   _SpecularBorder;
     float   _SpecularBlur;
     float   _ReflectionNormalStrength;
     float   _ReflectionCubeEnableLighting;
+#endif
+#if defined(LIL_FEATURE_REFLECTION) || defined(LIL_GEM) || defined(LIL_REFRACTION_BLUR2)
+    float   _Smoothness;
 #endif
 #if defined(LIL_FEATURE_REFLECTION)
     float   _Metallic;
@@ -531,14 +537,19 @@ uint    _Cull;
 #if defined(LIL_FEATURE_MATCAP_2ND)
     uint    _MatCap2ndBlendMode;
 #endif
+#if defined(LIL_FEATURE_RIMLIGHT)
+    uint    _RimBlendMode;
+#endif
 #if defined(LIL_FEATURE_GLITTER)
     uint    _GlitterUVMode;
 #endif
 #if defined(LIL_FEATURE_EMISSION_1ST)
     uint    _EmissionMap_UVMode;
+    uint    _EmissionBlendMode;
 #endif
 #if defined(LIL_FEATURE_EMISSION_2ND)
     uint    _Emission2ndMap_UVMode;
+    uint    _Emission2ndBlendMode;
 #endif
 #if defined(LIL_FEATURE_AUDIOLINK)
     uint    _AudioLinkUVMode;

@@ -397,7 +397,8 @@
             float furAlpha = saturate(furNoiseMask - furLayerShift * furLayerAbs * furLayerAbs * furLayerAbs + 0.25);
     #endif
     #define LIL_FUR_LAYER_AO \
-        fd.col.rgb *= furLayer * _FurAO * 2.0 + 1.0 - _FurAO;
+        float furAO = _FurAO * saturate(1.0 - fwidth(input.furLayer)); \
+        fd.col.rgb *= furLayer * furAO * 2.0 + 1.0 - furAO;
 #else
     #if defined(LIL_ONEPASS_FUR)
         #define LIL_FUR_LAYER_ALPHA \
@@ -546,7 +547,7 @@
                 if(_Bump2ndMap_UVMode == 1) uvBump2nd = fd.uv1; \
                 if(_Bump2ndMap_UVMode == 2) uvBump2nd = fd.uv2; \
                 if(_Bump2ndMap_UVMode == 3) uvBump2nd = fd.uv3; \
-                float4 normal2ndTex = LIL_SAMPLE_2D_ST(_Bump2ndMap, sampler_linear_repeat, uvBump2nd); \
+                float4 normal2ndTex = LIL_SAMPLE_2D_ST(_Bump2ndMap, lil_sampler_linear_repeat, uvBump2nd); \
                 float bump2ndScale = _Bump2ndScale; \
                 LIL_SAMPLE_Bump2ndScaleMask; \
                 normalmap = lilBlendNormal(normalmap, lilUnpackNormalScale(normal2ndTex, bump2ndScale)); \
@@ -632,7 +633,7 @@
                 if(_AudioLinkAsLocal)
                 {
                     audioLinkUV.x += frac(-LIL_TIME * _AudioLinkLocalMapParams.r / 60 * _AudioLinkLocalMapParams.g) + _AudioLinkLocalMapParams.b;
-                    fd.audioLinkValue = LIL_SAMPLE_2D(_AudioLinkLocalMap, sampler_linear_repeat, audioLinkUV).r;
+                    fd.audioLinkValue = LIL_SAMPLE_2D(_AudioLinkLocalMap, lil_sampler_linear_repeat, audioLinkUV).r;
                 }
                 else
             #endif
@@ -642,7 +643,7 @@
             {
                 // Scaling for _AudioTexture (4/64)
                 audioLinkUV.y *= 0.0625;
-                float4 audioTexture = LIL_SAMPLE_2D(_AudioTexture, sampler_linear_clamp, audioLinkUV);
+                float4 audioTexture = LIL_SAMPLE_2D(_AudioTexture, lil_sampler_linear_clamp, audioLinkUV);
                 if(_AudioLinkUVMode == 4)
                 {
                     float audioVal = audioTexture.b * _AudioLinkUVParams.x * lerp(_AudioLinkUVParams.y, _AudioLinkUVParams.z, audioLinkMask.g);
@@ -883,10 +884,10 @@
             #endif
             #if defined(LIL_FEATURE_ShadowBlurMask)
                 #if defined(_ShadowBlurMaskLOD)
-                    float4 shadowBlurMask = LIL_SAMPLE_2D(_ShadowBlurMask, sampler_linear_repeat, fd.uvMain);
-                    if(_ShadowBlurMaskLOD) shadowBlurMask = LIL_SAMPLE_2D_GRAD(_ShadowBlurMask, sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowBlurMaskLOD), max(fd.ddyMain, _ShadowBlurMaskLOD));
+                    float4 shadowBlurMask = LIL_SAMPLE_2D(_ShadowBlurMask, lil_sampler_linear_repeat, fd.uvMain);
+                    if(_ShadowBlurMaskLOD) shadowBlurMask = LIL_SAMPLE_2D_GRAD(_ShadowBlurMask, lil_sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowBlurMaskLOD), max(fd.ddyMain, _ShadowBlurMaskLOD));
                 #else
-                    float4 shadowBlurMask = LIL_SAMPLE_2D_GRAD(_ShadowBlurMask, sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowBlurMaskLOD), max(fd.ddyMain, _ShadowBlurMaskLOD));
+                    float4 shadowBlurMask = LIL_SAMPLE_2D_GRAD(_ShadowBlurMask, lil_sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowBlurMaskLOD), max(fd.ddyMain, _ShadowBlurMaskLOD));
                 #endif
                 shadowBlur *= shadowBlurMask.r;
                 shadow2ndBlur *= shadowBlurMask.g;
@@ -898,10 +899,10 @@
             // AO Map & Toon
             #if defined(LIL_FEATURE_ShadowBorderMask)
                 #if defined(_ShadowBorderMaskLOD)
-                    float4 shadowBorderMask = LIL_SAMPLE_2D(_ShadowBorderMask, sampler_linear_repeat, fd.uvMain);
-                    if(_ShadowBorderMaskLOD) shadowBorderMask = LIL_SAMPLE_2D_GRAD(_ShadowBorderMask, sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowBorderMaskLOD), max(fd.ddyMain, _ShadowBorderMaskLOD));
+                    float4 shadowBorderMask = LIL_SAMPLE_2D(_ShadowBorderMask, lil_sampler_linear_repeat, fd.uvMain);
+                    if(_ShadowBorderMaskLOD) shadowBorderMask = LIL_SAMPLE_2D_GRAD(_ShadowBorderMask, lil_sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowBorderMaskLOD), max(fd.ddyMain, _ShadowBorderMaskLOD));
                 #else
-                    float4 shadowBorderMask = LIL_SAMPLE_2D_GRAD(_ShadowBorderMask, sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowBorderMaskLOD), max(fd.ddyMain, _ShadowBorderMaskLOD));
+                    float4 shadowBorderMask = LIL_SAMPLE_2D_GRAD(_ShadowBorderMask, lil_sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowBorderMaskLOD), max(fd.ddyMain, _ShadowBorderMaskLOD));
                 #endif
                 shadowBorderMask.r = saturate(shadowBorderMask.r * _ShadowAOShift.x + _ShadowAOShift.y);
                 shadowBorderMask.g = saturate(shadowBorderMask.g * _ShadowAOShift.z + _ShadowAOShift.w);
@@ -911,21 +912,21 @@
                 lns.xyz = _ShadowPostAO ? lns.xyz : lns.xyz * shadowBorderMask.rgb;
 
                 lns.w = lns.x;
-                lns.x = lilTooningNoSaturate(lns.x, _ShadowBorder, shadowBlur);
-                lns.y = lilTooningNoSaturate(lns.y, _Shadow2ndBorder, shadow2ndBlur);
-                lns.w = lilTooningNoSaturate(lns.w, _ShadowBorder, shadowBlur, _ShadowBorderRange);
+                lns.x = lilTooningNoSaturateScale(_AAStrength, lns.x, _ShadowBorder, shadowBlur);
+                lns.y = lilTooningNoSaturateScale(_AAStrength, lns.y, _Shadow2ndBorder, shadow2ndBlur);
+                lns.w = lilTooningNoSaturateScale(_AAStrength, lns.w, _ShadowBorder, shadowBlur, _ShadowBorderRange);
                 #if defined(LIL_FEATURE_SHADOW_3RD)
-                    lns.z = lilTooningNoSaturate(lns.z, _Shadow3rdBorder, shadow3rdBlur);
+                    lns.z = lilTooningNoSaturateScale(_AAStrength, lns.z, _Shadow3rdBorder, shadow3rdBlur);
                 #endif
                 lns = _ShadowPostAO ? lns * shadowBorderMask.rgbr : lns;
                 lns = saturate(lns);
             #else
                 lns.w = lns.x;
-                lns.x = lilTooning(lns.x, _ShadowBorder, shadowBlur);
-                lns.y = lilTooning(lns.y, _Shadow2ndBorder, shadow2ndBlur);
-                lns.w = lilTooning(lns.w, _ShadowBorder, shadowBlur, _ShadowBorderRange);
+                lns.x = lilTooningScale(_AAStrength, lns.x, _ShadowBorder, shadowBlur);
+                lns.y = lilTooningScale(_AAStrength, lns.y, _Shadow2ndBorder, shadow2ndBlur);
+                lns.w = lilTooningScale(_AAStrength, lns.w, _ShadowBorder, shadowBlur, _ShadowBorderRange);
                 #if defined(LIL_FEATURE_SHADOW_3RD)
-                    lns.z = lilTooning(lns.z, _Shadow3rdBorder, shadow3rdBlur);
+                    lns.z = lilTooningScale(_AAStrength, lns.z, _Shadow3rdBorder, shadow3rdBlur);
                 #endif
             #endif
 
@@ -949,10 +950,10 @@
             float shadowStrengthMask = 1;
             #if defined(LIL_FEATURE_ShadowStrengthMask)
                 #if defined(_ShadowStrengthMaskLOD)
-                    shadowStrengthMask = LIL_SAMPLE_2D(_ShadowStrengthMask, sampler_linear_repeat, fd.uvMain).r;
-                    if(_ShadowStrengthMaskLOD) shadowStrengthMask = LIL_SAMPLE_2D_GRAD(_ShadowStrengthMask, sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowStrengthMaskLOD), max(fd.ddyMain, _ShadowStrengthMaskLOD)).r;
+                    shadowStrengthMask = LIL_SAMPLE_2D(_ShadowStrengthMask, lil_sampler_linear_repeat, fd.uvMain).r;
+                    if(_ShadowStrengthMaskLOD) shadowStrengthMask = LIL_SAMPLE_2D_GRAD(_ShadowStrengthMask, lil_sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowStrengthMaskLOD), max(fd.ddyMain, _ShadowStrengthMaskLOD)).r;
                 #else
-                    shadowStrengthMask = LIL_SAMPLE_2D_GRAD(_ShadowStrengthMask, sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowStrengthMaskLOD), max(fd.ddyMain, _ShadowStrengthMaskLOD)).r;
+                    shadowStrengthMask = LIL_SAMPLE_2D_GRAD(_ShadowStrengthMask, lil_sampler_linear_repeat, fd.uvMain, max(fd.ddxMain, _ShadowStrengthMaskLOD), max(fd.ddyMain, _ShadowStrengthMaskLOD)).r;
                 #endif
             #endif
             if(_ShadowMaskType)
@@ -1054,9 +1055,9 @@
             float lnB = ln1;
 
             // Toon
-            ln1 = lilTooning(ln1, _ShadowBorder, _ShadowBlur);
-            ln2 = lilTooning(ln2, _Shadow2ndBorder, _Shadow2ndBlur);
-            lnB = lilTooning(lnB, _ShadowBorder, _ShadowBlur, _ShadowBorderRange);
+            ln1 = lilTooningScale(_AAStrength, ln1, _ShadowBorder, _ShadowBlur);
+            ln2 = lilTooningScale(_AAStrength, ln2, _Shadow2ndBorder, _Shadow2ndBlur);
+            lnB = lilTooningScale(_AAStrength, lnB, _ShadowBorder, _ShadowBlur, _ShadowBorderRange);
 
             // Force shadow on back face
             float bfshadow = (fd.facing < 0.0) ? 1.0 - _BackfaceForceShadow : 1.0;
@@ -1125,7 +1126,7 @@
             #if defined(LIL_USE_SHADOW) || defined(LIL_LIGHTMODE_SHADOWMASK)
                 if(_BacklightReceiveShadow) backlightLN *= saturate(fd.attenuation + distance(fd.L, fd.origL));
             #endif
-            backlightLN = lilTooning(backlightLN, _BacklightBorder, _BacklightBlur);
+            backlightLN = lilTooningScale(_AAStrength, backlightLN, _BacklightBorder, _BacklightBlur);
             float backlight = saturate(backlightFactor * backlightLN);
             backlight = fd.facing < (_BacklightBackfaceMask-1.0) ? 0.0 : backlight;
 
@@ -1146,11 +1147,11 @@
     void lilRefraction(inout lilFragData fd LIL_SAMP_IN_FUNC(samp))
     {
         float2 refractUV = fd.uvScn + (pow(1.0 - fd.nv, _RefractionFresnelPower) * _RefractionStrength) * mul((float3x3)LIL_MATRIX_V, fd.N).xy;
-        #if defined(LIL_REFRACTION_BLUR2) && defined(LIL_FEATURE_REFLECTION)
+        #if defined(LIL_REFRACTION_BLUR2)
             #if defined(LIL_BRP)
                 float3 refractCol = 0;
                 float sum = 0;
-                float blurOffset = fd.perceptualRoughness / sqrt(fd.positionSS.w) * (0.05 / LIL_REFRACTION_SAMPNUM);
+                float blurOffset = fd.perceptualRoughness / sqrt(fd.positionSS.w) * (0.03 / LIL_REFRACTION_SAMPNUM) * LIL_MATRIX_P._m11;
                 for(int j = -16; j <= 16; j++)
                 {
                     refractCol += LIL_GET_GRAB_TEX(refractUV + float2(0,j*blurOffset), 0).rgb * LIL_REFRACTION_GAUSDIST(j);
@@ -1162,8 +1163,6 @@
                 float refractLod = min(sqrt(fd.perceptualRoughness / sqrt(fd.positionSS.w) * 5.0), 10);
                 float3 refractCol = LIL_GET_GRAB_TEX(refractUV, refractLod).rgb * _RefractionColor.rgb;
             #endif
-        #elif defined(LIL_REFRACTION_BLUR2)
-            float3 refractCol = LIL_GET_GRAB_TEX(refractUV,0).rgb * _RefractionColor.rgb;
         #else
             float3 refractCol = LIL_GET_BG_TEX(refractUV,0).rgb * _RefractionColor.rgb;
         #endif
@@ -1206,7 +1205,7 @@
         #else
             if(_SpecularToon)
         #endif
-        return lilTooning(pow(nh,1.0/fd.roughness), _SpecularBorder, _SpecularBlur);
+        return lilTooningScale(_AAStrength, pow(nh,1.0/fd.roughness), _SpecularBorder, _SpecularBlur);
 
         // Dot
         float nv = saturate(dot(N, fd.V));
@@ -1288,7 +1287,7 @@
 
         // Output
         #if defined(LIL_FEATURE_ANISOTROPY)
-            if(_SpecularToon) return lilTooning(specularTerm, 0.5);
+            if(_SpecularToon) return lilTooningScale(_AAStrength, specularTerm, 0.5);
         #endif
         return specularTerm * lilFresnelTerm(specular, lh);
     }
@@ -1414,7 +1413,7 @@
             // Color
             float4 matCapColor = _MatCapColor;
             #if defined(LIL_FEATURE_MatCapTex)
-                matCapColor *= LIL_SAMPLE_2D_LOD(_MatCapTex, sampler_linear_repeat, matUV, _MatCapLod);
+                matCapColor *= LIL_SAMPLE_2D_LOD(_MatCapTex, lil_sampler_linear_repeat, matUV, _MatCapLod);
             #endif
             #if !defined(LIL_PASS_FORWARDADD)
                 matCapColor.rgb = lerp(matCapColor.rgb, matCapColor.rgb * fd.lightColor, _MatCapEnableLighting);
@@ -1482,7 +1481,7 @@
             // Color
             float4 matCap2ndColor = _MatCap2ndColor;
             #if defined(LIL_FEATURE_MatCap2ndTex)
-                matCap2ndColor *= LIL_SAMPLE_2D_LOD(_MatCap2ndTex, sampler_linear_repeat, mat2ndUV, _MatCap2ndLod);
+                matCap2ndColor *= LIL_SAMPLE_2D_LOD(_MatCap2ndTex, lil_sampler_linear_repeat, mat2ndUV, _MatCap2ndLod);
             #endif
             #if !defined(LIL_PASS_FORWARDADD)
                 matCap2ndColor.rgb = lerp(matCap2ndColor.rgb, matCap2ndColor.rgb * fd.lightColor, _MatCap2ndEnableLighting);
@@ -1549,8 +1548,8 @@
                 float rimDir = lerp(rim, rim*lnDir, _RimDirStrength);
                 float rimIndir = rim * lnIndir * _RimDirStrength;
 
-                rimDir = lilTooning(rimDir, _RimBorder, _RimBlur);
-                rimIndir = lilTooning(rimIndir, _RimIndirBorder, _RimIndirBlur);
+                rimDir = lilTooningScale(_AAStrength, rimDir, _RimBorder, _RimBlur);
+                rimIndir = lilTooningScale(_AAStrength, rimIndir, _RimIndirBorder, _RimIndirBlur);
 
                 rimDir = lerp(rimDir, rimDir * fd.shadowmix, _RimShadowMask);
                 rimIndir = lerp(rimIndir, rimIndir * fd.shadowmix, _RimShadowMask);
@@ -1563,13 +1562,13 @@
                 #endif
 
                 // Blend
-                float3 rimSum = rimDir * rimColor.a * rimColor.rgb + rimIndir * rimIndirColor.a * rimIndirColor.rgb;
                 #if !defined(LIL_PASS_FORWARDADD)
-                    rimSum = lerp(rimSum, rimSum * fd.lightColor, _RimEnableLighting);
-                    fd.col.rgb += rimSum;
+                    float3 rimLightMul = 1 - _RimEnableLighting + fd.lightColor * _RimEnableLighting;
                 #else
-                    fd.col.rgb += rimSum * _RimEnableLighting * fd.lightColor;
+                    float3 rimLightMul = _RimBlendMode < 3 ? fd.lightColor * _RimEnableLighting : 1;
                 #endif
+                fd.col.rgb = lilBlendColor(fd.col.rgb, rimColor.rgb * rimLightMul, rimDir * rimColor.a, _RimBlendMode);
+                fd.col.rgb = lilBlendColor(fd.col.rgb, rimIndirColor.rgb * rimLightMul, rimIndir * rimIndirColor.a, _RimBlendMode);
             #else
                 // Color
                 float4 rimColor = _RimColor;
@@ -1588,20 +1587,19 @@
                 // Factor
                 float rim = pow(saturate(1.0 - nvabs), _RimFresnelPower);
                 rim = fd.facing < (_RimBackfaceMask-1.0) ? 0.0 : rim;
-                rim = lilTooning(rim, _RimBorder, _RimBlur);
+                rim = lilTooningScale(_AAStrength, rim, _RimBorder, _RimBlur);
                 #if LIL_RENDER == 2 && !defined(LIL_REFRACTION)
                     if(_RimApplyTransparency) rim *= fd.col.a;
                 #endif
+                rim = lerp(rim, rim * fd.shadowmix, _RimShadowMask);
 
                 // Blend
                 #if !defined(LIL_PASS_FORWARDADD)
-                    rim = lerp(rim, rim * fd.shadowmix, _RimShadowMask);
                     rimColor.rgb = lerp(rimColor.rgb, rimColor.rgb * fd.lightColor, _RimEnableLighting);
-                    fd.col.rgb += rim * rimColor.a * rimColor.rgb;
                 #else
-                    rim = lerp(rim, rim * fd.shadowmix, _RimShadowMask);
-                    fd.col.rgb += rim * _RimEnableLighting * rimColor.a * rimColor.rgb * fd.lightColor;
+                    if(_RimBlendMode < 3) rimColor.rgb *= fd.lightColor * _RimEnableLighting;
                 #endif
+                fd.col.rgb = lilBlendColor(fd.col.rgb, rimColor.rgb, rim * rimColor.a, _RimBlendMode);
             #endif
         }
     }
@@ -1611,7 +1609,7 @@
         if(_UseRim)
         {
             float rim = pow(saturate(1.0 - fd.nvabs), _RimFresnelPower);
-            rim = lilTooning(rim, _RimBorder, _RimBlur);
+            rim = lilTooningScale(_AAStrength, rim, _RimBorder, _RimBlur);
             rim = lerp(rim, rim * fd.shadowmix, _RimShadowMask);
             fd.col.rgb += rim * fd.triMask.g * _RimColor.rgb * fd.lightColor;
         }
@@ -1723,10 +1721,10 @@
                     if(_EmissionUseGrad)
                     {
                         float gradUV = _EmissionGradSpeed * LIL_TIME + fd.audioLinkValue * _AudioLink2EmissionGrad;
-                        emissionColor *= LIL_SAMPLE_1D_LOD(_EmissionGradTex, sampler_linear_repeat, gradUV, 0);
+                        emissionColor *= LIL_SAMPLE_1D_LOD(_EmissionGradTex, lil_sampler_linear_repeat, gradUV, 0);
                     }
                 #elif defined(LIL_FEATURE_EMISSION_GRADATION)
-                    if(_EmissionUseGrad) emissionColor *= LIL_SAMPLE_1D(_EmissionGradTex, sampler_linear_repeat, _EmissionGradSpeed * LIL_TIME);
+                    if(_EmissionUseGrad) emissionColor *= LIL_SAMPLE_1D(_EmissionGradTex, lil_sampler_linear_repeat, _EmissionGradSpeed * LIL_TIME);
                 #endif
             #endif
             #if defined(LIL_FEATURE_AUDIOLINK)
@@ -1734,7 +1732,12 @@
             #endif
             emissionColor.rgb = lerp(emissionColor.rgb, emissionColor.rgb * fd.invLighting, _EmissionFluorescence);
             emissionColor.rgb = lerp(emissionColor.rgb, emissionColor.rgb * fd.albedo, _EmissionMainStrength);
-            fd.emissionColor += _EmissionBlend * lilCalcBlink(_EmissionBlink) * emissionColor.a * emissionColor.rgb;
+            float emissionBlend = _EmissionBlend * lilCalcBlink(_EmissionBlink) * emissionColor.a;
+            #if LIL_RENDER == 2 && !defined(LIL_REFRACTION)
+                emissionBlend *= fd.col.a;
+            #endif
+            fd.emissionColor += emissionBlend * emissionColor.rgb;
+            fd.col.rgb = lilBlendColor(fd.col.rgb, emissionColor.rgb, emissionBlend, _EmissionBlendMode);
         }
     }
 #elif defined(LIL_LITE)
@@ -1803,10 +1806,10 @@
                     if(_Emission2ndUseGrad)
                     {
                         float gradUV = _Emission2ndGradSpeed * LIL_TIME + fd.audioLinkValue * _AudioLink2Emission2ndGrad;
-                        emission2ndColor *= LIL_SAMPLE_1D_LOD(_Emission2ndGradTex, sampler_linear_repeat, gradUV, 0);
+                        emission2ndColor *= LIL_SAMPLE_1D_LOD(_Emission2ndGradTex, lil_sampler_linear_repeat, gradUV, 0);
                     }
                 #elif defined(LIL_FEATURE_EMISSION_GRADATION)
-                    if(_Emission2ndUseGrad) emission2ndColor *= LIL_SAMPLE_1D(_Emission2ndGradTex, sampler_linear_repeat, _Emission2ndGradSpeed * LIL_TIME);
+                    if(_Emission2ndUseGrad) emission2ndColor *= LIL_SAMPLE_1D(_Emission2ndGradTex, lil_sampler_linear_repeat, _Emission2ndGradSpeed * LIL_TIME);
                 #endif
             #endif
             #if defined(LIL_FEATURE_AUDIOLINK)
@@ -1814,7 +1817,12 @@
             #endif
             emission2ndColor.rgb = lerp(emission2ndColor.rgb, emission2ndColor.rgb * fd.invLighting, _Emission2ndFluorescence);
             emission2ndColor.rgb = lerp(emission2ndColor.rgb, emission2ndColor.rgb * fd.albedo, _Emission2ndMainStrength);
-            fd.emissionColor += _Emission2ndBlend * lilCalcBlink(_Emission2ndBlink) * emission2ndColor.a * emission2ndColor.rgb;
+            float emission2ndBlend = _Emission2ndBlend * lilCalcBlink(_Emission2ndBlink) * emission2ndColor.a;
+            #if LIL_RENDER == 2 && !defined(LIL_REFRACTION)
+                emission2ndBlend *= fd.col.a;
+            #endif
+            fd.emissionColor += emission2ndBlend * emission2ndColor.rgb;
+            fd.col.rgb = lilBlendColor(fd.col.rgb, emission2ndColor.rgb, emission2ndBlend, _Emission2ndBlendMode);
         }
     }
 #endif
@@ -1827,12 +1835,23 @@
 //------------------------------------------------------------------------------------------------------------------------------
 // Dissolve Add
 #if !defined(OVERRIDE_DISSOLVE_ADD)
-    #define OVERRIDE_DISSOLVE_ADD \
-        fd.emissionColor += _DissolveColor.rgb * dissolveAlpha;
+    #if LIL_RENDER == 2 && !defined(LIL_REFRACTION)
+        #define OVERRIDE_DISSOLVE_ADD \
+            fd.emissionColor += _DissolveColor.rgb * dissolveAlpha; \
+            fd.col.rgb += _DissolveColor.rgb * dissolveAlpha * fd.col.a;
+    #else
+        #define OVERRIDE_DISSOLVE_ADD \
+            fd.emissionColor += _DissolveColor.rgb * dissolveAlpha; \
+            fd.col.rgb += _DissolveColor.rgb * dissolveAlpha;
+    #endif
 #endif
 
 //------------------------------------------------------------------------------------------------------------------------------
 // Blend Emission
+#if !defined(OVERRIDE_BLEND_EMISSION)
+    #define OVERRIDE_BLEND_EMISSION
+#endif
+/*
 #if !defined(OVERRIDE_BLEND_EMISSION)
     #if LIL_RENDER == 2 && !defined(LIL_REFRACTION)
         #define OVERRIDE_BLEND_EMISSION \
@@ -1842,6 +1861,7 @@
             fd.col.rgb += fd.emissionColor;
     #endif
 #endif
+*/
 
 //------------------------------------------------------------------------------------------------------------------------------
 // Depth Fade

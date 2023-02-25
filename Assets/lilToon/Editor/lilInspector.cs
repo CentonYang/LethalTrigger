@@ -291,6 +291,7 @@ namespace lilToon
         private readonly lilMaterialProperty flipNormal             = new lilMaterialProperty("_FlipNormal", PropertyBlock.Base);
         private readonly lilMaterialProperty backfaceForceShadow    = new lilMaterialProperty("_BackfaceForceShadow", PropertyBlock.Base);
         private readonly lilMaterialProperty backfaceColor          = new lilMaterialProperty("_BackfaceColor", PropertyBlock.Base);
+        private readonly lilMaterialProperty aaStrength             = new lilMaterialProperty("_AAStrength", PropertyBlock.Base);
 
         private readonly lilMaterialProperty asUnlit                        = new lilMaterialProperty("_AsUnlit", PropertyBlock.Lighting);
         private readonly lilMaterialProperty vertexLightStrength            = new lilMaterialProperty("_VertexLightStrength", PropertyBlock.Lighting);
@@ -319,9 +320,10 @@ namespace lilToon
         private readonly lilMaterialProperty useMain2ndTex                          = new lilMaterialProperty("_UseMain2ndTex", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
         private readonly lilMaterialProperty mainColor2nd                           = new lilMaterialProperty("_Color2nd", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
         private readonly lilMaterialProperty main2ndTex                             = new lilMaterialProperty("_Main2ndTex", true, PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
+        private readonly lilMaterialProperty main2ndTexAngle                        = new lilMaterialProperty("_Main2ndTexAngle", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
+        private readonly lilMaterialProperty main2ndTex_ScrollRotate                = new lilMaterialProperty("_Main2ndTex_ScrollRotate", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
         private readonly lilMaterialProperty main2ndTex_UVMode                      = new lilMaterialProperty("_Main2ndTex_UVMode", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
         private readonly lilMaterialProperty main2ndTex_Cull                        = new lilMaterialProperty("_Main2ndTex_Cull", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
-        private readonly lilMaterialProperty main2ndTexAngle                        = new lilMaterialProperty("_Main2ndTexAngle", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
         private readonly lilMaterialProperty main2ndTexDecalAnimation               = new lilMaterialProperty("_Main2ndTexDecalAnimation", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
         private readonly lilMaterialProperty main2ndTexDecalSubParam                = new lilMaterialProperty("_Main2ndTexDecalSubParam", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
         private readonly lilMaterialProperty main2ndTexIsDecal                      = new lilMaterialProperty("_Main2ndTexIsDecal", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
@@ -345,10 +347,11 @@ namespace lilToon
 
         private readonly lilMaterialProperty useMain3rdTex                          = new lilMaterialProperty("_UseMain3rdTex", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
         private readonly lilMaterialProperty mainColor3rd                           = new lilMaterialProperty("_Color3rd", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
+        private readonly lilMaterialProperty main3rdTexAngle                        = new lilMaterialProperty("_Main3rdTexAngle", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
+        private readonly lilMaterialProperty main3rdTex_ScrollRotate                = new lilMaterialProperty("_Main3rdTex_ScrollRotate", PropertyBlock.MainColor, PropertyBlock.MainColor2nd);
         private readonly lilMaterialProperty main3rdTex                             = new lilMaterialProperty("_Main3rdTex", true, PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
         private readonly lilMaterialProperty main3rdTex_UVMode                      = new lilMaterialProperty("_Main3rdTex_UVMode", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
         private readonly lilMaterialProperty main3rdTex_Cull                        = new lilMaterialProperty("_Main3rdTex_Cull", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
-        private readonly lilMaterialProperty main3rdTexAngle                        = new lilMaterialProperty("_Main3rdTexAngle", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
         private readonly lilMaterialProperty main3rdTexDecalAnimation               = new lilMaterialProperty("_Main3rdTexDecalAnimation", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
         private readonly lilMaterialProperty main3rdTexDecalSubParam                = new lilMaterialProperty("_Main3rdTexDecalSubParam", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
         private readonly lilMaterialProperty main3rdTexIsDecal                      = new lilMaterialProperty("_Main3rdTexIsDecal", PropertyBlock.MainColor, PropertyBlock.MainColor3rd);
@@ -423,6 +426,7 @@ namespace lilToon
         private readonly lilMaterialProperty emissionBlend                  = new lilMaterialProperty("_EmissionBlend", PropertyBlock.Emission, PropertyBlock.Emission1st);
         private readonly lilMaterialProperty emissionBlendMask              = new lilMaterialProperty("_EmissionBlendMask", true, PropertyBlock.Emission, PropertyBlock.Emission1st);
         private readonly lilMaterialProperty emissionBlendMask_ScrollRotate = new lilMaterialProperty("_EmissionBlendMask_ScrollRotate", PropertyBlock.Emission, PropertyBlock.Emission1st);
+        private readonly lilMaterialProperty emissionBlendMode              = new lilMaterialProperty("_EmissionBlendMode", PropertyBlock.Emission, PropertyBlock.Emission1st);
         private readonly lilMaterialProperty emissionBlink                  = new lilMaterialProperty("_EmissionBlink", PropertyBlock.Emission, PropertyBlock.Emission1st);
         private readonly lilMaterialProperty emissionUseGrad                = new lilMaterialProperty("_EmissionUseGrad", PropertyBlock.Emission, PropertyBlock.Emission1st);
         private readonly lilMaterialProperty emissionGradTex                = new lilMaterialProperty("_EmissionGradTex", true, PropertyBlock.Emission, PropertyBlock.Emission1st);
@@ -439,6 +443,7 @@ namespace lilToon
         private readonly lilMaterialProperty emission2ndBlend                   = new lilMaterialProperty("_Emission2ndBlend", PropertyBlock.Emission, PropertyBlock.Emission2nd);
         private readonly lilMaterialProperty emission2ndBlendMask               = new lilMaterialProperty("_Emission2ndBlendMask", true, PropertyBlock.Emission, PropertyBlock.Emission2nd);
         private readonly lilMaterialProperty emission2ndBlendMask_ScrollRotate  = new lilMaterialProperty("_Emission2ndBlendMask_ScrollRotate", PropertyBlock.Emission, PropertyBlock.Emission2nd);
+        private readonly lilMaterialProperty emission2ndBlendMode               = new lilMaterialProperty("_Emission2ndBlendMode", PropertyBlock.Emission, PropertyBlock.Emission2nd);
         private readonly lilMaterialProperty emission2ndBlink                   = new lilMaterialProperty("_Emission2ndBlink", PropertyBlock.Emission, PropertyBlock.Emission2nd);
         private readonly lilMaterialProperty emission2ndUseGrad                 = new lilMaterialProperty("_Emission2ndUseGrad", PropertyBlock.Emission, PropertyBlock.Emission2nd);
         private readonly lilMaterialProperty emission2ndGradTex                 = new lilMaterialProperty("_Emission2ndGradTex", true, PropertyBlock.Emission, PropertyBlock.Emission2nd);
@@ -572,6 +577,7 @@ namespace lilToon
         private readonly lilMaterialProperty rimIndirColor          = new lilMaterialProperty("_RimIndirColor", PropertyBlock.RimLight);
         private readonly lilMaterialProperty rimIndirBorder         = new lilMaterialProperty("_RimIndirBorder", PropertyBlock.RimLight);
         private readonly lilMaterialProperty rimIndirBlur           = new lilMaterialProperty("_RimIndirBlur", PropertyBlock.RimLight);
+        private readonly lilMaterialProperty rimBlendMode           = new lilMaterialProperty("_RimBlendMode", PropertyBlock.RimLight);
 
         private readonly lilMaterialProperty useGlitter                 = new lilMaterialProperty("_UseGlitter", PropertyBlock.Glitter);
         private readonly lilMaterialProperty glitterUVMode              = new lilMaterialProperty("_GlitterUVMode", PropertyBlock.Glitter);
@@ -663,6 +669,38 @@ namespace lilToon
 
         private readonly lilMaterialProperty ignoreEncryption   = new lilMaterialProperty("_IgnoreEncryption", PropertyBlock.Encryption);
         private readonly lilMaterialProperty keys               = new lilMaterialProperty("_Keys", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey0            = new lilMaterialProperty("_BitKey0", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey1            = new lilMaterialProperty("_BitKey1", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey2            = new lilMaterialProperty("_BitKey2", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey3            = new lilMaterialProperty("_BitKey3", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey4            = new lilMaterialProperty("_BitKey4", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey5            = new lilMaterialProperty("_BitKey5", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey6            = new lilMaterialProperty("_BitKey6", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey7            = new lilMaterialProperty("_BitKey7", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey8            = new lilMaterialProperty("_BitKey8", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey9            = new lilMaterialProperty("_BitKey9", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey10           = new lilMaterialProperty("_BitKey10", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey11           = new lilMaterialProperty("_BitKey11", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey12           = new lilMaterialProperty("_BitKey12", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey13           = new lilMaterialProperty("_BitKey13", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey14           = new lilMaterialProperty("_BitKey14", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey15           = new lilMaterialProperty("_BitKey15", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey16           = new lilMaterialProperty("_BitKey16", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey17           = new lilMaterialProperty("_BitKey17", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey18           = new lilMaterialProperty("_BitKey18", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey19           = new lilMaterialProperty("_BitKey19", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey20           = new lilMaterialProperty("_BitKey20", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey21           = new lilMaterialProperty("_BitKey21", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey22           = new lilMaterialProperty("_BitKey22", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey23           = new lilMaterialProperty("_BitKey23", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey24           = new lilMaterialProperty("_BitKey24", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey25           = new lilMaterialProperty("_BitKey25", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey26           = new lilMaterialProperty("_BitKey26", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey27           = new lilMaterialProperty("_BitKey27", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey28           = new lilMaterialProperty("_BitKey28", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey29           = new lilMaterialProperty("_BitKey29", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey30           = new lilMaterialProperty("_BitKey30", PropertyBlock.Encryption);
+        private readonly lilMaterialProperty bitKey31           = new lilMaterialProperty("_BitKey31", PropertyBlock.Encryption);
 
         private readonly lilMaterialProperty refractionStrength         = new lilMaterialProperty("_RefractionStrength", PropertyBlock.Refraction, PropertyBlock.Gem);
         private readonly lilMaterialProperty refractionFresnelPower     = new lilMaterialProperty("_RefractionFresnelPower", PropertyBlock.Refraction, PropertyBlock.Gem);
@@ -823,6 +861,7 @@ namespace lilToon
                 flipNormal,
                 backfaceForceShadow,
                 backfaceColor,
+                aaStrength,
 
                 asUnlit,
                 vertexLightStrength,
@@ -851,9 +890,10 @@ namespace lilToon
                 useMain2ndTex,
                 mainColor2nd,
                 main2ndTex,
+                main2ndTexAngle,
+                main2ndTex_ScrollRotate,
                 main2ndTex_UVMode,
                 main2ndTex_Cull,
-                main2ndTexAngle,
                 main2ndTexDecalAnimation,
                 main2ndTexDecalSubParam,
                 main2ndTexIsDecal,
@@ -878,9 +918,10 @@ namespace lilToon
                 useMain3rdTex,
                 mainColor3rd,
                 main3rdTex,
+                main3rdTexAngle,
+                main3rdTex_ScrollRotate,
                 main3rdTex_UVMode,
                 main3rdTex_Cull,
-                main3rdTexAngle,
                 main3rdTexDecalAnimation,
                 main3rdTexDecalSubParam,
                 main3rdTexIsDecal,
@@ -955,6 +996,7 @@ namespace lilToon
                 emissionBlend,
                 emissionBlendMask,
                 emissionBlendMask_ScrollRotate,
+                emissionBlendMode,
                 emissionBlink,
                 emissionUseGrad,
                 emissionGradTex,
@@ -971,6 +1013,7 @@ namespace lilToon
                 emission2ndBlend,
                 emission2ndBlendMask,
                 emission2ndBlendMask_ScrollRotate,
+                emission2ndBlendMode,
                 emission2ndBlink,
                 emission2ndUseGrad,
                 emission2ndGradTex,
@@ -1104,6 +1147,7 @@ namespace lilToon
                 rimIndirColor,
                 rimIndirBorder,
                 rimIndirBlur,
+                rimBlendMode,
 
                 useGlitter,
                 glitterUVMode,
@@ -1195,6 +1239,38 @@ namespace lilToon
 
                 ignoreEncryption,
                 keys,
+                bitKey0,
+                bitKey1,
+                bitKey2,
+                bitKey3,
+                bitKey4,
+                bitKey5,
+                bitKey6,
+                bitKey7,
+                bitKey8,
+                bitKey9,
+                bitKey10,
+                bitKey11,
+                bitKey12,
+                bitKey13,
+                bitKey14,
+                bitKey15,
+                bitKey16,
+                bitKey17,
+                bitKey18,
+                bitKey19,
+                bitKey20,
+                bitKey21,
+                bitKey22,
+                bitKey23,
+                bitKey24,
+                bitKey25,
+                bitKey26,
+                bitKey27,
+                bitKey28,
+                bitKey29,
+                bitKey30,
+                bitKey31,
 
                 refractionStrength,
                 refractionFresnelPower,
@@ -1568,6 +1644,7 @@ namespace lilToon
                         m_MaterialEditor.ShaderProperty(emissionMainStrength, GetLoc("sMainColorPower"));
                         lilEditorGUI.DrawLine();
                         TextureGUI(ref edSet.isShowEmissionBlendMask, maskBlendRGBAContent, emissionBlendMask, emissionBlend, emissionBlendMask_ScrollRotate, true, true);
+                        m_MaterialEditor.ShaderProperty(emissionBlendMode, sBlendModes);
                         lilEditorGUI.DrawLine();
                         m_MaterialEditor.ShaderProperty(emissionFluorescence, GetLoc("sFluorescence"));
                         EditorGUILayout.EndVertical();
@@ -1586,6 +1663,7 @@ namespace lilToon
                         m_MaterialEditor.ShaderProperty(emission2ndMainStrength, GetLoc("sMainColorPower"));
                         lilEditorGUI.DrawLine();
                         TextureGUI(ref edSet.isShowEmission2ndBlendMask, maskBlendRGBAContent, emission2ndBlendMask, emission2ndBlend, emission2ndBlendMask_ScrollRotate, true, true);
+                        m_MaterialEditor.ShaderProperty(emission2ndBlendMode, sBlendModes);
                         lilEditorGUI.DrawLine();
                         m_MaterialEditor.ShaderProperty(emission2ndFluorescence, GetLoc("sFluorescence"));
                         EditorGUILayout.EndVertical();
@@ -1986,22 +2064,7 @@ namespace lilToon
 
                 //------------------------------------------------------------------------------------------------------------------------------
                 // Encryption
-                if(lilDirectoryManager.ExistsEncryption())
-                {
-                    edSet.isShowEncryption = lilEditorGUI.Foldout(GetLoc("sEncryption"), edSet.isShowEncryption);
-                    DrawMenuButton(GetLoc("sAnchorEncryption"), PropertyBlock.Encryption);
-                    if(edSet.isShowEncryption)
-                    {
-                        EditorGUILayout.BeginVertical(boxOuter);
-                        EditorGUILayout.LabelField(GetLoc("sEncryption"), customToggleFont);
-                        DrawMenuButton(GetLoc("sAnchorEncryption"), PropertyBlock.Encryption);
-                        EditorGUILayout.BeginVertical(boxInnerHalf);
-                        m_MaterialEditor.ShaderProperty(ignoreEncryption, GetLoc("sIgnoreEncryption"));
-                        m_MaterialEditor.ShaderProperty(keys, GetLoc("sKeys"));
-                        EditorGUILayout.EndVertical();
-                        EditorGUILayout.EndVertical();
-                    }
-                }
+                DrawEncryptionSettings();
 
                 //------------------------------------------------------------------------------------------------------------------------------
                 // Stencil
@@ -2260,7 +2323,7 @@ namespace lilToon
                             m_MaterialEditor.ShaderProperty(main2ndEnableLighting, GetLoc("sEnableLighting"));
                             m_MaterialEditor.ShaderProperty(main2ndTexBlendMode, sBlendModes);
                             lilEditorGUI.DrawLine();
-                            UV4Decal(main2ndTexIsDecal, main2ndTexIsLeftOnly, main2ndTexIsRightOnly, main2ndTexShouldCopy, main2ndTexShouldFlipMirror, main2ndTexShouldFlipCopy, main2ndTex, main2ndTexAngle, main2ndTexDecalAnimation, main2ndTexDecalSubParam, main2ndTex_UVMode);
+                            UV4Decal(main2ndTexIsDecal, main2ndTexIsLeftOnly, main2ndTexIsRightOnly, main2ndTexShouldCopy, main2ndTexShouldFlipMirror, main2ndTexShouldFlipCopy, main2ndTex, main2ndTex_ScrollRotate, main2ndTexAngle, main2ndTexDecalAnimation, main2ndTexDecalSubParam, main2ndTex_UVMode);
                             lilEditorGUI.DrawLine();
                             m_MaterialEditor.TexturePropertySingleLine(maskBlendContent, main2ndBlendMask);
                             EditorGUILayout.LabelField(GetLoc("sDistanceFade"));
@@ -2302,7 +2365,7 @@ namespace lilToon
                             m_MaterialEditor.ShaderProperty(main3rdEnableLighting, GetLoc("sEnableLighting"));
                             m_MaterialEditor.ShaderProperty(main3rdTexBlendMode, sBlendModes);
                             lilEditorGUI.DrawLine();
-                            UV4Decal(main3rdTexIsDecal, main3rdTexIsLeftOnly, main3rdTexIsRightOnly, main3rdTexShouldCopy, main3rdTexShouldFlipMirror, main3rdTexShouldFlipCopy, main3rdTex, main3rdTexAngle, main3rdTexDecalAnimation, main3rdTexDecalSubParam, main3rdTex_UVMode);
+                            UV4Decal(main3rdTexIsDecal, main3rdTexIsLeftOnly, main3rdTexIsRightOnly, main3rdTexShouldCopy, main3rdTexShouldFlipMirror, main3rdTexShouldFlipCopy, main3rdTex, main3rdTex_ScrollRotate, main3rdTexAngle, main3rdTexDecalAnimation, main3rdTexDecalSubParam, main3rdTex_UVMode);
                             lilEditorGUI.DrawLine();
                             m_MaterialEditor.TexturePropertySingleLine(maskBlendContent, main3rdBlendMask);
                             EditorGUILayout.LabelField(GetLoc("sDistanceFade"));
@@ -2358,6 +2421,7 @@ namespace lilToon
                         m_MaterialEditor.ShaderProperty(emissionMainStrength, GetLoc("sMainColorPower"));
                         lilEditorGUI.DrawLine();
                         TextureGUI(ref edSet.isShowEmissionBlendMask, maskBlendRGBAContent, emissionBlendMask, emissionBlend, emissionBlendMask_ScrollRotate, true, true);
+                        m_MaterialEditor.ShaderProperty(emissionBlendMode, sBlendModes);
                         lilEditorGUI.DrawLine();
                         m_MaterialEditor.ShaderProperty(emissionBlink, blinkSetting);
                         lilEditorGUI.DrawLine();
@@ -2388,6 +2452,7 @@ namespace lilToon
                         m_MaterialEditor.ShaderProperty(emission2ndMainStrength, GetLoc("sMainColorPower"));
                         lilEditorGUI.DrawLine();
                         TextureGUI(ref edSet.isShowEmission2ndBlendMask, maskBlendRGBAContent, emission2ndBlendMask, emission2ndBlend, emission2ndBlendMask_ScrollRotate, true, true);
+                        m_MaterialEditor.ShaderProperty(emission2ndBlendMode, sBlendModes);
                         lilEditorGUI.DrawLine();
                         m_MaterialEditor.ShaderProperty(emission2ndBlink, blinkSetting);
                         lilEditorGUI.DrawLine();
@@ -2771,22 +2836,7 @@ namespace lilToon
 
                 //------------------------------------------------------------------------------------------------------------------------------
                 // Encryption
-                if(lilDirectoryManager.ExistsEncryption())
-                {
-                    edSet.isShowEncryption = lilEditorGUI.Foldout(GetLoc("sEncryption"), edSet.isShowEncryption);
-                    DrawMenuButton(GetLoc("sAnchorEncryption"), PropertyBlock.Encryption);
-                    if(edSet.isShowEncryption)
-                    {
-                        EditorGUILayout.BeginVertical(boxOuter);
-                        EditorGUILayout.LabelField(GetLoc("sEncryption"), customToggleFont);
-                        DrawMenuButton(GetLoc("sAnchorEncryption"), PropertyBlock.Encryption);
-                        EditorGUILayout.BeginVertical(boxInnerHalf);
-                        m_MaterialEditor.ShaderProperty(ignoreEncryption, GetLoc("sIgnoreEncryption"));
-                        m_MaterialEditor.ShaderProperty(keys, GetLoc("sKeys"));
-                        EditorGUILayout.EndVertical();
-                        EditorGUILayout.EndVertical();
-                    }
-                }
+                DrawEncryptionSettings();
 
                 //------------------------------------------------------------------------------------------------------------------------------
                 // Refraction
@@ -3171,6 +3221,7 @@ namespace lilToon
                 ToggleGUI(GetLoc("sSettingUseForwardAddShadow"), ref shaderSetting.LIL_OPTIMIZE_USE_FORWARDADD_SHADOW);
             }
             ToggleGUI(GetLoc("sSettingUseLightmap"), ref shaderSetting.LIL_OPTIMIZE_USE_LIGHTMAP);
+            if(RP == lilRenderPipeline.BRP) ToggleGUI("Fix for Deffered", ref shaderSetting.LIL_OPTIMIZE_DEFFERED);
             GUI.enabled = true;
         }
 
@@ -3401,7 +3452,7 @@ namespace lilToon
 
         private void DrawGIFragGUI()
         {
-            #if NITY_2019_1_OR_NEWER
+            #if UNITY_2019_1_OR_NEWER
                 m_MaterialEditor.LightmapEmissionFlagsProperty(0, true, true);
             #else
                 m_MaterialEditor.LightmapEmissionFlagsProperty(0, true);
@@ -4125,6 +4176,10 @@ namespace lilToon
                         vertexLightStrength.floatValue = 1.0f;
                     }
                 }
+                if(renderingModeBuf == RenderingMode.Fur || renderingModeBuf == RenderingMode.FurCutout || renderingModeBuf == RenderingMode.FurTwoPass)
+                {
+                    EditorGUILayout.HelpBox(GetLoc("sHelpRenderingFur"), MessageType.Warning);
+                }
                 if(lilDirectoryManager.ExistsClusterCreatorKit())
                 {
                     if(renderingModeBuf == RenderingMode.Refraction || renderingModeBuf == RenderingMode.RefractionBlur || renderingModeBuf == RenderingMode.Gem)
@@ -4159,7 +4214,7 @@ namespace lilToon
                     {
                         m_MaterialEditor.ShaderProperty(cutoff, GetLoc("sCutoff"));
                     }
-                    if(!isGem)
+                    if(!isGem && !isFakeShadow)
                     {
                         m_MaterialEditor.ShaderProperty(cull, sCullModes);
                         EditorGUI.indentLevel++;
@@ -4183,6 +4238,7 @@ namespace lilToon
                         zwrite.floatValue = 1.0f;
                     }
                     if(isMulti) m_MaterialEditor.ShaderProperty(useClippingCanceller, GetLoc("sSettingClippingCanceller"));
+                    if(!isFakeShadow) m_MaterialEditor.ShaderProperty(aaStrength, GetLoc("sAAShading"));
                     m_MaterialEditor.RenderQueueField();
                     if((renderingModeBuf >= RenderingMode.Transparent && renderingModeBuf != RenderingMode.FurCutout) || (isMulti && transparentModeMat.floatValue == 2.0f))
                     {
@@ -5022,6 +5078,7 @@ namespace lilToon
                         m_MaterialEditor.ShaderProperty(rimShadowMask, GetLoc("sShadowMask"));
                         m_MaterialEditor.ShaderProperty(rimBackfaceMask, GetLoc("sBackfaceMask"));
                         if(isTransparent) m_MaterialEditor.ShaderProperty(rimApplyTransparency, GetLoc("sApplyTransparency"));
+                        m_MaterialEditor.ShaderProperty(rimBlendMode, sBlendModes);
                         lilEditorGUI.DrawLine();
                         m_MaterialEditor.ShaderProperty(rimDirStrength, GetLoc("sRimLightDirection"));
                         if(rimDirStrength.floatValue != 0)
@@ -5085,6 +5142,7 @@ namespace lilToon
                         EditorGUILayout.BeginVertical(boxInnerHalf);
                         TextureGUI(ref edSet.isShowRimColorTex, colorMaskRGBAContent, rimColorTex, rimColor);
                         lilEditorGUI.DrawColorAsAlpha(rimColor);
+                        m_MaterialEditor.ShaderProperty(rimBlendMode, sBlendModes);
                         lilEditorGUI.DrawLine();
                         m_MaterialEditor.ShaderProperty(rimDirStrength, GetLoc("sRimLightDirection"));
                         if(rimDirStrength.floatValue != 0)
@@ -5489,14 +5547,72 @@ namespace lilToon
                 }
             }
         }
+
+        private void DrawEncryptionSettings()
+        {
+            if(lilDirectoryManager.ExistsEncryption() || lilDirectoryManager.ExistsAvaCryptV2())
+            {
+                edSet.isShowEncryption = lilEditorGUI.Foldout(GetLoc("sEncryption"), edSet.isShowEncryption);
+                DrawMenuButton(GetLoc("sAnchorEncryption"), PropertyBlock.Encryption);
+                if(edSet.isShowEncryption)
+                {
+                    EditorGUILayout.BeginVertical(boxOuter);
+                    EditorGUILayout.LabelField(GetLoc("sEncryption"), customToggleFont);
+                    DrawMenuButton(GetLoc("sAnchorEncryption"), PropertyBlock.Encryption);
+                    EditorGUILayout.BeginVertical(boxInnerHalf);
+                    m_MaterialEditor.ShaderProperty(ignoreEncryption, GetLoc("sIgnoreEncryption"));
+                    if(lilDirectoryManager.ExistsEncryption())
+                    {
+                        m_MaterialEditor.ShaderProperty(keys, GetLoc("sKeys"));
+                    }
+                    else
+                    {
+                        m_MaterialEditor.ShaderProperty(bitKey0, "_BitKey0");
+                        m_MaterialEditor.ShaderProperty(bitKey1, "_BitKey1");
+                        m_MaterialEditor.ShaderProperty(bitKey2, "_BitKey2");
+                        m_MaterialEditor.ShaderProperty(bitKey3, "_BitKey3");
+                        m_MaterialEditor.ShaderProperty(bitKey4, "_BitKey4");
+                        m_MaterialEditor.ShaderProperty(bitKey5, "_BitKey5");
+                        m_MaterialEditor.ShaderProperty(bitKey6, "_BitKey6");
+                        m_MaterialEditor.ShaderProperty(bitKey7, "_BitKey7");
+                        m_MaterialEditor.ShaderProperty(bitKey8, "_BitKey8");
+                        m_MaterialEditor.ShaderProperty(bitKey9, "_BitKey9");
+                        m_MaterialEditor.ShaderProperty(bitKey10, "_BitKey10");
+                        m_MaterialEditor.ShaderProperty(bitKey11, "_BitKey11");
+                        m_MaterialEditor.ShaderProperty(bitKey12, "_BitKey12");
+                        m_MaterialEditor.ShaderProperty(bitKey13, "_BitKey13");
+                        m_MaterialEditor.ShaderProperty(bitKey14, "_BitKey14");
+                        m_MaterialEditor.ShaderProperty(bitKey15, "_BitKey15");
+                        m_MaterialEditor.ShaderProperty(bitKey16, "_BitKey16");
+                        m_MaterialEditor.ShaderProperty(bitKey17, "_BitKey17");
+                        m_MaterialEditor.ShaderProperty(bitKey18, "_BitKey18");
+                        m_MaterialEditor.ShaderProperty(bitKey19, "_BitKey19");
+                        m_MaterialEditor.ShaderProperty(bitKey20, "_BitKey20");
+                        m_MaterialEditor.ShaderProperty(bitKey21, "_BitKey21");
+                        m_MaterialEditor.ShaderProperty(bitKey22, "_BitKey22");
+                        m_MaterialEditor.ShaderProperty(bitKey23, "_BitKey23");
+                        m_MaterialEditor.ShaderProperty(bitKey24, "_BitKey24");
+                        m_MaterialEditor.ShaderProperty(bitKey25, "_BitKey25");
+                        m_MaterialEditor.ShaderProperty(bitKey26, "_BitKey26");
+                        m_MaterialEditor.ShaderProperty(bitKey27, "_BitKey27");
+                        m_MaterialEditor.ShaderProperty(bitKey28, "_BitKey28");
+                        m_MaterialEditor.ShaderProperty(bitKey29, "_BitKey29");
+                        m_MaterialEditor.ShaderProperty(bitKey30, "_BitKey30");
+                        m_MaterialEditor.ShaderProperty(bitKey31, "_BitKey31");
+                    }
+                    EditorGUILayout.EndVertical();
+                    EditorGUILayout.EndVertical();
+                }
+            }
+        }
         #endregion
 
         //------------------------------------------------------------------------------------------------------------------------------
         // Property drawer
         #region
-        private void UV4Decal(MaterialProperty isDecal, MaterialProperty isLeftOnly, MaterialProperty isRightOnly, MaterialProperty shouldCopy, MaterialProperty shouldFlipMirror, MaterialProperty shouldFlipCopy, MaterialProperty tex, MaterialProperty angle, MaterialProperty decalAnimation, MaterialProperty decalSubParam, MaterialProperty uvMode)
+        private void UV4Decal(MaterialProperty isDecal, MaterialProperty isLeftOnly, MaterialProperty isRightOnly, MaterialProperty shouldCopy, MaterialProperty shouldFlipMirror, MaterialProperty shouldFlipCopy, MaterialProperty tex, MaterialProperty SR, MaterialProperty angle, MaterialProperty decalAnimation, MaterialProperty decalSubParam, MaterialProperty uvMode)
         {
-            lilEditorGUI.UV4Decal(m_MaterialEditor, isDecal, isLeftOnly, isRightOnly, shouldCopy, shouldFlipMirror, shouldFlipCopy, tex, angle, decalAnimation, decalSubParam, uvMode);
+            lilEditorGUI.UV4Decal(m_MaterialEditor, isDecal, isLeftOnly, isRightOnly, shouldCopy, shouldFlipMirror, shouldFlipCopy, tex, SR, angle, decalAnimation, decalSubParam, uvMode);
         }
 
         private void ToneCorrectionGUI(MaterialProperty hsvg)

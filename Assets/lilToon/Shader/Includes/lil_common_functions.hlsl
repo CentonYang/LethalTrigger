@@ -18,38 +18,23 @@
         return saturate(f) == f;
     }
 
-    float lilTooningNoSaturate(float value, float border)
+    float lilTooningNoSaturateScale(float aascale, float value, float border)
     {
         return step(border, value);
     }
 
-    float lilTooningNoSaturate(float value, float border, float blur)
+    float lilTooningNoSaturateScale(float aascale, float value, float border, float blur)
     {
         float borderMin = saturate(border - blur * 0.5);
         float borderMax = saturate(border + blur * 0.5);
         return (value - borderMin) / saturate(borderMax - borderMin);
     }
 
-    float lilTooningNoSaturate(float value, float border, float blur, float borderRange)
+    float lilTooningNoSaturateScale(float aascale, float value, float border, float blur, float borderRange)
     {
         float borderMin = saturate(border - blur * 0.5 - borderRange);
         float borderMax = saturate(border + blur * 0.5);
         return (value - borderMin) / saturate(borderMax - borderMin);
-    }
-
-    float lilTooning(float value, float border)
-    {
-        return lilTooningNoSaturate(value, border);
-    }
-
-    float lilTooning(float value, float border, float blur)
-    {
-        return saturate(lilTooningNoSaturate(value, border, blur));
-    }
-
-    float lilTooning(float value, float border, float blur, float borderRange)
-    {
-        return saturate(lilTooningNoSaturate(value, border, blur, borderRange));
     }
 #else
     float lilIsIn0to1(float f)
@@ -64,40 +49,70 @@
         return saturate(value / clamp(fwidth(value), 0.0001, nv));
     }
 
-    float lilTooningNoSaturate(float value, float border)
+    float lilTooningNoSaturateScale(float aascale, float value, float border)
     {
-        return (value - border) / clamp(fwidth(value), 0.0001, 1.0);
+        return (value - border) / clamp(fwidth(value) * aascale, 0.0001, 1.0);
     }
 
-    float lilTooningNoSaturate(float value, float border, float blur)
+    float lilTooningNoSaturateScale(float aascale, float value, float border, float blur)
     {
         float borderMin = saturate(border - blur * 0.5);
         float borderMax = saturate(border + blur * 0.5);
-        return (value - borderMin) / saturate(borderMax - borderMin + fwidth(value));
+        return (value - borderMin) / saturate(borderMax - borderMin + fwidth(value) * aascale);
     }
 
-    float lilTooningNoSaturate(float value, float border, float blur, float borderRange)
+    float lilTooningNoSaturateScale(float aascale, float value, float border, float blur, float borderRange)
     {
         float borderMin = saturate(border - blur * 0.5 - borderRange);
         float borderMax = saturate(border + blur * 0.5);
-        return (value - borderMin) / saturate(borderMax - borderMin + fwidth(value));
-    }
-
-    float lilTooning(float value, float border)
-    {
-        return saturate(lilTooningNoSaturate(value, border));
-    }
-
-    float lilTooning(float value, float border, float blur)
-    {
-        return saturate(lilTooningNoSaturate(value, border, blur));
-    }
-
-    float lilTooning(float value, float border, float blur, float borderRange)
-    {
-        return saturate(lilTooningNoSaturate(value, border, blur, borderRange));
+        return (value - borderMin) / saturate(borderMax - borderMin + fwidth(value) * aascale);
     }
 #endif
+
+float lilTooningScale(float aascale, float value, float border)
+{
+    return saturate(lilTooningNoSaturateScale(aascale, value, border));
+}
+
+float lilTooningScale(float aascale, float value, float border, float blur)
+{
+    return saturate(lilTooningNoSaturateScale(aascale, value, border, blur));
+}
+
+float lilTooningScale(float aascale, float value, float border, float blur, float borderRange)
+{
+    return saturate(lilTooningNoSaturateScale(aascale, value, border, blur, borderRange));
+}
+
+float lilTooningNoSaturate(float value, float border)
+{
+    return lilTooningNoSaturateScale(1.0, value, border);
+}
+
+float lilTooningNoSaturate(float value, float border, float blur)
+{
+    return lilTooningNoSaturateScale(1.0, value, border, blur);
+}
+
+float lilTooningNoSaturate(float value, float border, float blur, float borderRange)
+{
+    return lilTooningNoSaturateScale(1.0, value, border, blur, borderRange);
+}
+
+float lilTooning(float value, float border)
+{
+    return saturate(lilTooningNoSaturate(value, border));
+}
+
+float lilTooning(float value, float border, float blur)
+{
+    return saturate(lilTooningNoSaturate(value, border, blur));
+}
+
+float lilTooning(float value, float border, float blur, float borderRange)
+{
+    return saturate(lilTooningNoSaturate(value, border, blur, borderRange));
+}
 
 // Optimized matrix calculation
 float4 lilOptMul(float4x4 mat, float3 pos)
@@ -332,9 +347,9 @@ float3 lilGradationMap(float3 col, TEXTURE2D(gradationMap), float strength)
     #if !defined(LIL_COLORSPACE_GAMMA)
         col = lilLinearToSRGB(col);
     #endif
-    float R = LIL_SAMPLE_1D(gradationMap, sampler_linear_clamp, col.r).r;
-    float G = LIL_SAMPLE_1D(gradationMap, sampler_linear_clamp, col.g).g;
-    float B = LIL_SAMPLE_1D(gradationMap, sampler_linear_clamp, col.b).b;
+    float R = LIL_SAMPLE_1D(gradationMap, lil_sampler_linear_clamp, col.r).r;
+    float G = LIL_SAMPLE_1D(gradationMap, lil_sampler_linear_clamp, col.g).g;
+    float B = LIL_SAMPLE_1D(gradationMap, lil_sampler_linear_clamp, col.b).b;
     float3 outrgb = float3(R,G,B);
     #if !defined(LIL_COLORSPACE_GAMMA)
         col = lilSRGBToLinear(col);
@@ -373,8 +388,8 @@ void lilCalcLUTUV(float3 col, float resX, float resY, inout float4 uv, inout flo
 
 float4 lilSampleLUT(float4 uv, float factor, TEXTURE2D(lutTex))
 {
-    float4 a = LIL_SAMPLE_2D_LOD(lutTex, sampler_linear_clamp, uv.xy, 0);
-    float4 b = LIL_SAMPLE_2D_LOD(lutTex, sampler_linear_clamp, uv.zw, 0);
+    float4 a = LIL_SAMPLE_2D_LOD(lutTex, lil_sampler_linear_clamp, uv.xy, 0);
+    float4 b = LIL_SAMPLE_2D_LOD(lutTex, lil_sampler_linear_clamp, uv.zw, 0);
     return lerp(a, b, factor);
 }
 
@@ -471,6 +486,31 @@ float2 lilCalcDecalUV(
     return outUV;
 }
 
+float2 lilCalcDecalUV(
+    float2 uv,
+    float4 uv_ST,
+    float4 uv_SR,
+    bool isLeftOnly,
+    bool isRightOnly,
+    bool shouldCopy,
+    bool shouldFlipMirror,
+    bool shouldFlipCopy,
+    bool isRightHand)
+{
+    float4 uv_ST2 = uv_ST + float4(0,0,uv_SR.xy) * LIL_TIME;
+    float angle2 = uv_SR.z+ uv_SR.w * LIL_TIME;
+    return lilCalcDecalUV(
+        uv,
+        uv_ST2,
+        angle2,
+        isLeftOnly,
+        isRightOnly,
+        shouldCopy,
+        shouldFlipMirror,
+        shouldFlipCopy,
+        isRightHand);
+}
+
 float2 lilCalcAtlasAnimation(float2 uv, float4 decalAnimation, float4 decalSubParam)
 {
     float2 outuv = lerp(float2(uv.x, 1.0-uv.y), 0.5, decalSubParam.z);
@@ -511,7 +551,7 @@ void lilParallax(inout float2 uvMain, inout float2 uv, lilBool useParallax, floa
 {
     if(useParallax)
     {
-        float height = (LIL_SAMPLE_2D_LOD(parallaxMap,sampler_linear_repeat,uvMain,0).r - parallaxOffsetParam) * parallaxScale;
+        float height = (LIL_SAMPLE_2D_LOD(parallaxMap,lil_sampler_linear_repeat,uvMain,0).r - parallaxOffsetParam) * parallaxScale;
         uvMain += height * parallaxOffset;
         uv += height * parallaxOffset;
     }
@@ -534,7 +574,7 @@ void lilPOM(inout float2 uvMain, inout float2 uv, lilBool useParallax, float4 uv
         {
             height2 = height;
             rayPos += rayStep;
-            height = LIL_SAMPLE_2D_LOD(parallaxMap,sampler_linear_repeat,rayPos.xy,0).r;
+            height = LIL_SAMPLE_2D_LOD(parallaxMap,lil_sampler_linear_repeat,rayPos.xy,0).r;
             if(height >= rayPos.z) break;
         }
 
@@ -651,6 +691,7 @@ void lilCalcDissolveWithNoise(
 float4 lilGetSubTex(
     TEXTURE2D(tex),
     float4 uv_ST,
+    float4 uv_SR,
     float angle,
     float2 uv,
     float nv,
@@ -667,7 +708,8 @@ float4 lilGetSubTex(
     LIL_SAMP_IN_FUNC(samp))
 {
     #if defined(LIL_FEATURE_DECAL)
-        float2 uv2 = lilCalcDecalUV(uv, uv_ST, angle, isLeftOnly, isRightOnly, shouldCopy, shouldFlipMirror, shouldFlipCopy, isRightHand);
+        float4 uv_SR2 = float4(uv_SR.xy, angle, uv_SR.w);
+        float2 uv2 = lilCalcDecalUV(uv, uv_ST, uv_SR2, isLeftOnly, isRightOnly, shouldCopy, shouldFlipMirror, shouldFlipCopy, isRightHand);
         #if defined(LIL_FEATURE_ANIMATE_DECAL)
             float2 uv2samp = lilCalcAtlasAnimation(uv2, decalAnimation, decalSubParam);
         #else
@@ -678,7 +720,8 @@ float4 lilGetSubTex(
         if(isDecal) outCol.a *= lilIsIn0to1(uv2, saturate(nv-0.05));
         return outCol;
     #else
-        float2 uv2 = lilCalcUV(uv, uv_ST, angle);
+        float4 uv_SR2 = float4(uv_SR.xy, angle, uv_SR.w);
+        float2 uv2 = lilCalcUV(uv, uv_ST, uv_SR2);
         float4 outCol = LIL_SAMPLE_2D(tex,samp,uv2);
         if(isMSDF) outCol = float4(1.0, 1.0, 1.0, lilMSDF(outCol.rgb));
         return outCol;
@@ -688,6 +731,7 @@ float4 lilGetSubTex(
 float4 lilGetSubTexWithoutAnimation(
     TEXTURE2D(tex),
     float4 uv_ST,
+    float4 uv_SR,
     float angle,
     float2 uv,
     float nv,
@@ -988,7 +1032,7 @@ float3 lilCustomReflection(TEXTURECUBE(tex), float4 hdr, float3 viewDirection, f
 {
     float mip = perceptualRoughness * (10.2 - 4.2 * perceptualRoughness);
     float3 refl = reflect(-viewDirection, normalDirection);
-    return lilDecodeHDR(LIL_SAMPLE_CUBE_LOD(tex, sampler_linear_repeat, refl, mip), hdr);
+    return lilDecodeHDR(LIL_SAMPLE_CUBE_LOD(tex, lil_sampler_linear_repeat, refl, mip), hdr);
 }
 
 //------------------------------------------------------------------------------------------------------------------------------
@@ -1094,7 +1138,7 @@ float3 lilCalcGlitter(float2 uv, float3 normalDirection, float3 viewDirection, f
                 bool clamp = maskUV.x == saturate(maskUV.x) && maskUV.y == saturate(maskUV.y);
                 maskUV = (maskUV + floor(near.xy * glitterAtras.xy)) / glitterAtras.xy;
                 float2 mipfactor = 0.125 / glitterParams1.z * glitterAtras.xy * glitterShapeTex_ST.xy * randomScale;
-                float4 shapeTex = LIL_SAMPLE_2D_GRAD(glitterShapeTex, sampler_linear_clamp, maskUV, abs(ddx(pos)) * mipfactor.x, abs(ddy(pos)) * mipfactor.y);
+                float4 shapeTex = LIL_SAMPLE_2D_GRAD(glitterShapeTex, lil_sampler_linear_clamp, maskUV, abs(ddx(pos)) * mipfactor.x, abs(ddy(pos)) * mipfactor.y);
                 shapeTex.a = clamp ? shapeTex.a : 0;
                 glitterColor *= shapeTex.rgb * shapeTex.a;
             }

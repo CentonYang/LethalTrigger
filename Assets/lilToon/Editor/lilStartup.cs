@@ -6,6 +6,7 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Reflection;
+using System.Collections.Generic;
 
 namespace lilToon
 {
@@ -124,12 +125,37 @@ namespace lilToon
             }
 
             //------------------------------------------------------------------------------------------------------------------------------
-            // Migration
-            if(lilToonInspector.edSet.currentVersionValue < lilConstants.currentVersionValue)
+            // Update
+            if(lilToonInspector.edSet.currentVersionValue != lilConstants.currentVersionValue)
             {
+                // Migrate Materials
                 MigrateMaterials();
                 lilToonInspector.edSet.currentVersionValue = lilConstants.currentVersionValue;
                 lilToonInspector.SaveEditorSettingTemp();
+
+                #if UNITY_2019_4_OR_NEWER
+                    // Update custom shaders
+                    var folders = new List<string>();
+                    foreach(string shaderGuid in AssetDatabase.FindAssets("t:shader"))
+                    {
+                        string shaderPath = lilDirectoryManager.GUIDToPath(shaderGuid);
+                        if(!shaderPath.Contains(".lilcontainer")) continue;
+                        string folder = Path.GetDirectoryName(shaderPath);
+                        if(folders.Contains(folder)) continue;
+                        var shader = AssetDatabase.LoadAssetAtPath<Shader>(shaderPath);
+                        int versionIndex = shader.FindPropertyIndex("_lilToonVersion");
+                        if(
+                            versionIndex != -1 &&
+                            shader.GetPropertyDefaultFloatValue(versionIndex) == lilConstants.currentVersionValue &&
+                            !ShaderUtil.ShaderHasError(shader)
+                        ) continue;
+                        folders.Add(folder);
+                    }
+                    foreach(string folder in folders)
+                    {
+                        AssetDatabase.ImportAsset(folder, ImportAssetOptions.ImportRecursive);
+                    }
+                #endif
             }
 
             //------------------------------------------------------------------------------------------------------------------------------

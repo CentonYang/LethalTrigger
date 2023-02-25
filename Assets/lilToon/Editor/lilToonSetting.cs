@@ -113,6 +113,7 @@ public class lilToonSetting : ScriptableObject
     public bool LIL_OPTIMIZE_USE_FORWARDADD_SHADOW = false;
     public bool LIL_OPTIMIZE_USE_VERTEXLIGHT = true;
     public bool LIL_OPTIMIZE_USE_LIGHTMAP = false;
+    public bool LIL_OPTIMIZE_DEFFERED = false;
 
     public bool isLocked = false;
     public bool isDebugOptimize = false;
@@ -1132,6 +1133,7 @@ public class lilToonSetting : ScriptableObject
             shaderSetting.LIL_FEATURE_AUDIOLINK_VERTEX = shaderSetting.LIL_FEATURE_AUDIOLINK_VERTEX || propname.Contains("_AudioLink2Vertex");
             shaderSetting.LIL_FEATURE_AUDIOLINK_LOCAL = shaderSetting.LIL_FEATURE_AUDIOLINK_LOCAL || propname.Contains("_AudioLinkAsLocal");
             shaderSetting.LIL_FEATURE_DISSOLVE = shaderSetting.LIL_FEATURE_DISSOLVE || propname.Contains("_DissolveParams");
+            shaderSetting.LIL_FEATURE_ENCRYPTION = shaderSetting.LIL_FEATURE_ENCRYPTION || propname.Contains("_BitKey0");
 
             shaderSetting.LIL_FEATURE_ANIMATE_OUTLINE_UV = shaderSetting.LIL_FEATURE_ANIMATE_OUTLINE_UV || propname.Contains("_OutlineTex_ScrollRotate");
             shaderSetting.LIL_FEATURE_OUTLINE_TONE_CORRECTION = shaderSetting.LIL_FEATURE_OUTLINE_TONE_CORRECTION || propname.Contains("_OutlineTexHSVG");

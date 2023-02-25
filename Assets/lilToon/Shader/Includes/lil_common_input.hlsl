@@ -7,9 +7,15 @@
     TEXTURE3D(_DitherMaskLOD);
 #endif
 
-SAMPLER(sampler_trilinear_repeat);
-SAMPLER(sampler_linear_clamp);
-#define sampler_linear_repeat sampler_trilinear_repeat
+SAMPLER(lil_sampler_trilinear_repeat);
+SAMPLER(lil_sampler_linear_clamp);
+#define sampler_linear_clamp        lil_sampler_linear_clamp
+#define sampler_trilinear_clamp     lil_sampler_linear_clamp
+#define sampler_linear_repeat       lil_sampler_trilinear_repeat
+#define sampler_trilinear_repeat    lil_sampler_trilinear_repeat
+
+#define lil_sampler_trilinear_clamp     lil_sampler_linear_clamp
+#define lil_sampler_linear_repeat       lil_sampler_trilinear_repeat
 
 #if defined(LIL_BRP)
     TEXTURE2D_SCREEN(_CameraDepthTexture);
@@ -18,8 +24,8 @@ SAMPLER(sampler_linear_clamp);
     float4 _lilBackgroundTexture_TexelSize;
     #define LIL_GET_DEPTH_TEX_CS(uv) LIL_SAMPLE_SCREEN_CS(_CameraDepthTexture, lilCameraDepthTexel(uv))
     #define LIL_TO_LINEARDEPTH(z,uv) lilLinearEyeDepth(z, uv)
-    #define LIL_GET_BG_TEX(uv,lod) LIL_SAMPLE_SCREEN(_lilBackgroundTexture, sampler_linear_clamp, uv)
-    #define LIL_GET_GRAB_TEX(uv,lod) LIL_SAMPLE_SCREEN(_GrabTexture, sampler_linear_clamp, uv)
+    #define LIL_GET_BG_TEX(uv,lod) max(LIL_SAMPLE_SCREEN(_lilBackgroundTexture, lil_sampler_linear_clamp, uv),0)
+    #define LIL_GET_GRAB_TEX(uv,lod) max(LIL_SAMPLE_SCREEN(_GrabTexture, lil_sampler_linear_clamp, uv),0)
     #define LIL_ENABLED_DEPTH_TEX IsScreenTex(_CameraDepthTexture)
 #elif defined(LIL_HDRP)
     #define LIL_GET_DEPTH_TEX_CS(uv) SampleCameraDepth(uv/LIL_SCREENPARAMS.xy)
@@ -32,8 +38,8 @@ SAMPLER(sampler_linear_clamp);
     TEXTURE2D_SCREEN(_CameraOpaqueTexture);
     #define LIL_GET_DEPTH_TEX_CS(uv) LIL_SAMPLE_SCREEN_CS(_CameraDepthTexture, uv)
     #define LIL_TO_LINEARDEPTH(z,uv) LinearEyeDepth(z, _ZBufferParams)
-    #define LIL_GET_BG_TEX(uv,lod) LIL_SAMPLE_SCREEN_LOD(_CameraOpaqueTexture, sampler_linear_clamp, uv, lod)
-    #define LIL_GET_GRAB_TEX(uv,lod) LIL_SAMPLE_SCREEN_LOD(_CameraOpaqueTexture, sampler_linear_clamp, uv, lod)
+    #define LIL_GET_BG_TEX(uv,lod) LIL_SAMPLE_SCREEN_LOD(_CameraOpaqueTexture, lil_sampler_linear_clamp, uv, lod)
+    #define LIL_GET_GRAB_TEX(uv,lod) LIL_SAMPLE_SCREEN_LOD(_CameraOpaqueTexture, lil_sampler_linear_clamp, uv, lod)
     #define LIL_ENABLED_DEPTH_TEX IsScreenTex(_CameraDepthTexture)
 #endif
 
@@ -111,6 +117,7 @@ CBUFFER_START(UnityPerMaterial)
     float   _LightMinLimit;
     float   _LightMaxLimit;
     float   _MonochromeLighting;
+    float   _AAStrength;
     #if defined(LIL_BRP)
         float   _AlphaBoostFA;
     #endif
@@ -165,13 +172,16 @@ CBUFFER_START(UnityPerMaterial)
     float4  _MainTexHSVG;
     float4  _Color2nd;
     float4  _Main2ndTex_ST;
+    float4  _Main2ndTex_ScrollRotate;
     float4  _Color3rd;
     float4  _Main3rdTex_ST;
+    float4  _Main3rdTex_ScrollRotate;
     float   _MainGradationStrength;
     float   _Main2ndTexAngle;
     float   _Main3rdTexAngle;
     float   _AlphaMaskScale;
     float   _AlphaMaskValue;
+    float   _AAStrength;
     uint    _Main2ndTexBlendMode;
     uint    _Main2ndTex_UVMode;
     uint    _Main3rdTexBlendMode;
@@ -205,6 +215,7 @@ CBUFFER_START(UnityPerMaterial)
     #if defined(LIL_MULTI_INPUTS_MAIN2ND)
         float4  _Color2nd;
         float4  _Main2ndTex_ST;
+        float4  _Main2ndTex_ScrollRotate;
         float4  _Main2ndDistanceFade;
         float4  _Main2ndTexDecalAnimation;
         float4  _Main2ndTexDecalSubParam;
@@ -218,6 +229,7 @@ CBUFFER_START(UnityPerMaterial)
     #if defined(LIL_MULTI_INPUTS_MAIN3RD)
         float4  _Color3rd;
         float4  _Main3rdTex_ST;
+        float4  _Main3rdTex_ScrollRotate;
         float4  _Main3rdDistanceFade;
         float4  _Main3rdTexDecalAnimation;
         float4  _Main3rdTexDecalSubParam;
@@ -270,9 +282,11 @@ CBUFFER_START(UnityPerMaterial)
     #endif
     #if defined(LIL_MULTI_INPUTS_REFLECTION)
         float4  _ReflectionColor;
-        float4  _SmoothnessTex_ST;
         float4  _MetallicGlossMap_ST;
         float4  _ReflectionColorTex_ST;
+    #endif
+    #if defined(LIL_MULTI_INPUTS_REFLECTION) || defined(LIL_REFRACTION_BLUR2)
+        float4  _SmoothnessTex_ST;
     #endif
     #if defined(LIL_MULTI_INPUTS_REFLECTION) || defined(LIL_GEM)
         float4  _ReflectionCubeColor;
@@ -358,6 +372,7 @@ CBUFFER_START(UnityPerMaterial)
     float   _LightMinLimit;
     float   _LightMaxLimit;
     float   _MonochromeLighting;
+    float   _AAStrength;
     #if defined(LIL_BRP)
         float   _AlphaBoostFA;
     #endif
@@ -436,13 +451,15 @@ CBUFFER_START(UnityPerMaterial)
         float   _Anisotropy2ndSpecularStrength;
     #endif
     #if defined(LIL_MULTI_INPUTS_REFLECTION) || defined(LIL_GEM)
-        float   _Smoothness;
         float   _Reflectance;
         float   _SpecularNormalStrength;
         float   _SpecularBorder;
         float   _SpecularBlur;
         float   _ReflectionNormalStrength;
         float   _ReflectionCubeEnableLighting;
+    #endif
+    #if defined(LIL_MULTI_INPUTS_REFLECTION) || defined(LIL_GEM) || defined(LIL_REFRACTION_BLUR2)
+        float   _Smoothness;
     #endif
     #if defined(LIL_MULTI_INPUTS_REFLECTION)
         float   _Metallic;
@@ -583,6 +600,9 @@ CBUFFER_START(UnityPerMaterial)
     #if defined(LIL_MULTI_INPUTS_REFLECTION)
         uint    _ReflectionBlendMode;
     #endif
+    #if defined(LIL_MULTI_INPUTS_RIM)
+        uint    _RimBlendMode;
+    #endif
     #if defined(LIL_MULTI_INPUTS_MATCAP)
         uint    _MatCapBlendMode;
     #endif
@@ -594,9 +614,11 @@ CBUFFER_START(UnityPerMaterial)
     #endif
     #if defined(LIL_MULTI_INPUTS_EMISSION)
         uint    _EmissionMap_UVMode;
+        uint    _EmissionBlendMode;
     #endif
     #if defined(LIL_MULTI_INPUTS_EMISSION_2ND)
         uint    _Emission2ndMap_UVMode;
+        uint    _Emission2ndBlendMode;
     #endif
     #if defined(LIL_MULTI_INPUTS_AUDIOLINK)
         uint    _AudioLinkUVMode;
@@ -790,7 +812,7 @@ float4 _AudioTexture_TexelSize;
     #define sampler_MainTex sampler_OutlineTex
 #endif
 #if !defined(LIL_FEATURE_OutlineTex)
-    #define sampler_OutlineTex sampler_linear_repeat
+    #define sampler_OutlineTex lil_sampler_linear_repeat
 #endif
 
 //------------------------------------------------------------------------------------------------------------------------------

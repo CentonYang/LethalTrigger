@@ -1,5 +1,5 @@
 # lilToon
-Version 1.3.6
+Version 1.3.7
 
 # 概要
 アバターを用いたサービス（VRChat等）向けに開発したシェーダーで以下のような特徴があります。
@@ -20,8 +20,10 @@ Unityバージョン
 - Unity 2019.3.0f6  (Built-in RP / URP 7.1.8 / HDRP 7.1.8)
 - Unity 2019.4.31f1 (Built-in RP / URP 7.7.1 / HDRP 7.7.1)
 - Unity 2020.3.36f1 (Built-in RP / URP 10.9.0 / HDRP 10.9.0)
-- Unity 2021.3.5f1 (Built-in RP / URP 12.1.7 / HDRP 12.1.7)
-- Unity 2022.2.0b1 (Built-in RP / URP 14.0.3 / HDRP 14.0.3)
+- Unity 2021.3.16f1 (Built-in RP / URP 12.1.8 / HDRP 12.1.8)
+- Unity 2022.2.1f1 (Built-in RP / URP 14.0.4 / HDRP 14.0.4)
+
+`2021.3.16f1`及び`2022.2.1f1`でエラーにならないことを確認していますが、Unity側の問題でURP・HDRP使用時に確率でうまくレンダリングできない場合があります。問題が発生する場合はバージョンを下げるか修正され次第最新版に更新するようにしてください。（ [GameObjects doesn't get rendered when using "Unlit.Unlit_UsePass" Shader](https://issuetracker.unity3d.com/issues/sphere-gameobject-doesnt-get-rendered-when-using-unlit-dot-unlit-usepass-shader) ）
 
 シェーダーモデル
 - 通常版: SM4.0・ES3.0以降
@@ -32,8 +34,8 @@ Unityバージョン
 レンダリングパイプライン
 - Built-in Render Pipeline
 - Lightweight Render Pipeline 4.0.0 - 6.9.2
-- Universal Render Pipeline 7.0.0 - 13.1.8
-- High Definition Render Pipeline 4.0.0 - 13.1.8
+- Universal Render Pipeline 7.0.0 - 14.0.3
+- High Definition Render Pipeline 4.0.0 - 14.0.3
 
 # 主な機能
 - メインカラーx3レイヤー（デカール、レイヤーマスク、Gifアニメーション、通常・加算・乗算・スクリーン合成対応）
