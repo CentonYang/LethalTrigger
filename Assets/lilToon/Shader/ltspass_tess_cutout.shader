@@ -623,16 +623,68 @@ Shader "Hidden/ltspass_tess_cutout"
             #define LIL_FEATURE_OUTLINE_RECEIVE_SHADOW
             #define LIL_FEATURE_ANIMATE_OUTLINE_UV
             #define LIL_FEATURE_FUR_COLLISION
+            #define LIL_FEATURE_MainGradationTex
+            #define LIL_FEATURE_MainColorAdjustMask
+            #define LIL_FEATURE_Main2ndTex
+            #define LIL_FEATURE_Main2ndBlendMask
+            #define LIL_FEATURE_Main2ndDissolveMask
+            #define LIL_FEATURE_Main2ndDissolveNoiseMask
+            #define LIL_FEATURE_Main3rdTex
+            #define LIL_FEATURE_Main3rdBlendMask
+            #define LIL_FEATURE_Main3rdDissolveMask
+            #define LIL_FEATURE_Main3rdDissolveNoiseMask
+            #define LIL_FEATURE_AlphaMask
             #define LIL_FEATURE_BumpMap
+            #define LIL_FEATURE_Bump2ndMap
+            #define LIL_FEATURE_Bump2ndScaleMask
+            #define LIL_FEATURE_AnisotropyTangentMap
+            #define LIL_FEATURE_AnisotropyScaleMask
+            #define LIL_FEATURE_AnisotropyShiftNoiseMask
+            #define LIL_FEATURE_ShadowBorderMask
+            #define LIL_FEATURE_ShadowBlurMask
+            #define LIL_FEATURE_ShadowStrengthMask
+            #define LIL_FEATURE_ShadowColorTex
+            #define LIL_FEATURE_Shadow2ndColorTex
+            #define LIL_FEATURE_Shadow3rdColorTex
+            #define LIL_FEATURE_BacklightColorTex
+            #define LIL_FEATURE_SmoothnessTex
+            #define LIL_FEATURE_MetallicGlossMap
+            #define LIL_FEATURE_ReflectionColorTex
+            #define LIL_FEATURE_ReflectionCubeTex
+            #define LIL_FEATURE_MatCapTex
+            #define LIL_FEATURE_MatCapBlendMask
+            #define LIL_FEATURE_MatCapBumpMap
+            #define LIL_FEATURE_MatCap2ndTex
+            #define LIL_FEATURE_MatCap2ndBlendMask
+            #define LIL_FEATURE_MatCap2ndBumpMap
+            #define LIL_FEATURE_RimColorTex
+            #define LIL_FEATURE_GlitterColorTex
+            #define LIL_FEATURE_GlitterShapeTex
             #define LIL_FEATURE_EmissionMap
+            #define LIL_FEATURE_EmissionBlendMask
+            #define LIL_FEATURE_EmissionGradTex
+            #define LIL_FEATURE_Emission2ndMap
+            #define LIL_FEATURE_Emission2ndBlendMask
+            #define LIL_FEATURE_Emission2ndGradTex
+            #define LIL_FEATURE_ParallaxMap
+            #define LIL_FEATURE_AudioLinkMask
+            #define LIL_FEATURE_AudioLinkLocalMap
+            #define LIL_FEATURE_DissolveMask
+            #define LIL_FEATURE_DissolveNoiseMask
             #define LIL_FEATURE_OutlineTex
+            #define LIL_FEATURE_OutlineWidthMask
+            #define LIL_FEATURE_OutlineVectorTex
+            #define LIL_FEATURE_FurNoiseMask
+            #define LIL_FEATURE_FurMask
+            #define LIL_FEATURE_FurLengthMask
+            #define LIL_FEATURE_FurVectorTex
             #define LIL_OPTIMIZE_APPLY_SHADOW_FA
             #define LIL_OPTIMIZE_USE_FORWARDADD
             #define LIL_OPTIMIZE_USE_VERTEXLIGHT
             #pragma skip_variants LIGHTMAP_ON DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SHADOWMASK DIRLIGHTMAP_COMBINED _MIXED_LIGHTING_SUBTRACTIVE
-            #define LIL_SRP_VERSION_MAJOR 12
-            #define LIL_SRP_VERSION_MINOR 1
-            #define LIL_SRP_VERSION_PATCH 7
+            #define LIL_SRP_VERSION_MAJOR 14
+            #define LIL_SRP_VERSION_MINOR 0
+            #define LIL_SRP_VERSION_PATCH 6
 
             #define LIL_TESSELLATION
             #pragma target 5.0
@@ -691,7 +743,7 @@ Shader "Hidden/ltspass_tess_cutout"
             #pragma multi_compile_fragment _ _DBUFFER_MRT1 _DBUFFER_MRT2 _DBUFFER_MRT3
             #pragma multi_compile _ _LIGHT_LAYERS
             #pragma multi_compile_fragment _ _LIGHT_COOKIES
-            #pragma multi_compile _ _CLUSTERED_RENDERING
+            #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ LIGHTMAP_SHADOW_MIXING
             #pragma multi_compile _ SHADOWS_SHADOWMASK
             #pragma multi_compile _ DIRLIGHTMAP_COMBINED
@@ -759,7 +811,7 @@ Shader "Hidden/ltspass_tess_cutout"
             #pragma multi_compile_fragment _ _DBUFFER_MRT1 _DBUFFER_MRT2 _DBUFFER_MRT3
             #pragma multi_compile _ _LIGHT_LAYERS
             #pragma multi_compile_fragment _ _LIGHT_COOKIES
-            #pragma multi_compile _ _CLUSTERED_RENDERING
+            #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ LIGHTMAP_SHADOW_MIXING
             #pragma multi_compile _ SHADOWS_SHADOWMASK
             #pragma multi_compile _ DIRLIGHTMAP_COMBINED
@@ -993,16 +1045,68 @@ Shader "Hidden/ltspass_tess_cutout"
             #define LIL_FEATURE_OUTLINE_RECEIVE_SHADOW
             #define LIL_FEATURE_ANIMATE_OUTLINE_UV
             #define LIL_FEATURE_FUR_COLLISION
+            #define LIL_FEATURE_MainGradationTex
+            #define LIL_FEATURE_MainColorAdjustMask
+            #define LIL_FEATURE_Main2ndTex
+            #define LIL_FEATURE_Main2ndBlendMask
+            #define LIL_FEATURE_Main2ndDissolveMask
+            #define LIL_FEATURE_Main2ndDissolveNoiseMask
+            #define LIL_FEATURE_Main3rdTex
+            #define LIL_FEATURE_Main3rdBlendMask
+            #define LIL_FEATURE_Main3rdDissolveMask
+            #define LIL_FEATURE_Main3rdDissolveNoiseMask
+            #define LIL_FEATURE_AlphaMask
             #define LIL_FEATURE_BumpMap
+            #define LIL_FEATURE_Bump2ndMap
+            #define LIL_FEATURE_Bump2ndScaleMask
+            #define LIL_FEATURE_AnisotropyTangentMap
+            #define LIL_FEATURE_AnisotropyScaleMask
+            #define LIL_FEATURE_AnisotropyShiftNoiseMask
+            #define LIL_FEATURE_ShadowBorderMask
+            #define LIL_FEATURE_ShadowBlurMask
+            #define LIL_FEATURE_ShadowStrengthMask
+            #define LIL_FEATURE_ShadowColorTex
+            #define LIL_FEATURE_Shadow2ndColorTex
+            #define LIL_FEATURE_Shadow3rdColorTex
+            #define LIL_FEATURE_BacklightColorTex
+            #define LIL_FEATURE_SmoothnessTex
+            #define LIL_FEATURE_MetallicGlossMap
+            #define LIL_FEATURE_ReflectionColorTex
+            #define LIL_FEATURE_ReflectionCubeTex
+            #define LIL_FEATURE_MatCapTex
+            #define LIL_FEATURE_MatCapBlendMask
+            #define LIL_FEATURE_MatCapBumpMap
+            #define LIL_FEATURE_MatCap2ndTex
+            #define LIL_FEATURE_MatCap2ndBlendMask
+            #define LIL_FEATURE_MatCap2ndBumpMap
+            #define LIL_FEATURE_RimColorTex
+            #define LIL_FEATURE_GlitterColorTex
+            #define LIL_FEATURE_GlitterShapeTex
             #define LIL_FEATURE_EmissionMap
+            #define LIL_FEATURE_EmissionBlendMask
+            #define LIL_FEATURE_EmissionGradTex
+            #define LIL_FEATURE_Emission2ndMap
+            #define LIL_FEATURE_Emission2ndBlendMask
+            #define LIL_FEATURE_Emission2ndGradTex
+            #define LIL_FEATURE_ParallaxMap
+            #define LIL_FEATURE_AudioLinkMask
+            #define LIL_FEATURE_AudioLinkLocalMap
+            #define LIL_FEATURE_DissolveMask
+            #define LIL_FEATURE_DissolveNoiseMask
             #define LIL_FEATURE_OutlineTex
+            #define LIL_FEATURE_OutlineWidthMask
+            #define LIL_FEATURE_OutlineVectorTex
+            #define LIL_FEATURE_FurNoiseMask
+            #define LIL_FEATURE_FurMask
+            #define LIL_FEATURE_FurLengthMask
+            #define LIL_FEATURE_FurVectorTex
             #define LIL_OPTIMIZE_APPLY_SHADOW_FA
             #define LIL_OPTIMIZE_USE_FORWARDADD
             #define LIL_OPTIMIZE_USE_VERTEXLIGHT
             #pragma skip_variants LIGHTMAP_ON DYNAMICLIGHTMAP_ON LIGHTMAP_SHADOW_MIXING SHADOWS_SHADOWMASK DIRLIGHTMAP_COMBINED _MIXED_LIGHTING_SUBTRACTIVE
-            #define LIL_SRP_VERSION_MAJOR 12
-            #define LIL_SRP_VERSION_MINOR 1
-            #define LIL_SRP_VERSION_PATCH 7
+            #define LIL_SRP_VERSION_MAJOR 14
+            #define LIL_SRP_VERSION_MINOR 0
+            #define LIL_SRP_VERSION_PATCH 6
 
             #define LIL_TESSELLATION
             #pragma target 5.0
@@ -1061,7 +1165,7 @@ Shader "Hidden/ltspass_tess_cutout"
             #pragma multi_compile_fragment _ _DBUFFER_MRT1 _DBUFFER_MRT2 _DBUFFER_MRT3
             #pragma multi_compile _ _LIGHT_LAYERS
             #pragma multi_compile_fragment _ _LIGHT_COOKIES
-            #pragma multi_compile _ _CLUSTERED_RENDERING
+            #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ LIGHTMAP_SHADOW_MIXING
             #pragma multi_compile _ SHADOWS_SHADOWMASK
             #pragma multi_compile _ DIRLIGHTMAP_COMBINED
@@ -1128,7 +1232,7 @@ Shader "Hidden/ltspass_tess_cutout"
             #pragma multi_compile_fragment _ _DBUFFER_MRT1 _DBUFFER_MRT2 _DBUFFER_MRT3
             #pragma multi_compile _ _LIGHT_LAYERS
             #pragma multi_compile_fragment _ _LIGHT_COOKIES
-            #pragma multi_compile _ _CLUSTERED_RENDERING
+            #pragma multi_compile _ _FORWARD_PLUS
             #pragma multi_compile _ LIGHTMAP_SHADOW_MIXING
             #pragma multi_compile _ SHADOWS_SHADOWMASK
             #pragma multi_compile _ DIRLIGHTMAP_COMBINED

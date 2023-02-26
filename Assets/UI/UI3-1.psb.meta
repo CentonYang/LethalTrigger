@@ -21,11 +21,13 @@ ScriptedImporter:
     convertToNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
     isReadable: 0
     streamingMipmaps: 1
     streamingMipmapsPriority: 0
     vTOnly: 0
-    ignoreMasterTextureLimit: 0
+    ignoreMipmapLimit: 0
     nPOTScale: 1
     sRGBTexture: 1
     spriteMode: 2
@@ -88,7 +90,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 0, y: 0}
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData:
@@ -111,7 +112,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 950, y: 4}
     spritePosition: {x: 1170, y: 900}
   - name: Rs2
@@ -133,7 +133,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 940, y: 245}
     spritePosition: {x: 1174, y: 904}
   - name: Rsb2
@@ -155,7 +154,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 979, y: 245}
     spritePosition: {x: 1174, y: 904}
   - name: Rsbb1
@@ -177,7 +175,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 949, y: 57}
     spritePosition: {x: 1128, y: 900}
   - name: Rs1
@@ -199,7 +196,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 940, y: 295}
     spritePosition: {x: 1132, y: 904}
   - name: Rsb1
@@ -221,7 +217,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 979, y: 295}
     spritePosition: {x: 1132, y: 904}
   - name: Lsbb2
@@ -243,7 +238,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 947, y: 160}
     spritePosition: {x: 770, y: 900}
   - name: Ls2
@@ -265,7 +259,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 940, y: 345}
     spritePosition: {x: 774, y: 904}
   - name: Lsb2
@@ -287,7 +280,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 979, y: 345}
     spritePosition: {x: 774, y: 904}
   - name: Lsbb2_1
@@ -309,7 +301,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 947, y: 109}
     spritePosition: {x: 726, y: 900}
   - name: Ls1
@@ -331,7 +322,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 940, y: 395}
     spritePosition: {x: 730, y: 904}
   - name: Lsb1
@@ -353,7 +343,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 979, y: 395}
     spritePosition: {x: 730, y: 904}
   - name: Rm
@@ -375,7 +364,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 268, y: 481}
     spritePosition: {x: 1669, y: 770}
   - name: Lm
@@ -397,7 +385,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 481}
     spritePosition: {x: 0, y: 770}
   - name: Rw
@@ -419,7 +406,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: -102}
     spritePosition: {x: 0, y: 847}
   - name: Bw
@@ -441,7 +427,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 245}
     spritePosition: {x: 1644, y: 845}
   - name: Rbbb
@@ -463,7 +448,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 662, y: 210}
     spritePosition: {x: 1116, y: 944}
   - name: Rb1
@@ -485,7 +469,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 305, y: 784}
     spritePosition: {x: 1117, y: 946}
   - name: Rbr
@@ -507,7 +490,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 603, y: 784}
     spritePosition: {x: 1117, y: 946}
   - name: Rbb
@@ -529,7 +511,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 655, y: 467}
     spritePosition: {x: 1113, y: 946}
   - name: Lbbb
@@ -551,7 +532,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 655, y: 445}
     spritePosition: {x: 518, y: 944}
   - name: Lb1
@@ -573,7 +553,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 695, y: 759}
     spritePosition: {x: 520, y: 946}
   - name: Lbr
@@ -595,7 +574,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 784}
     spritePosition: {x: 520, y: 946}
   - name: Lbb
@@ -617,7 +595,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 393, y: 759}
     spritePosition: {x: 519, y: 946}
   - name: Rgbb
@@ -639,7 +616,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 295, y: 57}
     spritePosition: {x: 1066, y: 963}
   - name: Rg
@@ -661,7 +637,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 295, y: 109}
     spritePosition: {x: 1069, y: 964}
   - name: Rgr
@@ -683,7 +658,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 295, y: 160}
     spritePosition: {x: 1069, y: 964}
   - name: Rgb
@@ -705,7 +679,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 288, y: 245}
     spritePosition: {x: 1069, y: 964}
   - name: Lgbb
@@ -727,7 +700,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 295, y: 4}
     spritePosition: {x: 215, y: 963}
   - name: Lg
@@ -749,7 +721,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 288, y: 295}
     spritePosition: {x: 215, y: 964}
   - name: Lgr
@@ -771,7 +742,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 288, y: 345}
     spritePosition: {x: 215, y: 964}
   - name: Lgb
@@ -793,7 +763,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 288, y: 395}
     spritePosition: {x: 215, y: 964}
   - name: Rr1
@@ -815,7 +784,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 527, y: 707}
     spritePosition: {x: 1429, y: 83}
   - name: Rrb
@@ -837,7 +805,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 734}
     spritePosition: {x: 1429, y: 83}
   - name: Ro1
@@ -859,7 +826,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 295, y: 210}
     spritePosition: {x: 1440, y: 48}
   - name: Rob
@@ -881,7 +847,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 527, y: 637}
     spritePosition: {x: 1429, y: 48}
   - name: Lr1
@@ -903,7 +868,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 393, y: 734}
     spritePosition: {x: 116, y: 83}
   - name: Lrb
@@ -925,7 +889,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 759}
     spritePosition: {x: 116, y: 83}
   - name: Lo1
@@ -947,7 +910,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 288, y: 445}
     spritePosition: {x: 127, y: 48}
   - name: Lob
@@ -969,7 +931,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 527, y: 672}
     spritePosition: {x: 116, y: 48}
   - name: time
@@ -991,7 +952,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 527, y: 488}
     spritePosition: {x: 793, y: 939}
   rigSpriteImportData:
@@ -1014,7 +974,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 950, y: 4}
     spritePosition: {x: 1170, y: 900}
   - name: Rs2
@@ -1036,7 +995,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 940, y: 245}
     spritePosition: {x: 1174, y: 904}
   - name: Rsb2
@@ -1058,7 +1016,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 979, y: 245}
     spritePosition: {x: 1174, y: 904}
   - name: Rsbb1
@@ -1080,7 +1037,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 949, y: 57}
     spritePosition: {x: 1128, y: 900}
   - name: Rs1
@@ -1102,7 +1058,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 940, y: 295}
     spritePosition: {x: 1132, y: 904}
   - name: Rsb1
@@ -1124,7 +1079,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 979, y: 295}
     spritePosition: {x: 1132, y: 904}
   - name: Lsbb2
@@ -1146,7 +1100,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 947, y: 160}
     spritePosition: {x: 770, y: 900}
   - name: Ls2
@@ -1168,7 +1121,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 940, y: 345}
     spritePosition: {x: 774, y: 904}
   - name: Lsb2
@@ -1190,7 +1142,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 979, y: 345}
     spritePosition: {x: 774, y: 904}
   - name: Lsbb2_1
@@ -1212,7 +1163,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 947, y: 109}
     spritePosition: {x: 726, y: 900}
   - name: Ls1
@@ -1234,7 +1184,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 940, y: 395}
     spritePosition: {x: 730, y: 904}
   - name: Lsb1
@@ -1256,7 +1205,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 979, y: 395}
     spritePosition: {x: 730, y: 904}
   - name: Rm
@@ -1278,7 +1226,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 268, y: 481}
     spritePosition: {x: 1669, y: 770}
   - name: Lm
@@ -1300,7 +1247,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 481}
     spritePosition: {x: 0, y: 770}
   - name: Rw
@@ -1322,7 +1268,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: -102}
     spritePosition: {x: 0, y: 847}
   - name: Bw
@@ -1344,7 +1289,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 245}
     spritePosition: {x: 1644, y: 845}
   - name: Rbbb
@@ -1366,7 +1310,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 662, y: 210}
     spritePosition: {x: 1116, y: 944}
   - name: Rb1
@@ -1388,7 +1331,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 305, y: 784}
     spritePosition: {x: 1117, y: 946}
   - name: Rbr
@@ -1410,7 +1352,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 603, y: 784}
     spritePosition: {x: 1117, y: 946}
   - name: Rbb
@@ -1432,7 +1373,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 655, y: 467}
     spritePosition: {x: 1113, y: 946}
   - name: Lbbb
@@ -1454,7 +1394,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 655, y: 445}
     spritePosition: {x: 518, y: 944}
   - name: Lb1
@@ -1476,7 +1415,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 695, y: 759}
     spritePosition: {x: 520, y: 946}
   - name: Lbr
@@ -1498,7 +1436,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 784}
     spritePosition: {x: 520, y: 946}
   - name: Lbb
@@ -1520,7 +1457,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 393, y: 759}
     spritePosition: {x: 519, y: 946}
   - name: Rgbb
@@ -1542,7 +1478,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 295, y: 57}
     spritePosition: {x: 1066, y: 963}
   - name: Rg
@@ -1564,7 +1499,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 295, y: 109}
     spritePosition: {x: 1069, y: 964}
   - name: Rgr
@@ -1586,7 +1520,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 295, y: 160}
     spritePosition: {x: 1069, y: 964}
   - name: Rgb
@@ -1608,7 +1541,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 288, y: 245}
     spritePosition: {x: 1069, y: 964}
   - name: Lgbb
@@ -1630,7 +1562,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 295, y: 4}
     spritePosition: {x: 215, y: 963}
   - name: Lg
@@ -1652,7 +1583,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 288, y: 295}
     spritePosition: {x: 215, y: 964}
   - name: Lgr
@@ -1674,7 +1604,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 288, y: 345}
     spritePosition: {x: 215, y: 964}
   - name: Lgb
@@ -1696,7 +1625,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 288, y: 395}
     spritePosition: {x: 215, y: 964}
   - name: Rr1
@@ -1718,7 +1646,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 527, y: 707}
     spritePosition: {x: 1429, y: 83}
   - name: Rrb
@@ -1740,7 +1667,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 734}
     spritePosition: {x: 1429, y: 83}
   - name: Ro1
@@ -1762,7 +1688,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 295, y: 210}
     spritePosition: {x: 1440, y: 48}
   - name: Rob
@@ -1784,7 +1709,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 527, y: 637}
     spritePosition: {x: 1429, y: 48}
   - name: Lr1
@@ -1806,7 +1730,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 393, y: 734}
     spritePosition: {x: 116, y: 83}
   - name: Lrb
@@ -1828,7 +1751,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 4, y: 759}
     spritePosition: {x: 116, y: 83}
   - name: Lo1
@@ -1850,7 +1772,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 288, y: 445}
     spritePosition: {x: 127, y: 48}
   - name: Lob
@@ -1872,7 +1793,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 527, y: 672}
     spritePosition: {x: 116, y: 48}
   - name: time
@@ -1894,7 +1814,6 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    parentGroupIndex: -1
     uvTransform: {x: 527, y: 488}
     spritePosition: {x: 793, y: 939}
   characterData:
@@ -1902,6 +1821,7 @@ ScriptedImporter:
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
+    pivot: {x: 0, y: 0}
     boneReadOnly: 0
   sharedRigSpriteImportData: []
   sharedRigCharacterData:
@@ -1909,6 +1829,7 @@ ScriptedImporter:
     parts: []
     dimension: {x: 0, y: 0}
     characterGroups: []
+    pivot: {x: 0, y: 0}
     boneReadOnly: 0
   platformSettings:
   - name: DefaultTexturePlatform
@@ -1976,6 +1897,8 @@ ScriptedImporter:
   paperDollMode: 0
   keepDupilcateSpriteName: 0
   skeletonAssetReferenceID: 
+  padding: 4
+  spriteSizeExpand: 0
   spriteCategoryList:
     categories: []
   spritePackingTag: 
@@ -3164,6 +3087,9 @@ ScriptedImporter:
     isVisible: 1
   sharedRigPSDLayers: []
   pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
   generateGOHierarchy: 0
   textureAssetName: 
   prefabAssetName: 
