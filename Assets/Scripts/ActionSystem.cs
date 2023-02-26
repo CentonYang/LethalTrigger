@@ -21,6 +21,7 @@ public class ActionSystem : MonoBehaviour
     public GameObject hitboxes;
     public Transform hitTrans;
     public GameObject hitVFX;
+    [HideInInspector] public CameraShake cameraShake;
 
     public enum MoveMode { move, soar, all, none };
     [Tooltip("移動模式:移動/漂浮/全部/無視")] public MoveMode moveMode;
@@ -96,20 +97,23 @@ public class ActionSystem : MonoBehaviour
     string SearchAction(string target, string mStr, string cStr, string aStr)
     {
         string inStateStr = inState == 0 ? "" : inState.ToString();
-        if (target == inStateStr + cStr + aStr) return target;
-        if (target == cStr + aStr) return target;
-        if (cStr.Length > 1 && target == inStateStr + cStr.Substring(1) + aStr) return target;
-        if (cStr.Length > 1 && target == cStr.Substring(1) + aStr) return target;
+        for (int i = 0; i < cStr.Length; i++)
+        {
+            if (target == inStateStr + cStr.Substring(i) + aStr) return target;
+            if (target == cStr.Substring(i) + aStr) return target;
+        }
         if (target == inStateStr + mStr + aStr) return target;
         if (target == mStr + aStr) return target;
         if (target == inStateStr + aStr) return target;
         if (target == aStr) return target;
-        if (target == inStateStr + cStr) return target;
-        if (target == cStr) return target;
-        if (cStr.Length > 1 && target == inStateStr + cStr.Substring(1)) return target;
-        if (cStr.Length > 1 && target == cStr.Substring(1)) return target;
         if (mStr.Length > 0 && target == inStateStr + mStr[mStr.Length - 1].ToString()) return target;
         if (mStr.Length > 0 && target == mStr[mStr.Length - 1].ToString()) return target;
+        for (int i = 0; i < cStr.Length; i++)
+        {
+            if (i == cStr.Length - 1) if ((mStr[mStr.Length - 1] == '5' && cStr != "N") || (mStr[mStr.Length - 1] == '2' && cStr != "D")) return null;
+            if (target == inStateStr + cStr.Substring(i)) return target;
+            if (target == cStr.Substring(i)) return target;
+        }
         return null;
     }
 
@@ -258,7 +262,7 @@ public class ActionSystem : MonoBehaviour
         if (pushReac > 0 && animState == "5") return;
         cancelList.Clear(); cancelOtherList.Clear(); actionMsg = null;
         if (animator.HasState(0, Animator.StringToHash(animState)))
-            animator.Play(animState, -1, 0);
+            animator.CrossFadeInFixedTime(animState, .01f);
     }
 
     public void Hited(string oppoCol)
@@ -356,6 +360,7 @@ public class ActionSystem : MonoBehaviour
                     NextState("HUB");
             }
         }
+        cameraShake.SetShake(_dStiffDur * .2f, _dmg * .01f);
         Time.timeScale = .5f;
         yield return new WaitForSecondsRealtime(.1f);
         Time.timeScale = 1;
@@ -386,6 +391,7 @@ public class ActionSystem : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         moveList = GetComponent<MoveList>();
         audioSource = GetComponentInChildren<AudioSource>();
+        cameraShake = FindAnyObjectByType<CameraShake>();
         if (GameObject.Find("TwoCharCam") != null)
             GameObject.Find("TwoCharCam").GetComponent<CinemachineTargetGroup>().AddMember(transform, 1, 0);
         if (pc != null)

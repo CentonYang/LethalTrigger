@@ -46,11 +46,11 @@ public class PlayerController : MonoBehaviour
 
     public void GameMode()
     {
-        moveTimer[0]++;
+        if (moveString.Length > 1)
+            moveTimer[0]++;
         if (moveTimer[0] > moveTimer[1])
         {
-            if (moveString.Length > 1)
-                moveString = moveString[moveString.Length - 1].ToString();
+            moveString = moveString[moveString.Length - 1].ToString();
             moveTimer[0] = 0;
             comString = ConvertMoves(moveString, comString);
         }
@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
                 ctx.action.name + ctx.ReadValue<float>() == "S_cls1" ? 'S' :
                 ctx.action.name + ctx.ReadValue<float>() == "S_cls0" ? 's' :
                 ctx.action.name + ctx.ReadValue<float>() == "R_cls1" ? 'R' : 'r';
-            moveString = movesNum.ToString();
+            //moveString = movesNum.ToString();
             id.GetInput(actionKey);
             if (ctx.action.name == "Start")
             {
@@ -126,10 +126,12 @@ public class PlayerController : MonoBehaviour
                 for (int j = 1; j < movesName[i].Split(spliter).Length; j++)
                     if (str.Contains(movesName[i].Split(spliter)[j]))
                     {
+                        if (str.Length > 1 && cto.Length > movesName[i].Split(spliter)[0].Length && cto.Contains(movesName[i].Split(spliter)[0]))
+                            return cto;
                         movesName.Add(movesName[i]);
                         movesName.RemoveAt(i);
-                        if (movesName[i].Split(spliter)[0].Length > 1)
-                            moveString = moveString[moveString.Length - 1].ToString();
+                        //if (movesName[i].Split(spliter)[0].Length > 1)
+                        //    moveString = moveString[moveString.Length - 1].ToString();
                         return movesName[movesName.Count - 1].Split(spliter)[0];
                     }
         return cto;
