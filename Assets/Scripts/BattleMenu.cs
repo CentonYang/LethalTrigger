@@ -70,7 +70,7 @@ public class BattleMenu : MonoBehaviour
                 if (select == 0)
                 {
                     GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
-                    StartCoroutine(MainMenu.PreloadScene(SceneManager.GetActiveScene().name));
+                    //StartCoroutine(MainMenu.PreloadScene(SceneManager.GetActiveScene().name));
                 }
                 else if (select == 4)
                     SceneManager.LoadSceneAsync(exitScene);

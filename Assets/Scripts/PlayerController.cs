@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public List<string> actionName, actionStep, actionMsg, movesName;
     public string moveString, comString;
     public InputDisplay id;
-    public BattleMenu battleMenu;
+    public Menu menu;
     public List<ActionSystem> characters;
 
     void Awake()
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
     public void InputMove(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase == InputActionPhase.Performed && !battleMenu.gameObject.activeSelf)
+        if (ctx.phase == InputActionPhase.Performed && !menu.gameObject.activeSelf)
         {
             moveTimer[0] = 0;
             float angle = Mathf.Atan2(ctx.ReadValue<Vector2>().y, ctx.ReadValue<Vector2>().x) * Mathf.Rad2Deg;
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     public void InputAction(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase != InputActionPhase.Performed && !battleMenu.gameObject.activeSelf)
+        if (ctx.phase != InputActionPhase.Performed && !menu.gameObject.activeSelf)
         {
             actionKey =
                 ctx.action.name + ctx.ReadValue<float>() == "M_cls1" ? 'M' :
@@ -105,10 +105,9 @@ public class PlayerController : MonoBehaviour
             //moveString = movesNum.ToString();
             id.GetInput(actionKey);
             if (ctx.action.name == "Start")
-            {
-                battleMenu.layer = 0; battleMenu.changeLayer = true;
-                battleMenu.pc = pc;
-                battleMenu.gameObject.SetActive(true);
+            {            
+                menu.pc = pc;
+                menu.gameObject.SetActive(true);
             }
         }
     }

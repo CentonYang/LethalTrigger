@@ -41,7 +41,7 @@ public class CharacterSelect : MonoBehaviour
             {
                 layer[i] = -2;
                 GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
-                StartCoroutine(MainMenu.PreloadScene("Main"));
+                StartCoroutine(Menu.PreloadScene("Main"));
             }
             if (layer[i] == 1 && !complete[i].gameObject.activeSelf)
             {
@@ -64,7 +64,7 @@ public class CharacterSelect : MonoBehaviour
                 }
                 GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
                 if (GameSystem.gamemode == 1)
-                    StartCoroutine(MainMenu.PreloadScene("PracticeMode"));
+                    StartCoroutine(Menu.PreloadScene("PracticeMode"));
             }
             if (pc[i] > selectRange.y) pc[i] = (int)selectRange.x; if (pc[i] < selectRange.x) pc[i] = (int)selectRange.y;
             selectTrans[i].position = Vector2.Lerp(selectTrans[i].position, selectContent[pc[i]].selectTrans.position, .2f);
@@ -97,7 +97,7 @@ public class CharacterSelect : MonoBehaviour
             GameSystem.p1Comp = true; GameSystem.p2Comp = true;
             GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
             if (GameSystem.gamemode == 1)
-                StartCoroutine(MainMenu.PreloadScene("PracticeMode"));
+                StartCoroutine(Menu.PreloadScene("PracticeMode"));
         }
     }
 

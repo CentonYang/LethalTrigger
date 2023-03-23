@@ -145,7 +145,7 @@ public class MainMenu : MonoBehaviour
         return null;
     }
 
-    static public IEnumerator PreloadScene(string sceneID)
+    public IEnumerator PreloadScene(string sceneID)
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneID);
         while (!asyncLoad.isDone)
