@@ -17,7 +17,7 @@ public class CharacterSelect : MonoBehaviour
     public struct SelectContent
     {
         public int selectID;
-        public string selectName, selectSign;
+        public Text selectName, selectSign;
         public RectTransform selectTrans;
     }
     public List<SelectContent> selectContent;
@@ -68,7 +68,7 @@ public class CharacterSelect : MonoBehaviour
             }
             if (pc[i] > selectRange.y) pc[i] = (int)selectRange.x; if (pc[i] < selectRange.x) pc[i] = (int)selectRange.y;
             selectTrans[i].position = Vector2.Lerp(selectTrans[i].position, selectContent[pc[i]].selectTrans.position, .2f);
-            nameObj[i].text = selectContent[pc[i]].selectName; signObj[i].text = selectContent[pc[i]].selectSign;
+            nameObj[i].text = selectContent[pc[i]].selectName.text; signObj[i].text = selectContent[pc[i]].selectSign.text;
             if (checkID[i] != selectContent[pc[i]].selectID)
             {
                 selectAnim[i].Play("OnSelect", -1, 0);

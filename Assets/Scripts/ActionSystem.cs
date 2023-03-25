@@ -262,7 +262,7 @@ public class ActionSystem : MonoBehaviour
         if (pushReac > 0 && animState == "5") return;
         cancelList.Clear(); cancelOtherList.Clear(); actionMsg = null;
         if (animator.HasState(0, Animator.StringToHash(animState)))
-            animator.CrossFadeInFixedTime(animState, .01f);
+            animator.CrossFadeInFixedTime(animState, 0);
     }
 
     public void Hited(string oppoCol)
