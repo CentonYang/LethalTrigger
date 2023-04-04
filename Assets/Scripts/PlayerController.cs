@@ -105,9 +105,11 @@ public class PlayerController : MonoBehaviour
             //moveString = movesNum.ToString();
             id.GetInput(actionKey);
             if (ctx.action.name == "Start")
-            {            
+            {
                 menu.pc = pc;
                 menu.gameObject.SetActive(true);
+                menu.BattleMenu(true);
+                menu.menuContent[menu.selection.index].selectEvent.Invoke();
             }
         }
     }

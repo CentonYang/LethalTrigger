@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1682156345015583131}
   - component: {fileID: 1682156345015583124}
   - component: {fileID: 1682156345015583130}
+  - component: {fileID: 2134174777060474919}
   m_Layer: 0
   m_Name: Sounder
   m_TagString: Untagged
@@ -141,3 +142,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d91a949dda6b4f6b19324b78975048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2134174777060474919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682156345015583125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfe24a3f4db2fd2bb75fd5918245c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 1
+  scale: 1

@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: d49f054325997c27282ff3e1897c4031
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects: {}
   materials:
@@ -17,7 +17,13 @@ ModelImporter:
     removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'mixamorig:LeftUpLeg' : position
+      error = 91.104904 mm\n\t'mixamorig:LeftLeg' : position error = 395.964783 mm\n\t'mixamorig:LeftFoot'
+      : position error = 402.964111 mm\n\t'mixamorig:LeftToeBase' : position error
+      = 227.442734 mm\n\t'mixamorig:RightUpLeg' : position error = 91.006096 mm\n\t'mixamorig:RightLeg'
+      : position error = 396.014465 mm\n\t'mixamorig:RightFoot' : position error
+      = 402.995514 mm\n\t'mixamorig:RightToeBase' : position error = 228.282898 mm\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Armature|DW' has import animation warnings
       that might lower retargeting quality:\nNote: Activate translation DOF on avatar
@@ -131,7 +137,7 @@ ModelImporter:
       takeName: Armature|FFW
       internalID: -7767685773930260093
       firstFrame: 0
-      lastFrame: 140
+      lastFrame: 130
       wrapMode: 0
       orientationOffsetY: 0
       level: -0.02
@@ -190,6 +196,7 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -1768,6 +1775,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 0
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 

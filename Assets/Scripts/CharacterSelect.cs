@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
-    public List<int> pc, layer, arrow, checkID;
+    public List<int> pc, layer, arrowX, arrowY, checkID, color;
     public List<RectTransform> selectTrans, complete;
-    public List<Text> nameObj, signObj;
-    public List<Animator> selectAnim;
+    public List<Text> nameObj, signObj, colorNum;
+    public List<Animator> selectAnim, skinAnim;
     public Vector2 selectRange;
     public List<ActionSystem> selectChar;
     public Transform transCharL, transCharR;
@@ -21,6 +21,7 @@ public class CharacterSelect : MonoBehaviour
         public RectTransform selectTrans;
     }
     public List<SelectContent> selectContent;
+    public int colorCount;
 
     void Start()
     {
@@ -34,8 +35,12 @@ public class CharacterSelect : MonoBehaviour
             if (layer[i] == 0)
             {
                 complete[i].gameObject.SetActive(false);
-                if (arrow[i] > 0 && selectAnim[i].GetCurrentAnimatorStateInfo(0).normalizedTime > .5f) pc[i]++;
-                else if (arrow[i] < 0 && selectAnim[i].GetCurrentAnimatorStateInfo(0).normalizedTime > .5f) pc[i]--;
+                if (arrowX[i] > 0 && selectAnim[i].GetCurrentAnimatorStateInfo(0).normalizedTime > .5f) pc[i]++;
+                else if (arrowX[i] < 0 && selectAnim[i].GetCurrentAnimatorStateInfo(0).normalizedTime > .5f) pc[i]--;
+                if (arrowY[i] > 0 && skinAnim[i].GetCurrentAnimatorStateInfo(0).normalizedTime > .5f)
+                    if (color[i] < colorCount - 1) color[i]++; else color[i] = 0;
+                else if (arrowY[i] < 0 && skinAnim[i].GetCurrentAnimatorStateInfo(0).normalizedTime > .5f)
+                    if (color[i] > 0) color[i]--; else color[i] = colorCount - 1;
             }
             if (layer[i] == -1)
             {
@@ -79,6 +84,8 @@ public class CharacterSelect : MonoBehaviour
                         Destroy(transCharL.GetComponentInChildren<ActionSystem>().gameObject);
                     if (checkID[i] != -1)
                         Instantiate(selectChar[checkID[i]], transCharL);
+                    foreach (CharacterColor item in transCharL.GetComponentsInChildren<CharacterColor>())
+                        item.ColorChange(0);
                 }
                 else
                 {
@@ -86,8 +93,26 @@ public class CharacterSelect : MonoBehaviour
                         Destroy(transCharR.GetComponentInChildren<ActionSystem>().gameObject);
                     if (checkID[i] != -1)
                         Instantiate(selectChar[checkID[i]], transCharR);
+                    foreach (CharacterColor item in transCharR.GetComponentsInChildren<CharacterColor>())
+                        item.ColorChange(1);
                 }
             }
+        }
+        if (GameSystem.p1Color != color[0])
+        {
+            skinAnim[0].Play("Select", -1, 0);
+            colorNum[0].text = (color[0] + 1).ToString("00");
+            GameSystem.p1Color = color[0];
+            foreach (CharacterColor item in transCharL.GetComponentsInChildren<CharacterColor>())
+                item.ColorChange(0);
+        }
+        if (GameSystem.p2Color != color[1])
+        {
+            skinAnim[1].Play("Select", -1, 0);
+            colorNum[1].text = (color[1] + 1).ToString("00");
+            GameSystem.p2Color = color[1];
+            foreach (CharacterColor item in transCharR.GetComponentsInChildren<CharacterColor>())
+                item.ColorChange(1);
         }
         if (layer[0] == 1 && layer[1] == 1)
         {
@@ -104,6 +129,6 @@ public class CharacterSelect : MonoBehaviour
     int ConfirmCharacter(int id)
     {
         if (id != -1) return id;
-        return Random.Range(0, 2);
+        return Random.Range(0, selectChar.Count);
     }
 }

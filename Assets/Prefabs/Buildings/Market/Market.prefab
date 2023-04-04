@@ -2862,6 +2862,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5344675975132062155}
   - component: {fileID: 2764910426339424585}
+  - component: {fileID: 8158096305782715046}
   m_Layer: 0
   m_Name: Market
   m_TagString: Untagged
@@ -2953,7 +2954,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0f2631d6a83ec2c4da5071ace724da7d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -3037,6 +3038,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8158096305782715046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712958563926932337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfe24a3f4db2fd2bb75fd5918245c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 0
+  scale: 0.5
 --- !u!1 &4715218324381790494
 GameObject:
   m_ObjectHideFlags: 0

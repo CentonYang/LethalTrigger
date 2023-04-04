@@ -66,7 +66,7 @@ MonoBehaviour:
     FocusDistance: 10
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
-    m_BlendHint: 0
+    m_BlendHint: 1
     m_InheritPosition: 0
     m_OnCameraLive:
       m_PersistentCalls:
@@ -85,6 +85,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d4a6b02732fb787b2701cd9dcbcecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vcam: {fileID: 0}
+  shakeTime: 0
+  shakePower: 0
 --- !u!1 &5833381927211146688
 GameObject:
   m_ObjectHideFlags: 0

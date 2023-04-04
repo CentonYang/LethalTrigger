@@ -39,11 +39,15 @@ public class Menu : MonoBehaviour
             if (arrow > 0) anim.Play("Next", 0, 0);
             if (arrow < 0) anim.Play("Previous", 0, 0);
         }
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Null") && sceneChangeID != "")
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Null"))
         {
-            if (sceneChangeID == "Exit") Application.Quit();
-            else StartCoroutine(PreloadScene(sceneChangeID));
-            sceneChangeID = "";
+            if (sceneChangeID != "")
+            {
+                if (sceneChangeID == "Exit") Application.Quit();
+                else StartCoroutine(PreloadScene(sceneChangeID));
+                sceneChangeID = "";
+            }
+            else gameObject.SetActive(false);
         }
     }
 
@@ -68,7 +72,7 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void SelectTransition(int trans)
+    public void SelectTransition(int trans) //選擇選單動畫啟用
     {
         transition = trans;
         foreach (MenuList item in menuLists)
@@ -83,20 +87,29 @@ public class Menu : MonoBehaviour
         if (trans != 0) menuContent[selection.index].selectEvent.Invoke();
     }
 
-    public void BattleEnable()
+    public void BattleMenu(bool enable) //戰鬥選單啟用
     {
-        cineTarget = FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
-        cineTrans = GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>();
-        PlayerController.InstallDevices(gameObject, pc);
-        for (int i = 0; i < cineTarget.m_Targets.Length; i++)
-            if (cineTarget.m_Targets[i].target.GetComponent<ActionSystem>().pc.pc == pc)
-                cineTarget.m_Targets[1 - i].weight = 0;
-        cineTrans.m_ScreenX = .65f;
-        foreach (PlayerController item in FindObjectsOfType<PlayerController>())
-        { item.movesNum = 5; item.moveString = "5"; item.comString = "N"; }
+        if (enable)
+        {
+            cineTarget = FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
+            cineTrans = GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>();
+            PlayerController.InstallDevices(gameObject, pc);
+            for (int i = 0; i < cineTarget.m_Targets.Length; i++)
+                if (cineTarget.m_Targets[i].target.GetComponent<ActionSystem>().pc.pc == pc)
+                    cineTarget.m_Targets[1 - i].weight = 0;
+            cineTrans.m_ScreenX = .65f;
+            foreach (PlayerController item in FindObjectsOfType<PlayerController>())
+            { item.movesNum = 5; item.moveString = "5"; item.comString = "N"; }
+        }
+        else
+        {
+            cineTrans.m_ScreenX = .5f;
+            for (int i = 0; i < cineTarget.m_Targets.Length; i++)
+                cineTarget.m_Targets[i].weight = 1;
+        }
     }
 
-    public void ChangeScene(string sceneID)
+    public void ChangeScene(string sceneID) //讓Unity Event轉換場景用
     {
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Null"))
         {
@@ -105,14 +118,14 @@ public class Menu : MonoBehaviour
         }
     }
 
-    static public IEnumerator PreloadScene(string sceneID)
+    static public IEnumerator PreloadScene(string sceneID) //讓其他腳本轉換場景用
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneID);
         while (!asyncLoad.isDone)
             yield return null;
     }
 
-    public void GameMode(int mode)
+    public void GameMode(int mode) //主選單選擇模式用
     {
         GameSystem.gamemode = mode;
     }

@@ -14,7 +14,7 @@ public class ActionSystem : MonoBehaviour
     public Sounder sounder;
     [HideInInspector] public string actionMsg, acceptMsg;
     [HideInInspector] public int direction, hitType;
-    [HideInInspector] public bool hited, hurted, downbreak;
+    [HideInInspector] public bool hited, hurted, downbreak, comboOver;
     [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed;
     [HideInInspector] public Vector2 velocity, hurtVel;
     public Vector2 hp, sta, btr, skill, fix;
@@ -125,6 +125,7 @@ public class ActionSystem : MonoBehaviour
         {
             if (pc.movesNum == 1 || pc.movesNum == 4 || pc.movesNum == 7) dirDis -= .2f;
             if (pc.movesNum == 3 || pc.movesNum == 6 || pc.movesNum == 9) dirDis += .2f;
+            velocity.x += dirDis * Time.fixedDeltaTime;
         }
         else dirDis = 0;
         if (actionMsg != null && (cancel || (hitCancel && hited)) /*&& acceptMsg == null*/)
@@ -210,27 +211,21 @@ public class ActionSystem : MonoBehaviour
         }
         if (hited && pushDis != 0)
             velocity.x = -pushDis;
-        float dis = Mathf.Abs(opponent.transform.position.x - transform.position.x) - 5;
-        if (dis > 0)
+        float dis = transform.position.x > opponent.transform.position.x ? ((transform.position.x + radius) - (opponent.transform.position.x - opponent.radius)) :
+        ((transform.position.x - radius) - (opponent.transform.position.x + opponent.radius));
+        if (dis >= 5 && velocity.x > 0)
+            velocity.x = 5 - dis;
+        if (dis <= -5 && velocity.x < 0)
+            velocity.x = -5 - dis;
+        float ras = Mathf.Abs(opponent.transform.position.x - transform.position.x);
+        if (ras - radius - opponent.radius < 0 && !trigger && !opponent.trigger)
         {
-            if (transform.position.x > opponent.transform.position.x && velocity.x > 0)
-                velocity.x = -dis / Time.fixedDeltaTime;
-            if (transform.position.x < opponent.transform.position.x && velocity.x < 0)
-                velocity.x = dis / Time.fixedDeltaTime;
-            cc.Move(new Vector2(velocity.x, velocity.y < -10 ? -10 : velocity.y) * Time.fixedDeltaTime);
-            velocity.x = 0;
+            if (transform.position.x < opponent.transform.position.x && velocity.x > 0)
+                velocity.x /= 8;
+            if (transform.position.x > opponent.transform.position.x && velocity.x < 0)
+                velocity.x /= 8;
         }
-        float ras = Mathf.Abs(opponent.transform.position.x - transform.position.x) - radius - opponent.radius;
-        if (ras < 0 && !trigger && !opponent.trigger && inState != InState.HU && inState != InState.AHU)
-        {
-            if (transform.position.x < opponent.transform.position.x)
-                velocity.x = ras / Time.fixedDeltaTime * .75f;
-            if (transform.position.x > opponent.transform.position.x)
-                velocity.x = -ras / Time.fixedDeltaTime * .75f;
-            cc.Move(new Vector2(velocity.x, velocity.y < -10 ? -10 : velocity.y) * Time.fixedDeltaTime);
-            velocity.x = 0;
-        }
-        cc.Move((new Vector2(velocity.x, velocity.y < -10 ? -10 : velocity.y) + new Vector2(dirDis, 0)) * Time.fixedDeltaTime);
+        cc.Move(new Vector2(velocity.x, velocity.y < -10 ? -10 : velocity.y) * Time.fixedDeltaTime);
         transform.position = cc.transform.position;
         cc.transform.localPosition *= 0;
     }
@@ -267,7 +262,7 @@ public class ActionSystem : MonoBehaviour
 
     public void Hited(string oppoCol)
     {
-        if (oppoCol == "HurtBox" && !hited && !follow && !(opponent.cc.isGrounded && opponent.velocity.y < 0 && opponent.downed > 1))
+        if (oppoCol == "HurtBox" && !hited && !follow && !(opponent.cc.isGrounded && opponent.velocity.y < 0 && opponent.downed > 1) /*&& opponent.fix.x > .1f*/)
         {
             hited = true;
             GameObject hitVFXObj = Instantiate(hitVFX, hitTrans.position, hitTrans.rotation);
@@ -395,12 +390,10 @@ public class ActionSystem : MonoBehaviour
         if (GameObject.Find("TwoCharCam") != null)
             GameObject.Find("TwoCharCam").GetComponent<CinemachineTargetGroup>().AddMember(transform, 1, 0);
         if (pc != null)
+        {
+            foreach (CharacterColor item in GetComponentsInChildren<CharacterColor>())
+                item.ColorChange(pc.pc);
             direction = pc.direction;
-    }
-
-    void FixedUpdate()
-    {
-        if (pc != null)
             if (opponent == null)
             {
                 if (pc.name == "Player1")
@@ -408,11 +401,16 @@ public class ActionSystem : MonoBehaviour
                 else if (pc.name == "Player2")
                     opponent = GameObject.Find("Player1").GetComponentInChildren<ActionSystem>();
             }
-            else
-            {
-                ActionEvent();
-                ValueEvent();
-            }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (pc != null)
+        {
+            ActionEvent();
+            ValueEvent();
+        }
     }
 
     void Update()
