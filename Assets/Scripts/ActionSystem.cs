@@ -415,10 +415,11 @@ public class ActionSystem : MonoBehaviour
 
     void Update()
     {
-        if (pc == null || (pc.pc == 0 && !GameSystem.p1Comp) || (pc.pc == 1 && !GameSystem.p2Comp))
+        if (pc == null)
             return;
         if ((inState == InState.WAKE || inState == InState.N) && pushReac <= 0)
         { downed = 0; opponent.combo = 0; fix.x = fix.y; }
-        ComMessage();
+        if ((pc.pc == 0 && GameSystem.p1Comp) || (pc.pc == 1 && GameSystem.p2Comp))
+            ComMessage();
     }
 }

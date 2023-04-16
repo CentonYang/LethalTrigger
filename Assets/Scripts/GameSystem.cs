@@ -20,4 +20,11 @@ public class GameSystem : MonoBehaviour
         else
             playerData = JsonUtility.FromJson<PlayerData>(File.ReadAllText(Application.dataPath + "/Save.dat"));
     }
+
+    public static void SaveGame(PlayerData pd)
+    {
+        if (pd != null)
+            playerData = pd;
+        File.WriteAllText(Application.dataPath + "/Save.dat", JsonUtility.ToJson(playerData));
+    }
 }

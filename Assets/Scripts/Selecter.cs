@@ -21,13 +21,13 @@ public class Selecter : MonoBehaviour
 
     public void SelectMotion(InputAction.CallbackContext ctx)
     {
-        if (ctx.ReadValue<Vector2>().x < -.5f && ctx.ReadValue<Vector2>().y < .5f && ctx.ReadValue<Vector2>().y > -.5f)
+        if (ctx.ReadValue<Vector2>().x < -.25f && ctx.ReadValue<Vector2>().y < .25f && ctx.ReadValue<Vector2>().y > -.25f)
             characterSelect.arrowX[pc] = -1;
-        else if (ctx.ReadValue<Vector2>().x > .5f && ctx.ReadValue<Vector2>().y < .5f && ctx.ReadValue<Vector2>().y > -.5f)
+        else if (ctx.ReadValue<Vector2>().x > .25f && ctx.ReadValue<Vector2>().y < .25f && ctx.ReadValue<Vector2>().y > -.25f)
             characterSelect.arrowX[pc] = 1;
-        else if (ctx.ReadValue<Vector2>().y < -.5 && ctx.ReadValue<Vector2>().x < .5f && ctx.ReadValue<Vector2>().x > -.5f)
+        else if (ctx.ReadValue<Vector2>().y < -.25f && ctx.ReadValue<Vector2>().x < .25f && ctx.ReadValue<Vector2>().x > -.25f)
             characterSelect.arrowY[pc] = -1;
-        else if (ctx.ReadValue<Vector2>().y > .5 && ctx.ReadValue<Vector2>().x < .5f && ctx.ReadValue<Vector2>().x > -.5f)
+        else if (ctx.ReadValue<Vector2>().y > .25f && ctx.ReadValue<Vector2>().x < .25f && ctx.ReadValue<Vector2>().x > -.25f)
             characterSelect.arrowY[pc] = 1;
         else { characterSelect.arrowX[pc] = 0; characterSelect.arrowY[pc] = 0; }
     }

@@ -25,6 +25,8 @@ public class Menu : MonoBehaviour
     Cinemachine.CinemachineTargetGroup cineTarget;
     Cinemachine.CinemachineFramingTransposer cineTrans;
     public string sceneChangeID = "";
+    bool infoView = false;
+    Text infoTarget;
 
     void Start()
     {
@@ -36,8 +38,14 @@ public class Menu : MonoBehaviour
     {
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Null") && transition == 0)
         {
-            if (arrow > 0) anim.Play("Next", 0, 0);
-            if (arrow < 0) anim.Play("Previous", 0, 0);
+            if (arrow > 0)
+                if (infoView)
+                    infoTarget.rectTransform.Translate(0, 4, 0);
+                else anim.Play("Next", 0, 0);
+            if (arrow < 0)
+                if (infoView)
+                    infoTarget.rectTransform.Translate(0, -4, 0);
+                else anim.Play("Previous", 0, 0);
         }
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Null"))
         {
@@ -65,10 +73,11 @@ public class Menu : MonoBehaviour
     {
         if (ctx.phase == InputActionPhase.Performed && !anim.GetCurrentAnimatorStateInfo(0).IsName("Null") && transition == 0)
         {
-            if (ctx.action.name + ctx.ReadValue<float>() == "W_cls1")
+            if (ctx.action.name + ctx.ReadValue<float>() == "W_cls1" && !infoView)
                 menuContent[selection.index].confirmEvent.Invoke();
             if (ctx.action.name + ctx.ReadValue<float>() == "R_cls1")
-                menuContent[selection.index].backEvent.Invoke();
+                if (infoView) { infoView = false; SelectTransition(0); }
+                else menuContent[selection.index].backEvent.Invoke();
         }
     }
 
@@ -128,5 +137,16 @@ public class Menu : MonoBehaviour
     public void GameMode(int mode) //主選單選擇模式用
     {
         GameSystem.gamemode = mode;
+    }
+
+    public void ViewInfo()
+    {
+        infoView = true;
+    }
+
+    public void MoveList(MoveListDisplay mldp)
+    {
+        infoTarget = mldp.contenTarget;
+        mldp.contenTarget.text = pc == 0 ? mldp.skills[GameSystem.p1Char] : mldp.skills[GameSystem.p2Char];
     }
 }
