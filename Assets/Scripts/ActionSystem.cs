@@ -13,8 +13,8 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public AudioSource audioSource;
     public Sounder sounder;
     [HideInInspector] public string actionMsg, acceptMsg;
-    [HideInInspector] public int direction, hitType;
-    [HideInInspector] public bool hited, hurted, downbreak, comboOver;
+    [HideInInspector] public int direction, hitType, life;
+    [HideInInspector] public bool hited, hurted, downbreak, comboOver, death;
     [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed;
     [HideInInspector] public Vector2 velocity, hurtVel;
     public Vector2 hp, sta, btr, skill, fix;
@@ -135,24 +135,15 @@ public class ActionSystem : MonoBehaviour
                 if (item.name == actionMsg && item.staLost > 0)
                     if (!staCD)
                         sta.x -= item.staLost;
-                    else actionMsg = null;
+                    else { actionMsg = item.subName == "" ? null : item.subName; pc.actionKey = '_'; }
                 if (item.name == actionMsg && item.btrLost > 0)
                     if (btr.x - item.btrLost >= 0)
                         btr.x -= item.btrLost;
-                    else actionMsg = actionMsg + "NB";
+                    else { actionMsg = item.subName == "" ? null : item.subName; pc.actionKey = '_'; }
             }
-            if (actionMsg != null)
-            {
-                if (actionMsg.Contains(pc.actionKey))
-                    pc.actionKey = '\0';
-                NextState(actionMsg);
-            }
-        }
-        if (acceptMsg != null)
-        {
-            if (inState != InState.WAKE)
-                NextState(acceptMsg);
-            acceptMsg = null;
+            if (actionMsg.Contains(pc.actionKey))
+                pc.actionKey = '_';
+            NextState(actionMsg);
         }
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITF") && velocity.y < 0)
             NextState("HITD");
@@ -191,7 +182,7 @@ public class ActionSystem : MonoBehaviour
                 }
                 else
                 {
-                    if (downed > 0) NextState("WAKE");
+                    if (downed > 0 && !death) NextState("WAKE");
                     else NextState("DOWN");
                     downed++;
                 }
@@ -256,13 +247,14 @@ public class ActionSystem : MonoBehaviour
     {
         if (pushReac > 0 && animState == "5") return;
         cancelList.Clear(); cancelOtherList.Clear(); actionMsg = null;
+        if (animState == "WAKE" && death) { StartCoroutine(Recovery()); return; }
         if (animator.HasState(0, Animator.StringToHash(animState)))
             animator.CrossFadeInFixedTime(animState, 0);
     }
 
     public void Hited(string oppoCol)
     {
-        if (oppoCol == "HurtBox" && !hited && !follow && !(opponent.cc.isGrounded && opponent.velocity.y < 0 && opponent.downed > 1) /*&& opponent.fix.x > .1f*/)
+        if (oppoCol == "HurtBox" && !hited && !follow && !opponent.death && opponent.inState != InState.WAKE && pc.isCtrl && !(opponent.cc.isGrounded && opponent.velocity.y < 0 && opponent.downed > 1))
         {
             hited = true;
             GameObject hitVFXObj = Instantiate(hitVFX, hitTrans.position, hitTrans.rotation);
@@ -331,6 +323,15 @@ public class ActionSystem : MonoBehaviour
             sta.x += _hitSDmg; btr.x += _hitBDmg;
             opponent.skill.x += _hitBDmg / 2;
             //////
+            if (hp.x <= 0)
+            {
+                isAir = true; death = true; pc.isCtrl = false; life--;
+                CinemachineTargetGroup cineTarget = FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
+                for (int i = 0; i < cineTarget.m_Targets.Length; i++)
+                    if (!cineTarget.m_Targets[i].target.GetComponent<ActionSystem>().death)
+                        cineTarget.m_Targets[i].weight = 0;
+            }
+            //////
             if (isAir)
                 hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
             else
@@ -358,23 +359,40 @@ public class ActionSystem : MonoBehaviour
         cameraShake.SetShake(_dStiffDur * .2f, _dmg * .01f);
         Time.timeScale = .5f;
         yield return new WaitForSecondsRealtime(.1f);
-        Time.timeScale = 1;
+        if (!death) Time.timeScale = 1;
     }
 
     IEnumerator DownBreak(Vector2 vel, float timeLong)
     {
         yield return new WaitForSecondsRealtime(timeLong);
-        Time.timeScale = 1;
+        if (!death) Time.timeScale = 1;
         velocity.x = vel.x;
         velocity.y = Mathf.Abs(vel.y) * .4f * (downed > 0 ? Mathf.Pow(.75f, downed) : 1); NextState("HITF");
         pushReac = 0;
         downed++; downbreak = false;
     }
 
-    IEnumerator TimeStop(float timeLong)
+    IEnumerator TimeWait(float timeLong)
     {
         yield return new WaitForSecondsRealtime(timeLong);
         Time.timeScale = 1;
+    }
+
+    public IEnumerator Recovery()
+    {
+        Time.timeScale = 1;
+        opponent.combo = 0;
+        CinemachineTargetGroup cineTarget = FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
+        for (int i = 0; i < cineTarget.m_Targets.Length; i++)
+            cineTarget.m_Targets[i].weight = 1;
+        yield return new WaitForSecondsRealtime(.5f);
+        if (life > 0)
+        {
+            hp.x = hp.y;
+            pc.isCtrl = true;
+            NextState("WAKE");
+            death = false;
+        }
     }
 
     void Start()
@@ -389,6 +407,7 @@ public class ActionSystem : MonoBehaviour
         cameraShake = FindAnyObjectByType<CameraShake>();
         if (GameObject.Find("TwoCharCam") != null)
             GameObject.Find("TwoCharCam").GetComponent<CinemachineTargetGroup>().AddMember(transform, 1, 0);
+        life = GameSystem.life;
         if (pc != null)
         {
             foreach (CharacterColor item in GetComponentsInChildren<CharacterColor>())
@@ -415,11 +434,10 @@ public class ActionSystem : MonoBehaviour
 
     void Update()
     {
-        if (pc == null)
-            return;
+        if (pc == null) return;
         if ((inState == InState.WAKE || inState == InState.N) && pushReac <= 0)
         { downed = 0; opponent.combo = 0; fix.x = fix.y; }
-        if ((pc.pc == 0 && GameSystem.p1Comp) || (pc.pc == 1 && GameSystem.p2Comp))
+        if (pc.isCtrl && ((pc.pc == 0 && GameSystem.p1Comp) || (pc.pc == 1 && GameSystem.p2Comp)))
             ComMessage();
     }
 }

@@ -121,6 +121,8 @@ public class CharacterSelect : MonoBehaviour
             GameSystem.p2Char = ConfirmCharacter(checkID[1]);
             GameSystem.p1Comp = true; GameSystem.p2Comp = true;
             GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
+            if (GameSystem.gamemode == 0)
+                StartCoroutine(Menu.PreloadScene("VersusMode"));
             if (GameSystem.gamemode == 1)
                 StartCoroutine(Menu.PreloadScene("PracticeMode"));
         }

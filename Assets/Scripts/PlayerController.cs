@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public InputDisplay id;
     public Menu menu;
     public List<ActionSystem> characters;
+    public bool isCtrl;
 
     void Awake()
     {
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     public void InputMove(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase == InputActionPhase.Performed && !menu.gameObject.activeSelf)
+        if (ctx.phase == InputActionPhase.Performed && !menu.gameObject.activeSelf && isCtrl)
         {
             moveTimer[0] = 0;
             float angle = Mathf.Atan2(ctx.ReadValue<Vector2>().y, ctx.ReadValue<Vector2>().x) * Mathf.Rad2Deg;
@@ -75,7 +76,7 @@ public class PlayerController : MonoBehaviour
                 movesNum = num;
                 id.GetInput(movesNum.ToString()[0]);
             }
-            if (moveString.Length == 0 || moveString[moveString.Length - 1].ToString() != movesNum.ToString())
+            if ((moveString.Length == 0 || moveString[moveString.Length - 1].ToString() != movesNum.ToString()))
             {
                 switch (movesNum)
                 {
@@ -92,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
     public void InputAction(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase != InputActionPhase.Performed && !menu.gameObject.activeSelf)
+        if (ctx.phase != InputActionPhase.Performed && !menu.gameObject.activeSelf && isCtrl)
         {
             actionKey =
                 ctx.action.name + ctx.ReadValue<float>() == "M_cls1" ? 'M' :
@@ -149,5 +150,10 @@ public class PlayerController : MonoBehaviour
                 InputUser.PerformPairingWithDevice(InputSystem.devices[InputSystem.devices.Count - 1], pi.user);
         else if (_pc == 0)
             InputUser.PerformPairingWithDevice(InputSystem.devices[0], pi.user);
+    }
+
+    public void IsControl(bool _isCtrl)
+    {
+        isCtrl = _isCtrl;
     }
 }

@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
         public UnityEvent backEvent;
     }
     public List<MenuContent> menuContent;
-    Animator anim;
+    public Animator anim;
     Cinemachine.CinemachineTargetGroup cineTarget;
     Cinemachine.CinemachineFramingTransposer cineTrans;
     public string sceneChangeID = "";
@@ -30,7 +30,6 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
         SelectTransition(0);
     }
 
@@ -148,5 +147,11 @@ public class Menu : MonoBehaviour
     {
         infoTarget = mldp.contenTarget;
         mldp.contenTarget.text = pc == 0 ? mldp.skills[GameSystem.p1Char] : mldp.skills[GameSystem.p2Char];
+    }
+
+    public void Reset()
+    {
+        for (int i = 0; i < menuContent.Count; i++)
+            menuContent[i].textDisplay[0].text = menuContent[i].textSource[0].text;
     }
 }

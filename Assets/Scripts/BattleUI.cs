@@ -5,28 +5,38 @@ using UnityEngine.UI;
 
 public class BattleUI : MonoBehaviour
 {
+    public bool practiceMode, result;
+    public Menu battleMenu;
+    public Text timerTxt;
     public ActionSystem pc1, pc2;
     public PlayerUI p1, p2;
     public Sprite[] stab1, stab2;
-    public bool practiceMode;
-
     [System.Serializable]
     public struct PlayerUI
     {
-        public RectTransform hp, hpLose, sta, btr, skill;
+        public RectTransform hp, hpLose, sta, btr, skill, life;
         public Text combo;
         public Vector2 hpV, staV, btrV, skillV;
+        public List<Image> iconList;
     }
+    public struct ResultPanel
+    {
+        public RectTransform result, p1, p2;
+        public List<RectTransform> useChar;
+    }
+    public ResultPanel resultPanel;
+    public Image goodGame, extraTime;
+    float timer;
 
     void Start()
     {
-
+        if (pc1 == null && GameObject.Find("Player1").GetComponentInChildren<ActionSystem>() != null) pc1 = GameObject.Find("Player1").GetComponentInChildren<ActionSystem>();
+        if (pc2 == null && GameObject.Find("Player2").GetComponentInChildren<ActionSystem>() != null) pc2 = GameObject.Find("Player2").GetComponentInChildren<ActionSystem>();
+        timer = GameSystem.timer;
     }
 
     void FixedUpdate()
     {
-        if (pc1 == null && GameObject.Find("Player1").GetComponentInChildren<ActionSystem>() != null) pc1 = GameObject.Find("Player1").GetComponentInChildren<ActionSystem>();
-        if (pc2 == null && GameObject.Find("Player2").GetComponentInChildren<ActionSystem>() != null) pc2 = GameObject.Find("Player2").GetComponentInChildren<ActionSystem>();
         if (pc1 != null && pc2 != null)
         {
             p1.hp.anchoredPosition = new Vector2(Mathf.Lerp(p1.hpV.x, p1.hpV.y, pc1.hp.x / pc1.hp.y), p1.hp.anchoredPosition.y);
@@ -51,8 +61,60 @@ public class BattleUI : MonoBehaviour
             if (pc2.combo > 1 && pc2.combo < 100 && p2.combo.text != pc2.combo.ToString())
             { p2.combo.GetComponent<Animator>().Play("FadeIn", 0, 0); p2.combo.text = pc2.combo.ToString(); }
             if (pc2.combo < 1 && p2.combo.text != pc2.combo.ToString() && p2.combo.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("FadeIn")) p2.combo.GetComponent<Animator>().Play("FadeOut");
-            if (practiceMode && pc1.combo == 0 && pc2.hp.x <= 0) pc2.hp.x = pc2.hp.y;
-            if (practiceMode && pc2.combo == 0 && pc1.hp.x <= 0) pc1.hp.x = pc1.hp.y;
+            if (practiceMode) { timerTxt.text = "∞"; pc1.life = 2; pc2.life = 2; }
+            else
+            {
+                for (int i = 0; i < p1.life.childCount; i++)
+                {
+                    p1.life.GetChild(i).gameObject.SetActive(i < GameSystem.life ? true : false);
+                    p1.life.GetChild(i).GetComponent<Animator>().enabled = i < pc1.life ? false : true;
+                }
+                for (int i = 0; i < p2.life.childCount; i++)
+                {
+                    p2.life.GetChild(i).gameObject.SetActive(i < GameSystem.life ? true : false);
+                    p2.life.GetChild(i).GetComponent<Animator>().enabled = i < pc2.life ? false : true;
+                }
+                if (pc1.pc.isCtrl && pc2.pc.isCtrl && timer > 0)
+                    timer -= Time.fixedDeltaTime;
+                timerTxt.text = (timer + .5f).ToString("0");
+                if (!result && (timer <= 0 || pc1.life <= 0 || pc2.life <= 0)) { result = true; GoodGame(); }
+            }
         }
+    }
+
+    public void GoodGame()
+    {
+        pc1.pc.isCtrl = false; pc2.pc.isCtrl = false;
+        battleMenu.gameObject.SetActive(false);
+        int win = 0;
+        if (pc1.life > pc2.life) win = 1;
+        else if (pc1.life < pc2.life) win = 2;
+        else if (pc1.hp.x > pc2.hp.x) win = 1;
+        else if (pc1.hp.x < pc2.hp.x) win = 2;
+        else { StartCoroutine(ExtraTime()); return; }
+        StartCoroutine(Result(win));
+    }
+
+    IEnumerator ExtraTime()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        pc1.life = 1; pc2.life = 1; timer += 30;
+        extraTime.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2);
+        extraTime.gameObject.SetActive(false);
+        if (pc1.death) StartCoroutine(pc1.Recovery());
+        if (pc2.death) StartCoroutine(pc2.Recovery());
+        battleMenu.gameObject.SetActive(true);
+    }
+
+    IEnumerator Result(int winner)
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        goodGame.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2);
+        goodGame.gameObject.SetActive(false);
+        resultPanel.result.gameObject.SetActive(true);
+        if (winner == 1) resultPanel.p1.gameObject.SetActive(true);
+        else resultPanel.p2.gameObject.SetActive(true);
     }
 }
