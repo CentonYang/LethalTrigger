@@ -20,7 +20,7 @@ MonoBehaviour:
     x: 224
     y: -190
     width: 1952
-    height: 2167
+    height: 2166
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -31,7 +31,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d4c867f6b72b714dbb5fd1780afe208, type: 3}
-  m_Name: bullet shoot
+  m_Name: CrenoLongShoot
   m_EditorClassIdentifier: 
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 0}
@@ -122,7 +122,7 @@ VisualEffectResource:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bullet shoot
+  m_Name: CrenoLongShoot
   m_Graph: {fileID: 114350483966674976}
   m_Infos:
     m_RendererSettings:
@@ -1241,7 +1241,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614849}
   m_ExposedName: Color
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 0
   m_Category: 
   m_Min:
     m_Type:
@@ -3910,7 +3910,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615086}
   m_ExposedName: Lifetime
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
@@ -4062,7 +4062,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615090}
   m_ExposedName: Velocity
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -4244,7 +4244,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615095}
   m_ExposedName: Size
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:

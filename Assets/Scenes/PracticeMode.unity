@@ -4542,7 +4542,7 @@ GameObject:
   m_Component:
   - component: {fileID: 722385079}
   - component: {fileID: 722385080}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Vcam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4959,9 +4959,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5833381926083324310, guid: 3fcf3bd366fe1ae448369400632e9fb5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1236770525}
     - targetCorrespondingSourceObject: {fileID: 5833381927211146688, guid: 3fcf3bd366fe1ae448369400632e9fb5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1278875920}
@@ -7184,28 +7181,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 20, y: 20, z: 20}
   m_Center: {x: 0, y: 10, z: 0}
---- !u!1 &1236770522 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5833381926083324310, guid: 3fcf3bd366fe1ae448369400632e9fb5, type: 3}
-  m_PrefabInstance: {fileID: 776533932}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1236770525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1236770522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ConfineMode: 1
-  m_BoundingVolume: {fileID: 1220578005}
-  m_BoundingShape2D: {fileID: 0}
-  m_ConfineScreenEdges: 1
-  m_Damping: 0
 --- !u!1 &1258059452
 GameObject:
   m_ObjectHideFlags: 0
@@ -11561,10 +11536,6 @@ PrefabInstance:
     - target: {fileID: 4765005096918558302, guid: b3604b4decca8c446b4fa914e01bbbcc, type: 3}
       propertyPath: near clip plane
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765005096918558302, guid: b3604b4decca8c446b4fa914e01bbbcc, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4063
       objectReference: {fileID: 0}
     - target: {fileID: 5253467874086680727, guid: b3604b4decca8c446b4fa914e01bbbcc, type: 3}
       propertyPath: m_RootOrder

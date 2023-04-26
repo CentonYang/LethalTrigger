@@ -68,6 +68,8 @@ public class CharacterSelect : MonoBehaviour
                     GameSystem.p2Comp = true;
                 }
                 GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
+                if (GameSystem.gamemode == 0)
+                    StartCoroutine(Menu.PreloadScene("VersusMode"));
                 if (GameSystem.gamemode == 1)
                     StartCoroutine(Menu.PreloadScene("PracticeMode"));
             }
@@ -83,7 +85,10 @@ public class CharacterSelect : MonoBehaviour
                     if (transCharL.GetComponentInChildren<ActionSystem>() != null)
                         Destroy(transCharL.GetComponentInChildren<ActionSystem>().gameObject);
                     if (checkID[i] != -1)
-                        Instantiate(selectChar[checkID[i]], transCharL);
+                    {
+                        ActionSystem _char = Instantiate(selectChar[checkID[i]], transCharL);
+                        _char.transform.localPosition = new Vector3(_char.transform.localPosition.x, _char.transform.localPosition.y, 0);
+                    }
                     foreach (CharacterColor item in transCharL.GetComponentsInChildren<CharacterColor>())
                         item.ColorChange(0);
                 }
@@ -92,7 +97,11 @@ public class CharacterSelect : MonoBehaviour
                     if (transCharR.GetComponentInChildren<ActionSystem>() != null)
                         Destroy(transCharR.GetComponentInChildren<ActionSystem>().gameObject);
                     if (checkID[i] != -1)
-                        Instantiate(selectChar[checkID[i]], transCharR);
+                    {
+                        ActionSystem _char = Instantiate(selectChar[checkID[i]], transCharR);
+                        _char.transform.localPosition = new Vector3(-_char.transform.localPosition.x, _char.transform.localPosition.y, 0);
+                        _char.root.localScale = new Vector3(-_char.root.localScale.x, _char.root.localScale.y, _char.root.localScale.z);
+                    }
                     foreach (CharacterColor item in transCharR.GetComponentsInChildren<CharacterColor>())
                         item.ColorChange(1);
                 }

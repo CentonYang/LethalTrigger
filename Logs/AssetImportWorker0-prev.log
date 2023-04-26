@@ -24,7 +24,7 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-45957
+40743
 Successfully changed project path to: /media/centon/Centon/File/Project/Github/LethalTrigger
 /media/centon/Centon/File/Project/Github/LethalTrigger
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -56,11 +56,11 @@ Successfully changed project path to: /media/centon/Centon/File/Project/Github/L
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [140423131816896] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 4228064711 [EditorId] 4228064711 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [140496848806848] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 1052912423 [EditorId] 1052912423 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [140423131816896] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 4228064711 [EditorId] 4228064711 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [140496848806848] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 1052912423 [EditorId] 1052912423 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 145.16 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 115.92 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.2.8f1 (996aee41dc57)
 [Subsystems] Discovering subsystems at path /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/Resources/UnitySubsystems
@@ -178,9 +178,9 @@ Vulkan detection: 2
 [vulkan] Loaded instance function vkCmdEndDebugUtilsLabelEXT
 [vulkan] Loaded instance function vkCmdInsertDebugUtilsLabelEXT
 [Vulkan init] SelectPhysicalDevice requestedDeviceIndex=-1 xrDevice=(nil)
-[Vulkan init] Physical Device 0x55c5f5a50080 [0]: "NVIDIA GeForce GTX 1050 Ti" deviceType=2 vendorID=10de deviceID=1c82
-[Vulkan init] Physical Device 0x55c5f5a74800 [1]: "llvmpipe (LLVM 15.0.2, 256 bits)" deviceType=4 vendorID=10005 deviceID=0
-[Vulkan init] Selected physical device 0x55c5f5a50080
+[Vulkan init] Physical Device 0x5649d750cfa0 [0]: "NVIDIA GeForce GTX 1050 Ti" deviceType=2 vendorID=10de deviceID=1c82
+[Vulkan init] Physical Device 0x5649d75870e0 [1]: "llvmpipe (LLVM 15.0.2, 256 bits)" deviceType=4 vendorID=10005 deviceID=0
+[Vulkan init] Selected physical device 0x5649d750cfa0
 [Vulkan init] Graphics queue count=1
 [Vulkan init] extensions: count=153
 [Vulkan init] extensions: name=VK_EXT_4444_formats [enabled=1, external=0]
@@ -490,48 +490,48 @@ Initialize mono
 Mono path[0] = '/home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/Managed'
 Mono path[1] = '/home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
 Mono config path = '/home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56967
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56261
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.023392 seconds.
-- Loaded All Assemblies, in  0.392 seconds
+Registered in 0.022839 seconds.
+- Loaded All Assemblies, in  0.356 seconds
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 323 ms
+Android Extension - Scanning For ADB Devices 255 ms
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.728 seconds
+- Finished resetting the current domain, in  0.644 seconds
 Domain Reload Profiling:
-	ReloadAssembly (225ms)
-		BeginReloadAssembly (70ms)
+	ReloadAssembly (201ms)
+		BeginReloadAssembly (63ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
 		LoadAllAssembliesAndSetupDomain (0ms)
-			LoadAssemblies (68ms)
+			LoadAssemblies (61ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (157ms)
-				TypeCache.Initialize (157ms)
-					TypeCache.ScanAssembly (155ms)
+			SetupTypeCache (145ms)
+				TypeCache.Initialize (145ms)
+					TypeCache.ScanAssembly (143ms)
 				ResolveRequiredComponents (0ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (657ms)
+			SetupLoadedEditorAssemblies (577ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (469ms)
-				SetLoadedEditorAssemblies (6ms)
+				InitializePlatformSupportModulesInManaged (394ms)
+				SetLoadedEditorAssemblies (5ms)
 				RefreshPlugins (0ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (121ms)
-				ProcessInitializeOnLoadMethodAttributes (60ms)
+				ProcessInitializeOnLoadAttributes (114ms)
+				ProcessInitializeOnLoadMethodAttributes (62ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -539,8 +539,8 @@ Domain Reload Profiling:
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.304 seconds
-Refreshing native plugins compatible for Editor in 82.88 ms, found 2 plugins.
+- Loaded All Assemblies, in  1.866 seconds
+Refreshing native plugins compatible for Editor in 79.01 ms, found 2 plugins.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
@@ -550,44 +550,44 @@ UpdateMenuTitleForLanguage: 10
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.474 seconds
+- Finished resetting the current domain, in  1.254 seconds
 Domain Reload Profiling:
-	ReloadAssembly (252ms)
-		BeginReloadAssembly (125ms)
+	ReloadAssembly (237ms)
+		BeginReloadAssembly (115ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (29ms)
-		LoadAllAssembliesAndSetupDomain (1980ms)
-			LoadAssemblies (1024ms)
+			CreateAndSetChildDomain (26ms)
+		LoadAllAssembliesAndSetupDomain (1560ms)
+			LoadAssemblies (724ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (916ms)
-				TypeCache.Initialize (401ms)
-					TypeCache.ScanAssembly (396ms)
+			SetupTypeCache (813ms)
+				TypeCache.Initialize (351ms)
+					TypeCache.ScanAssembly (346ms)
 				ResolveRequiredComponents (13ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1212ms)
+			SetupLoadedEditorAssemblies (1011ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (69ms)
+				InitializePlatformSupportModulesInManaged (59ms)
 				SetLoadedEditorAssemblies (5ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (358ms)
-				ProcessInitializeOnLoadAttributes (576ms)
-				ProcessInitializeOnLoadMethodAttributes (195ms)
+				BeforeProcessingInitializeOnLoad (290ms)
+				ProcessInitializeOnLoadAttributes (476ms)
+				ProcessInitializeOnLoadMethodAttributes (171ms)
 				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler after 0.14 seconds
-Refreshing native plugins compatible for Editor in 80.17 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
+Refreshing native plugins compatible for Editor in 75.96 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5998 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 91 unused Assets / (11.6 MB). Loaded Objects now: 6433.
+Unloading 5995 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 91 unused Assets / (11.6 MB). Loaded Objects now: 6429.
 Memory consumption went from 0.96 GB to 0.95 GB.
-Total: 16.930141 ms (FindLiveObjects: 0.620985 ms CreateObjectMapping: 0.804890 ms MarkObjects: 5.580000 ms  DeleteObjects: 9.923027 ms)
+Total: 16.937142 ms (FindLiveObjects: 0.604533 ms CreateObjectMapping: 0.897896 ms MarkObjects: 5.641458 ms  DeleteObjects: 9.791815 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -636,33 +636,39 @@ AssetImportParameters requested are different than current active one (requested
   custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
 ========================================================================
 Received Import Request.
-  Time since last request: 45260.295812 seconds.
-  path: Assets/Scenes/VersusMode.unity
-  artifactKey: Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/VersusMode.unity using Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f67b5f28f0e0f0e926076bfa9f73eee') in 0.002309 seconds 
+  Time since last request: 531.951481 seconds.
+  path: Assets/Characters/Natalia/Natalia.prefab
+  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9bf9cf67aaa25dd140e21eafec2db8a') in 2.640492 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 697
 ========================================================================
 Received Import Request.
-  Time since last request: 560.786367 seconds.
-  path: Assets/UI/goodgame.png
-  artifactKey: Guid(f3c57d2fc89edfb5c9a96c3ff08c1ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/goodgame.png using Guid(f3c57d2fc89edfb5c9a96c3ff08c1ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0243e6a4c0448330e9a6dadccb07b33') in 0.071688 seconds 
+  Time since last request: 0.000058 seconds.
+  path: Assets/Characters/Natalia/Animations/5.anim
+  artifactKey: Guid(868c63aa5fe039ad6a910756bc072221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Natalia/Animations/5.anim using Guid(868c63aa5fe039ad6a910756bc072221) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '692c0412cdd7d34644c17986797c8a81') in 0.023038 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
+Number of asset objects unloaded after import = 1
 ========================================================================
 Received Import Request.
-  Time since last request: 9.767883 seconds.
-  path: Assets/UI/goodgame.png
-  artifactKey: Guid(f3c57d2fc89edfb5c9a96c3ff08c1ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/goodgame.png using Guid(f3c57d2fc89edfb5c9a96c3ff08c1ab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa7e1543a43e7f1507206bc8249a8f46') in 0.249568 seconds 
+  Time since last request: 2242.338734 seconds.
+  path: Assets/Characters/Sergio/Animations/AM.anim
+  artifactKey: Guid(121bed722086fa6528bdf27002c7caec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Animations/AM.anim using Guid(121bed722086fa6528bdf27002c7caec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41b8cbd09c3ad018f54b883d2ea6ee59') in 0.008510 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 1
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.423 seconds
-Refreshing native plugins compatible for Editor in 73.99 ms, found 2 plugins.
+- Loaded All Assemblies, in  1.467 seconds
+Refreshing native plugins compatible for Editor in 81.19 ms, found 2 plugins.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
@@ -671,140 +677,43 @@ Native extension for WebGL target not found
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.009 seconds
+- Finished resetting the current domain, in  4.540 seconds
 Domain Reload Profiling:
-	ReloadAssembly (321ms)
+	ReloadAssembly (315ms)
 		BeginReloadAssembly (205ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (10ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (64ms)
-		LoadAllAssembliesAndSetupDomain (1035ms)
-			LoadAssemblies (670ms)
+			CreateAndSetChildDomain (62ms)
+		LoadAllAssembliesAndSetupDomain (1093ms)
+			LoadAssemblies (707ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (349ms)
-				TypeCache.Initialize (328ms)
-					TypeCache.ScanAssembly (322ms)
+			SetupTypeCache (365ms)
+				TypeCache.Initialize (343ms)
+					TypeCache.ScanAssembly (336ms)
 				ResolveRequiredComponents (13ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (862ms)
+			SetupLoadedEditorAssemblies (866ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (69ms)
-				SetLoadedEditorAssemblies (6ms)
+				InitializePlatformSupportModulesInManaged (66ms)
+				SetLoadedEditorAssemblies (7ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (275ms)
-				ProcessInitializeOnLoadAttributes (422ms)
-				ProcessInitializeOnLoadMethodAttributes (79ms)
+				BeforeProcessingInitializeOnLoad (248ms)
+				ProcessInitializeOnLoadAttributes (436ms)
+				ProcessInitializeOnLoadMethodAttributes (99ms)
 				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (19ms)
-Refreshing native plugins compatible for Editor in 71.75 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.6 MB). Loaded Objects now: 6458.
-Memory consumption went from 0.92 GB to 0.91 GB.
-Total: 10.504937 ms (FindLiveObjects: 0.452235 ms CreateObjectMapping: 0.519033 ms MarkObjects: 4.413838 ms  DeleteObjects: 5.118335 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.407 seconds
-Refreshing native plugins compatible for Editor in 80.49 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.819 seconds
-Domain Reload Profiling:
-	ReloadAssembly (317ms)
-		BeginReloadAssembly (201ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (60ms)
-		LoadAllAssembliesAndSetupDomain (1032ms)
-			LoadAssemblies (669ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (345ms)
-				TypeCache.Initialize (325ms)
-					TypeCache.ScanAssembly (319ms)
-				ResolveRequiredComponents (12ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1124ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (87ms)
-				SetLoadedEditorAssemblies (10ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (311ms)
-				ProcessInitializeOnLoadAttributes (620ms)
-				ProcessInitializeOnLoadMethodAttributes (85ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (21ms)
-Refreshing native plugins compatible for Editor in 72.81 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 83.34 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5775 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6475.
+Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6498.
 Memory consumption went from 0.92 GB to 0.91 GB.
-Total: 12.776564 ms (FindLiveObjects: 0.476873 ms CreateObjectMapping: 0.764668 ms MarkObjects: 5.349298 ms  DeleteObjects: 6.183769 ms)
+Total: 11.393454 ms (FindLiveObjects: 0.501772 ms CreateObjectMapping: 0.646271 ms MarkObjects: 4.756132 ms  DeleteObjects: 5.487637 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -853,10 +762,146 @@ AssetImportParameters requested are different than current active one (requested
   custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
   custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
 ========================================================================
+Received Import Request.
+  Time since last request: 757.770983 seconds.
+  path: Assets/Characters/Creno/Creno.prefab
+  artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '313a3373a2fb2301008b8fd71eeb4a95') in 1.791516 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 636
+========================================================================
+Received Import Request.
+  Time since last request: 0.000164 seconds.
+  path: Assets/Scripts/ActionSystem.cs
+  artifactKey: Guid(333e958690e586e449c3876becea5b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ActionSystem.cs using Guid(333e958690e586e449c3876becea5b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2eb9293a43c41af495152e9e0b4dcf8') in 0.014680 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.699568 seconds.
+  path: Assets/Characters/Creno/Creno.prefab
+  artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93aabd4940dec40e984ff8208da544e5') in 2.178323 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 618
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/Characters/Creno/Creno.prefab
+  artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de71af81c48aa7adece3ca3a48ec0ad2') in 1.095954 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 618
+========================================================================
+Received Import Request.
+  Time since last request: 2.123274 seconds.
+  path: Assets/Characters/Natalia/Natalia.prefab
+  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '027a7afc1cea1e9a815e8942d56de095') in 1.293377 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 697
+========================================================================
+Received Import Request.
+  Time since last request: 7.287331 seconds.
+  path: Assets/Characters/Natalia/Natalia.prefab
+  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '491eca52aefe60e1fc83b2f5a63cafea') in 2.854309 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 697
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Characters/Natalia/Natalia.prefab
+  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '521d0566e683f041aba5fd62075bb8c1') in 1.280906 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 697
+========================================================================
+Received Import Request.
+  Time since last request: 4.672205 seconds.
+  path: Assets/Characters/Sergio/Sergio.prefab
+  artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e46cfab417546fb181bf1d23a4896c4f') in 0.342885 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 412
+========================================================================
+Received Import Request.
+  Time since last request: 9.765314 seconds.
+  path: Assets/Characters/Sergio/Sergio.prefab
+  artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e4d2e2e30244af05f473fe3cd167bde') in 0.658894 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 412
+========================================================================
+Received Import Request.
+  Time since last request: 4.691185 seconds.
+  path: Assets/Characters/Sergio/Sergio.prefab
+  artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '693c5de56d2faeaf598c8a22e906e825') in 0.393982 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 412
+========================================================================
+Received Import Request.
+  Time since last request: 6.303445 seconds.
+  path: Assets/Characters/Sergio/Sergio.prefab
+  artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7a5fa638344da78ccc4245403632482') in 0.359518 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 412
+========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.494 seconds
-Refreshing native plugins compatible for Editor in 78.78 ms, found 2 plugins.
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 5)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 5)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 6)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 6)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 7)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 7)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 8)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 8)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 9)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 9)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 11)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 11)
+- Loaded All Assemblies, in  1.352 seconds
+Refreshing native plugins compatible for Editor in 62.76 ms, found 2 plugins.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
@@ -865,421 +910,43 @@ Native extension for WebGL target not found
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.906 seconds
+- Finished resetting the current domain, in  3.718 seconds
 Domain Reload Profiling:
-	ReloadAssembly (307ms)
-		BeginReloadAssembly (194ms)
+	ReloadAssembly (326ms)
+		BeginReloadAssembly (209ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (10ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (55ms)
-		LoadAllAssembliesAndSetupDomain (1130ms)
-			LoadAssemblies (737ms)
+			CreateAndSetChildDomain (59ms)
+		LoadAllAssembliesAndSetupDomain (963ms)
+			LoadAssemblies (623ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (366ms)
-				TypeCache.Initialize (343ms)
-					TypeCache.ScanAssembly (336ms)
+			SetupTypeCache (329ms)
+				TypeCache.Initialize (309ms)
+					TypeCache.ScanAssembly (303ms)
 				ResolveRequiredComponents (12ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (938ms)
+			SetupLoadedEditorAssemblies (930ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (77ms)
-				SetLoadedEditorAssemblies (6ms)
+				InitializePlatformSupportModulesInManaged (72ms)
+				SetLoadedEditorAssemblies (7ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (305ms)
-				ProcessInitializeOnLoadAttributes (452ms)
+				BeforeProcessingInitializeOnLoad (300ms)
+				ProcessInitializeOnLoadAttributes (453ms)
 				ProcessInitializeOnLoadMethodAttributes (88ms)
 				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (22ms)
-Refreshing native plugins compatible for Editor in 85.08 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5775 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6492.
-Memory consumption went from 0.92 GB to 0.91 GB.
-Total: 12.531355 ms (FindLiveObjects: 0.498799 ms CreateObjectMapping: 0.554602 ms MarkObjects: 4.951043 ms  DeleteObjects: 6.525232 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
-========================================================================
-Received Import Request.
-  Time since last request: 2644.094977 seconds.
-  path: Assets/Scenes/VersusMode.unity
-  artifactKey: Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/VersusMode.unity using Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dae8beb02dff2bf0bfca2e2174d7ed3e') in 0.002253 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 59.022573 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09e56f1376297dc2291462bae59fa5f2') in 1.102647 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 289
-========================================================================
-Received Import Request.
-  Time since last request: 14.917610 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a93632c927523f4d63e05be989a1441') in 0.051710 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 293
-========================================================================
-Received Import Request.
-  Time since last request: 14.685648 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c83c0fd7b48f607e84a51bd4d27f57e3') in 0.321426 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 293
-========================================================================
-Received Import Request.
-  Time since last request: 112.205669 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e90fbfdc1883f3db6dc5047c63b5e237') in 0.026518 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 294
-========================================================================
-Received Import Request.
-  Time since last request: 50.723927 seconds.
-  path: Assets/UI/Animations/BattleUIResult
-  artifactKey: Guid(f754b4ae5011dd01d9e9a73f4d95a101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/Animations/BattleUIResult using Guid(f754b4ae5011dd01d9e9a73f4d95a101) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d9ff85b2410d461bd938e95706dc796') in 0.004045 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 9.352523 seconds.
-  path: Assets/UI/Animations/BattleUIResult/Result.controller
-  artifactKey: Guid(ac3ac708cf923587d91a9619632ff796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/Animations/BattleUIResult/Result.controller using Guid(ac3ac708cf923587d91a9619632ff796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f9dd0c86c7f0eb461c851678d5f43b2') in 0.016282 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 28.652176 seconds.
-  path: Assets/UI/Animations/BattleUIResult/Zoon.anim
-  artifactKey: Guid(2e19f816c99bd6b428a126046f3a400e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/Animations/BattleUIResult/Zoon.anim using Guid(2e19f816c99bd6b428a126046f3a400e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df158e0c99c5ac7d161ed6b33b4ef8b5') in 0.005325 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 1.992680 seconds.
-  path: Assets/UI/Animations/BattleUIResult/Zoom.anim
-  artifactKey: Guid(2e19f816c99bd6b428a126046f3a400e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/Animations/BattleUIResult/Zoom.anim using Guid(2e19f816c99bd6b428a126046f3a400e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '748a2d00ad2ec29c3e93269f745a90d3') in 0.011637 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 432.222901 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4089c8bdbf87ec8bfea0b0aae848d52b') in 0.028703 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 295
-========================================================================
-Received Import Request.
-  Time since last request: 3.918915 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93bd4b71b43044d3b6f3aa4a70109df6') in 0.330574 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 299
-========================================================================
-Received Import Request.
-  Time since last request: 3.130191 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bd60fc1334af4af943bb9950c53022f') in 0.171440 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 299
-========================================================================
-Received Import Request.
-  Time since last request: 2.731107 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63062925b09d464a0a8209b03eafbe16') in 0.162145 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 299
-========================================================================
-Received Import Request.
-  Time since last request: 45.070778 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e122a601f643f2a6ccb6ea64ddedf557') in 0.026092 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 308
-========================================================================
-Received Import Request.
-  Time since last request: 14.293119 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7082c810e5942f7643b769ae401f018f') in 0.306639 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 308
-========================================================================
-Received Import Request.
-  Time since last request: 3.350995 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '684638e7a85dd39983f090b7880262a3') in 0.344913 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 308
-========================================================================
-Received Import Request.
-  Time since last request: 293.421540 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f00a06456d566f5dfb7460d9c9839b7e') in 0.279122 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 299
-========================================================================
-Received Import Request.
-  Time since last request: 4.448180 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca62ab4b6ad9ff9ed6f28f9d112baef5') in 0.317486 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 308
-========================================================================
-Received Import Request.
-  Time since last request: 4.099754 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69bec33b567f023265194373dc5d05c0') in 0.366624 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 304
-========================================================================
-Received Import Request.
-  Time since last request: 2.704626 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28ec92e76163c96de486783456e1e613') in 0.328889 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 304
-========================================================================
-Received Import Request.
-  Time since last request: 2.811944 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '775566ef695de20e23b3bded992df03a') in 0.319126 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 304
-========================================================================
-Received Import Request.
-  Time since last request: 8.432689 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ab231e9032c7313e5ec8d43576916a6f') in 0.326057 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 304
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.571 seconds
-Refreshing native plugins compatible for Editor in 68.28 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in 22.964 seconds
-Domain Reload Profiling:
-	ReloadAssembly (338ms)
-		BeginReloadAssembly (203ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (55ms)
-		LoadAllAssembliesAndSetupDomain (1149ms)
-			LoadAssemblies (775ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (354ms)
-				TypeCache.Initialize (342ms)
-					TypeCache.ScanAssembly (336ms)
-				ResolveRequiredComponents (12ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (922ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (71ms)
-				SetLoadedEditorAssemblies (6ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (332ms)
-				ProcessInitializeOnLoadAttributes (426ms)
-				ProcessInitializeOnLoadMethodAttributes (79ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (21ms)
-Refreshing native plugins compatible for Editor in 123.93 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5775 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.6 MB). Loaded Objects now: 6509.
-Memory consumption went from 0.93 GB to 0.91 GB.
-Total: 19.937441 ms (FindLiveObjects: 0.440854 ms CreateObjectMapping: 0.467158 ms MarkObjects: 9.714336 ms  DeleteObjects: 9.313557 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
-========================================================================
-Received Import Request.
-  Time since last request: 314.716698 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c2b14b5dd21c8006a576545d58d9aca') in 0.255416 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 316
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.560 seconds
-Refreshing native plugins compatible for Editor in 69.17 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  6.258 seconds
-Domain Reload Profiling:
-	ReloadAssembly (322ms)
-		BeginReloadAssembly (201ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (57ms)
-		LoadAllAssembliesAndSetupDomain (1174ms)
-			LoadAssemblies (796ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (347ms)
-				TypeCache.Initialize (327ms)
-					TypeCache.ScanAssembly (321ms)
-				ResolveRequiredComponents (12ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (919ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (76ms)
-				SetLoadedEditorAssemblies (6ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (291ms)
-				ProcessInitializeOnLoadAttributes (447ms)
-				ProcessInitializeOnLoadMethodAttributes (89ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (24ms)
-Refreshing native plugins compatible for Editor in 65.63 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 73.15 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5775 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6526.
-Memory consumption went from 0.93 GB to 0.92 GB.
-Total: 11.600078 ms (FindLiveObjects: 0.456306 ms CreateObjectMapping: 0.487449 ms MarkObjects: 4.763699 ms  DeleteObjects: 5.891445 ms)
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6554.
+Memory consumption went from 0.92 GB to 0.91 GB.
+Total: 12.871100 ms (FindLiveObjects: 0.506027 ms CreateObjectMapping: 0.619273 ms MarkObjects: 5.488202 ms  DeleteObjects: 6.255594 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -1328,18 +995,10 @@ AssetImportParameters requested are different than current active one (requested
   custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
   custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
 ========================================================================
-Received Import Request.
-  Time since last request: 22.510509 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f9b554f00ea0e43b0a2210c81b9f115') in 0.063836 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 316
-========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.502 seconds
-Refreshing native plugins compatible for Editor in 80.46 ms, found 2 plugins.
+- Loaded All Assemblies, in  1.389 seconds
+Refreshing native plugins compatible for Editor in 63.05 ms, found 2 plugins.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
@@ -1348,43 +1007,43 @@ Native extension for WebGL target not found
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.198 seconds
+- Finished resetting the current domain, in  7.576 seconds
 Domain Reload Profiling:
-	ReloadAssembly (308ms)
-		BeginReloadAssembly (196ms)
+	ReloadAssembly (315ms)
+		BeginReloadAssembly (200ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (56ms)
-		LoadAllAssembliesAndSetupDomain (1138ms)
-			LoadAssemblies (743ms)
+			CreateAndSetChildDomain (54ms)
+		LoadAllAssembliesAndSetupDomain (1011ms)
+			LoadAssemblies (661ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (372ms)
-				TypeCache.Initialize (351ms)
-					TypeCache.ScanAssembly (344ms)
-				ResolveRequiredComponents (13ms)
+			SetupTypeCache (333ms)
+				TypeCache.Initialize (312ms)
+					TypeCache.ScanAssembly (307ms)
+				ResolveRequiredComponents (12ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1017ms)
+			SetupLoadedEditorAssemblies (930ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (107ms)
-				SetLoadedEditorAssemblies (9ms)
+				InitializePlatformSupportModulesInManaged (72ms)
+				SetLoadedEditorAssemblies (6ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (345ms)
-				ProcessInitializeOnLoadAttributes (460ms)
-				ProcessInitializeOnLoadMethodAttributes (87ms)
+				BeforeProcessingInitializeOnLoad (295ms)
+				ProcessInitializeOnLoadAttributes (463ms)
+				ProcessInitializeOnLoadMethodAttributes (84ms)
 				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (26ms)
-Refreshing native plugins compatible for Editor in 79.88 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 85.21 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5775 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6543.
-Memory consumption went from 0.93 GB to 0.92 GB.
-Total: 13.147057 ms (FindLiveObjects: 0.503735 ms CreateObjectMapping: 0.613665 ms MarkObjects: 5.632016 ms  DeleteObjects: 6.395586 ms)
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6571.
+Memory consumption went from 0.92 GB to 0.91 GB.
+Total: 12.665403 ms (FindLiveObjects: 0.452440 ms CreateObjectMapping: 0.575851 ms MarkObjects: 5.259293 ms  DeleteObjects: 6.375985 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -1434,33 +1093,19 @@ AssetImportParameters requested are different than current active one (requested
   custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
 ========================================================================
 Received Import Request.
-  Time since last request: 162.540020 seconds.
-  path: Assets/UI/Animations/BattleUILife/Fade.anim
-  artifactKey: Guid(722134e4e6fd58696b64b2e113c25843) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/Animations/BattleUILife/Fade.anim using Guid(722134e4e6fd58696b64b2e113c25843) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64758d632194fd6437c190ed64f3b22c') in 0.020334 seconds 
+  Time since last request: 661.926356 seconds.
+  path: Assets/Scenes/CharacterSelect.unity
+  artifactKey: Guid(776549f15bfa58a61914c6546e82eb43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/CharacterSelect.unity using Guid(776549f15bfa58a61914c6546e82eb43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77595be40d50cfe7f5df9adb57e5af04') in 0.002203 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 2.306316 seconds.
-  path: Assets/UI/Animations/BattleUIResult/Zoom.anim
-  artifactKey: Guid(2e19f816c99bd6b428a126046f3a400e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/Animations/BattleUIResult/Zoom.anim using Guid(2e19f816c99bd6b428a126046f3a400e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '639f4a72762e5d48a0c4eaf47291a09d') in 0.005354 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 118.763322 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4ecc16fe26007c3e167997bf605cef2') in 0.150399 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 316
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.454 seconds
-Refreshing native plugins compatible for Editor in 119.06 ms, found 2 plugins.
+- Loaded All Assemblies, in  1.338 seconds
+Refreshing native plugins compatible for Editor in 161.33 ms, found 2 plugins.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
@@ -1469,114 +1114,211 @@ Native extension for WebGL target not found
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.094 seconds
+- Finished resetting the current domain, in  4.014 seconds
 Domain Reload Profiling:
-	ReloadAssembly (312ms)
+	ReloadAssembly (316ms)
 		BeginReloadAssembly (201ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (56ms)
-		LoadAllAssembliesAndSetupDomain (1086ms)
-			LoadAssemblies (705ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (362ms)
-				TypeCache.Initialize (342ms)
-					TypeCache.ScanAssembly (336ms)
-				ResolveRequiredComponents (12ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (964ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (81ms)
-				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (302ms)
-				ProcessInitializeOnLoadAttributes (474ms)
-				ProcessInitializeOnLoadMethodAttributes (90ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (27ms)
-Refreshing native plugins compatible for Editor in 82.05 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5775 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6560.
-Memory consumption went from 0.93 GB to 0.92 GB.
-Total: 13.092163 ms (FindLiveObjects: 0.492820 ms CreateObjectMapping: 0.516461 ms MarkObjects: 5.184226 ms  DeleteObjects: 6.897151 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
-  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.732 seconds
-Refreshing native plugins compatible for Editor in 117.02 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  5.185 seconds
-Domain Reload Profiling:
-	ReloadAssembly (337ms)
-		BeginReloadAssembly (218ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (62ms)
-		LoadAllAssembliesAndSetupDomain (1315ms)
-			LoadAssemblies (950ms)
+			CreateAndSetChildDomain (54ms)
+		LoadAllAssembliesAndSetupDomain (960ms)
+			LoadAssemblies (614ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (337ms)
+				TypeCache.Initialize (317ms)
+					TypeCache.ScanAssembly (312ms)
+				ResolveRequiredComponents (12ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (853ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (73ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (288ms)
+				ProcessInitializeOnLoadAttributes (401ms)
+				ProcessInitializeOnLoadMethodAttributes (77ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (24ms)
+Refreshing native plugins compatible for Editor in 76.74 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6588.
+Memory consumption went from 0.92 GB to 0.91 GB.
+Total: 10.951768 ms (FindLiveObjects: 0.452111 ms CreateObjectMapping: 0.460062 ms MarkObjects: 4.301020 ms  DeleteObjects: 5.737398 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.427 seconds
+Refreshing native plugins compatible for Editor in 64.36 ms, found 2 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.417 seconds
+Domain Reload Profiling:
+	ReloadAssembly (321ms)
+		BeginReloadAssembly (200ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (54ms)
+		LoadAllAssembliesAndSetupDomain (1012ms)
+			LoadAssemblies (659ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (336ms)
+				TypeCache.Initialize (315ms)
+					TypeCache.ScanAssembly (310ms)
+				ResolveRequiredComponents (12ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (828ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (72ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (266ms)
+				ProcessInitializeOnLoadAttributes (401ms)
+				ProcessInitializeOnLoadMethodAttributes (75ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (24ms)
+Refreshing native plugins compatible for Editor in 83.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6605.
+Memory consumption went from 0.93 GB to 0.92 GB.
+Total: 13.130238 ms (FindLiveObjects: 0.522240 ms CreateObjectMapping: 0.511839 ms MarkObjects: 5.312465 ms  DeleteObjects: 6.781825 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.418 seconds
+Refreshing native plugins compatible for Editor in 76.09 ms, found 2 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.832 seconds
+Domain Reload Profiling:
+	ReloadAssembly (329ms)
+		BeginReloadAssembly (209ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (56ms)
+		LoadAllAssembliesAndSetupDomain (1026ms)
+			LoadAssemblies (676ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
 			SetupTypeCache (333ms)
 				TypeCache.Initialize (313ms)
@@ -1585,24 +1327,606 @@ Domain Reload Profiling:
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (964ms)
+			SetupLoadedEditorAssemblies (923ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (88ms)
-				SetLoadedEditorAssemblies (7ms)
+				InitializePlatformSupportModulesInManaged (75ms)
+				SetLoadedEditorAssemblies (6ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (318ms)
-				ProcessInitializeOnLoadAttributes (455ms)
-				ProcessInitializeOnLoadMethodAttributes (86ms)
+				BeforeProcessingInitializeOnLoad (339ms)
+				ProcessInitializeOnLoadAttributes (415ms)
+				ProcessInitializeOnLoadMethodAttributes (79ms)
 				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (27ms)
-Refreshing native plugins compatible for Editor in 64.80 ms, found 2 plugins.
+			AwakeInstancesAfterBackupRestoration (28ms)
+Refreshing native plugins compatible for Editor in 81.16 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5775 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.6 MB). Loaded Objects now: 6577.
-Memory consumption went from 0.94 GB to 0.92 GB.
-Total: 12.509048 ms (FindLiveObjects: 0.513232 ms CreateObjectMapping: 0.528643 ms MarkObjects: 4.936427 ms  DeleteObjects: 6.529200 ms)
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6622.
+Memory consumption went from 0.93 GB to 0.92 GB.
+Total: 13.219922 ms (FindLiveObjects: 0.502513 ms CreateObjectMapping: 0.560012 ms MarkObjects: 5.108755 ms  DeleteObjects: 7.047232 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.363 seconds
+Refreshing native plugins compatible for Editor in 76.19 ms, found 2 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.641 seconds
+Domain Reload Profiling:
+	ReloadAssembly (316ms)
+		BeginReloadAssembly (201ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (55ms)
+		LoadAllAssembliesAndSetupDomain (990ms)
+			LoadAssemblies (624ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (352ms)
+				TypeCache.Initialize (330ms)
+					TypeCache.ScanAssembly (323ms)
+				ResolveRequiredComponents (13ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (994ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (75ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (390ms)
+				ProcessInitializeOnLoadAttributes (433ms)
+				ProcessInitializeOnLoadMethodAttributes (81ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (30ms)
+Refreshing native plugins compatible for Editor in 62.96 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6639.
+Memory consumption went from 0.93 GB to 0.92 GB.
+Total: 11.354131 ms (FindLiveObjects: 0.539181 ms CreateObjectMapping: 0.514952 ms MarkObjects: 4.425308 ms  DeleteObjects: 5.873482 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.336 seconds
+Refreshing native plugins compatible for Editor in 62.43 ms, found 2 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.660 seconds
+Domain Reload Profiling:
+	ReloadAssembly (315ms)
+		BeginReloadAssembly (201ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (55ms)
+		LoadAllAssembliesAndSetupDomain (959ms)
+			LoadAssemblies (611ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (340ms)
+				TypeCache.Initialize (319ms)
+					TypeCache.ScanAssembly (313ms)
+				ResolveRequiredComponents (12ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (952ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (78ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (304ms)
+				ProcessInitializeOnLoadAttributes (466ms)
+				ProcessInitializeOnLoadMethodAttributes (88ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (33ms)
+Refreshing native plugins compatible for Editor in 76.47 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6656.
+Memory consumption went from 0.93 GB to 0.92 GB.
+Total: 11.362837 ms (FindLiveObjects: 0.502747 ms CreateObjectMapping: 0.491670 ms MarkObjects: 4.261916 ms  DeleteObjects: 6.105313 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.351 seconds
+Refreshing native plugins compatible for Editor in 69.93 ms, found 2 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.634 seconds
+Domain Reload Profiling:
+	ReloadAssembly (318ms)
+		BeginReloadAssembly (203ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (56ms)
+		LoadAllAssembliesAndSetupDomain (971ms)
+			LoadAssemblies (615ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (343ms)
+				TypeCache.Initialize (323ms)
+					TypeCache.ScanAssembly (316ms)
+				ResolveRequiredComponents (12ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (948ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (84ms)
+				SetLoadedEditorAssemblies (7ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (301ms)
+				ProcessInitializeOnLoadAttributes (459ms)
+				ProcessInitializeOnLoadMethodAttributes (88ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (33ms)
+Refreshing native plugins compatible for Editor in 96.62 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6673.
+Memory consumption went from 0.94 GB to 0.93 GB.
+Total: 13.214709 ms (FindLiveObjects: 0.475881 ms CreateObjectMapping: 0.535479 ms MarkObjects: 5.207275 ms  DeleteObjects: 6.994810 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.329 seconds
+Refreshing native plugins compatible for Editor in 62.56 ms, found 2 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.519 seconds
+Domain Reload Profiling:
+	ReloadAssembly (317ms)
+		BeginReloadAssembly (202ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (57ms)
+		LoadAllAssembliesAndSetupDomain (949ms)
+			LoadAssemblies (605ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (337ms)
+				TypeCache.Initialize (317ms)
+					TypeCache.ScanAssembly (311ms)
+				ResolveRequiredComponents (12ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (912ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (73ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (272ms)
+				ProcessInitializeOnLoadAttributes (464ms)
+				ProcessInitializeOnLoadMethodAttributes (88ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (34ms)
+Refreshing native plugins compatible for Editor in 78.89 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.8 MB). Loaded Objects now: 6690.
+Memory consumption went from 0.94 GB to 0.93 GB.
+Total: 13.279420 ms (FindLiveObjects: 0.500018 ms CreateObjectMapping: 0.603219 ms MarkObjects: 5.232389 ms  DeleteObjects: 6.942331 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.396 seconds
+Refreshing native plugins compatible for Editor in 77.12 ms, found 2 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.653 seconds
+Domain Reload Profiling:
+	ReloadAssembly (321ms)
+		BeginReloadAssembly (206ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (59ms)
+		LoadAllAssembliesAndSetupDomain (1012ms)
+			LoadAssemblies (662ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (333ms)
+				TypeCache.Initialize (313ms)
+					TypeCache.ScanAssembly (307ms)
+				ResolveRequiredComponents (12ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (934ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (81ms)
+				SetLoadedEditorAssemblies (7ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (293ms)
+				ProcessInitializeOnLoadAttributes (451ms)
+				ProcessInitializeOnLoadMethodAttributes (92ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (34ms)
+Refreshing native plugins compatible for Editor in 83.69 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6707.
+Memory consumption went from 0.94 GB to 0.93 GB.
+Total: 13.773765 ms (FindLiveObjects: 0.488442 ms CreateObjectMapping: 0.601920 ms MarkObjects: 5.870779 ms  DeleteObjects: 6.810443 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/ConfirmContinueWithPendingChangesDialog.cs: 8a008e86ef24df3be86d45501020abfc -> 77462b1904ad8f6fee2f8da4523d59fe
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CloudEditionWelcomeWindow.cs: 8c0cef92fd2b3d39e44ab91fb1c804dc -> b1721e471183956468462f6b64901640
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/EditorProgressControls.cs:  -> 2e606eb01a6e6a567f3de9a0379ed3ae
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForViews.cs:  -> e9f27d547a5e8f646a959ad5574b41be
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/SSOCredentialsDialog.cs:  -> e140ede12a96f68f30062138385171c3
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Changesets/ChangesetsTab.cs:  -> 3290c4c0cd248666e01a08ee6d621249
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/UpdateReport/UpdateReportDialog.cs:  -> 96b667cbaa9ae30b0a331fe038a6fefa
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/AssetMenu/Dialogs/CheckinDialog.cs:  -> 0457308882a8dd3ae67f9b9adfdbc0bb
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Developer/IncomingChangesNotifier.cs:  -> 6668a1562d4223b04d3535632d6783f5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Branch/BranchesTab.cs:  -> 57c33f76c527a5aba4d269245ffff188
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/ViewSwitcher.cs:  -> 1700c042de8c16a5c0f6851d66df802a
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Gluon/IncomingChangesTab.cs:  -> 82bff1d960538992d4e618d909869d2e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityThreadWaiter.cs:  -> 99333406d92d10003984b4d1920de2f9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/ProgressOperationHandler.cs:  -> d793efe4d4a733b9c5ef194b86f11ea2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/Progress/ProgressControlsForDialogs.cs:  -> 13e87cf7efaf727a86256255f716798e
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoriesListView.cs:  -> 95287f65338ca0073ad04002a16eaaf7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/CreateOrganizationPanel.cs:  -> bbfc737d286a85f982dda65d32a76753
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/CreateWorkspaceView.cs:  -> ed446a757ae69ab1e952e6c740f800ac
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/MissingEncryptionPasswordPromptHandler.cs:  -> 5d7b9646eb14a39b6d3d5bab19d266ff
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/AutoLogin.cs:  -> cac363a2d5471994de278e71f937b032
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/ChannelCertificateUiImpl.cs:  -> cefccf1e13b7bcf15e3c9f2dd4cd2fc8
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CredentialsUIImpl.cs:  -> dbacf67c37819fd95562fe169e706732
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchCheckinConflictsDialog.cs:  -> e2c1e3f8f4e14a62e4363fe6259adbc2
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/History/HistoryTab.cs:  -> d57f000c65fde42a2228c7a105a836e5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/RepositoryExplorerDialog.cs:  -> 1517b9efad1932ebcc59f444923414a0
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/PendingChanges/Dialogs/LaunchDependenciesDialog.cs:  -> 2cabf22eb95430074b6c730a84e03493
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UIElements/ProgressControlsForDialogs.cs:  -> dc8ae6c813eb8dac97bdafc5d42081b5
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticGuiMessage.cs:  -> 24eef0792e3802809607a7f9d04b8f1d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/IncomingChanges/Developer/IncomingChangesTab.cs:  -> fe2a1c6c6ea0fd399895f19bd30455c7
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Configuration/CloudEdition/Welcome/SSOSignUpPanel.cs:  -> 00da4eb954d981fc242771326acec48d
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/Diff/DiffPanel.cs:  -> 210366dab3631628227b9406f87a9b7f
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/StatusBar/NotificationBar.cs:  -> ef3c66548821060322cbccccc5f3bede
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Gluon/IncomingChangesNotifier.cs:  -> 3d0a2f9016e7a4f2f64ad758a5137d11
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/Views/CreateWorkspace/Dialogs/CreateRepositoryDialog.cs:  -> 5cec3e66b09e0dbe1f805953c5c64af9
+  custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.397 seconds
+Refreshing native plugins compatible for Editor in 75.95 ms, found 2 plugins.
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.562 seconds
+Domain Reload Profiling:
+	ReloadAssembly (319ms)
+		BeginReloadAssembly (204ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (57ms)
+		LoadAllAssembliesAndSetupDomain (1015ms)
+			LoadAssemblies (665ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (333ms)
+				TypeCache.Initialize (313ms)
+					TypeCache.ScanAssembly (307ms)
+				ResolveRequiredComponents (12ms)
+		FinalizeReload (0ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (0ms)
+			SetupLoadedEditorAssemblies (939ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (78ms)
+				SetLoadedEditorAssemblies (6ms)
+				RefreshPlugins (0ms)
+				BeforeProcessingInitializeOnLoad (284ms)
+				ProcessInitializeOnLoadAttributes (467ms)
+				ProcessInitializeOnLoadMethodAttributes (93ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (36ms)
+Refreshing native plugins compatible for Editor in 81.24 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5776 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6724.
+Memory consumption went from 0.94 GB to 0.93 GB.
+Total: 13.006329 ms (FindLiveObjects: 0.522335 ms CreateObjectMapping: 0.517148 ms MarkObjects: 5.238576 ms  DeleteObjects: 6.726604 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -1652,185 +1976,89 @@ AssetImportParameters requested are different than current active one (requested
   custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
 ========================================================================
 Received Import Request.
-  Time since last request: 954.295525 seconds.
-  path: Assets/UI/Results.psb
-  artifactKey: Guid(dbdafb9fdf237e1c1a0913e932b644b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/Results.psb using Guid(dbdafb9fdf237e1c1a0913e932b644b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5099eef2f901144c0509e4ebcedf4da0') in 0.139710 seconds 
+  Time since last request: 1386.032468 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(70d43dab218f76c4d8826bd0a09107cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(70d43dab218f76c4d8826bd0a09107cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f06200dd6c8705ccb49ba606af0028db') in 0.796457 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 6
+Number of asset objects unloaded after import = 1315
 ========================================================================
 Received Import Request.
-  Time since last request: 191.936201 seconds.
-  path: Assets/UI/Results.psb
-  artifactKey: Guid(dbdafb9fdf237e1c1a0913e932b644b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/Results.psb using Guid(dbdafb9fdf237e1c1a0913e932b644b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0772b182338617d6aa37ba474f9ebd5c') in 0.546577 seconds 
+  Time since last request: 4.737939 seconds.
+  path: Assets/Characters/Sergio/Sergio.prefab
+  artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37afd987571532b6ed7f1a93cabfab1c') in 0.977854 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 45
+Number of asset objects unloaded after import = 430
 ========================================================================
 Received Import Request.
-  Time since last request: 39.829257 seconds.
-  path: Assets/UI/Results.psb
-  artifactKey: Guid(dbdafb9fdf237e1c1a0913e932b644b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/UI/Results.psb using Guid(dbdafb9fdf237e1c1a0913e932b644b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67bfa13847203c554feabbd0d99e392f') in 0.285334 seconds 
+  Time since last request: 33.391933 seconds.
+  path: Assets/Characters/Sergio/Sergio.prefab
+  artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a75c2da6b83daf0f030383bdd051f3be') in 0.456024 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 7
+Number of asset objects unloaded after import = 423
 ========================================================================
 Received Import Request.
-  Time since last request: 167.594669 seconds.
-  path: Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/refresh.png
-  artifactKey: Guid(6f6a4c6bd7cdc654d9d91f7de72afcb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/refresh.png using Guid(6f6a4c6bd7cdc654d9d91f7de72afcb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f6a9e1ad8102687fffaceec505d4b80') in 0.236092 seconds 
+  Time since last request: 6.325832 seconds.
+  path: Assets/Characters/Sergio/Materials/Sergio.mat
+  artifactKey: Guid(b894af690b661a74092ec8ec0e2a205a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Materials/Sergio.mat using Guid(b894af690b661a74092ec8ec0e2a205a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '573e1e76c6da5e8f774e16b8ac98278d') in 0.138414 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/refresh@2x.png
-  artifactKey: Guid(59571f82a0dc1a14da606dc0df6f8ea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.collab-proxy/Editor/PlasticSCM/Assets/Images/refresh@2x.png using Guid(59571f82a0dc1a14da606dc0df6f8ea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40eb4f55727cc1eea0ae8eb1b22aaed0') in 0.114382 seconds 
+  Time since last request: 300.399130 seconds.
+  path: Assets/Characters/Sergio/Materials/sergio_texture2.png
+  artifactKey: Guid(99dd271c7612be7e29f01844c6546a80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Materials/sergio_texture2.png using Guid(99dd271c7612be7e29f01844c6546a80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb0ce4bb4eecec5db942cc01951c0d8f') in 0.025554 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 1073.514568 seconds.
-  path: Assets/Scenes/VersusMode.unity
-  artifactKey: Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/VersusMode.unity using Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea8da2541a9134bacec657147e7bb264') in 0.004100 seconds 
+  Time since last request: 12.296472 seconds.
+  path: Assets/Characters/Sergio/Materials/Sergio 1.mat
+  artifactKey: Guid(5ca519ad592bee0b6844461a39c5b510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Materials/Sergio 1.mat using Guid(5ca519ad592bee0b6844461a39c5b510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69f88001f48663e462a57d3f87010973') in 0.022047 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 194.244925 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c32bdb336266d5d03bcc48477ef8d4b') in 6.622029 seconds 
+  Time since last request: 5.271528 seconds.
+  path: Assets/Characters/Sergio/Materials/Sergio2.mat
+  artifactKey: Guid(5ca519ad592bee0b6844461a39c5b510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Materials/Sergio2.mat using Guid(5ca519ad592bee0b6844461a39c5b510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e091f56083b7f9be455fb990e719c14') in 0.033911 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 362
+Number of asset objects unloaded after import = 4
 ========================================================================
 Received Import Request.
-  Time since last request: 140.293230 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bae7074d7037e610236ef3e6a90edeb7') in 1.307906 seconds 
+  Time since last request: 50.835853 seconds.
+  path: Assets/Characters/Sergio/Materials/Sergio2.mat
+  artifactKey: Guid(5ca519ad592bee0b6844461a39c5b510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Materials/Sergio2.mat using Guid(5ca519ad592bee0b6844461a39c5b510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c1aa2f5ff6d946137b86a430b7e39b2') in 0.080616 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 362
-========================================================================
-Received Import Request.
-  Time since last request: 44.011420 seconds.
-  path: Assets/Scenes/CharacterSelect.unity
-  artifactKey: Guid(776549f15bfa58a61914c6546e82eb43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/CharacterSelect.unity using Guid(776549f15bfa58a61914c6546e82eb43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6192f77bef67b12ecea702b7ce905a5') in 0.005445 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 12.310153 seconds.
-  path: Assets/Scenes/VersusMode.unity
-  artifactKey: Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/VersusMode.unity using Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6857dd11211b14576cc9ab973ea03a06') in 0.001051 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 3.854649 seconds.
-  path: Assets/Scenes/PracticeMode.unity
-  artifactKey: Guid(46779bcc89c85cc45a0e799be3238b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/PracticeMode.unity using Guid(46779bcc89c85cc45a0e799be3238b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1fc2f8144335b9fdb7f89e1a005d4a5') in 0.001081 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 21.724108 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2817ea123ab8fe2a79497244d2c2a8d3') in 1.022559 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 364
-========================================================================
-Received Import Request.
-  Time since last request: 14.634394 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7634ae5e39c952c995d6aabeb2d1917') in 0.912247 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 364
-========================================================================
-Received Import Request.
-  Time since last request: 461.033230 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe0c6b6b1c25660ff69e25c6484e38a9') in 1.073367 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 381
-========================================================================
-Received Import Request.
-  Time since last request: 49.678645 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b18dd736007628cfb53cc8cd740ad601') in 1.381393 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 447
-========================================================================
-Received Import Request.
-  Time since last request: 73.864988 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa543a4c67bbfdd50e717c496c05cdbb') in 2.887004 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 447
-========================================================================
-Received Import Request.
-  Time since last request: 29.603664 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deca6887ca199c21e62000deeba733f8') in 0.879152 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 447
-========================================================================
-Received Import Request.
-  Time since last request: 18.027320 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34b53608a2575072ec6e8ab61ea0e76a') in 0.816476 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 482
-========================================================================
-Received Import Request.
-  Time since last request: 16.252271 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ae9d0006112c33cb6ca71e8d8ef1d14') in 0.045193 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 482
-========================================================================
-Received Import Request.
-  Time since last request: 10.022403 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8525a63ad7083f835eb2e3894ac5a0dd') in 1.341608 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 482
-========================================================================
-Received Import Request.
-  Time since last request: 167.302431 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec8c5af13078fb74f6642bf50ad7c4f4') in 2.553819 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 497
-========================================================================
-Received Import Request.
-  Time since last request: 137.177260 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cf5043588a17832ce4209c862009ea2') in 0.046151 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 497
-========================================================================
-Received Import Request.
-  Time since last request: 31.300067 seconds.
-  path: Assets/Prefabs/BattleUI.prefab
-  artifactKey: Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/BattleUI.prefab using Guid(9bd82ab794c3c1f6a8cd0e411e566f7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eddddd068f4daf3a75f0306404e1811b') in 1.566014 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 497
+Number of asset objects unloaded after import = 5

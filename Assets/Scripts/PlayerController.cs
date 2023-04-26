@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         GameMode();
+        if (!isCtrl)
+        { movesNum = 5; moveString = "5"; comString = "N"; }
     }
 
     public void GameMode()
@@ -128,12 +130,10 @@ public class PlayerController : MonoBehaviour
                 for (int j = 1; j < movesName[i].Split(spliter).Length; j++)
                     if (str.Contains(movesName[i].Split(spliter)[j]))
                     {
-                        if (str.Length > 1 && cto.Length > movesName[i].Split(spliter)[0].Length && cto.Contains(movesName[i].Split(spliter)[0]))
+                        if (str.Length > 1 && str.Length < 6 && cto.Length > movesName[i].Split(spliter)[0].Length && cto.Contains(movesName[i].Split(spliter)[0]))
                             return cto;
                         movesName.Add(movesName[i]);
                         movesName.RemoveAt(i);
-                        //if (movesName[i].Split(spliter)[0].Length > 1)
-                        //    moveString = moveString[moveString.Length - 1].ToString();
                         return movesName[movesName.Count - 1].Split(spliter)[0];
                     }
         return cto;

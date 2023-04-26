@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class BattleUI : MonoBehaviour
 {
-    public bool practiceMode, result;
+    public bool practiceMode;
     public Menu battleMenu;
     public Text timerTxt;
     public ActionSystem pc1, pc2;
@@ -19,14 +21,17 @@ public class BattleUI : MonoBehaviour
         public Vector2 hpV, staV, btrV, skillV;
         public List<Image> iconList;
     }
+    [System.Serializable]
     public struct ResultPanel
     {
         public RectTransform result, p1, p2;
         public List<RectTransform> useChar;
     }
     public ResultPanel resultPanel;
+    public UnityEvent resultEvnet;
     public Image goodGame, extraTime;
     float timer;
+    bool result = false, exit = false;
 
     void Start()
     {
@@ -76,7 +81,7 @@ public class BattleUI : MonoBehaviour
                 }
                 if (pc1.pc.isCtrl && pc2.pc.isCtrl && timer > 0)
                     timer -= Time.fixedDeltaTime;
-                timerTxt.text = (timer + .5f).ToString("0");
+                timerTxt.text = (timer + .1f).ToString("0");
                 if (!result && (timer <= 0 || pc1.life <= 0 || pc2.life <= 0)) { result = true; GoodGame(); }
             }
         }
@@ -98,13 +103,15 @@ public class BattleUI : MonoBehaviour
     IEnumerator ExtraTime()
     {
         yield return new WaitForSecondsRealtime(1f);
-        pc1.life = 1; pc2.life = 1; timer += 30;
+        pc1.life = 1; pc2.life = 1; timer = 30;
         extraTime.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
         extraTime.gameObject.SetActive(false);
         if (pc1.death) StartCoroutine(pc1.Recovery());
+        else pc1.pc.isCtrl = true;
         if (pc2.death) StartCoroutine(pc2.Recovery());
-        battleMenu.gameObject.SetActive(true);
+        else pc2.pc.isCtrl = true;
+        result = false;
     }
 
     IEnumerator Result(int winner)
@@ -114,7 +121,29 @@ public class BattleUI : MonoBehaviour
         yield return new WaitForSeconds(2);
         goodGame.gameObject.SetActive(false);
         resultPanel.result.gameObject.SetActive(true);
+        foreach (AudioVolume item in FindObjectsOfType<AudioVolume>())
+            if (item.audioType == AudioVolume.AudioType.bgm) item.GetComponent<AudioSource>().volume = (float)GameSystem.playerData.bgmVol * .25f;
+        Cinemachine.CinemachineTargetGroup cineTarget = FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
+        Cinemachine.CinemachineFramingTransposer cineTrans = resultPanel.result.GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>();
+        for (int i = 0; i < cineTarget.m_Targets.Length; i++)
+            if (cineTarget.m_Targets[i].target.GetComponent<ActionSystem>().pc.pc == winner - 1)
+                cineTarget.m_Targets[1 - i].weight = 0;
+        cineTrans.m_ScreenX = .35f;
         if (winner == 1) resultPanel.p1.gameObject.SetActive(true);
         else resultPanel.p2.gameObject.SetActive(true);
+        resultPanel.useChar[winner == 1 ? GameSystem.p1Char : GameSystem.p2Char].gameObject.SetActive(true);
+        yield return new WaitForSeconds(2);
+        exit = true;
+    }
+
+    public void InputAction(InputAction.CallbackContext ctx)
+    {
+        if (ctx.phase != InputActionPhase.Performed && ctx.action.name + ctx.ReadValue<float>() == "W_cls1" && exit)
+            resultEvnet.Invoke();
+    }
+
+    public void ChangeScene(string sceneID)
+    {
+        StartCoroutine(Menu.PreloadScene(sceneID));
     }
 }

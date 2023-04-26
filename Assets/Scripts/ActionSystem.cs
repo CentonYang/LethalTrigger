@@ -15,11 +15,11 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public string actionMsg, acceptMsg;
     [HideInInspector] public int direction, hitType, life;
     [HideInInspector] public bool hited, hurted, downbreak, comboOver, death;
-    [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed;
+    [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed, rootScale;
     [HideInInspector] public Vector2 velocity, hurtVel;
     public Vector2 hp, sta, btr, skill, fix;
     public GameObject hitboxes;
-    public Transform hitTrans;
+    public Transform hitTrans, root, local;
     public GameObject hitVFX;
     [HideInInspector] public CameraShake cameraShake;
 
@@ -72,7 +72,6 @@ public class ActionSystem : MonoBehaviour
                 if (getName != null)
                 {
                     cancelList.Clear(); cancelOtherList.Clear();
-                    //pc.actionKey = '\0';
                     actionMsg = getName;
                     return;
                 }
@@ -86,7 +85,6 @@ public class ActionSystem : MonoBehaviour
                 if (getName != null)
                 {
                     cancelList.Clear();
-                    //pc.actionKey = '\0';
                     actionMsg = cancelOtherList[0];
                     cancelOtherList.Clear();
                     return;
@@ -110,7 +108,10 @@ public class ActionSystem : MonoBehaviour
         if (mStr.Length > 0 && target == mStr[mStr.Length - 1].ToString()) return target;
         for (int i = 0; i < cStr.Length; i++)
         {
-            if (i == cStr.Length - 1) if ((mStr[mStr.Length - 1] == '5' && cStr != "N") || (mStr[mStr.Length - 1] == '2' && cStr != "D")) return null;
+            if (i == cStr.Length - 1)
+                if (mStr[mStr.Length - 1] == '5' && cStr != "N") return null;
+                else if ((mStr[mStr.Length - 1] == '1' || mStr[mStr.Length - 1] == '2' || mStr[mStr.Length - 1] == '3') && cStr != "D") return null;
+                else if ((mStr[mStr.Length - 1] == '7' || mStr[mStr.Length - 1] == '8' || mStr[mStr.Length - 1] == '9') && cStr != "U") return null;
             if (target == inStateStr + cStr.Substring(i)) return target;
             if (target == cStr.Substring(i)) return target;
         }
@@ -187,17 +188,17 @@ public class ActionSystem : MonoBehaviour
                     downed++;
                 }
         }
-        if (drtMode == DirectionMode.turn_ctrl) transform.localScale = new Vector3(direction, 1, 1);
+        if (drtMode == DirectionMode.turn_ctrl) { root.localScale = new Vector3(rootScale * direction, rootScale, rootScale); local.localScale = new Vector3(direction, 1, 1); }
         switch (moveMode)
         {
             case MoveMode.move:
-                velocity.x = moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.x);
+                velocity.x = moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : local.localScale.x);
                 break;
             case MoveMode.soar:
                 velocity.y = soarHeight;
                 break;
             case MoveMode.all:
-                velocity = new Vector2(moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : transform.localScale.x), soarHeight);
+                velocity = new Vector2(moveSpeed * (drtMode != DirectionMode.noTurn_noCtrl ? direction : local.localScale.x), soarHeight);
                 break;
         }
         if (hited && pushDis != 0)
@@ -258,7 +259,7 @@ public class ActionSystem : MonoBehaviour
         {
             hited = true;
             GameObject hitVFXObj = Instantiate(hitVFX, hitTrans.position, hitTrans.rotation);
-            hitVFXObj.transform.localScale = transform.localScale;
+            hitVFXObj.transform.localScale = local.localScale;
             StartCoroutine(opponent.Hurted(dmg, staDmg, hitStaDmg, btrDmg, hitBtrDmg, fixRate, stiffDuration, defStiffDuration, hitHeight, hitDistance, airHitHeight, airHitDistance, hitPoint == 0 ? true : false));
         }
     }
@@ -290,7 +291,8 @@ public class ActionSystem : MonoBehaviour
         pushReac = 2;
         if ((inState == InState.D || inState == InState.G) && (opponent.transform.position.x - transform.position.x) * direction > 0)
         {
-            transform.localScale = new Vector3(direction, 1, 1);
+            root.localScale = new Vector3(rootScale * direction, rootScale, rootScale);
+            local.localScale = new Vector3(direction, 1, 1);
             audioSource.clip = audios[4]; Sounder sd = Instantiate(sounder, audioSource.transform);
             float _gHitH = 0;
             //傷害計算
@@ -344,13 +346,13 @@ public class ActionSystem : MonoBehaviour
                 else
                     NextState("HITF");
             else if (_hitHigh) //是打點高
-                if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //面對對手
+                if ((opponent.transform.position.x - transform.position.x) * local.localScale.x > 0) //面對對手
                     NextState("HUB");
                 else //背對對手
                     NextState("HUF");
             else //是打點低
             {
-                if ((opponent.transform.position.x - transform.position.x) * transform.localScale.x > 0) //面對對手
+                if ((opponent.transform.position.x - transform.position.x) * local.localScale.x > 0) //面對對手
                     NextState("HUF");
                 else //背對對手
                     NextState("HUB");
@@ -397,7 +399,7 @@ public class ActionSystem : MonoBehaviour
 
     void Start()
     {
-        gravity = .5f;
+        gravity = .5f; rootScale = root.localScale.x;
         pc = transform.parent.GetComponent<PlayerController>();
         pc = transform.parent.GetComponent<PlayerController>();
         cc = GetComponentInChildren<CharacterController>();

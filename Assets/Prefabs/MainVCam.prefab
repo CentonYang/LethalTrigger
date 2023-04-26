@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5833381926083324308}
   - component: {fileID: 5833381926083324311}
   - component: {fileID: 5618864637493030753}
+  - component: {fileID: 5649339555806984129}
+  - component: {fileID: 8514625030833240952}
   m_Layer: 0
   m_Name: MainVCam
   m_TagString: Untagged
@@ -88,6 +90,35 @@ MonoBehaviour:
   vcam: {fileID: 0}
   shakeTime: 0
   shakePower: 0
+--- !u!114 &5649339555806984129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5833381926083324310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ConfineMode: 1
+  m_BoundingVolume: {fileID: 0}
+  m_BoundingShape2D: {fileID: 0}
+  m_ConfineScreenEdges: 1
+  m_Damping: 0
+--- !u!114 &8514625030833240952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5833381926083324310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ad41cfdee09d999a647685d093d95e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5833381927211146688
 GameObject:
   m_ObjectHideFlags: 0
