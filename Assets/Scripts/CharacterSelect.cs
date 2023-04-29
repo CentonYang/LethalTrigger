@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour
 {
@@ -26,6 +25,12 @@ public class CharacterSelect : MonoBehaviour
     void Start()
     {
         GameSystem.p1Comp = false; GameSystem.p2Comp = false;
+        for (int i = 0; i < selectContent.Count; i++)
+        {
+            if (selectContent[i].selectID == GameSystem.p1Char) pc[0] = i;
+            if (selectContent[i].selectID == GameSystem.p2Char) pc[1] = i;
+        }
+        color[0] = GameSystem.p1Color; color[1] = GameSystem.p2Color;
     }
 
     void FixedUpdate()

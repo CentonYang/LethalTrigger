@@ -419,9 +419,10 @@ public class ActionSystem : MonoBehaviour
         if (life > 0)
         {
             hp.x = hp.y;
-            pc.isCtrl = true;
-            NextStateSelf("WAKE");
             death = false;
+            NextStateSelf("WAKE");
+            yield return new WaitForSecondsRealtime(.1f);
+            pc.isCtrl = true;
         }
     }
 

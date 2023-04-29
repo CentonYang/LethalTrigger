@@ -359,8 +359,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4059179255139449653}
   m_LocalRotation: {x: -0.7061478, y: 0.036814835, z: 0.036814835, w: 0.7061478}
-  m_LocalPosition: {x: -0, y: -0.5813732, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 1}
+  m_LocalPosition: {x: -0, y: -0.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3272423103841974015}
@@ -433,7 +433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7153164529724862647
 Transform:
   m_ObjectHideFlags: 0
@@ -579,7 +579,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -911,6 +911,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3272423103841974015}
   - component: {fileID: 7668412738553474009}
+  - component: {fileID: 8101853195683472882}
   m_Layer: 0
   m_Name: Arena
   m_TagString: Untagged
@@ -954,10 +955,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8545333259809901377}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0f2631d6a83ec2c4da5071ace724da7d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f3a037278a4d82b25ad16a9ab77c8263, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
@@ -1043,6 +1044,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8101853195683472882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545333259809901377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cfe24a3f4db2fd2bb75fd5918245c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioType: 0
+  scale: 0.5
 --- !u!1 &8742739026729063648
 GameObject:
   m_ObjectHideFlags: 0

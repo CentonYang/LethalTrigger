@@ -3,7 +3,7 @@ using System.IO;
 
 public class GameSystem : MonoBehaviour
 {
-    static public int p1Char, p2Char, p1Color, p2Color, gamemode, life = 2, timer = 90, map = 0;
+    static public int p1Char = 0, p2Char = 1, p1Color, p2Color, gamemode, life = 2, timer = 90, map = 0;
     static public bool p1Comp, p2Comp;
     [System.Serializable]
     public class PlayerData
