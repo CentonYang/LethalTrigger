@@ -292,10 +292,10 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 4, y: 0.5019608, z: 0.5019608, w: 1}
+      - m_Value: {x: 0.5019608, y: 3.0117648, z: 1.0039216, w: 1}
         m_Name: color
         m_Overridden: 1
-      - m_Value: {x: 4, y: 1.0039216, z: 0, w: 1}
+      - m_Value: {x: 0, y: 0, z: 0, w: 1}
         m_Name: color2
         m_Overridden: 1
     m_Uint:
@@ -1166,7 +1166,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.219608, y: 0.4825632}
+  m_Offset: {x: -0.127875, y: 0.4825632}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1177,7 +1177,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.069813, y: 0.9646159}
+  m_Size: {x: 1.253279, y: 0.9646159}
   m_EdgeRadius: 0
 --- !u!1 &1989207067778263413
 GameObject:
@@ -3055,6 +3055,7 @@ MonoBehaviour:
   life: 0
   hited: 0
   hurted: 0
+  hurtCheck: 0
   downbreak: 0
   comboOver: 0
   death: 0
@@ -3077,7 +3078,7 @@ MonoBehaviour:
   hitTrans: {fileID: 5533052948686535871}
   root: {fileID: 1250314365168402712}
   local: {fileID: 8758732166426786527}
-  hitVFX: {fileID: 4910821486317229336, guid: a6a60f7aae5e4a5b19a2ae043759793d, type: 3}
+  hitVFX: {fileID: 4910821486317229336, guid: 480c64395fc024734b358deb95d277a9, type: 3}
   cameraShake: {fileID: 0}
   moveMode: 0
   drtMode: 0
@@ -3088,7 +3089,7 @@ MonoBehaviour:
   cancelOtherList: []
   soarHeight: 0
   moveSpeed: 0
-  radius: 0.4
+  radius: 0.5
   trigger: 0
   staCD: 0
   timeScale: 0
@@ -3112,7 +3113,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c266e86e5ec11e344bf66dede26cbc46, type: 3}
   - {fileID: 8300000, guid: 04e43a8b4371b424482511efde8fcf1b, type: 3}
   - {fileID: 8300000, guid: a715ddf00ff7f24469c72404e8df85e9, type: 3}
-  - {fileID: 8300000, guid: 5ecea32fd444565dc916356a136c287c, type: 3}
+  - {fileID: 8300000, guid: a715ddf00ff7f24469c72404e8df85e9, type: 3}
   - {fileID: 8300000, guid: e4b229d1cd4c5954c982c44b6f42eb27, type: 3}
   - {fileID: 8300000, guid: 1e3312d22540aa14597a1fb4739f2782, type: 3}
   - {fileID: 8300000, guid: 1d9451f46b004438faaa8665ea8b280f, type: 3}
@@ -3131,20 +3132,20 @@ MonoBehaviour:
   data:
   - name: FR
     subName: F
-    staLost: 75
+    staLost: 90
     btrLost: 0
   - name: S
     subName: SNB
     staLost: 0
-    btrLost: 50
+    btrLost: 33
   - name: DS
     subName: DSNB
     staLost: 0
-    btrLost: 50
+    btrLost: 33
   - name: AS
     subName: ASNB
     staLost: 0
-    btrLost: 50
+    btrLost: 33
 --- !u!50 &2360381858331573799
 Rigidbody2D:
   serializedVersion: 4
@@ -3520,7 +3521,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2891275571485413298}
   m_RootOrder: 1
@@ -3564,10 +3565,10 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 4, y: 0.5026177, z: 0.5026177, w: 1}
+      - m_Value: {x: 0, y: 0, z: 0, w: 1}
         m_Name: color
         m_Overridden: 1
-      - m_Value: {x: 3.9999995, y: 1.0052354, z: 0, w: 1}
+      - m_Value: {x: 0.5019608, y: 3.0117648, z: 1.0039216, w: 1}
         m_Name: color 1
         m_Overridden: 1
     m_Uint:

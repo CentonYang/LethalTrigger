@@ -14,7 +14,7 @@ public class ActionSystem : MonoBehaviour
     public Sounder sounder;
     [HideInInspector] public string actionMsg, acceptMsg;
     [HideInInspector] public int direction, hitType, life;
-    [HideInInspector] public bool hited, hurted, downbreak, comboOver, death;
+    [HideInInspector] public bool hited, hurted, hurtCheck, downbreak, comboOver, death;
     [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed, rootScale;
     [HideInInspector] public Vector2 velocity, hurtVel;
     public Vector2 hp, sta, btr, skill, fix;
@@ -22,6 +22,7 @@ public class ActionSystem : MonoBehaviour
     public Transform hitTrans, root, local;
     public GameObject hitVFX;
     [HideInInspector] public CameraShake cameraShake;
+    string animName, animCheck;
 
     public enum MoveMode { move, soar, all, none };
     [Tooltip("移動模式:移動/漂浮/全部/無視")] public MoveMode moveMode;
@@ -147,13 +148,11 @@ public class ActionSystem : MonoBehaviour
             NextState(actionMsg);
         }
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITF") && velocity.y < 0)
-            NextState("HITD");
-        if (inState == InState.HU || inState == InState.AHU || inState == InState.G)
-            hurted = true;
-        else hurted = false;
-        if (stiff <= 0 && pushReac <= 0)
-            if (inState == InState.HU) NextState("5");
-            else if (inState == InState.G) NextState("D");
+            NextStateSelf("HITD");
+        if (stiff <= 0 && pushReac <= 0 && hurted)
+            if (inState == InState.HU) { hurted = false; ; NextStateSelf("5"); }
+            else if (inState == InState.G) { hurted = false; NextStateSelf("D"); }
+            else if (inState == InState.AHU) { hurted = false; }
         if (stiff > 0)
             stiff--;
         if (pushReac > 0)
@@ -172,7 +171,7 @@ public class ActionSystem : MonoBehaviour
         if (cc.isGrounded && velocity.y < 0 && pushReac <= 0)
         {
             if (inState == InState.A && (moveMode == MoveMode.move || moveMode == MoveMode.none))
-                NextState("AL");
+                NextStateSelf("AL");
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITD") && !downbreak)
                 if (velocity.y < -20)
                 {
@@ -183,8 +182,8 @@ public class ActionSystem : MonoBehaviour
                 }
                 else
                 {
-                    if (downed > 0 && !death) NextState("WAKE");
-                    else NextState("DOWN");
+                    if (downed > 0 && !death) NextStateSelf("WAKE");
+                    else NextStateSelf("DOWN");
                     downed++;
                 }
         }
@@ -244,13 +243,19 @@ public class ActionSystem : MonoBehaviour
         cancelOtherList.AddRange(canceler.Split(','));
     }
 
-    public void NextState(string animState)
+    void NextStateSelf(string animState)
     {
-        if (pushReac > 0 && animState == "5") return;
-        cancelList.Clear(); cancelOtherList.Clear(); actionMsg = null;
         if (animState == "WAKE" && death) { StartCoroutine(Recovery()); return; }
         if (animator.HasState(0, Animator.StringToHash(animState)))
+        {
+            cancelList.Clear(); cancelOtherList.Clear(); actionMsg = null;
             animator.CrossFadeInFixedTime(animState, 0);
+        }
+    }
+
+    public void NextState(string animState)
+    {
+        if (stiff <= 0 || pushReac <= 0) NextStateSelf(animState);
     }
 
     public void Hited(string oppoCol)
@@ -285,6 +290,9 @@ public class ActionSystem : MonoBehaviour
         }
     }
 
+    float s_dmg, s_staDmg, s_hitSDmg, s_btrDmg, s_hitBDmg, s_fixRate, s_stiffDur, s_dStiffDur, s_hitH, s_hitD, s_aHitH, s_aHitD;
+    bool s_hitHigh;
+
     public IEnumerator Hurted(float _dmg, float _staDmg, float _hitSDmg, float _btrDmg, float _hitBDmg, float _fixRate, float _stiffDur, float _dStiffDur, float _hitH, float _hitD, float _aHitH, float _aHitD, bool _hitHigh)
     {
         bool isAir = inState == InState.A || inState == InState.AHU || inState == InState.DOWN ? true : false;
@@ -294,23 +302,26 @@ public class ActionSystem : MonoBehaviour
             root.localScale = new Vector3(rootScale * direction, rootScale, rootScale);
             local.localScale = new Vector3(direction, 1, 1);
             audioSource.clip = audios[4]; Sounder sd = Instantiate(sounder, audioSource.transform);
-            float _gHitH = 0;
             //傷害計算
             btr.x += _btrDmg;
             opponent.skill.x += _btrDmg / 2;
             sta.x += _staDmg;
+            float _gHitH = 0;
             if (sta.x > 0 && !staCD)
-            { stiff = _dStiffDur; if (!hitRange) NextState("G"); }
+            { stiff = _dStiffDur; if (!hitRange) NextStateSelf("G"); }
             else if (_hitH != 0) //是打飛招式或在空中
             {
                 if (_hitH < 0)
-                    NextState("HITD");
+                    NextStateSelf("HITD");
                 else
-                    NextState("HITF");
+                    NextStateSelf("HITF");
                 hp.x += _dmg / 2; _gHitH = _hitH;
             }
             else
-            { stiff = _stiffDur; NextState("BK"); hp.x += _dmg / 2; }
+            { stiff = _stiffDur; NextStateSelf("BK"); hp.x += _dmg / 2; }
+            //////
+            if (hp.x <= 0)
+            { StartCoroutine(Death(_dmg, _dStiffDur, _aHitD, _aHitH, _hitH)); yield break; }
             //////
             hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD * .75f : _hitD * .75f, _gHitH);
         }
@@ -326,13 +337,7 @@ public class ActionSystem : MonoBehaviour
             opponent.skill.x += _hitBDmg / 2;
             //////
             if (hp.x <= 0)
-            {
-                isAir = true; death = true; pc.isCtrl = false; life--;
-                CinemachineTargetGroup cineTarget = FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
-                for (int i = 0; i < cineTarget.m_Targets.Length; i++)
-                    if (!cineTarget.m_Targets[i].target.GetComponent<ActionSystem>().death)
-                        cineTarget.m_Targets[i].weight = 0;
-            }
+            { StartCoroutine(Death(_dmg, _dStiffDur, _aHitD, _aHitH, _hitH)); yield break; }
             //////
             if (isAir)
                 hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
@@ -342,26 +347,32 @@ public class ActionSystem : MonoBehaviour
                 stiff = _stiffDur;
             if (_hitH != 0 || isAir) //是打飛招式或在空中
                 if (_hitH < 0)
-                    NextState("HITD");
+                    NextStateSelf("HITD");
                 else
-                    NextState("HITF");
+                    NextStateSelf("HITF");
             else if (_hitHigh) //是打點高
                 if ((opponent.transform.position.x - transform.position.x) * local.localScale.x > 0) //面對對手
-                    NextState("HUB");
+                    NextStateSelf("HUB");
                 else //背對對手
-                    NextState("HUF");
+                    NextStateSelf("HUF");
             else //是打點低
             {
                 if ((opponent.transform.position.x - transform.position.x) * local.localScale.x > 0) //面對對手
-                    NextState("HUF");
+                    NextStateSelf("HUF");
                 else //背對對手
-                    NextState("HUB");
+                    NextStateSelf("HUB");
             }
         }
-        cameraShake.SetShake(_dStiffDur * .2f, _dmg * .01f);
+        hurted = true;
+        cameraShake.SetShake(Mathf.Abs(_dStiffDur * .5f), Mathf.Abs(_dmg * .01f));
         Time.timeScale = .5f;
         yield return new WaitForSecondsRealtime(.1f);
         if (!death) Time.timeScale = 1;
+    }
+
+    public void CameraShake(string tick_power)
+    {
+        cameraShake.SetShake(float.Parse(tick_power.Split(',')[0]), float.Parse(tick_power.Split(',')[1]));
     }
 
     IEnumerator DownBreak(Vector2 vel, float timeLong)
@@ -369,7 +380,7 @@ public class ActionSystem : MonoBehaviour
         yield return new WaitForSecondsRealtime(timeLong);
         if (!death) Time.timeScale = 1;
         velocity.x = vel.x;
-        velocity.y = Mathf.Abs(vel.y) * .4f * (downed > 0 ? Mathf.Pow(.75f, downed) : 1); NextState("HITF");
+        velocity.y = Mathf.Abs(vel.y) * .4f * (downed > 0 ? Mathf.Pow(.75f, downed) : 1); NextStateSelf("HITF");
         pushReac = 0;
         downed++; downbreak = false;
     }
@@ -380,6 +391,23 @@ public class ActionSystem : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    IEnumerator Death(float _dmg, float _dStiffDur, float _aHitD, float _aHitH, float _hitH)
+    {
+        death = true; pc.isCtrl = false; life--;
+        CinemachineTargetGroup cineTarget = FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
+        for (int i = 0; i < cineTarget.m_Targets.Length; i++)
+            if (!cineTarget.m_Targets[i].target.GetComponent<ActionSystem>().death)
+                cineTarget.m_Targets[i].weight = 0;
+        hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_aHitD : _aHitD, _aHitH);
+        if (_hitH < 0)
+            NextStateSelf("HITD");
+        else
+            NextStateSelf("HITF");
+        cameraShake.SetShake(Mathf.Abs(_dStiffDur * .5f), Mathf.Abs(_dmg * .01f));
+        Time.timeScale = .5f;
+        yield return new WaitForSecondsRealtime(.1f);
+        if (!death) Time.timeScale = 1;
+    }
     public IEnumerator Recovery()
     {
         Time.timeScale = 1;
@@ -392,7 +420,7 @@ public class ActionSystem : MonoBehaviour
         {
             hp.x = hp.y;
             pc.isCtrl = true;
-            NextState("WAKE");
+            NextStateSelf("WAKE");
             death = false;
         }
     }
@@ -439,7 +467,7 @@ public class ActionSystem : MonoBehaviour
         if (pc == null) return;
         if ((inState == InState.WAKE || inState == InState.N) && pushReac <= 0)
         { downed = 0; opponent.combo = 0; fix.x = fix.y; }
-        if (pc.isCtrl && ((pc.pc == 0 && GameSystem.p1Comp) || (pc.pc == 1 && GameSystem.p2Comp)))
+        if ((pc.pc == 0 && GameSystem.p1Comp) || (pc.pc == 1 && GameSystem.p2Comp))
             ComMessage();
     }
 }

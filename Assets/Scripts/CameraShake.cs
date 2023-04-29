@@ -17,15 +17,15 @@ public class CameraShake : MonoBehaviour
     {
 
         if (shakeTime > 0)
-        {
-            vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shakePower;
-            shakeTime -= 1;
-        }
-        else vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+        { vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = shakePower; shakeTime -= 1; }
+        else { vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0; shakePower = 0; }
     }
 
     public void SetShake(float tick, float power)
     {
-        shakeTime = tick; shakePower = power;
+        if (tick > shakeTime)
+            shakeTime = tick;
+        if (power > shakePower)
+            shakePower = power;
     }
 }

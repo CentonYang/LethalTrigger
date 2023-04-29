@@ -24854,7 +24854,14 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: Canceler
-    data: DUW,FF,F,8,U,DM,M,DW,W,DS,S,D
+    data: DUW,DFM,FF,F,8,U,DM,M,DW,W,DS,S,D
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: CameraShake
+    data: 10,0.05
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

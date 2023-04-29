@@ -2088,7 +2088,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.46666667
-        value: 0.75
+        value: 0.8
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -35103,7 +35103,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.46666667
-        value: 0.75
+        value: 0.8
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -64423,6 +64423,13 @@ AnimationClip:
   - time: 0.4
     functionName: AudioPlay
     data: s
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.55
+    functionName: CameraShake
+    data: 10,0.2
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

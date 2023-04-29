@@ -122,21 +122,21 @@ public class PlayerController : MonoBehaviour
         return v > min && v <= max;
     }
 
-    public string ConvertMoves(string str, string cto)
+    public string ConvertMoves(string mst, string cst)
     {
         char spliter = ',';
-        if (str.Length > 0)
+        if (mst.Length > 0)
             for (int i = 0; i < movesName.Count; i++)
                 for (int j = 1; j < movesName[i].Split(spliter).Length; j++)
-                    if (str.Contains(movesName[i].Split(spliter)[j]))
+                    if (mst.Contains(movesName[i].Split(spliter)[j]))
                     {
-                        if (str.Length > 1 && str.Length < 6 && cto.Length > movesName[i].Split(spliter)[0].Length && cto.Contains(movesName[i].Split(spliter)[0]))
-                            return cto;
+                        if (mst.Length > 1 && cst.Length > movesName[i].Split(spliter)[0].Length && cst.Contains(movesName[i].Split(spliter)[0]) && mst.Contains(movesName[movesName.Count - 1].Split(spliter)[j]))
+                            return cst;
                         movesName.Add(movesName[i]);
                         movesName.RemoveAt(i);
                         return movesName[movesName.Count - 1].Split(spliter)[0];
                     }
-        return cto;
+        return cst;
     }
 
     static public void InstallDevices(GameObject _obj, int _pc)
