@@ -23,10 +23,10 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: c494c335823f54b52b2e87e1b7a63a23, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 01f4eb1c73693428d923f1520032e7f9, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.008958812, g: 0.013101446, b: 0.02045097, a: 1}
+  m_IndirectSpecularColor: {r: 0.19557698, g: 0.2369566, b: 0.3105411, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 03a32fa576d5ea942924de3cd9e50bf9, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1611,10 +1611,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6462256666696594895, guid: 70d21493affd7f4469e5c79e5c2c1c80, type: 3}
-      propertyPath: m_Intensity
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7668412738553474009, guid: 70d21493affd7f4469e5c79e5c2c1c80, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2769,7 +2765,7 @@ MonoBehaviour:
   m_IsGlobal: 1
   priority: 0
   blendDistance: 0
-  weight: 1
+  weight: 0.8
   sharedProfile: {fileID: 11400000, guid: 2fd4a2ac0bc1f3b49a6f68c132f92e23, type: 2}
 --- !u!4 &393366710
 Transform:
@@ -5706,6 +5702,10 @@ MonoBehaviour:
     \uFF37\uFF1A\u5411\u524D\u8F49\u8F49\n\u3000Air [\uFF37]\uFF1A\u5288\u88C2\u5427\n\u3010\u5C04\u64CA\u62DB\u5F0F\u3011\n\u3000\uFF33\uFF1A\u96C6\u675F\u7832\uFF0F\u805A\u675F\u7832\n\u3000\u2193\uFF33\uFF1A\u5411\u4E0A\u96C6\u675F\u7832\uFF0F\u5411\u4E0A\u805A\u675F\u7832\n\u3000Air
     \uFF33\uFF1A\u5411\u4E0B\u96C6\u675F\u7832\uFF0F\u5411\u4E0B\u805A\u675F\u7832\n\u3010\u7279\u6B8A\u62DB\u5F0F\u3011\n\u3000\u2193\u2192\uFF2D\uFF1A\u63A8\u63A8\n\u3000\u2193\u2191\uFF37\uFF1A\u98DB\u5427\n\u3000Air
     \u2193\u2191\uFF37\uFF1A\u98DB\u5427"
+  - "\u3010\uFF2D\uFF1A\uFF38/\uFF35\u3011\u3010\uFF37\uFF1A\uFF21/\uFF2A\u3011\n\u3010\uFF33\uFF1A\uFF39/\uFF29\u3011\u3010\uFF32\uFF1A\uFF22/\uFF2B\u3011\nSergio\u3010\u30BB\u30EB\u30B8\u30AA\u3011\n\u3010\u8FD1\u8EAB\u62DB\u5F0F\u3011\n\u3000\uFF2D\uFF1A\u5BF8\u62F3\uFF08\u53EF\u7531\uFF37\u53D6\u6D88\uFF09\n\u3000\u2193\uFF2D\uFF1A\u91CD\u8E0F\n\u3000Air
+    \uFF2D\uFF1A\u523A\u62F3\n\u3000\u2192\u2192\uFF1A\u8B77\u62F3\u885D\u649E\u3000\n\u3010\u6B66\u5668\u62DB\u5F0F\u3011\n\u3000\uFF37\uFF1A\u885D\u62F3\n\u3000\u3000\u6D3E\u751F\uFF2D\uFF1A\u885D\u62F3\u7E8C\u9032\n\u3000\u2193\uFF37\uFF1A\u5288\u638C\n\u3000\u2193[\uFF37]\uFF1A\u589C\u62F3\n\u3000Air
+    \uFF37\uFF1A\u964D\u62F3\n\u3010\u5C04\u64CA\u62DB\u5F0F\u3011\n\u3000\uFF33\uFF1A\u71B1\u7832\uFF0F\u5B8F\u71B1\u7832\n\u3000\u2193\uFF33\uFF1A\u9707\u5730\u71B1\u7832\uFF0F\u9707\u5730\u5B8F\u71B1\u7832\n\u3000Air
+    \uFF33\uFF1A\u5411\u4E0B\u71B1\u7832\uFF0F\u5411\u4E0B\u5B8F\u71B1\u7832\n\u3000\u8B77\u62F3\u2192\uFF33\uFF1A\u885D\u92D2\u71B1\u7832\uFF0F\u885D\u92D2\u5B8F\u71B1\u7832\uFF08\u53EF\u7531\uFF37\u53D6\u6D88\uFF09\n\u3010\u7279\u6B8A\u62DB\u5F0F\u3011\n\u3000\u2192\u2193\u2192\uFF2D\uFF1A\u5730\u7403\u61F7\u62B1\n\u3000\u2192\u2193\u2191\uFF37\uFF1A\u5730\u7403\u5929\u964D\n\u3000\u3000\u6D3E\u751F\uFF33\uFF1A\u5730\u7403\u5929\u964D\uFF0D\u71B1\u7832\u964D\u6BC0"
   contenTarget: {fileID: 1969102601}
 --- !u!1 &963075520
 GameObject:
@@ -7927,11 +7927,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5833381926083324308, guid: 3fcf3bd366fe1ae448369400632e9fb5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6581928
+      value: 1.7649645
       objectReference: {fileID: 0}
     - target: {fileID: 5833381926083324308, guid: 3fcf3bd366fe1ae448369400632e9fb5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.8854856
+      value: -7.8761444
       objectReference: {fileID: 0}
     - target: {fileID: 5833381926083324308, guid: 3fcf3bd366fe1ae448369400632e9fb5, type: 3}
       propertyPath: m_LocalRotation.w

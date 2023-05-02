@@ -52,11 +52,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 92c37e64d2b05ac6a9ac774cf869e8db, type: 3}
+        m_Texture: {fileID: 2800000, guid: ddff4f77d4b72088da8006e0cc74709f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 92c37e64d2b05ac6a9ac774cf869e8db, type: 3}
+        m_Texture: {fileID: 2800000, guid: ddff4f77d4b72088da8006e0cc74709f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Bump2ndMap:
@@ -68,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 82bf3b2de7238f992a1323b680a74e93, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -164,7 +164,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 947e89f4a83b7ae0599a9555773f9cfc, type: 3}
+        m_Texture: {fileID: 2800000, guid: ddff4f77d4b72088da8006e0cc74709f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCap2ndBlendMask:
@@ -594,7 +594,7 @@ Material:
     - _UseAudioLink: 0
     - _UseBacklight: 1
     - _UseBump2ndMap: 0
-    - _UseBumpMap: 0
+    - _UseBumpMap: 1
     - _UseClippingCanceller: 0
     - _UseEmission: 0
     - _UseEmission2nd: 0

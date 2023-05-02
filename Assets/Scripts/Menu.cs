@@ -108,12 +108,18 @@ public class Menu : MonoBehaviour
             cineTrans.m_ScreenX = .65f;
             foreach (PlayerController item in FindObjectsOfType<PlayerController>())
             { item.movesNum = 5; item.moveString = "5"; item.comString = "N"; }
+            foreach (AudioVolume item in FindObjectsOfType<AudioVolume>())
+                if (item.audioType == AudioVolume.AudioType.bgm)
+                    item.GetComponent<AudioSource>().volume = (float)GameSystem.playerData.bgmVol * item.scale * .5f;
         }
         else
         {
             cineTrans.m_ScreenX = .5f;
             for (int i = 0; i < cineTarget.m_Targets.Length; i++)
                 cineTarget.m_Targets[i].weight = 1;
+            foreach (AudioVolume item in FindObjectsOfType<AudioVolume>())
+                if (item.audioType == AudioVolume.AudioType.bgm)
+                    item.GetComponent<AudioSource>().volume = (float)GameSystem.playerData.bgmVol * item.scale;
         }
     }
 

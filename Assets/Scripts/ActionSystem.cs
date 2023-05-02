@@ -150,7 +150,13 @@ public class ActionSystem : MonoBehaviour
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("HITF") && velocity.y < 0)
             NextStateSelf("HITD");
         if (stiff <= 0 && pushReac <= 0 && hurted)
-            if (inState == InState.HU) { hurted = false; ; NextStateSelf("5"); }
+            if (inState == InState.HU)
+            {
+                hurted = false; ;
+                if (pc.comString == "U") if (pc.movesNum == '8') NextStateSelf("8"); else NextStateSelf("U");
+                if (pc.comString == "D") NextStateSelf("D");
+                else NextStateSelf("5");
+            }
             else if (inState == InState.G) { hurted = false; NextStateSelf("D"); }
             else if (inState == InState.AHU) { hurted = false; }
         if (stiff > 0)
@@ -255,7 +261,7 @@ public class ActionSystem : MonoBehaviour
 
     public void NextState(string animState)
     {
-        if (stiff <= 0 || pushReac <= 0) NextStateSelf(animState);
+        if (stiff <= 0 && pushReac <= 0) NextStateSelf(animState);
     }
 
     public void Hited(string oppoCol)
@@ -297,15 +303,16 @@ public class ActionSystem : MonoBehaviour
     {
         bool isAir = inState == InState.A || inState == InState.AHU || inState == InState.DOWN ? true : false;
         pushReac = 2;
+        hurted = true;
         if ((inState == InState.D || inState == InState.G) && (opponent.transform.position.x - transform.position.x) * direction > 0)
         {
             root.localScale = new Vector3(rootScale * direction, rootScale, rootScale);
             local.localScale = new Vector3(direction, 1, 1);
             audioSource.clip = audios[4]; Sounder sd = Instantiate(sounder, audioSource.transform);
             //傷害計算
-            btr.x += _btrDmg;
+            fix.x *= .5f;
+            sta.x += _staDmg; btr.x += _btrDmg;
             opponent.skill.x += _btrDmg / 2;
-            sta.x += _staDmg;
             float _gHitH = 0;
             if (sta.x > 0 && !staCD)
             { stiff = _dStiffDur; if (!hitRange) NextStateSelf("G"); }
@@ -331,6 +338,8 @@ public class ActionSystem : MonoBehaviour
             Sounder sd = Instantiate(sounder, audioSource.transform);
             opponent.combo++;
             //傷害計算
+            if (inState != InState.HU && inState != InState.AHU & (opponent.transform.position.x - transform.position.x) * local.localScale.x < 0)
+                fix.x *= 1.2f;
             hp.x += _dmg * fix.x;
             fix.x *= _fixRate;
             sta.x += _hitSDmg; btr.x += _hitBDmg;
@@ -363,7 +372,6 @@ public class ActionSystem : MonoBehaviour
                     NextStateSelf("HUB");
             }
         }
-        hurted = true;
         cameraShake.SetShake(Mathf.Abs(_dStiffDur * .5f), Mathf.Abs(_dmg * .01f));
         Time.timeScale = .5f;
         yield return new WaitForSecondsRealtime(.1f);
@@ -393,7 +401,7 @@ public class ActionSystem : MonoBehaviour
 
     IEnumerator Death(float _dmg, float _dStiffDur, float _aHitD, float _aHitH, float _hitH)
     {
-        death = true; pc.isCtrl = false; life--;
+        death = true; pc.isCtrl = false; opponent.pc.isCtrl = false; life--;
         CinemachineTargetGroup cineTarget = FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
         for (int i = 0; i < cineTarget.m_Targets.Length; i++)
             if (!cineTarget.m_Targets[i].target.GetComponent<ActionSystem>().death)
@@ -422,7 +430,7 @@ public class ActionSystem : MonoBehaviour
             death = false;
             NextStateSelf("WAKE");
             yield return new WaitForSecondsRealtime(.1f);
-            pc.isCtrl = true;
+            pc.isCtrl = true; opponent.pc.isCtrl = true;
         }
     }
 

@@ -24,7 +24,7 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-37155
+44919
 Successfully changed project path to: /media/centon/Centon/File/Project/Github/LethalTrigger
 /media/centon/Centon/File/Project/Github/LethalTrigger
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -56,11 +56,11 @@ Successfully changed project path to: /media/centon/Centon/File/Project/Github/L
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [140224578958208] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 185454905 [EditorId] 185454905 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [139854882886528] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 655721492 [EditorId] 655721492 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [140224578958208] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 185454905 [EditorId] 185454905 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [139854882886528] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 655721492 [EditorId] 655721492 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 161.58 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 143.70 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.2.8f1 (996aee41dc57)
 [Subsystems] Discovering subsystems at path /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/Resources/UnitySubsystems
@@ -180,9 +180,9 @@ Vulkan detection: 2
 [vulkan] Loaded instance function vkCmdEndDebugUtilsLabelEXT
 [vulkan] Loaded instance function vkCmdInsertDebugUtilsLabelEXT
 [Vulkan init] SelectPhysicalDevice requestedDeviceIndex=-1 xrDevice=(nil)
-[Vulkan init] Physical Device 0x5555ba11add0 [0]: "NVIDIA GeForce GTX 1050 Ti" deviceType=2 vendorID=10de deviceID=1c82
-[Vulkan init] Physical Device 0x5555ba1221f0 [1]: "llvmpipe (LLVM 15.0.7, 256 bits)" deviceType=4 vendorID=10005 deviceID=0
-[Vulkan init] Selected physical device 0x5555ba11add0
+[Vulkan init] Physical Device 0x55f14f992e70 [0]: "NVIDIA GeForce GTX 1050 Ti" deviceType=2 vendorID=10de deviceID=1c82
+[Vulkan init] Physical Device 0x55f14f992dc0 [1]: "llvmpipe (LLVM 15.0.7, 256 bits)" deviceType=4 vendorID=10005 deviceID=0
+[Vulkan init] Selected physical device 0x55f14f992e70
 [Vulkan init] Graphics queue count=1
 [Vulkan init] extensions: count=146
 [Vulkan init] extensions: name=VK_EXT_4444_formats [enabled=1, external=0]
@@ -485,48 +485,48 @@ Initialize mono
 Mono path[0] = '/home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/Managed'
 Mono path[1] = '/home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
 Mono config path = '/home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56261
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56776
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.024525 seconds.
-- Loaded All Assemblies, in  0.390 seconds
+Registered in 0.025476 seconds.
+- Loaded All Assemblies, in  0.401 seconds
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 322 ms
+Android Extension - Scanning For ADB Devices 356 ms
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.742 seconds
+- Finished resetting the current domain, in  0.817 seconds
 Domain Reload Profiling:
-	ReloadAssembly (224ms)
-		BeginReloadAssembly (65ms)
+	ReloadAssembly (228ms)
+		BeginReloadAssembly (71ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
 		LoadAllAssembliesAndSetupDomain (0ms)
-			LoadAssemblies (64ms)
+			LoadAssemblies (70ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (157ms)
-				TypeCache.Initialize (156ms)
-					TypeCache.ScanAssembly (155ms)
+			SetupTypeCache (163ms)
+				TypeCache.Initialize (163ms)
+					TypeCache.ScanAssembly (161ms)
 				ResolveRequiredComponents (0ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (669ms)
+			SetupLoadedEditorAssemblies (741ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (476ms)
-				SetLoadedEditorAssemblies (5ms)
+				InitializePlatformSupportModulesInManaged (555ms)
+				SetLoadedEditorAssemblies (6ms)
 				RefreshPlugins (0ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (120ms)
-				ProcessInitializeOnLoadMethodAttributes (66ms)
+				ProcessInitializeOnLoadAttributes (118ms)
+				ProcessInitializeOnLoadMethodAttributes (61ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -534,8 +534,8 @@ Domain Reload Profiling:
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.992 seconds
-Refreshing native plugins compatible for Editor in 95.44 ms, found 2 plugins.
+- Loaded All Assemblies, in  2.005 seconds
+Refreshing native plugins compatible for Editor in 90.75 ms, found 2 plugins.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
@@ -545,44 +545,44 @@ UpdateMenuTitleForLanguage: 10
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.887 seconds
+- Finished resetting the current domain, in  2.279 seconds
 Domain Reload Profiling:
-	ReloadAssembly (256ms)
-		BeginReloadAssembly (127ms)
+	ReloadAssembly (254ms)
+		BeginReloadAssembly (128ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (30ms)
-		LoadAllAssembliesAndSetupDomain (1655ms)
-			LoadAssemblies (773ms)
+		LoadAllAssembliesAndSetupDomain (1669ms)
+			LoadAssemblies (784ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (859ms)
-				TypeCache.Initialize (371ms)
-					TypeCache.ScanAssembly (366ms)
+			SetupTypeCache (858ms)
+				TypeCache.Initialize (360ms)
+					TypeCache.ScanAssembly (355ms)
 				ResolveRequiredComponents (13ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1619ms)
+			SetupLoadedEditorAssemblies (2017ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (65ms)
+				InitializePlatformSupportModulesInManaged (73ms)
 				SetLoadedEditorAssemblies (5ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (842ms)
-				ProcessInitializeOnLoadAttributes (507ms)
-				ProcessInitializeOnLoadMethodAttributes (191ms)
-				AfterProcessingInitializeOnLoad (9ms)
+				BeforeProcessingInitializeOnLoad (1217ms)
+				ProcessInitializeOnLoadAttributes (514ms)
+				ProcessInitializeOnLoadMethodAttributes (198ms)
+				AfterProcessingInitializeOnLoad (10ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Launched and connected shader compiler UnityShaderCompiler after 0.02 seconds
-Refreshing native plugins compatible for Editor in 98.45 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 76.46 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5999 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 91 unused Assets / (11.6 MB). Loaded Objects now: 6433.
+Unloading 5998 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 91 unused Assets / (11.7 MB). Loaded Objects now: 6433.
 Memory consumption went from 0.96 GB to 0.95 GB.
-Total: 17.144829 ms (FindLiveObjects: 0.675856 ms CreateObjectMapping: 0.898801 ms MarkObjects: 5.474727 ms  DeleteObjects: 10.093968 ms)
+Total: 16.709512 ms (FindLiveObjects: 0.579082 ms CreateObjectMapping: 0.952591 ms MarkObjects: 5.127798 ms  DeleteObjects: 10.048049 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -596,19 +596,143 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 20736.393068 seconds.
-  path: Assets/Prefabs/Buildings/Arena/Arena.prefab
-  artifactKey: Guid(70d21493affd7f4469e5c79e5c2c1c80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Buildings/Arena/Arena.prefab using Guid(70d21493affd7f4469e5c79e5c2c1c80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1010d285461d186709873ab33d6bc886') in 1.411261 seconds 
+  Time since last request: 23588.246123 seconds.
+  path: Assets/Scenes/PracticeMode.unity
+  artifactKey: Guid(46779bcc89c85cc45a0e799be3238b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/PracticeMode.unity using Guid(46779bcc89c85cc45a0e799be3238b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e67a733e3c7dcfb741c6e7984b0f565') in 0.005285 seconds 
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 119.647777 seconds.
+  path: Assets/Characters/Creno/Creno.prefab
+  artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e248c11383196387674f4804a1a1951') in 2.078291 seconds 
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 142
+Number of asset objects unloaded after import = 618
+========================================================================
+Received Import Request.
+  Time since last request: 29.841431 seconds.
+  path: Assets/Characters/Creno/Creno.prefab
+  artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ac1585ed350e7f759d684c4ab8f5a85') in 1.137841 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 618
+========================================================================
+Received Import Request.
+  Time since last request: 5.959486 seconds.
+  path: Assets/Characters/Natalia/Animations/WAKE.anim
+  artifactKey: Guid(cced0046960c3c71b8e1d5cb99aa191c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Natalia/Animations/WAKE.anim using Guid(cced0046960c3c71b8e1d5cb99aa191c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6969dd08563488016d1d1509c0e95ba8') in 0.024650 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 11.097322 seconds.
+  path: Assets/Characters/Sergio/Sergio.prefab
+  artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6852e8b45f22b5046424f5fc9d212f25') in 0.584617 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 433
+========================================================================
+Received Import Request.
+  Time since last request: 107.413624 seconds.
+  path: Assets/Characters/Natalia/Natalia.prefab
+  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef39c9ca1e3e5501976ac11f20751f73') in 1.494719 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 695
+========================================================================
+Received Import Request.
+  Time since last request: 8.349919 seconds.
+  path: Assets/Characters/Natalia/Animations/WAKE.anim
+  artifactKey: Guid(cced0046960c3c71b8e1d5cb99aa191c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Natalia/Animations/WAKE.anim using Guid(cced0046960c3c71b8e1d5cb99aa191c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e84ccc1f3f1a75263a2f8e1ed9f6c333') in 0.025759 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 11.559803 seconds.
+  path: Assets/Characters/Creno/Animations/WAKE.anim
+  artifactKey: Guid(d21c2ae9434ee1a448ab50ca05c0ee8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Animations/WAKE.anim using Guid(d21c2ae9434ee1a448ab50ca05c0ee8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd50afcc94ac4f8592ec200be1000448a') in 0.014651 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 1217.235309 seconds.
+  path: Assets/Characters/Sergio/Sergio.prefab
+  artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fbe63a6fa902292ce9b01debe804ae9') in 0.611197 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 433
+========================================================================
+Received Import Request.
+  Time since last request: 3.241831 seconds.
+  path: Assets/Characters/Sergio/Animations/S.anim
+  artifactKey: Guid(2fa021cf4b94b0383a2f8efe7cde6c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Animations/S.anim using Guid(2fa021cf4b94b0383a2f8efe7cde6c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ff6e78048f4a5ff8a468b2c24adebae') in 0.019551 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 4.841209 seconds.
+  path: Assets/Characters/Sergio/Animations/S 1.anim
+  artifactKey: Guid(bcdf56cb8520c79c9a15b7e078056ef6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Animations/S 1.anim using Guid(bcdf56cb8520c79c9a15b7e078056ef6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8352464e6be0acf89e0acc81540d0da') in 0.021465 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 6.048664 seconds.
+  path: Assets/Characters/Sergio/Animations/SNB.anim
+  artifactKey: Guid(bcdf56cb8520c79c9a15b7e078056ef6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Animations/SNB.anim using Guid(bcdf56cb8520c79c9a15b7e078056ef6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c20674f350969517c2fda2a529e0338') in 0.053513 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.513 seconds
-Refreshing native plugins compatible for Editor in 79.55 ms, found 2 plugins.
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 7)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 7)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 8)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 8)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 10)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 10)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 11)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 11)
+- Loaded All Assemblies, in  1.657 seconds
+Refreshing native plugins compatible for Editor in 80.55 ms, found 2 plugins.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
@@ -617,229 +741,43 @@ Native extension for WebGL target not found
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.488 seconds
+- Finished resetting the current domain, in 36.643 seconds
 Domain Reload Profiling:
-	ReloadAssembly (339ms)
-		BeginReloadAssembly (216ms)
+	ReloadAssembly (402ms)
+		BeginReloadAssembly (269ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (10ms)
+			DisableScriptedObjects (12ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (66ms)
-		LoadAllAssembliesAndSetupDomain (1114ms)
-			LoadAssemblies (719ms)
+			CreateAndSetChildDomain (84ms)
+		LoadAllAssembliesAndSetupDomain (1167ms)
+			LoadAssemblies (807ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (369ms)
-				TypeCache.Initialize (347ms)
-					TypeCache.ScanAssembly (340ms)
-				ResolveRequiredComponents (13ms)
+			SetupTypeCache (350ms)
+				TypeCache.Initialize (329ms)
+					TypeCache.ScanAssembly (323ms)
+				ResolveRequiredComponents (12ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (946ms)
+			SetupLoadedEditorAssemblies (1162ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (75ms)
+				InitializePlatformSupportModulesInManaged (69ms)
 				SetLoadedEditorAssemblies (6ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (323ms)
-				ProcessInitializeOnLoadAttributes (449ms)
-				ProcessInitializeOnLoadMethodAttributes (84ms)
+				BeforeProcessingInitializeOnLoad (519ms)
+				ProcessInitializeOnLoadAttributes (477ms)
+				ProcessInitializeOnLoadMethodAttributes (83ms)
 				AfterProcessingInitializeOnLoad (9ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (24ms)
-Refreshing native plugins compatible for Editor in 83.06 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 86.58 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5778 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6501.
+Unloading 70 unused Assets / (11.6 MB). Loaded Objects now: 6502.
 Memory consumption went from 0.92 GB to 0.91 GB.
-Total: 10.712286 ms (FindLiveObjects: 0.530521 ms CreateObjectMapping: 0.710911 ms MarkObjects: 4.448565 ms  DeleteObjects: 5.020701 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.607 seconds
-Refreshing native plugins compatible for Editor in 105.34 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.492 seconds
-Domain Reload Profiling:
-	ReloadAssembly (322ms)
-		BeginReloadAssembly (201ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (55ms)
-		LoadAllAssembliesAndSetupDomain (1220ms)
-			LoadAssemblies (815ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (374ms)
-				TypeCache.Initialize (352ms)
-					TypeCache.ScanAssembly (346ms)
-				ResolveRequiredComponents (13ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (996ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (77ms)
-				SetLoadedEditorAssemblies (8ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (350ms)
-				ProcessInitializeOnLoadAttributes (463ms)
-				ProcessInitializeOnLoadMethodAttributes (89ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (23ms)
-Refreshing native plugins compatible for Editor in 86.94 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6518.
-Memory consumption went from 0.92 GB to 0.91 GB.
-Total: 13.019969 ms (FindLiveObjects: 0.525408 ms CreateObjectMapping: 0.561434 ms MarkObjects: 5.550461 ms  DeleteObjects: 6.381362 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.640 seconds
-Refreshing native plugins compatible for Editor in 103.15 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.723 seconds
-Domain Reload Profiling:
-	ReloadAssembly (337ms)
-		BeginReloadAssembly (212ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (60ms)
-		LoadAllAssembliesAndSetupDomain (1234ms)
-			LoadAssemblies (816ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (386ms)
-				TypeCache.Initialize (364ms)
-					TypeCache.ScanAssembly (357ms)
-				ResolveRequiredComponents (13ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1009ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (101ms)
-				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (343ms)
-				ProcessInitializeOnLoadAttributes (464ms)
-				ProcessInitializeOnLoadMethodAttributes (85ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (27ms)
-Refreshing native plugins compatible for Editor in 89.66 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.6 MB). Loaded Objects now: 6535.
-Memory consumption went from 0.92 GB to 0.91 GB.
-Total: 12.061622 ms (FindLiveObjects: 0.488987 ms CreateObjectMapping: 0.588595 ms MarkObjects: 4.868459 ms  DeleteObjects: 6.114300 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.529 seconds
-Refreshing native plugins compatible for Editor in 79.65 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.624 seconds
-Domain Reload Profiling:
-	ReloadAssembly (346ms)
-		BeginReloadAssembly (215ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (58ms)
-		LoadAllAssembliesAndSetupDomain (1108ms)
-			LoadAssemblies (746ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (355ms)
-				TypeCache.Initialize (334ms)
-					TypeCache.ScanAssembly (327ms)
-				ResolveRequiredComponents (13ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1015ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (81ms)
-				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (341ms)
-				ProcessInitializeOnLoadAttributes (482ms)
-				ProcessInitializeOnLoadMethodAttributes (94ms)
-				AfterProcessingInitializeOnLoad (10ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (27ms)
-Refreshing native plugins compatible for Editor in 89.58 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6552.
-Memory consumption went from 0.93 GB to 0.92 GB.
-Total: 13.400406 ms (FindLiveObjects: 0.662927 ms CreateObjectMapping: 0.536657 ms MarkObjects: 5.125646 ms  DeleteObjects: 7.073990 ms)
+Total: 12.840033 ms (FindLiveObjects: 0.506680 ms CreateObjectMapping: 0.631166 ms MarkObjects: 6.124622 ms  DeleteObjects: 5.576012 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -854,914 +792,114 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1410.966007 seconds.
-  path: Assets/Scenes/Main.unity
-  artifactKey: Guid(dbab7834df68d3c4190e2d7b2de22263) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Main.unity using Guid(dbab7834df68d3c4190e2d7b2de22263) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e0562ee30a167a98a80a20896edae2c') in 0.002320 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.736 seconds
-Refreshing native plugins compatible for Editor in 93.95 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.682 seconds
-Domain Reload Profiling:
-	ReloadAssembly (368ms)
-		BeginReloadAssembly (237ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (66ms)
-		LoadAllAssembliesAndSetupDomain (1292ms)
-			LoadAssemblies (849ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (419ms)
-				TypeCache.Initialize (395ms)
-					TypeCache.ScanAssembly (388ms)
-				ResolveRequiredComponents (14ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1010ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (86ms)
-				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (349ms)
-				ProcessInitializeOnLoadAttributes (471ms)
-				ProcessInitializeOnLoadMethodAttributes (89ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (25ms)
-Refreshing native plugins compatible for Editor in 101.73 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6569.
-Memory consumption went from 0.93 GB to 0.92 GB.
-Total: 13.489533 ms (FindLiveObjects: 0.486647 ms CreateObjectMapping: 0.555367 ms MarkObjects: 5.589117 ms  DeleteObjects: 6.857147 ms)
+  Time since last request: 2247.769542 seconds.
+  path: Assets/Particles/CrenoLongShoot.vfx
+  artifactKey: Guid(20d42c934c2a8f81f9fe60bdbb7aa732) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Particles/CrenoLongShoot.vfx using Guid(20d42c934c2a8f81f9fe60bdbb7aa732) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Attempting to draw with missing bindings
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.Rendering.ScriptableRenderContext:Submit_Internal ()
+UnityEngine.Rendering.ScriptableRenderContext:Submit () (at /home/bokken/build/output/unity/unity/Runtime/Export/RenderPipeline/ScriptableRenderContext.cs:117)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCamera (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Rendering.Universal.CameraData&,bool) (at ./Library/PackageCache/com.unity.render-pipelines.universal@14.0.6/Runtime/UniversalRenderPipeline.cs:657)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:RenderSingleCameraInternal (UnityEngine.Rendering.ScriptableRenderContext,UnityEngine.Camera) (at ./Library/PackageCache/com.unity.render-pipelines.universal@14.0.6/Runtime/UniversalRenderPipeline.cs:527)
+UnityEngine.Rendering.Universal.UniversalRenderPipeline:Render (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at ./Library/PackageCache/com.unity.render-pipelines.universal@14.0.6/Runtime/UniversalRenderPipeline.cs:369)
+UnityEngine.Rendering.RenderPipeline:InternalRender (UnityEngine.Rendering.ScriptableRenderContext,System.Collections.Generic.List`1<UnityEngine.Camera>) (at /home/bokken/build/output/unity/unity/Runtime/Export/RenderPipeline/RenderPipeline.cs:52)
+UnityEngine.Rendering.RenderPipelineManager:DoRenderLoop_Internal (UnityEngine.Rendering.RenderPipelineAsset,intptr,UnityEngine.Object,Unity.Collections.LowLevel.Unsafe.AtomicSafetyHandle) (at /home/bokken/build/output/unity/unity/Runtime/Export/RenderPipeline/RenderPipelineManager.cs:126)
+UnityEditor.PreviewRenderUtility:Render (bool,bool) (at /home/bokken/build/output/unity/unity/Editor/Mono/Inspector/PreviewRenderUtility.cs:539)
+UnityEditor.MaterialEditor:DoRenderPreview (UnityEditor.PreviewRenderUtility,bool) (at /home/bokken/build/output/unity/unity/Editor/Mono/Inspector/MaterialEditor.cs:2729)
+UnityEditor.MaterialEditor:RenderStaticPreview (string,UnityEngine.Object[],int,int) (at /home/bokken/build/output/unity/unity/Editor/Mono/Inspector/MaterialEditor.cs:2591)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int) (at /home/bokken/build/output/unity/unity/Editor/Mono/AssetPreviewUpdater.cs:38)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string) (at /home/bokken/build/output/unity/unity/Editor/Mono/AssetPreviewUpdater.cs:9)
 
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 687.538381 seconds.
-  path: Assets/Scenes/PracticeMode.unity
-  artifactKey: Guid(46779bcc89c85cc45a0e799be3238b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/PracticeMode.unity using Guid(46779bcc89c85cc45a0e799be3238b66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3aaa014a79552877c2e564d68f36164') in 0.002623 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 146.990412 seconds.
-  path: Assets/Scenes/VersusMode.unity
-  artifactKey: Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/VersusMode.unity using Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c4502b7fe6b33a9c1fc98d19145cf6c') in 0.001083 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 67.477059 seconds.
-  path: Assets/Scenes/Main.unity
-  artifactKey: Guid(dbab7834df68d3c4190e2d7b2de22263) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Main.unity using Guid(dbab7834df68d3c4190e2d7b2de22263) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd373547cf156f6a9ebfb868914e15526') in 0.001050 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 354.366720 seconds.
-  path: Assets/Prefabs/MainVCam.prefab
-  artifactKey: Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/MainVCam.prefab using Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a689722b1699a9a0c07ea6f01c1488e2') in 0.041496 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 47.905818 seconds.
-  path: Assets/Prefabs/MainVCam.prefab
-  artifactKey: Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/MainVCam.prefab using Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a537bf2e4c93d93d545826cbf43f6f15') in 0.007357 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 6.769754 seconds.
-  path: Assets/Prefabs/MainVCam.prefab
-  artifactKey: Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/MainVCam.prefab using Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba317f55c1d75456cf29ee77e7b30d33') in 0.009749 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 26.716510 seconds.
-  path: Assets/Prefabs/MainVCam.prefab
-  artifactKey: Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/MainVCam.prefab using Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '881a4677f2ba803f11e4f2c8b6198b88') in 0.007564 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 7.572449 seconds.
-  path: Assets/Prefabs/MainVCam.prefab
-  artifactKey: Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/MainVCam.prefab using Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22cde004ac3ac72ba450d61fc6c91952') in 0.007562 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Import Request.
-  Time since last request: 109.554110 seconds.
-  path: Assets/Prefabs/MainVCam.prefab
-  artifactKey: Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/MainVCam.prefab using Guid(3fcf3bd366fe1ae448369400632e9fb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '308e781e9dce1a27efdd5086fae7115a') in 0.010793 seconds 
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 14
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.616 seconds
-Refreshing native plugins compatible for Editor in 113.01 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.466 seconds
-Domain Reload Profiling:
-	ReloadAssembly (429ms)
-		BeginReloadAssembly (303ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (39ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (69ms)
-		LoadAllAssembliesAndSetupDomain (1117ms)
-			LoadAssemblies (771ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (343ms)
-				TypeCache.Initialize (321ms)
-					TypeCache.ScanAssembly (315ms)
-				ResolveRequiredComponents (13ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (999ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (85ms)
-				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (337ms)
-				ProcessInitializeOnLoadAttributes (473ms)
-				ProcessInitializeOnLoadMethodAttributes (88ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (30ms)
-Refreshing native plugins compatible for Editor in 89.62 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6586.
-Memory consumption went from 0.93 GB to 0.92 GB.
-Total: 12.863929 ms (FindLiveObjects: 0.495276 ms CreateObjectMapping: 0.528835 ms MarkObjects: 5.075304 ms  DeleteObjects: 6.762710 ms)
+[/home/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs line 37]
 
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.568 seconds
-Refreshing native plugins compatible for Editor in 80.43 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.231 seconds
-Domain Reload Profiling:
-	ReloadAssembly (343ms)
-		BeginReloadAssembly (222ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (56ms)
-		LoadAllAssembliesAndSetupDomain (1157ms)
-			LoadAssemblies (793ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (347ms)
-				TypeCache.Initialize (326ms)
-					TypeCache.ScanAssembly (320ms)
-				ResolveRequiredComponents (12ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1027ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (87ms)
-				SetLoadedEditorAssemblies (8ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (344ms)
-				ProcessInitializeOnLoadAttributes (489ms)
-				ProcessInitializeOnLoadMethodAttributes (90ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (32ms)
-Refreshing native plugins compatible for Editor in 90.73 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6603.
-Memory consumption went from 0.93 GB to 0.92 GB.
-Total: 13.269738 ms (FindLiveObjects: 0.481277 ms CreateObjectMapping: 0.554857 ms MarkObjects: 4.598342 ms  DeleteObjects: 7.633432 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.458 seconds
-Refreshing native plugins compatible for Editor in 76.76 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.094 seconds
-Domain Reload Profiling:
-	ReloadAssembly (344ms)
-		BeginReloadAssembly (220ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (59ms)
-		LoadAllAssembliesAndSetupDomain (1046ms)
-			LoadAssemblies (677ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (357ms)
-				TypeCache.Initialize (334ms)
-					TypeCache.ScanAssembly (328ms)
-				ResolveRequiredComponents (13ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (920ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (85ms)
-				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (301ms)
-				ProcessInitializeOnLoadAttributes (437ms)
-				ProcessInitializeOnLoadMethodAttributes (82ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (29ms)
-Refreshing native plugins compatible for Editor in 76.62 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6620.
-Memory consumption went from 0.94 GB to 0.92 GB.
-Total: 12.150210 ms (FindLiveObjects: 0.473082 ms CreateObjectMapping: 0.525100 ms MarkObjects: 4.586591 ms  DeleteObjects: 6.563887 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.463 seconds
-Refreshing native plugins compatible for Editor in 83.53 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.016 seconds
-Domain Reload Profiling:
-	ReloadAssembly (332ms)
-		BeginReloadAssembly (211ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (58ms)
-		LoadAllAssembliesAndSetupDomain (1064ms)
-			LoadAssemblies (704ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (341ms)
-				TypeCache.Initialize (320ms)
-					TypeCache.ScanAssembly (314ms)
-				ResolveRequiredComponents (12ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (994ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (90ms)
-				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (321ms)
-				ProcessInitializeOnLoadAttributes (477ms)
-				ProcessInitializeOnLoadMethodAttributes (89ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (34ms)
-Refreshing native plugins compatible for Editor in 93.40 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6637.
-Memory consumption went from 0.94 GB to 0.93 GB.
-Total: 15.583979 ms (FindLiveObjects: 0.488807 ms CreateObjectMapping: 0.630667 ms MarkObjects: 6.352122 ms  DeleteObjects: 8.110713 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.623 seconds
-Refreshing native plugins compatible for Editor in 90.10 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  5.296 seconds
-Domain Reload Profiling:
-	ReloadAssembly (330ms)
-		BeginReloadAssembly (210ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (61ms)
-		LoadAllAssembliesAndSetupDomain (1231ms)
-			LoadAssemblies (798ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (404ms)
-				TypeCache.Initialize (381ms)
-					TypeCache.ScanAssembly (373ms)
-				ResolveRequiredComponents (14ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1028ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (89ms)
-				SetLoadedEditorAssemblies (8ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (344ms)
-				ProcessInitializeOnLoadAttributes (476ms)
-				ProcessInitializeOnLoadMethodAttributes (100ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (34ms)
-Refreshing native plugins compatible for Editor in 99.61 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6654.
-Memory consumption went from 0.94 GB to 0.93 GB.
-Total: 13.102574 ms (FindLiveObjects: 0.492934 ms CreateObjectMapping: 0.524130 ms MarkObjects: 4.932794 ms  DeleteObjects: 7.150871 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+ -> (artifact id: '7351a022d01af5ecbfe31cdfd8945b87') in 0.794576 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 26
 ========================================================================
 Received Import Request.
-  Time since last request: 2716.969076 seconds.
+  Time since last request: 360.467094 seconds.
   path: Assets/Characters/Sergio/Sergio.prefab
   artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c62d5e28350af8757a5067416cbbb31') in 1.067637 seconds 
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd67e35cf86fbd248100261db76eb9e20') in 1.941968 seconds 
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 437
+Number of asset objects unloaded after import = 435
 ========================================================================
 Received Import Request.
-  Time since last request: 4.526054 seconds.
-  path: Assets/Scripts/ActionSystem.cs
-  artifactKey: Guid(333e958690e586e449c3876becea5b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/ActionSystem.cs using Guid(333e958690e586e449c3876becea5b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b921ec4bf0d9cbd0e243331382d98893') in 0.000972 seconds 
-Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.534 seconds
-Refreshing native plugins compatible for Editor in 94.85 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.562 seconds
-Domain Reload Profiling:
-	ReloadAssembly (338ms)
-		BeginReloadAssembly (219ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (11ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (66ms)
-		LoadAllAssembliesAndSetupDomain (1136ms)
-			LoadAssemblies (730ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (379ms)
-				TypeCache.Initialize (357ms)
-					TypeCache.ScanAssembly (350ms)
-				ResolveRequiredComponents (13ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1030ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (87ms)
-				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (360ms)
-				ProcessInitializeOnLoadAttributes (474ms)
-				ProcessInitializeOnLoadMethodAttributes (92ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (37ms)
-Refreshing native plugins compatible for Editor in 86.15 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6712.
-Memory consumption went from 0.92 GB to 0.91 GB.
-Total: 14.778975 ms (FindLiveObjects: 0.491588 ms CreateObjectMapping: 0.558389 ms MarkObjects: 5.639108 ms  DeleteObjects: 8.087946 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 310.904964 seconds.
-  path: Assets/Scripts/ActionSystem.cs
-  artifactKey: Guid(333e958690e586e449c3876becea5b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/ActionSystem.cs using Guid(333e958690e586e449c3876becea5b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7eb3bf9f616f1238b2483191195a1f9') in 0.002087 seconds 
-Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.634 seconds
-Refreshing native plugins compatible for Editor in 101.30 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  5.178 seconds
-Domain Reload Profiling:
-	ReloadAssembly (326ms)
-		BeginReloadAssembly (209ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (60ms)
-		LoadAllAssembliesAndSetupDomain (1246ms)
-			LoadAssemblies (816ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (394ms)
-				TypeCache.Initialize (370ms)
-					TypeCache.ScanAssembly (364ms)
-				ResolveRequiredComponents (14ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1055ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (107ms)
-				SetLoadedEditorAssemblies (6ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (374ms)
-				ProcessInitializeOnLoadAttributes (468ms)
-				ProcessInitializeOnLoadMethodAttributes (91ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (37ms)
-Refreshing native plugins compatible for Editor in 120.78 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6729.
-Memory consumption went from 0.92 GB to 0.91 GB.
-Total: 27.195681 ms (FindLiveObjects: 0.477623 ms CreateObjectMapping: 0.512079 ms MarkObjects: 11.989710 ms  DeleteObjects: 14.214443 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 100.248118 seconds.
-  path: Assets/Scripts/ActionSystem.cs
-  artifactKey: Guid(333e958690e586e449c3876becea5b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/ActionSystem.cs using Guid(333e958690e586e449c3876becea5b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.021247 seconds  code(4) message(Build asset version error: assets/scripts/actionsystem.cs in SourceAssetDB has modification time of '2023-04-29T22:15:31Z' while content on disk has modification time of '2023-04-29T22:15:56Z')
-  ERROR: Build asset version error: assets/scripts/actionsystem.cs in SourceAssetDB has modification time of '2023-04-29T22:15:31Z' while content on disk has modification time of '2023-04-29T22:15:56Z'
-Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.560 seconds
-Refreshing native plugins compatible for Editor in 70.47 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.442 seconds
-Domain Reload Profiling:
-	ReloadAssembly (325ms)
-		BeginReloadAssembly (208ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (60ms)
-		LoadAllAssembliesAndSetupDomain (1172ms)
-			LoadAssemblies (768ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (370ms)
-				TypeCache.Initialize (349ms)
-					TypeCache.ScanAssembly (342ms)
-				ResolveRequiredComponents (13ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (992ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (91ms)
-				SetLoadedEditorAssemblies (7ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (324ms)
-				ProcessInitializeOnLoadAttributes (472ms)
-				ProcessInitializeOnLoadMethodAttributes (90ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (34ms)
-Refreshing native plugins compatible for Editor in 71.17 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6746.
-Memory consumption went from 0.93 GB to 0.92 GB.
-Total: 12.400436 ms (FindLiveObjects: 0.522171 ms CreateObjectMapping: 0.498551 ms MarkObjects: 4.803123 ms  DeleteObjects: 6.574698 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 22.094885 seconds.
-  path: Assets/Scripts/ActionSystem.cs
-  artifactKey: Guid(333e958690e586e449c3876becea5b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/ActionSystem.cs using Guid(333e958690e586e449c3876becea5b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f3d0ce41d99c4ae1f4c93352017474c') in 0.001854 seconds 
-Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.508 seconds
-Refreshing native plugins compatible for Editor in 88.85 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.337 seconds
-Domain Reload Profiling:
-	ReloadAssembly (330ms)
-		BeginReloadAssembly (211ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (61ms)
-		LoadAllAssembliesAndSetupDomain (1119ms)
-			LoadAssemblies (722ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (372ms)
-				TypeCache.Initialize (350ms)
-					TypeCache.ScanAssembly (343ms)
-				ResolveRequiredComponents (13ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (924ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (93ms)
-				SetLoadedEditorAssemblies (6ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (273ms)
-				ProcessInitializeOnLoadAttributes (452ms)
-				ProcessInitializeOnLoadMethodAttributes (90ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (39ms)
-Refreshing native plugins compatible for Editor in 72.07 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.6 MB). Loaded Objects now: 6763.
-Memory consumption went from 0.93 GB to 0.92 GB.
-Total: 11.771595 ms (FindLiveObjects: 0.514073 ms CreateObjectMapping: 0.602974 ms MarkObjects: 4.453247 ms  DeleteObjects: 6.200095 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.485 seconds
-Refreshing native plugins compatible for Editor in 74.34 ms, found 2 plugins.
-Native extension for LinuxStandalone target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[MODES] ModeService[none].Initialize
-[MODES] ModeService[none].LoadModes
-[MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  4.605 seconds
-Domain Reload Profiling:
-	ReloadAssembly (329ms)
-		BeginReloadAssembly (210ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (61ms)
-		LoadAllAssembliesAndSetupDomain (1095ms)
-			LoadAssemblies (715ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (368ms)
-				TypeCache.Initialize (346ms)
-					TypeCache.ScanAssembly (340ms)
-				ResolveRequiredComponents (13ms)
-		FinalizeReload (0ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (1090ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (102ms)
-				SetLoadedEditorAssemblies (12ms)
-				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (385ms)
-				ProcessInitializeOnLoadAttributes (488ms)
-				ProcessInitializeOnLoadMethodAttributes (93ms)
-				AfterProcessingInitializeOnLoad (9ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (38ms)
-Refreshing native plugins compatible for Editor in 83.20 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5777 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 70 unused Assets / (11.7 MB). Loaded Objects now: 6780.
-Memory consumption went from 0.93 GB to 0.92 GB.
-Total: 11.832283 ms (FindLiveObjects: 0.478525 ms CreateObjectMapping: 0.452695 ms MarkObjects: 4.282394 ms  DeleteObjects: 6.617160 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 1290.975883 seconds.
-  path: Assets/Characters/Natalia/Natalia.prefab
-  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbf68c724100d43cfd99651657147b3d') in 2.230570 seconds 
-Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 713
-========================================================================
-Received Import Request.
-  Time since last request: 297.307903 seconds.
-  path: Assets/Characters/Natalia/Natalia.prefab
-  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0631313245d9550ce9c7f527ea3ca28') in 1.201228 seconds 
-Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 695
-========================================================================
-Received Import Request.
-  Time since last request: 54.858589 seconds.
-  path: Assets/Characters/Natalia/Natalia.prefab
-  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b3d5341bafc7afea59d0012629d949f') in 1.344892 seconds 
-Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 695
-========================================================================
-Received Import Request.
-  Time since last request: 2.826839 seconds.
+  Time since last request: 380.639819 seconds.
   path: Assets/Characters/Sergio/Sergio.prefab
   artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e50a4c69972cee518695f7d465a8084') in 0.467847 seconds 
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec98103a70182b4aed90b043b8144562') in 0.587228 seconds 
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 419
+Number of asset objects unloaded after import = 435
 ========================================================================
 Received Import Request.
-  Time since last request: 5.633930 seconds.
-  path: Assets/Characters/Sergio/Sergio.prefab
-  artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7ec7e0f89161b651f795fcf6e35ea27') in 0.587107 seconds 
-Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 419
-========================================================================
-Received Import Request.
-  Time since last request: 5.685507 seconds.
+  Time since last request: 503.112895 seconds.
   path: Assets/Characters/Creno/Creno.prefab
   artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66eab178882de3906c0e77b9c36abaa4') in 2.070509 seconds 
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55e1f1eb1e9d7fe1de4affc967eaa2d0') in 4.753279 seconds 
 Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 618
+Number of asset objects unloaded after import = 624
 ========================================================================
 Received Import Request.
-  Time since last request: 4.303706 seconds.
+  Time since last request: 1114.723814 seconds.
   path: Assets/Characters/Creno/Creno.prefab
   artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13fab4f87a5e317ebdacf80019135039') in 1.279548 seconds 
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e20b70a2bcc0d963e63a175861124c2') in 1.166369 seconds 
 Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 618
+Number of asset objects unloaded after import = 624
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 89.95 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 46 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 46 unused Assets / (11.6 MB). Loaded Objects now: 6617.
+Memory consumption went from 164.2 MB to 152.6 MB.
+Total: 11.951236 ms (FindLiveObjects: 0.463795 ms CreateObjectMapping: 0.495721 ms MarkObjects: 5.244715 ms  DeleteObjects: 5.746108 ms)
+
+Prepare: number of updated asset objects reloaded= 2
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: 2f0ff77a95e0ac474e3e8eeba4e2f7cb -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 58.219447 seconds.
-  path: Assets/Characters/Natalia/Natalia.prefab
-  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fa452bffed125313d4304057bb257a3') in 1.192362 seconds 
-Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
-To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 695
-========================================================================
-Received Import Request.
-  Time since last request: 455.615291 seconds.
-  path: Assets/Scenes/VersusMode.unity
-  artifactKey: Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/VersusMode.unity using Guid(07713b564f0cf21b5a5b3ae28760903f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c42758a76d053f6d47f41ca8efc5b3f') in 0.017573 seconds 
+  Time since last request: 127.413312 seconds.
+  path: Assets/Characters/Creno/Creno.prefab
+  artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b1fc63e176efe79081e505fab88abb9') in 8.310553 seconds 
 Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 623
+========================================================================
+Received Import Request.
+  Time since last request: 0.000114 seconds.
+  path: Assets/Characters/Creno/Weapon_N.fbx
+  artifactKey: Guid(3e4510f8d5a1cc04d8a025957a8c7dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Weapon_N.fbx using Guid(3e4510f8d5a1cc04d8a025957a8c7dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddfc7648454be23d31187f11ea90cb70') in 0.168303 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10

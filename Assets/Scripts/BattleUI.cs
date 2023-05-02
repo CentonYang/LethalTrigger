@@ -122,7 +122,7 @@ public class BattleUI : MonoBehaviour
         goodGame.gameObject.SetActive(false);
         resultPanel.result.gameObject.SetActive(true);
         foreach (AudioVolume item in FindObjectsOfType<AudioVolume>())
-            if (item.audioType == AudioVolume.AudioType.bgm) item.GetComponent<AudioSource>().volume = (float)GameSystem.playerData.bgmVol * .25f;
+            if (item.audioType == AudioVolume.AudioType.bgm) item.GetComponent<AudioSource>().volume = (float)GameSystem.playerData.bgmVol * item.scale * .5f;
         Cinemachine.CinemachineTargetGroup cineTarget = FindObjectOfType<Cinemachine.CinemachineTargetGroup>();
         Cinemachine.CinemachineFramingTransposer cineTrans = resultPanel.result.GetComponentInChildren<Cinemachine.CinemachineVirtualCamera>().GetCinemachineComponent<Cinemachine.CinemachineFramingTransposer>();
         for (int i = 0; i < cineTarget.m_Targets.Length; i++)
