@@ -2090,6 +2090,7 @@ GameObject:
   - component: {fileID: 3272423103841974015}
   - component: {fileID: 7668412738553474009}
   - component: {fileID: 8101853195683472882}
+  - component: {fileID: 1209951025407716019}
   m_Layer: 0
   m_Name: Arena
   m_TagString: Untagged
@@ -2236,6 +2237,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioType: 0
   scale: 0.5
+--- !u!114 &1209951025407716019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8545333259809901377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa44270a39cdc17bdbd50f0dd2fb7071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 7
 --- !u!1 &8742739026729063648
 GameObject:
   m_ObjectHideFlags: 0

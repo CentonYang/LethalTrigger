@@ -1297,7 +1297,7 @@ MonoBehaviour:
   m_Lens:
     FieldOfView: 30
     OrthographicSize: 1.5
-    NearClipPlane: 0.01
+    NearClipPlane: 1
     FarClipPlane: 1000
     Dutch: 0
     ModeOverride: 0
@@ -1763,9 +1763,12 @@ MonoBehaviour:
   sounder: {fileID: 1682156345015583130, guid: 3d3474b250a7e64f887cd2e371d5d958, type: 3}
   actionMsg: 
   acceptMsg: 
+  catchName: 
+  followName: 
   direction: 0
   hitType: 0
   life: 0
+  ctrlDir: 0
   hited: 0
   hurted: 0
   hurtCheck: 0
@@ -1780,13 +1783,14 @@ MonoBehaviour:
   combo: 0
   downed: 0
   rootScale: 0
+  mapRange: 0
   velocity: {x: 0, y: 0}
   hurtVel: {x: 0, y: 0}
   hp: {x: 200, y: 200}
   sta: {x: 100, y: 100}
   btr: {x: 0, y: 100}
   skill: {x: 0, y: 100}
-  fix: {x: 0, y: 0.9}
+  fix: {x: 0, y: 0.92}
   hitboxes: {fileID: 1773849848365235502}
   hitTrans: {fileID: 7309310878727414233}
   root: {fileID: 949104778191347621}

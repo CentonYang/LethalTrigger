@@ -28,7 +28,7 @@ public class BattleUI : MonoBehaviour
         public List<RectTransform> useChar;
     }
     public ResultPanel resultPanel;
-    public UnityEvent resultEvnet;
+    public UnityEvent restartEvent, backEvent;
     public Image goodGame, extraTime;
     float timer;
     bool result = false, exit = false;
@@ -139,7 +139,9 @@ public class BattleUI : MonoBehaviour
     public void InputAction(InputAction.CallbackContext ctx)
     {
         if (ctx.phase != InputActionPhase.Performed && ctx.action.name + ctx.ReadValue<float>() == "W_cls1" && exit)
-            resultEvnet.Invoke();
+            restartEvent.Invoke();
+        if (ctx.phase != InputActionPhase.Performed && ctx.action.name + ctx.ReadValue<float>() == "R_cls1" && exit)
+            backEvent.Invoke();
     }
 
     public void ChangeScene(string sceneID)

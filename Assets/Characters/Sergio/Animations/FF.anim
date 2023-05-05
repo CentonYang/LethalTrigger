@@ -39621,7 +39621,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: Canceler
-    data: FS,DS,DW,W,DM,M
+    data: FDFW,FDFM,FS,DS,DW,W,DM,M
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -39657,6 +39657,13 @@ AnimationClip:
   - time: 0.5
     functionName: CameraShake
     data: 10,0.15
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.65
+    functionName: ClearStiff
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

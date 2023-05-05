@@ -43,8 +43,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         GameMode();
-        if (!isCtrl)
-        { movesNum = 5; moveString = "5"; comString = "N"; }
     }
 
     public void GameMode()
@@ -61,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
     public void InputMove(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase == InputActionPhase.Performed && !menu.gameObject.activeSelf && isCtrl)
+        if (ctx.phase == InputActionPhase.Performed && !menu.gameObject.activeSelf)
         {
             moveTimer[0] = 0;
             float angle = Mathf.Atan2(ctx.ReadValue<Vector2>().y, ctx.ReadValue<Vector2>().x) * Mathf.Rad2Deg;
@@ -95,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
     public void InputAction(InputAction.CallbackContext ctx)
     {
-        if (ctx.phase != InputActionPhase.Performed && !menu.gameObject.activeSelf && isCtrl)
+        if (ctx.phase != InputActionPhase.Performed && !menu.gameObject.activeSelf)
         {
             actionKey =
                 ctx.action.name + ctx.ReadValue<float>() == "M_cls1" ? 'M' :
@@ -107,7 +105,7 @@ public class PlayerController : MonoBehaviour
                 ctx.action.name + ctx.ReadValue<float>() == "R_cls1" ? 'R' : 'r';
             //moveString = movesNum.ToString();
             id.GetInput(actionKey);
-            if (ctx.action.name == "Start")
+            if (ctx.action.name == "Start" && isCtrl)
             {
                 menu.pc = pc;
                 menu.gameObject.SetActive(true);
@@ -154,6 +152,7 @@ public class PlayerController : MonoBehaviour
 
     public void IsControl(bool _isCtrl)
     {
+        movesNum = 5; moveString = "5"; comString = "N";
         isCtrl = _isCtrl;
     }
 }

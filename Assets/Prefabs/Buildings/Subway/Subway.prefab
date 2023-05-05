@@ -1413,6 +1413,7 @@ GameObject:
   - component: {fileID: 4832305641698456760}
   - component: {fileID: 4867914234077845894}
   - component: {fileID: 7787055446354201206}
+  - component: {fileID: 5486404825774076515}
   m_Layer: 0
   m_Name: Subway
   m_TagString: Untagged
@@ -1585,6 +1586,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &5486404825774076515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115183185891481954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa44270a39cdc17bdbd50f0dd2fb7071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10.5
 --- !u!1 &7834248352470773871
 GameObject:
   m_ObjectHideFlags: 0
