@@ -52,6 +52,11 @@ public class Selecter : MonoBehaviour
                     case 1: characterSelect.layer[pc] = 0; break;
                 }
             }
+            if (ctx.action.name == "Start")
+            {
+                switch (characterSelect.layer[pc])
+                { case 0: characterSelect.layer[pc] = 4; break; }
+            }
         }
     }
 }

@@ -78,6 +78,17 @@ public class CharacterSelect : MonoBehaviour
                 if (GameSystem.gamemode == 1)
                     StartCoroutine(Menu.PreloadScene("PracticeMode"));
             }
+            if (layer[i] == 4)
+            {
+                layer[0] = 5; layer[1] = 5;
+                GameSystem.p1Char = ConfirmCharacter(checkID[0]); GameSystem.p1Comp = false;
+                GameSystem.p2Char = ConfirmCharacter(checkID[1]); GameSystem.p2Comp = false;
+                GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
+                if (GameSystem.gamemode == 0)
+                    StartCoroutine(Menu.PreloadScene("VersusMode"));
+                if (GameSystem.gamemode == 1)
+                    StartCoroutine(Menu.PreloadScene("PracticeMode"));
+            }
             if (pc[i] > selectRange.y) pc[i] = (int)selectRange.x; if (pc[i] < selectRange.x) pc[i] = (int)selectRange.y;
             selectTrans[i].position = Vector2.Lerp(selectTrans[i].position, selectContent[pc[i]].selectTrans.position, .2f);
             nameObj[i].text = selectContent[pc[i]].selectName.text; signObj[i].text = selectContent[pc[i]].selectSign.text;
