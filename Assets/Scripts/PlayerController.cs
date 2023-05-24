@@ -128,11 +128,11 @@ public class PlayerController : MonoBehaviour
                 for (int j = 1; j < movesName[i].Split(spliter).Length; j++)
                     if (mst.Contains(movesName[i].Split(spliter)[j]))
                     {
-                        if (mst.Length > 1 && cst.Length > movesName[i].Split(spliter)[0].Length && cst.Contains(movesName[i].Split(spliter)[0]) && mst.Contains(movesName[movesName.Count - 1].Split(spliter)[j]))
-                            return cst;
-                        movesName.Add(movesName[i]);
-                        movesName.RemoveAt(i);
-                        return movesName[movesName.Count - 1].Split(spliter)[0];
+                        //if (mst.Length > 1 && cst.Length > movesName[i].Split(spliter)[0].Length && cst.Contains(movesName[i].Split(spliter)[0]) && mst.Contains(movesName[movesName.Count - 1].Split(spliter)[j]))
+                        //    return cst;
+                        //movesName.Add(movesName[i]);
+                        //movesName.RemoveAt(i);
+                        return movesName[i].Split(spliter)[0];
                     }
         return cst;
     }
@@ -152,7 +152,6 @@ public class PlayerController : MonoBehaviour
 
     public void IsControl(bool _isCtrl)
     {
-        movesNum = 5; moveString = "5"; comString = "N";
         isCtrl = _isCtrl;
     }
 }

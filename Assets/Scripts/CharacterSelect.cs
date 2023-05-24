@@ -31,6 +31,7 @@ public class CharacterSelect : MonoBehaviour
             if (selectContent[i].selectID == GameSystem.p2Char) pc[1] = i;
         }
         color[0] = GameSystem.p1Color; color[1] = GameSystem.p2Color;
+        colorNum[0].text = (color[0] + 1).ToString("00"); colorNum[1].text = (color[1] + 1).ToString("00");
     }
 
     void FixedUpdate()

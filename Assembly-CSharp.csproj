@@ -111,7 +111,6 @@
      <None Include="Assets/lilToon/Shader/Includes/lil_pass_shadowcaster.hlsl" />
      <None Include="Assets/lilToon/Shader/Includes/lil_vert_audiolink.hlsl" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
-     <None Include="Assets/UnityChanSSU_URP-release-1.0.2/Packages/UnityChanToonShaderVer2_Project-urp-2.5.0/Runtime/Shaders/UniversalToonBodyDoubleShadeWithFeather.hlsl" />
      <None Include="Assets/lilToon/Shader/Includes/lil_common_vert_fur_thirdparty.hlsl" />
      <None Include="Assets/lilToon/Shader/Includes/lil_replace_keywords.hlsl" />
      <None Include="Assets/lilToon/Shader/ltspass_tess_cutout.shader" />
@@ -121,7 +120,6 @@
      <None Include="Assets/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_lighting_mtoon.hlsl" />
      <None Include="Assets/lilToon/Shader/lts_fur_cutout.shader" />
      <None Include="Assets/lilToon/Shader/lts_fur_two.shader" />
-     <None Include="Assets/UnityChanSSU_URP-release-1.0.2/ProjectSettings/ProjectVersion.txt" />
      <None Include="Assets/lilToon/Shader/lts_overlay.shader" />
      <None Include="Assets/Shaders/NiloZOffset.hlsl" />
      <None Include="Assets/lilToon/Shader/Includes/lil_common.hlsl" />
@@ -133,11 +131,9 @@
      <None Include="Assets/Shaders/Outline.hlsl" />
      <None Include="Assets/Assets MOOD WARE/_MW Skybox/Documentation/Documentation City Street Skyboxes Vol. 1.txt" />
      <None Include="Assets/lilToon/Shader/lts_trans.shader" />
-     <None Include="Assets/UnityChanSSU_URP-release-1.0.2/Packages/UnityChanToonShaderVer2_Project-urp-2.5.0/Runtime/Shaders/UniversalToonBody.hlsl" />
      <None Include="Assets/lilToon/Shader/ltspass_transparent.shader" />
      <None Include="Assets/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_forward_vertex.hlsl" />
      <None Include="Assets/lilToon/Shader/Includes/lil_common_macro.hlsl" />
-     <None Include="Assets/UnityChanSSU_URP-release-1.0.2/Packages/UnityChanToonShaderVer2_Project-urp-2.5.0/Runtime/Shaders/UniversalToon.shader" />
      <None Include="Assets/VRMShaders/GLTF/IO/Resources/UniGLTF/StandardMapExporter.shader" />
      <None Include="Assets/Shaders/SimpleURPToonLitOutlineExample_LightingEquation.hlsl" />
      <None Include="Assets/lilToon/Shader/lts_tess_o.shader" />
@@ -160,7 +156,6 @@
      <None Include="Assets/lilToon/Shader/ltsl.shader" />
      <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets/UnityChanSSU_URP-release-1.0.2/Packages/UnityChanToonShaderVer2_Project-urp-2.5.0/Runtime/Shaders/UniversalToonHead.hlsl" />
      <None Include="Assets/lilToon/Shader/ltsl_o.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" />
      <None Include="Assets/lilToon/Shader/Includes/lil_vert_outline.hlsl" />
@@ -174,7 +169,6 @@
      <None Include="Assets/Outline/Readme.txt" />
      <None Include="Assets/lilToon/Shader/ltspass_lite_opaque.shader" />
      <None Include="Assets/lilToon/Shader/ltsmulti_gem.shader" />
-     <None Include="Assets/UnityChanSSU_URP-release-1.0.2/Packages/UnityChanToonShaderVer2_Project-urp-2.5.0/Runtime/Shaders/UniversalToonOutline.hlsl" />
      <None Include="Assets/VRMShaders/VRM10/MToon10/Resources/VRM10/vrmc_materials_mtoon_utility.hlsl" />
      <None Include="Assets/Shaders/CustomLighting.hlsl" />
      <None Include="Assets/lilToon/Shader/ltsl_cutout.shader" />
@@ -183,10 +177,8 @@
      <None Include="Assets/lilToon/Shader/Includes/lil_pipeline_brp.hlsl" />
      <None Include="Assets/lilToon/Shader/Includes/lil_pass_forward_gem.hlsl" />
      <None Include="Assets/lilToon/Shader/ltspass_baker.shader" />
-     <None Include="Assets/UnityChanSSU_URP-release-1.0.2/Packages/UnityChanToonShaderVer2_Project-urp-2.5.0/Runtime/Shaders/UniversalToonInput.hlsl" />
      <None Include="Assets/Shaders/ToonShader.shader" />
      <None Include="Assets/lilToon/Shader/lts_twotrans.shader" />
-     <None Include="Assets/UnityChanSSU_URP-release-1.0.2/Packages/UnityChanToonShaderVer2_Project-urp-2.5.0/Runtime/Shaders/UniversalToonBodyShadingGradeMap.hlsl" />
      <None Include="Assets/lilToon/Shader/Includes/lil_pass_meta.hlsl" />
      <None Include="Assets/lilToon/Shader/ltspass_tess_opaque.shader" />
      <None Include="Assets/lilToon/Shader/ltspass_lite_cutout.shader" />
@@ -1032,10 +1024,6 @@
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
       <Project>{91bec1fc-37a5-b505-8d99-e30ffce079bc}</Project>
       <Name>Unity.RenderPipelines.Core.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.UniversalToonShader.Urp.Editor.csproj">
-      <Project>{ec0581f2-9deb-13b4-5ece-ad95a5e2bde1}</Project>
-      <Name>Unity.UniversalToonShader.Urp.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UniGLTF.csproj">
       <Project>{ad967c15-795f-0aaa-1274-773ae965c1e9}</Project>

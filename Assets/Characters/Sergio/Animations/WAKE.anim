@@ -25496,7 +25496,14 @@ AnimationClip:
   m_Events:
   - time: 0.46666667
     functionName: Canceler
-    data: FDFW,FF,FR,D,8,U
+    data: FDFW,FR,D,8,U
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.46666667
+    functionName: CancelOther
+    data: FF_,FF
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

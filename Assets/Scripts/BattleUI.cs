@@ -10,6 +10,7 @@ public class BattleUI : MonoBehaviour
     public bool practiceMode;
     public Menu battleMenu;
     public Text timerTxt;
+    public AnimationCurve hpCurve;
     public ActionSystem pc1, pc2;
     public PlayerUI p1, p2;
     public Sprite[] stab1, stab2;
@@ -44,14 +45,14 @@ public class BattleUI : MonoBehaviour
     {
         if (pc1 != null && pc2 != null)
         {
-            p1.hp.anchoredPosition = new Vector2(Mathf.Lerp(p1.hpV.x, p1.hpV.y, pc1.hp.x / pc1.hp.y), p1.hp.anchoredPosition.y);
+            p1.hp.anchoredPosition = new Vector2(Mathf.Lerp(p1.hpV.x, p1.hpV.y, pc1.hp.x / pc1.hp.y * hpCurve.Evaluate(pc1.hp.x / pc1.hp.y)), p1.hp.anchoredPosition.y);
             if (pc2.combo == 0)
                 p1.hpLose.anchoredPosition = new Vector2(Mathf.Lerp(p1.hpLose.anchoredPosition.x, p1.hp.anchoredPosition.x, .05f), p1.hpLose.anchoredPosition.y);
-            p2.hp.anchoredPosition = new Vector2(Mathf.Lerp(p2.hpV.x, p2.hpV.y, pc2.hp.x / pc2.hp.y), p2.hp.anchoredPosition.y);
+            p2.hp.anchoredPosition = new Vector2(Mathf.Lerp(p2.hpV.x, p2.hpV.y, pc2.hp.x / pc2.hp.y * hpCurve.Evaluate(pc2.hp.x / pc2.hp.y)), p2.hp.anchoredPosition.y);
             if (pc1.combo == 0)
                 p2.hpLose.anchoredPosition = new Vector2(Mathf.Lerp(p2.hpLose.anchoredPosition.x, p2.hp.anchoredPosition.x, .05f), p2.hpLose.anchoredPosition.y);
-            p1.sta.anchoredPosition = new Vector2(Mathf.Lerp(p1.staV.x, p1.staV.y, pc1.sta.x / pc1.sta.y), p1.sta.anchoredPosition.y);
-            p2.sta.anchoredPosition = new Vector2(Mathf.Lerp(p2.staV.x, p2.staV.y, pc2.sta.x / pc2.sta.y), p2.sta.anchoredPosition.y);
+            p1.sta.anchoredPosition = new Vector2(Mathf.Lerp(p1.staV.x, p1.staV.y, pc1.sta.x / pc1.sta.y * hpCurve.Evaluate(pc1.sta.x / pc1.sta.y)), p1.sta.anchoredPosition.y);
+            p2.sta.anchoredPosition = new Vector2(Mathf.Lerp(p2.staV.x, p2.staV.y, pc2.sta.x / pc2.sta.y * hpCurve.Evaluate(pc2.sta.x / pc2.sta.y)), p2.sta.anchoredPosition.y);
             p1.sta.GetComponent<Image>().sprite = pc1.staCD ? stab1[1] : stab1[0];
             p2.sta.GetComponent<Image>().sprite = pc2.staCD ? stab2[1] : stab2[0];
             p1.btr.anchoredPosition = new Vector2(Mathf.Lerp(p1.btrV.x, p1.btrV.y, pc1.btr.x / pc1.btr.y), p1.btr.anchoredPosition.y);

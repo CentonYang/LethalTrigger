@@ -15,7 +15,7 @@ public class ActionSystem : MonoBehaviour
     [HideInInspector] public string actionMsg, acceptMsg, catchName, followName;
     [HideInInspector] public int direction, hitType, life, ctrlDir;
     [HideInInspector] public bool hited, hurted, hurtCheck, downbreak, comboOver, death;
-    [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed, rootScale, mapRange;
+    [HideInInspector] public float stiff, pushReac, gravity, pushDis, dirDis, combo, downed, rootScale, mapRange, aiWait;
     [HideInInspector] public Vector2 velocity, hurtVel, followOffset;
     public Vector2 hp, sta, btr, skill, fix;
     public GameObject hitboxes;
@@ -66,12 +66,16 @@ public class ActionSystem : MonoBehaviour
             else direction = (int)local.localScale.x;
         else { int randNum = Random.Range(0, 10); if (randNum < 4) direction = transform.position.x < opponent.transform.position.x ? 1 : -1; }
         string mStr = pc.moveString, cStr = pc.comString, aStr = pc.actionKey.ToString();
-        string getName;
+        string getName = null;
         if (cancelList != null)
             foreach (string item in cancelList)
             {
                 if ((pc.pc == 0 && !GameSystem.p1Comp) || (pc.pc == 1 && !GameSystem.p2Comp))
-                { int randNum = Random.Range(0, item.Length * 5); if (randNum == 0) getName = item; else getName = null; }
+                {
+                    int randNum = Random.Range(0, item.Length * 5);
+                    if (randNum == 0 && aiWait <= 0) { getName = item; aiWait = Random.Range(0f, item.Length * 30f); }
+                    else if (randNum < item.Length * 3 && item == "D") getName = "D";
+                }
                 else getName = SearchAction(item, mStr, cStr, aStr);
                 if (pc.comString.Length <= 1)
                     pc.comString = pc.ConvertMoves(pc.movesNum.ToString(), pc.comString);
@@ -87,7 +91,11 @@ public class ActionSystem : MonoBehaviour
             for (int i = 1; i < cancelOtherList.Count; i++)
             {
                 if ((pc.name == "Player1" && !GameSystem.p1Comp) || (pc.name == "Player2" && !GameSystem.p2Comp))
-                { int randNum = Random.Range(0, cancelOtherList[0].Length * 10); if (randNum == 0) getName = cancelOtherList[0]; else getName = null; }
+                {
+                    int randNum = Random.Range(0, cancelOtherList[0].Length * 10);
+                    if (randNum == 0 && aiWait <= 0) { getName = cancelOtherList[0]; aiWait = Random.Range(0f, cancelOtherList[0].Length * 60f); }
+                    else if (randNum < cancelOtherList[0].Length * 6 && cancelOtherList[0] == "D") getName = "D";
+                }
                 else getName = SearchAction(cancelOtherList[i], mStr, cStr, aStr);
                 if (pc.comString.Length <= 1)
                     pc.comString = pc.ConvertMoves(pc.movesNum.ToString(), pc.comString);
@@ -105,23 +113,28 @@ public class ActionSystem : MonoBehaviour
     string SearchAction(string target, string mStr, string cStr, string aStr)
     {
         string inStateStr = inState == 0 ? "" : inState.ToString();
+        if (cStr.Length == 1)
+        {
+            if (mStr[mStr.Length - 1] == '4' || mStr[mStr.Length - 1] == '6') cStr = "F";
+            if (mStr[mStr.Length - 1] == '1' || mStr[mStr.Length - 1] == '2' || mStr[mStr.Length - 1] == '3') cStr = "D";
+            if (mStr[mStr.Length - 1] == '7' || mStr[mStr.Length - 1] == '9') cStr = "U";
+            if (mStr[mStr.Length - 1] == '5') cStr = "N";
+        }
+        if (cStr.Length == 2)
+        {
+            if (cStr == "FF" && mStr[mStr.Length - 1] == '1' || mStr[mStr.Length - 1] == '2' || mStr[mStr.Length - 1] == '3') cStr = "D";
+        }
         if (mStr.Length > 0 && target == mStr[mStr.Length - 1].ToString()) return target;
         if (mStr.Length > 0 && target == inStateStr + mStr[mStr.Length - 1].ToString()) return target;
         if (target == aStr) return target;
         if (target == inStateStr + aStr) return target;
         if (target == mStr + aStr) return target;
         if (target == inStateStr + mStr + aStr) return target;
-        for (int i = 0; i < cStr.Length; i++)
+        for (int i = cStr.Length - 1; i >= 0; i--)
         {
+            if (target == "F" && mStr[mStr.Length - 1] != '4' && mStr[mStr.Length - 1] != '6') return null;
             if (target == inStateStr + cStr.Substring(i) + aStr) return target;
             if (target == cStr.Substring(i) + aStr) return target;
-        }
-        for (int i = 0; i < cStr.Length; i++)
-        {
-            if (i == cStr.Length - 1)
-                if (mStr[mStr.Length - 1] == '5' && cStr != "N") return null;
-                else if ((mStr[mStr.Length - 1] == '1' || mStr[mStr.Length - 1] == '2' || mStr[mStr.Length - 1] == '3') && cStr != "D") return null;
-                else if ((mStr[mStr.Length - 1] == '7' || mStr[mStr.Length - 1] == '8' || mStr[mStr.Length - 1] == '9') && cStr != "U") return null;
             if (target == inStateStr + cStr.Substring(i)) return target;
             if (target == cStr.Substring(i)) return target;
         }
@@ -135,6 +148,7 @@ public class ActionSystem : MonoBehaviour
         if (follow || animator.GetCurrentAnimatorStateInfo(0).IsName(opponent.followName))
         {
             opponent.followName = null;
+            if (opponent.inState == InState.HU || opponent.inState == InState.AHU) NextStateSelf("HITF");
             transform.position += opponent.hitTrans.position - hitTrans.position;
             root.localScale = new Vector3(rootScale * (ctrlDir != 0 ? ctrlDir : (int)opponent.local.localScale.x), rootScale, rootScale); local.localScale = new Vector3(ctrlDir != 0 ? ctrlDir : (int)opponent.local.localScale.x, 1, 1);
             if (followOffset != Vector2.zero) { transform.position = new Vector3(followOffset.x, followOffset.y, 0); followOffset = Vector2.zero; }
@@ -240,14 +254,14 @@ public class ActionSystem : MonoBehaviour
         }
         cc.Move(new Vector3(velocity.x, velocity.y < -10 ? -10 : velocity.y, 0) * Time.fixedDeltaTime);
         ctrlDir = 0;
-        if (inState == InState.AHU || inState == InState.DOWN || inState == InState.WAKE)
+        transform.position = cc.transform.position;
+        if (inState == InState.HU || inState == InState.AHU || inState == InState.DOWN || inState == InState.WAKE)
         {
             Vector3 v3 = transform.position;
             if (v3.x + radius > mapRange) { v3.x -= v3.x + radius - mapRange; opponent.pushDis = velocity.x; }
             if (v3.x - radius < -mapRange) { v3.x -= v3.x - radius + mapRange; opponent.pushDis = velocity.x; }
             transform.position = v3;
         }
-        transform.position = cc.transform.position;
         cc.transform.localPosition *= 0;
     }
 
@@ -261,6 +275,7 @@ public class ActionSystem : MonoBehaviour
         if (skill.x < 0) skill.x = 0; if (skill.x > skill.y) skill.x = skill.y;
         if (mapRange == 0 && FindObjectOfType<MapRange>() != null)
             mapRange = FindObjectOfType<MapRange>().range;
+        if (aiWait > 0) aiWait--;
     }
 
     public void Canceler(string canceler)
@@ -366,7 +381,7 @@ public class ActionSystem : MonoBehaviour
             if (hp.x <= 0)
             { StartCoroutine(Death(_dmg, _dStiffDur, _aHitD, _aHitH)); yield break; }
             //////
-            hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD * .75f : _hitD * .75f, _gHitH);
+            hurtVel = new Vector2(opponent.transform.position.x > transform.position.x ? -_hitD * 1.25f : _hitD * 1.25f, _gHitH);
         }
         else
         {

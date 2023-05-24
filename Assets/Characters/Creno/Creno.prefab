@@ -2487,13 +2487,15 @@ MonoBehaviour:
   downed: 0
   rootScale: 0
   mapRange: 0
+  aiWait: 0
   velocity: {x: 0, y: 0}
   hurtVel: {x: 0, y: 0}
+  followOffset: {x: 0, y: 0}
   hp: {x: 200, y: 200}
   sta: {x: 100, y: 100}
   btr: {x: 0, y: 100}
   skill: {x: 0, y: 100}
-  fix: {x: 0, y: 1}
+  fix: {x: 0, y: 1.09}
   hitboxes: {fileID: 1622245735124416948}
   hitTrans: {fileID: 2955892448575142941}
   root: {fileID: 5169138036618136004}
