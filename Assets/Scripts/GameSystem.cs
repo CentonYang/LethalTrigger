@@ -15,6 +15,7 @@ public class GameSystem : MonoBehaviour
     [RuntimeInitializeOnLoadMethod]
     static void OnStart()
     {
+        Cursor.visible = false;
         if (!File.Exists(Application.dataPath + "/Save.dat"))
             File.WriteAllText(Application.dataPath + "/Save.dat", JsonUtility.ToJson(playerData));
         else

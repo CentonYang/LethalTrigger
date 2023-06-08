@@ -74,6 +74,7 @@ public class CharacterSelect : MonoBehaviour
                     GameSystem.p2Comp = true;
                 }
                 GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
+                CheckColor();
                 if (GameSystem.gamemode == 0)
                     StartCoroutine(Menu.PreloadScene("VersusMode"));
                 if (GameSystem.gamemode == 1)
@@ -85,6 +86,7 @@ public class CharacterSelect : MonoBehaviour
                 GameSystem.p1Char = ConfirmCharacter(checkID[0]); GameSystem.p1Comp = false;
                 GameSystem.p2Char = ConfirmCharacter(checkID[1]); GameSystem.p2Comp = false;
                 GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
+                CheckColor();
                 if (GameSystem.gamemode == 0)
                     StartCoroutine(Menu.PreloadScene("VersusMode"));
                 if (GameSystem.gamemode == 1)
@@ -147,6 +149,7 @@ public class CharacterSelect : MonoBehaviour
             GameSystem.p2Char = ConfirmCharacter(checkID[1]);
             GameSystem.p1Comp = true; GameSystem.p2Comp = true;
             GameObject.Find("LoadingCover").GetComponent<Animator>().Play("FadeOut", -1, 0);
+            CheckColor();
             if (GameSystem.gamemode == 0)
                 StartCoroutine(Menu.PreloadScene("VersusMode"));
             if (GameSystem.gamemode == 1)
@@ -158,5 +161,14 @@ public class CharacterSelect : MonoBehaviour
     {
         if (id != -1) return id;
         return Random.Range(0, selectChar.Count);
+    }
+
+    void CheckColor()
+    {
+        if (pc[0] == pc[1] && color[0] == color[1])
+            if (color[0] == 0) color[1] = 1;
+            else color[1] = 0;
+        GameSystem.p1Color = color[0];
+        GameSystem.p2Color = color[1];
     }
 }

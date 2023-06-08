@@ -267,6 +267,7 @@ public class ActionSystem : MonoBehaviour
 
     void ValueEvent()
     {
+        hp.x = Mathf.Round(hp.x);
         if (hp.x < 0) hp.x = 0; if (hp.x > hp.y) hp.x = hp.y;
         if (sta.x <= 0) { staCD = true; sta.x = 0; }
         if (sta.x >= sta.y) { staCD = false; sta.x = sta.y; }
