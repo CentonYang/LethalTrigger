@@ -24,7 +24,7 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-33045
+45197
 Successfully changed project path to: /media/centon/Centon/File/Project/Github/LethalTrigger
 /media/centon/Centon/File/Project/Github/LethalTrigger
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -56,11 +56,11 @@ Successfully changed project path to: /media/centon/Centon/File/Project/Github/L
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [140297554019200] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 2153590939 [EditorId] 2153590939 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [140097430057856] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 4009539871 [EditorId] 4009539871 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [140297554019200] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 2153590939 [EditorId] 2153590939 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [140097430057856] Host "[IP] 192.168.0.23 [Port] 0 [Flags] 2 [Guid] 4009539871 [EditorId] 4009539871 [Version] 1048832 [Id] LinuxEditor(16,192.168.0.23) [Debug] 1 [PackageName] LinuxEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 661.57 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 154.78 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.2.8f1 (996aee41dc57)
 [Subsystems] Discovering subsystems at path /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/Resources/UnitySubsystems
@@ -180,13 +180,12 @@ Vulkan detection: 2
 [vulkan] Loaded instance function vkCmdEndDebugUtilsLabelEXT
 [vulkan] Loaded instance function vkCmdInsertDebugUtilsLabelEXT
 [Vulkan init] SelectPhysicalDevice requestedDeviceIndex=-1 xrDevice=(nil)
-[Vulkan init] Physical Device 0x55e9ecb69480 [0]: "NVIDIA GeForce GTX 1050 Ti" deviceType=2 vendorID=10de deviceID=1c82
-[Vulkan init] Physical Device 0x55e9ecb67470 [1]: "llvmpipe (LLVM 15.0.7, 256 bits)" deviceType=4 vendorID=10005 deviceID=0
-[Vulkan init] Selected physical device 0x55e9ecb69480
+[Vulkan init] Physical Device 0x556622c4a6a0 [0]: "NVIDIA GeForce GTX 1050 Ti" deviceType=2 vendorID=10de deviceID=1c82
+[Vulkan init] Physical Device 0x556622c4a5f0 [1]: "llvmpipe (LLVM 15.0.7, 256 bits)" deviceType=4 vendorID=10005 deviceID=0
+[Vulkan init] Selected physical device 0x556622c4a6a0
 [Vulkan init] Graphics queue count=1
-[Vulkan init] extensions: count=146
+[Vulkan init] extensions: count=136
 [Vulkan init] extensions: name=VK_EXT_4444_formats [enabled=1, external=0]
-[Vulkan init] extensions: name=VK_EXT_attachment_feedback_loop_layout [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_blend_operation_advanced [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_border_color_swizzle [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_buffer_device_address [enabled=0, external=0]
@@ -208,9 +207,7 @@ Vulkan detection: 2
 [Vulkan init] extensions: name=VK_EXT_fragment_shader_interlock [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_global_priority [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_global_priority_query [enabled=0, external=0]
-[Vulkan init] extensions: name=VK_EXT_graphics_pipeline_library [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_host_query_reset [enabled=0, external=0]
-[Vulkan init] extensions: name=VK_EXT_image_2d_view_of_3d [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_image_drm_format_modifier [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_image_robustness [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_image_view_min_lod [enabled=0, external=0]
@@ -220,15 +217,12 @@ Vulkan detection: 2
 [Vulkan init] extensions: name=VK_EXT_load_store_op_none [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_memory_budget [enabled=1, external=0]
 [Vulkan init] extensions: name=VK_EXT_multi_draw [enabled=0, external=0]
-[Vulkan init] extensions: name=VK_EXT_non_seamless_cube_map [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_pci_bus_info [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_physical_device_drm [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_pipeline_creation_cache_control [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_pipeline_creation_feedback [enabled=0, external=0]
-[Vulkan init] extensions: name=VK_EXT_pipeline_robustness [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_post_depth_coverage [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_primitive_topology_list_restart [enabled=0, external=0]
-[Vulkan init] extensions: name=VK_EXT_primitives_generated_query [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_private_data [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_provoking_vertex [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_queue_family_foreign [enabled=1, external=0]
@@ -240,7 +234,6 @@ Vulkan detection: 2
 [Vulkan init] extensions: name=VK_EXT_shader_atomic_float [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_shader_demote_to_helper_invocation [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_shader_image_atomic_int64 [enabled=0, external=0]
-[Vulkan init] extensions: name=VK_EXT_shader_module_identifier [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_shader_subgroup_ballot [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_shader_subgroup_vote [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_EXT_shader_viewport_index_layer [enabled=1, external=0]
@@ -282,7 +275,6 @@ Vulkan detection: 2
 [Vulkan init] extensions: name=VK_KHR_maintenance4 [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_KHR_multiview [enabled=1, external=0]
 [Vulkan init] extensions: name=VK_KHR_pipeline_executable_properties [enabled=0, external=0]
-[Vulkan init] extensions: name=VK_KHR_pipeline_library [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_KHR_present_id [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_KHR_present_wait [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_KHR_push_descriptor [enabled=0, external=0]
@@ -312,7 +304,6 @@ Vulkan detection: 2
 [Vulkan init] extensions: name=VK_KHR_zero_initialize_workgroup_memory [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_NVX_multiview_per_view_attributes [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_NV_clip_space_w_scaling [enabled=0, external=0]
-[Vulkan init] extensions: name=VK_NV_copy_memory_indirect [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_NV_coverage_reduction_mode [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_NV_dedicated_allocation [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_NV_dedicated_allocation_image_aliasing [enabled=0, external=0]
@@ -325,7 +316,6 @@ Vulkan detection: 2
 [Vulkan init] extensions: name=VK_NV_geometry_shader_passthrough [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_NV_inherited_viewport_scissor [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_NV_linear_color_attachment [enabled=0, external=0]
-[Vulkan init] extensions: name=VK_NV_memory_decompression [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_NV_sample_mask_override_coverage [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_NV_shader_sm_builtins [enabled=0, external=0]
 [Vulkan init] extensions: name=VK_NV_shader_subgroup_partitioned [enabled=0, external=0]
@@ -475,58 +465,58 @@ Vulkan detection: 2
 [vulkan] Loaded instance function vkCmdDebugMarkerEndEXT
 [vulkan] Failed to load device function vkCmdDebugMarkerInsertEXT
 [vulkan] Loaded instance function vkCmdDebugMarkerInsertEXT
-Vulkan API version 1.1.0 (1.3.224 supported by driver, 1.1.0 requested)
+Vulkan API version 1.1.0 (1.3.205 supported by driver, 1.1.0 requested)
 Vulkan vendor=[NVIDIA] id=[10de]
 Vulkan renderer=[NVIDIA GeForce GTX 1050 Ti] id=[1c82]
 Vulkan device type 2
-Vulkan driverversion=[0x835a4440] uint=[-2091236288]
+Vulkan driverversion=[0x80da4040] uint=[-2133180352]
 Vulkan PSO: cache data not found [path=/tmp/DefaultCompany/LethalTrigger/vulkan_pso_cache.bin]
 Initialize mono
 Mono path[0] = '/home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/Managed'
 Mono path[1] = '/home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-linux'
 Mono config path = '/home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56056
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56594
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: /home/centon/Unity/Hub/Editor/2022.2.8f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll
-Registered in 0.065258 seconds.
-- Loaded All Assemblies, in  0.486 seconds
+Registered in 0.028226 seconds.
+- Loaded All Assemblies, in  0.754 seconds
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 334 ms
+Android Extension - Scanning For ADB Devices 385 ms
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.768 seconds
+- Finished resetting the current domain, in  0.992 seconds
 Domain Reload Profiling:
-	ReloadAssembly (316ms)
-		BeginReloadAssembly (102ms)
+	ReloadAssembly (348ms)
+		BeginReloadAssembly (126ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
 		LoadAllAssembliesAndSetupDomain (0ms)
-			LoadAssemblies (99ms)
+			LoadAssemblies (125ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (157ms)
-				TypeCache.Initialize (156ms)
-					TypeCache.ScanAssembly (155ms)
+			SetupTypeCache (396ms)
+				TypeCache.Initialize (395ms)
+					TypeCache.ScanAssembly (392ms)
 				ResolveRequiredComponents (0ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (697ms)
+			SetupLoadedEditorAssemblies (867ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (483ms)
+				InitializePlatformSupportModulesInManaged (598ms)
 				SetLoadedEditorAssemblies (6ms)
 				RefreshPlugins (0ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (120ms)
-				ProcessInitializeOnLoadMethodAttributes (88ms)
+				ProcessInitializeOnLoadAttributes (174ms)
+				ProcessInitializeOnLoadMethodAttributes (87ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -534,8 +524,8 @@ Domain Reload Profiling:
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  2.332 seconds
-Refreshing native plugins compatible for Editor in 106.42 ms, found 2 plugins.
+- Loaded All Assemblies, in  7.316 seconds
+Refreshing native plugins compatible for Editor in 104.85 ms, found 2 plugins.
 Native extension for LinuxStandalone target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
@@ -545,44 +535,44 @@ UpdateMenuTitleForLanguage: 10
 [MODES] ModeService[none].LoadModes
 [MODES] Loading mode Default (0) for mode-current-id-LethalTrigger
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  3.862 seconds
+- Finished resetting the current domain, in  3.724 seconds
 Domain Reload Profiling:
-	ReloadAssembly (267ms)
-		BeginReloadAssembly (141ms)
+	ReloadAssembly (278ms)
+		BeginReloadAssembly (142ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (7ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (37ms)
-		LoadAllAssembliesAndSetupDomain (2002ms)
-			LoadAssemblies (881ms)
+			CreateAndSetChildDomain (36ms)
+		LoadAllAssembliesAndSetupDomain (6690ms)
+			LoadAssemblies (5715ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1112ms)
-				TypeCache.Initialize (542ms)
-					TypeCache.ScanAssembly (534ms)
-				ResolveRequiredComponents (15ms)
+			SetupTypeCache (929ms)
+				TypeCache.Initialize (395ms)
+					TypeCache.ScanAssembly (390ms)
+				ResolveRequiredComponents (14ms)
 		FinalizeReload (0ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (0ms)
-			SetupLoadedEditorAssemblies (3582ms)
+			SetupLoadedEditorAssemblies (3418ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (88ms)
-				SetLoadedEditorAssemblies (6ms)
+				InitializePlatformSupportModulesInManaged (78ms)
+				SetLoadedEditorAssemblies (5ms)
 				RefreshPlugins (0ms)
-				BeforeProcessingInitializeOnLoad (359ms)
-				ProcessInitializeOnLoadAttributes (920ms)
-				ProcessInitializeOnLoadMethodAttributes (2200ms)
-				AfterProcessingInitializeOnLoad (9ms)
+				BeforeProcessingInitializeOnLoad (401ms)
+				ProcessInitializeOnLoadAttributes (791ms)
+				ProcessInitializeOnLoadMethodAttributes (2133ms)
+				AfterProcessingInitializeOnLoad (10ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (7ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Launched and connected shader compiler UnityShaderCompiler after 0.04 seconds
-Refreshing native plugins compatible for Editor in 104.75 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 182.49 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 6000 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 91 unused Assets / (11.6 MB). Loaded Objects now: 6435.
 Memory consumption went from 0.96 GB to 0.95 GB.
-Total: 19.002347 ms (FindLiveObjects: 0.595665 ms CreateObjectMapping: 1.197108 ms MarkObjects: 6.804498 ms  DeleteObjects: 10.403531 ms)
+Total: 20.998960 ms (FindLiveObjects: 0.573149 ms CreateObjectMapping: 0.857524 ms MarkObjects: 8.721204 ms  DeleteObjects: 10.845102 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -631,11 +621,53 @@ AssetImportParameters requested are different than current active one (requested
   custom:scripting/monoscript/filePath//Library/PackageCache/com.unity.collab-proxy@2.0.0/Editor/PlasticSCM/UI/UnityPlasticTimer.cs:  -> 6c887e722e951c2964523825cad70c4c
 ========================================================================
 Received Import Request.
-  Time since last request: 289453.904827 seconds.
+  Time since last request: 2458.729645 seconds.
   path: Assets/Characters/Creno/Creno.prefab
   artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '653eeb50ed27731af5bc0850e6c78ee3') in 13.654742 seconds 
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9df1b21a1c9dc722e2bda97bb335a8d4') in 13.515412 seconds 
 Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
 To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 628
+========================================================================
+Received Import Request.
+  Time since last request: 506.250950 seconds.
+  path: Assets/Characters/Creno/Creno.prefab
+  artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c151aa205bc747f3022a0703e9b34ef2') in 1.692141 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 628
+========================================================================
+Received Import Request.
+  Time since last request: 427.008000 seconds.
+  path: Assets/Characters/Creno/Creno.prefab
+  artifactKey: Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Creno/Creno.prefab using Guid(e076c011f2438ffe586f992f7ec4c9ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dcdbf398fcff8ff83ef857ee5c11abd') in 1.196627 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 628
+========================================================================
+Received Import Request.
+  Time since last request: 2.101628 seconds.
+  path: Assets/Characters/Natalia/Natalia.prefab
+  artifactKey: Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Natalia/Natalia.prefab using Guid(0cef48cb926a9704296c560d3d644567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6c62a198083c0fbdcaa05d049ab4c87') in 2.455017 seconds 
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 700
+========================================================================
+Received Import Request.
+  Time since last request: 201.445594 seconds.
+  path: Assets/Characters/Sergio/Sergio.prefab
+  artifactKey: Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Characters/Sergio/Sergio.prefab using Guid(fe90d4968bec54c95a9fe48c786c3312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69a24caad149cdd577682e8245c197af') in 0.876129 seconds 
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 442
